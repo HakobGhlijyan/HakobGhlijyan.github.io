@@ -1,698 +1,96 @@
 <!DOCTYPE html>
-<html lang="ru" class="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hakob Ghlijyan — iOS Developer & SwiftUI Specialist</title>
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts: Inter & JetBrains Mono -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        apple: {
-                            blue: '#0071e3',
-                            blueHover: '#0077ed',
-                            darkBg: '#050507',
-                            darkCard: '#0d0d12',
-                            darkBorder: 'rgba(255, 255, 255, 0.08)',
-                            lightBg: '#fbfbfd',
-                            lightCard: '#ffffff',
-                            lightBorder: 'rgba(0, 0, 0, 0.06)',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        * {
-            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
-        }
-
-        /* Subtle Kavsoft Glassmorphism */
-        .glass-panel {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-
-        .dark .glass-panel {
-            background: rgba(13, 13, 18, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-        }
-
-        .light .glass-panel {
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.03);
-        }
-
-        .dark .glass-panel:hover {
-            border-color: rgba(0, 113, 227, 0.35);
-        }
-
-        .light .glass-panel:hover {
-            border-color: rgba(0, 113, 227, 0.25);
-            box-shadow: 0 10px 30px rgba(0, 113, 227, 0.08);
-        }
-
-        /* Ambient Glow Effect */
-        .glow-orb {
-            position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-            filter: blur(120px);
-            opacity: 0.35;
-            z-index: 0;
-        }
-
-        /* Custom minimal scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(156, 163, 175, 0.25);
-            border-radius: 9999px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(0, 113, 227, 0.5);
-        }
-    </style>
-</head>
-
-<body class="min-h-screen bg-apple-lightBg dark:bg-apple-darkBg text-slate-800 dark:text-slate-100 font-sans relative overflow-x-hidden selection:bg-apple-blue selection:text-white">
-
-    <!-- Ambient background glows -->
-    <div class="glow-orb w-[500px] h-[500px] bg-blue-600/20 top-0 left-1/2 -translate-x-1/2"></div>
-    <div class="glow-orb w-[400px] h-[400px] bg-purple-600/15 top-1/3 right-0"></div>
-    <div class="glow-orb w-[400px] h-[400px] bg-indigo-600/15 bottom-1/4 left-0"></div>
-
-    <header class="sticky top-0 z-50 backdrop-blur-2xl bg-white/70 dark:bg-apple-darkBg/75 border-b border-slate-200/60 dark:border-white/[0.06]">
-        <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-            
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white text-xs shadow-md shadow-blue-500/20">
-                    <i class="fa-solid fa-swift"></i>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Hakob Ghlijyan — iOS Developer specializing in SwiftUI, UIKit, SwiftData, Combine, Clean Architecture, and App Store-ready native apps." />
+        <meta name="author" content="Hakob Ghlijyan" />
+        <title>Hakob Ghlijyan — iOS Developer</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><img class="brand-avatar rounded-circle" src="assets/avatar-mini.png" alt="Hakob Ghlijyan mini avatar" /><span class="fw-bolder text-primary">Hakob Ghlijyan</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <span class="font-bold text-sm tracking-tight text-slate-900 dark:text-white">HakobGhlijyan</span>
-            </a>
-
-            <!-- Minimal Navigation Links -->
-            <nav class="hidden md:flex items-center gap-8 text-xs font-medium text-slate-600 dark:text-slate-400">
-                <a href="#about" class="hover:text-apple-blue dark:hover:text-white transition-colors">Обо мне</a>
-                <a href="#skills" class="hover:text-apple-blue dark:hover:text-white transition-colors">Стек</a>
-                <a href="#apps" class="hover:text-apple-blue dark:hover:text-white transition-colors">Приложения</a>
-                <a href="#support" class="hover:text-apple-blue dark:hover:text-apple-blue text-apple-blue font-semibold transition-colors flex items-center gap-1.5">
-                    <i class="fa-solid fa-life-ring text-[11px]"></i>
-                    <span>Support Center</span>
-                </a>
-                <a href="#contact" class="hover:text-apple-blue dark:hover:text-white transition-colors">Контакты</a>
             </nav>
-
-            <!-- Actions: Theme Switcher & Contact CTA -->
-            <div class="flex items-center gap-3">
-                <button id="themeToggle" aria-label="Toggle Theme" class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/[0.06] border border-slate-200 dark:border-white/[0.08] flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-apple-blue transition-all">
-                    <i id="themeIconSun" class="fa-solid fa-sun text-amber-500 hidden text-xs"></i>
-                    <i id="themeIconMoon" class="fa-solid fa-moon text-blue-400 text-xs"></i>
-                </button>
-
-                <a href="#support" class="inline-flex items-center gap-1.5 bg-apple-blue hover:bg-apple-blueHover text-white text-xs font-medium px-3.5 py-1.5 rounded-lg transition-all shadow-sm shadow-blue-500/30">
-                    <i class="fa-solid fa-headset text-[10px]"></i>
-                    <span>App Support</span>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <main class="max-w-5xl mx-auto px-6 py-16 space-y-32 relative z-10">
-
-        <section id="about" class="pt-6 flex flex-col md:flex-row items-center justify-between gap-12">
-            <div class="flex-1 space-y-6 text-center md:text-left">
-                
-                <!-- Status Badge -->
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-apple-blue text-[11px] font-semibold">
-                    <span class="w-2 h-2 rounded-full bg-apple-blue animate-pulse"></span>
-                    <span>iOS & SwiftUI Engineer</span>
-                </div>
-
-                <!-- Main Headline -->
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-slate-900 dark:text-white">
-                    Чистый Swift. <br />
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-indigo-400 to-purple-500">
-                        Элегантный iOS UX.
-                    </span>
-                </h1>
-
-                <!-- Subtitle -->
-                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-xl leading-relaxed font-normal">
-                    Привет! Hi, Я Hakob Ghlijyan. Разрабатываю производительные нативные iOS-приложения, ориентированные на выверенную микроанимацию, современные фреймворки Swift/SwiftUI и масштабируемую архитектуру.
-                </p>
-
-                <!-- Action Buttons -->
-                <div class="flex flex-wrap items-center justify-center md:justify-start gap-3.5 pt-2">
-                    <a href="#apps" class="px-5 py-2.5 rounded-xl bg-apple-blue hover:bg-apple-blueHover text-white font-medium text-xs transition-all shadow-lg shadow-blue-500/20 flex items-center gap-2">
-                        <i class="fa-brands fa-app-store-ios text-sm"></i>
-                        <span>Проекты в App Store</span>
-                    </a>
-                    <a href="#support" class="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-white/[0.06] hover:bg-slate-200 dark:hover:bg-white/[0.1] text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-white/[0.08] font-medium text-xs transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-headset text-apple-blue"></i>
-                        <span>Центр Поддержки</span>
-                    </a>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="flex items-center justify-center md:justify-start gap-4 pt-3 text-slate-400">
-                    <a href="https://github.com/HakobGhlijyan" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:hover:text-white transition-colors text-sm" title="GitHub">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="https://t.me" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors text-sm" title="Telegram">
-                        <i class="fa-brands fa-telegram"></i>
-                    </a>
-                    <a href="mailto:support@hakob.dev" class="hover:text-purple-400 transition-colors text-sm" title="Support Email">
-                        <i class="fa-solid fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Profile Avatar Card with image from GitHub repository -->
-            <div class="relative group flex-shrink-0">
-                <div class="w-60 h-60 sm:w-64 sm:h-64 rounded-3xl p-1 bg-gradient-to-tr from-blue-600/40 via-purple-600/40 to-indigo-600/40 relative shadow-2xl">
-                    <div class="w-full h-full rounded-[22px] overflow-hidden bg-slate-900 border border-white/10 relative flex flex-col justify-between group">
-                        <!-- Profile Image -->
-                        <img src="Hakob_profile+smallSize.png" 
-                             alt="Hakob Ghlijyan" 
-                             onerror="this.onerror=null; this.src='https://placehold.co/400x400/0d0d12/0071e3?text=Hakob';"
-                             class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
-                        
-                        <!-- Floating Glass Overlay Info -->
-                        <div class="absolute bottom-0 inset-x-0 p-3 bg-slate-950/80 backdrop-blur-md border-t border-white/10 flex items-center justify-between text-xs">
-                            <div class="flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                                <span class="font-medium text-white text-[11px]">Apple Developer</span>
-                            </div>
-                            <div class="flex items-center gap-1 text-orange-500 font-mono text-[11px]">
-                                <i class="fa-solid fa-swift"></i>
-                                <span>iOS 18</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="glass-panel p-5 rounded-2xl text-center">
-                <div class="text-2xl font-bold text-apple-blue mb-1">5+</div>
-                <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Приложений в App Store</div>
-            </div>
-            <div class="glass-panel p-5 rounded-2xl text-center">
-                <div class="text-2xl font-bold text-indigo-400 mb-1">100%</div>
-                <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Native Swift Code</div>
-            </div>
-            <div class="glass-panel p-5 rounded-2xl text-center">
-                <div class="text-2xl font-bold text-purple-400 mb-1">4.9 ★</div>
-                <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Средняя оценка</div>
-            </div>
-            <div class="glass-panel p-5 rounded-2xl text-center">
-                <div class="text-2xl font-bold text-emerald-400 mb-1">&lt; 24h</div>
-                <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Ответ поддержки</div>
-            </div>
-        </section>
-
-        <section id="skills" class="space-y-6">
-            <div>
-                <span class="text-apple-blue text-[11px] font-bold uppercase tracking-wider">Tech Ecosystem</span>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight mt-1">
-                    Технологический Стек
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3.5">
-                
-                <div class="glass-panel p-4 rounded-xl flex items-center gap-3.5">
-                    <div class="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 text-lg flex-shrink-0">
-                        <i class="fa-solid fa-swift"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-slate-900 dark:text-white text-xs">SwiftUI & Swift</h3>
-                        <p class="text-[11px] text-slate-500 dark:text-slate-400">Declarative UI & Concurrency</p>
-                    </div>
-                </div>
-
-                <div class="glass-panel p-4 rounded-xl flex items-center gap-3.5">
-                    <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-500 text-lg flex-shrink-0">
-                        <i class="fa-solid fa-mobile-screen"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-slate-900 dark:text-white text-xs">UIKit & AutoLayout</h3>
-                        <p class="text-[11px] text-slate-500 dark:text-slate-400">Programmatic UI</p>
-                    </div>
-                </div>
-
-                <div class="glass-panel p-4 rounded-xl flex items-center gap-3.5">
-                    <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-lg flex-shrink-0">
-                        <i class="fa-solid fa-database"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-slate-900 dark:text-white text-xs">SwiftData / CoreData</h3>
-                        <p class="text-[11px] text-slate-500 dark:text-slate-400">Persistent Storage</p>
-                    </div>
-                </div>
-
-                <div class="glass-panel p-4 rounded-xl flex items-center gap-3.5">
-                    <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-lg flex-shrink-0">
-                        <i class="fa-solid fa-network-wired"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-slate-900 dark:text-white text-xs">Combine & Networking</h3>
-                        <p class="text-[11px] text-slate-500 dark:text-slate-400">REST API & Reactive</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="apps" class="space-y-6">
-            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-                <div>
-                    <span class="text-apple-blue text-[11px] font-bold uppercase tracking-wider">App Showcase</span>
-                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight mt-1">
-                        Мои Приложения
-                    </h2>
-                </div>
-
-                <!-- Minimal Category Filters -->
-                <div class="flex items-center gap-1.5 bg-slate-200/60 dark:bg-white/[0.05] p-1 rounded-xl text-xs font-medium self-start sm:self-auto">
-                    <button onclick="filterApps('all', event)" class="filter-btn active px-3 py-1.5 rounded-lg text-white bg-apple-blue transition-all">
-                        Все
-                    </button>
-                    <button onclick="filterApps('appstore', event)" class="filter-btn px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
-                        App Store
-                    </button>
-                    <button onclick="filterApps('swiftui', event)" class="filter-btn px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
-                        SwiftUI
-                    </button>
-                </div>
-            </div>
-
-            <!-- Apps Cards Grid -->
-            <div id="appsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-
-                <!-- APP CARD 1 -->
-                <div class="app-card glass-panel rounded-2xl p-5 flex flex-col justify-between" data-category="appstore">
-                    <div>
-                        <div class="flex items-start justify-between gap-3 mb-4">
-                            <!-- iOS Squircle Icon -->
-                            <div class="w-14 h-14 rounded-[18px] bg-gradient-to-tr from-blue-600 to-cyan-400 p-0.5 shadow-md shadow-blue-500/20 flex-shrink-0">
-                                <div class="w-full h-full bg-slate-950 rounded-[16px] flex items-center justify-center text-white text-xl">
-                                    <i class="fa-solid fa-bolt text-blue-400"></i>
+            <header class="py-5">
+                <div class="container px-5 pb-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-xxl-5">
+                            <div class="text-center text-xxl-start">
+                                <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">SwiftUI &middot; UIKit &middot; SwiftData &middot; App Store</div></div>
+                                <div class="fs-3 fw-light text-muted">Hi, I am Hakob</div>
+                                <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">iOS Developer building clean native apps</span></h1>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                                    <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="resume.html">Resume</a>
+                                    <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="projects.html">Projects</a>
                                 </div>
                             </div>
-                            <span class="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-blue-500/10 text-apple-blue border border-blue-500/20">
-                                Productivity
-                            </span>
                         </div>
-
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Focus Flow Tracker</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-3 font-normal">Таймер сфокусированной работы</p>
-                        <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed mb-4">
-                            Минималистичный планер с поддержкой Lock Screen Widget, Live Activities и синхронизацией CloudKit.
-                        </p>
-
-                        <div class="flex flex-wrap gap-1.5 mb-5">
-                            <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400">SwiftUI</span>
-                            <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-400">SwiftData</span>
-                            <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400">WidgetKit</span>
-                        </div>
-                    </div>
-
-                    <div class="space-y-2">
-                        <a href="https://apps.apple.com" target="_blank" class="w-full py-2 px-3 rounded-lg bg-apple-blue hover:bg-apple-blueHover text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
-                            <i class="fa-brands fa-app-store text-xs"></i>
-                            <span>App Store</span>
-                        </a>
-                        <a href="#support" onclick="selectAppInSupport('Focus Flow Tracker')" class="w-full py-1.5 px-3 rounded-lg bg-slate-100 dark:bg-white/[0.05] hover:bg-slate-200 dark:hover:bg-white/[0.08] text-slate-600 dark:text-slate-300 text-[10px] font-medium flex items-center justify-center gap-1 transition-all">
-                            <i class="fa-solid fa-headset text-apple-blue"></i>
-                            <span>Поддержка приложения</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- APP CARD 2 -->
-                <div class="app-card glass-panel rounded-2xl p-5 flex flex-col justify-between" data-category="appstore">
-                    <div>
-                        <div class="flex items-start justify-between gap-3 mb-4">
-                            <div class="w-14 h-14 rounded-[18px] bg-gradient-to-tr from-emerald-500 to-teal-400 p-0.5 shadow-md shadow-emerald-500/20 flex-shrink-0">
-                                <div class="w-full h-full bg-slate-950 rounded-[16px] flex items-center justify-center text-white text-xl">
-                                    <i class="fa-solid fa-wallet text-emerald-400"></i>
+                        <div class="col-xxl-7">
+                            <div class="d-flex justify-content-center mt-5 mt-xxl-0">
+                                <div class="profile bg-gradient-primary-to-secondary">
+                                    <img class="profile-img" src="assets/profile.png" alt="Portrait of Hakob Ghlijyan" />
+                                    <div class="dots-1"></div>
+                                    <div class="dots-2"></div>
+                                    <div class="dots-3"></div>
+                                    <div class="dots-4"></div>
                                 </div>
                             </div>
-                            <span class="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                                Finance
-                            </span>
                         </div>
-
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Expenzio Pro</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-3 font-normal">Менеджер личных финансов</p>
-                        <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed mb-4">
-                            Интерактивный учет расходов с графиками Swift Charts, биометрией Face ID и мультивалютностью.
-                        </p>
-
-                        <div class="flex flex-wrap gap-1.5 mb-5">
-                            <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400">Swift Charts</span>
-                            <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400">CoreData</span>
-                        </div>
-                    </div>
-
-                    <div class="space-y-2">
-                        <a href="https://apps.apple.com" target="_blank" class="w-full py-2 px-3 rounded-lg bg-apple-blue hover:bg-apple-blueHover text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
-                            <i class="fa-brands fa-app-store text-xs"></i>
-                            <span>App Store</span>
-                        </a>
-                        <a href="#support" onclick="selectAppInSupport('Expenzio Pro')" class="w-full py-1.5 px-3 rounded-lg bg-slate-100 dark:bg-white/[0.05] hover:bg-slate-200 dark:hover:bg-white/[0.08] text-slate-600 dark:text-slate-300 text-[10px] font-medium flex items-center justify-center gap-1 transition-all">
-                            <i class="fa-solid fa-headset text-apple-blue"></i>
-                            <span>Поддержка приложения</span>
-                        </a>
                     </div>
                 </div>
-
-                <!-- APP CARD 3 -->
-                <div class="app-card glass-panel rounded-2xl p-5 flex flex-col justify-between" data-category="swiftui">
-                    <div>
-                        <div class="flex items-start justify-between gap-3 mb-4">
-                            <div class="w-14 h-14 rounded-[18px] bg-gradient-to-tr from-purple-600 to-pink-500 p-0.5 shadow-md shadow-purple-500/20 flex-shrink-0">
-                                <div class="w-full h-full bg-slate-950 rounded-[16px] flex items-center justify-center text-white text-xl">
-                                    <i class="fa-solid fa-wand-magic-sparkles text-purple-400"></i>
+            </header>
+            <section class="bg-light py-5">
+                <div class="container px-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-xxl-8">
+                            <div class="text-center my-5">
+                                <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About Me</span></h2>
+                                <p class="lead fw-light mb-4">Native iOS engineer with 5+ years of full-cycle mobile development experience.</p>
+                                <p class="text-muted">I work with modern Apple technologies and classic production stacks: SwiftUI, UIKit, Combine, SwiftData, Core Data, async/await, REST APIs, WebSockets, offline caching, and App Store delivery. My engineering style is practical: Clean Architecture where it matters, MVVM and Coordinators for clarity, and simple maintainable code guided by SOLID, DRY, KISS, and YAGNI.</p>
+                                <div class="d-flex justify-content-center fs-2 gap-4">
+                                    <a class="text-gradient" href="mailto:support@hakob.dev" aria-label="Email Hakob"><i class="bi bi-envelope"></i></a>
+                                    <a class="text-gradient" href="https://github.com/HakobGhlijyan" target="_blank" rel="noopener noreferrer" aria-label="Hakob on GitHub"><i class="bi bi-github"></i></a>
+                                    <a class="text-gradient" href="contact.html" aria-label="Contact page"><i class="bi bi-chat-dots"></i></a>
                                 </div>
                             </div>
-                            <span class="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">
-                                SwiftUI UI/UX
-                            </span>
-                        </div>
-
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Dynamic Island Animations</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-3 font-normal">Кастомные микроанимации</p>
-                        <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed mb-4">
-                            Библиотека динамических интерактивных переходов в стиле iOS 18 и macOS Sequoia.
-                        </p>
-
-                        <div class="flex flex-wrap gap-1.5 mb-5">
-                            <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-400">SwiftUI</span>
-                            <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-pink-500/10 text-pink-400">Canvas</span>
-                        </div>
-                    </div>
-
-                    <div class="space-y-2">
-                        <a href="https://github.com/HakobGhlijyan" target="_blank" class="w-full py-2 px-3 rounded-lg bg-slate-800 dark:bg-white/[0.1] hover:bg-slate-900 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
-                            <i class="fa-brands fa-github text-xs"></i>
-                            <span>GitHub Source</span>
-                        </a>
-                        <a href="#support" onclick="selectAppInSupport('Dynamic Island Animations')" class="w-full py-1.5 px-3 rounded-lg bg-slate-100 dark:bg-white/[0.05] hover:bg-slate-200 dark:hover:bg-white/[0.08] text-slate-600 dark:text-slate-300 text-[10px] font-medium flex items-center justify-center gap-1 transition-all">
-                            <i class="fa-solid fa-headset text-apple-blue"></i>
-                            <span>Задать вопрос</span>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="support" class="glass-panel rounded-3xl p-6 sm:p-10 relative overflow-hidden space-y-8 scroll-mt-20">
-            
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-200 dark:border-white/[0.08] pb-6">
-                <div>
-                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-apple-blue text-[10px] font-bold uppercase tracking-wider mb-2">
-                        <i class="fa-solid fa-life-ring"></i> Official App Store Support URL
-                    </div>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                        Центр Поддержки Приложений
-                    </h2>
-                    <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1">
-                        Официальная страница поддержки пользователей для App Store Connect.
-                    </p>
-                </div>
-
-                <div class="flex items-center gap-3">
-                    <a href="mailto:support@hakob.dev" class="px-4 py-2 rounded-xl bg-apple-blue hover:bg-apple-blueHover text-white text-xs font-semibold flex items-center gap-2 transition-all">
-                        <i class="fa-solid fa-envelope"></i>
-                        <span>support@hakob.dev</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Support Form & FAQ Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                
-                <!-- Support Inquiry Form (7 cols) -->
-                <div class="lg:col-span-7 bg-slate-100/70 dark:bg-slate-900/60 p-5 sm:p-6 rounded-2xl border border-slate-200 dark:border-white/[0.06] space-y-4">
-                    <h3 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
-                        <i class="fa-solid fa-paper-plane text-apple-blue"></i>
-                        <span>Отправить запрос в поддержку</span>
-                    </h3>
-
-                    <form id="supportForm" onsubmit="handleSupportSubmit(event)" class="space-y-3">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <div>
-                                <label class="block text-[11px] font-semibold text-slate-700 dark:text-slate-300 mb-1">Ваше имя</label>
-                                <input type="text" id="supportName" required placeholder="Имя" class="w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/[0.1] text-xs text-slate-900 dark:text-white focus:outline-none focus:border-apple-blue">
-                            </div>
-                            <div>
-                                <label class="block text-[11px] font-semibold text-slate-700 dark:text-slate-300 mb-1">Email для связи</label>
-                                <input type="email" id="supportEmail" required placeholder="name@example.com" class="w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/[0.1] text-xs text-slate-900 dark:text-white focus:outline-none focus:border-apple-blue">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-[11px] font-semibold text-slate-700 dark:text-slate-300 mb-1">Выберите приложение</label>
-                            <select id="supportAppSelect" class="w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/[0.1] text-xs text-slate-900 dark:text-white focus:outline-none focus:border-apple-blue">
-                                <option value="Focus Flow Tracker">Focus Flow Tracker</option>
-                                <option value="Expenzio Pro">Expenzio Pro</option>
-                                <option value="Dynamic Island Animations">Dynamic Island Animations</option>
-                                <option value="Общий запрос">Общий запрос</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="block text-[11px] font-semibold text-slate-700 dark:text-slate-300 mb-1">Описание вопроса или проблемы</label>
-                            <textarea id="supportMessage" rows="3" required placeholder="Опишите вопрос, версию iOS или ваше предложение..." class="w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/[0.1] text-xs text-slate-900 dark:text-white focus:outline-none focus:border-apple-blue resize-none"></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full py-2.5 rounded-lg bg-apple-blue hover:bg-apple-blueHover text-white font-semibold text-xs transition-all shadow-md shadow-blue-500/20">
-                            Отправить запрос
-                        </button>
-                    </form>
-                </div>
-
-                <!-- FAQ Accordion (5 cols) -->
-                <div class="lg:col-span-5 space-y-3">
-                    <h3 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
-                        <i class="fa-solid fa-circle-question text-apple-blue"></i>
-                        <span>Часто задаваемые вопросы (FAQ)</span>
-                    </h3>
-
-                    <div class="space-y-2">
-                        <!-- FAQ 1 -->
-                        <div class="border border-slate-200 dark:border-white/[0.08] rounded-xl bg-white/40 dark:bg-slate-900/40 overflow-hidden">
-                            <button onclick="toggleFaq(this)" class="w-full p-3 text-left font-medium text-xs text-slate-800 dark:text-slate-200 flex items-center justify-between gap-2 hover:text-apple-blue">
-                                <span>Как восстановить встроенные покупки?</span>
-                                <i class="fa-solid fa-chevron-down text-[10px] text-slate-400"></i>
-                            </button>
-                            <div class="faq-content hidden p-3 pt-0 text-[11px] text-slate-600 dark:text-slate-400 border-t border-slate-100 dark:border-white/[0.04]">
-                                Перейдите в настройки приложения и нажмите «Восстановить покупки». Проверьте, что вошли под своим оригинальным Apple ID.
-                            </div>
-                        </div>
-
-                        <!-- FAQ 2 -->
-                        <div class="border border-slate-200 dark:border-white/[0.08] rounded-xl bg-white/40 dark:bg-slate-900/40 overflow-hidden">
-                            <button onclick="toggleFaq(this)" class="w-full p-3 text-left font-medium text-xs text-slate-800 dark:text-slate-200 flex items-center justify-between gap-2 hover:text-apple-blue">
-                                <span>Где хранятся мои данные?</span>
-                                <i class="fa-solid fa-chevron-down text-[10px] text-slate-400"></i>
-                            </button>
-                            <div class="faq-content hidden p-3 pt-0 text-[11px] text-slate-600 dark:text-slate-400 border-t border-slate-100 dark:border-white/[0.04]">
-                                Все данные хранятся локально через SwiftData и защищены личным аккаунтом iCloud via CloudKit.
-                            </div>
-                        </div>
-
-                        <!-- FAQ 3 -->
-                        <div class="border border-slate-200 dark:border-white/[0.08] rounded-xl bg-white/40 dark:bg-slate-900/40 overflow-hidden">
-                            <button onclick="toggleFaq(this)" class="w-full p-3 text-left font-medium text-xs text-slate-800 dark:text-slate-200 flex items-center justify-between gap-2 hover:text-apple-blue">
-                                <span>Сообщить об ошибке (Bug Report)?</span>
-                                <i class="fa-solid fa-chevron-down text-[10px] text-slate-400"></i>
-                            </button>
-                            <div class="faq-content hidden p-3 pt-0 text-[11px] text-slate-600 dark:text-slate-400 border-t border-slate-100 dark:border-white/[0.04]">
-                                Воспользуйтесь формой слева, указав версию iOS и описание проблемы. Исправление будет выпущено в ближайшем апдейте.
-                            </div>
                         </div>
                     </div>
                 </div>
-
+            </section>
+        </main>
+        <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0">Copyright &copy; Hakob Ghlijyan 2026</div></div>
+                    <div class="col-auto">
+                        <a class="small" href="projects.html">Projects</a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="small" href="resume.html">Resume</a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="small" href="contact.html">Contact</a>
+                    </div>
+                </div>
             </div>
-        </section>
-
-        <section id="contact" class="glass-panel rounded-3xl p-8 sm:p-12 text-center space-y-4 border border-slate-200 dark:border-white/[0.08]">
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                Обсудим ваш iOS проект?
-            </h2>
-            <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm max-w-lg mx-auto leading-relaxed">
-                Открыт к предложению о работе в команде и проектному сотрудничеству.
-            </p>
-
-            <div class="pt-2 flex justify-center">
-                <a href="https://t.me" target="_blank" class="px-6 py-2.5 rounded-xl bg-apple-blue hover:bg-apple-blueHover text-white font-medium text-xs transition-all shadow-lg shadow-blue-500/20 flex items-center gap-2">
-                    <i class="fa-brands fa-telegram text-sm"></i>
-                    <span>Написать в Telegram</span>
-                </a>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Notification Toast -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white border border-slate-700 px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2.5 transform translate-y-20 opacity-0 transition-all text-xs font-medium">
-        <i class="fa-solid fa-circle-check text-emerald-400"></i>
-        <span id="toastMsg">Сообщение отправлено!</span>
-    </div>
-
-    <footer class="border-t border-slate-200/60 dark:border-white/[0.06] py-8 text-center text-xs text-slate-500">
-        <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p>© <span id="year"></span> Hakob Ghlijyan. All rights reserved.</p>
-            <div class="flex items-center gap-4">
-                <a href="#support" class="hover:text-apple-blue transition-colors">App Store Support URL</a>
-                <span>•</span>
-                <span>Swift & SwiftUI</span>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Theme Switcher Logic
-        const themeToggleBtn = document.getElementById('themeToggle');
-        const sunIcon = document.getElementById('themeIconSun');
-        const moonIcon = document.getElementById('themeIconMoon');
-        const htmlElement = document.documentElement;
-
-        function updateThemeIcons(isDark) {
-            if (isDark) {
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
-            } else {
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
-            }
-        }
-
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            htmlElement.classList.add('dark');
-            htmlElement.classList.remove('light');
-            updateThemeIcons(true);
-        } else {
-            htmlElement.classList.remove('dark');
-            htmlElement.classList.add('light');
-            updateThemeIcons(false);
-        }
-
-        themeToggleBtn.addEventListener('click', () => {
-            if (htmlElement.classList.contains('dark')) {
-                htmlElement.classList.remove('dark');
-                htmlElement.classList.add('light');
-                localStorage.setItem('theme', 'light');
-                updateThemeIcons(false);
-            } else {
-                htmlElement.classList.add('dark');
-                htmlElement.classList.remove('light');
-                localStorage.setItem('theme', 'dark');
-                updateThemeIcons(true);
-            }
-        });
-
-        // App Filter Logic
-        function filterApps(category, evt) {
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('active', 'bg-apple-blue', 'text-white');
-                btn.classList.add('text-slate-600', 'dark:text-slate-400');
-            });
-
-            if (evt && evt.currentTarget) {
-                evt.currentTarget.classList.add('active', 'bg-apple-blue', 'text-white');
-                evt.currentTarget.classList.remove('text-slate-600', 'dark:text-slate-400');
-            }
-
-            const cards = document.querySelectorAll('.app-card');
-            cards.forEach(card => {
-                if (category === 'all' || card.dataset.category === category) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // Support Helper Functions
-        function selectAppInSupport(appName) {
-            const select = document.getElementById('supportAppSelect');
-            if (select) {
-                select.value = appName;
-            }
-        }
-
-        function toggleFaq(button) {
-            const content = button.nextElementSibling;
-            const icon = button.querySelector('.fa-chevron-down');
-            
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                content.classList.add('hidden');
-                icon.style.transform = 'rotate(0deg)';
-            }
-        }
-
-        function handleSupportSubmit(e) {
-            e.preventDefault();
-            const name = document.getElementById('supportName').value;
-            const app = document.getElementById('supportAppSelect').value;
-
-            showToast(`Спасибо, ${name}! Запрос по ${app} отправлен.`);
-            document.getElementById('supportForm').reset();
-        }
-
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toastMsg');
-            toastMsg.textContent = message;
-
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
-
-            setTimeout(() => {
-                toast.classList.remove('translate-y-0', 'opacity-100');
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 3500);
-        }
-    </script>
-</body>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
