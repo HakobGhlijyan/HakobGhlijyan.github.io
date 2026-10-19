@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07110d">
+  <title>Device Preview — BalanceCleaner</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/theme-fixes.css">
+  <link rel="stylesheet" href="assets/responsive.css">
+  <style>
+    .device-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      padding: 40px 0 80px;
+    }
+    .device-group { display: flex; flex-direction: column; gap: 24px; }
+    .device-group-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+    }
+    /* Update 5: аналог SwiftUI scrollPosition(anchor: .center) + scrollClipDisabled.
+       Лента на всю ширину окна (не обрезается по краям колонки). Первая карточка
+       стоит по ЦЕНТРУ окна, при скролле уезжает к краю, каждая карточка
+       «примагничивается» по центру. Последняя тоже может встать по центру.
+       Update 5: like SwiftUI scrollPosition(anchor: .center) — full-bleed strip,
+       first card centered, cards snap to center while scrolling. */
+    body { overflow-x: clip; } /* убирает горизонтальный скролл страницы / no page-level x-scroll */
+    .device-group { container-type: inline-size; }
+    .device-screen-scroll {
+      --card-w: 260px;                         /* ширина карточки / card width */
+      --gutter: calc(50vw - 50cqw);            /* расстояние от края окна до колонки */
+      --center-pad: calc(50vw - var(--card-w) / 2); /* отступ, при котором карточка по центру */
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      margin-inline: calc(-1 * var(--gutter)); /* выходим за колонку до краёв окна */
+      padding: 0 var(--center-pad) 20px;
+      scroll-snap-type: x mandatory;
+      overscroll-behavior-x: contain;          /* не триггерит жест «назад» в Safari */
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE/Edge */
+    }
+    .device-screen-scroll::-webkit-scrollbar { display: none; }
+    /* Update 10: лента скроллится ТОЛЬКО по горизонтали. Из-за overflow-x:auto браузер
+       делал overflow-y:auto тоже — лента перехватывала вертикальный жест/колесо и
+       страница «залипала». Теперь вертикаль уходит странице.
+       Update 10: strip scrolls horizontally ONLY. overflow-x:auto implicitly made
+       overflow-y:auto, so the strip captured vertical wheel/touch and the page stuck.
+       Now vertical gestures pass through to the page. */
+    .device-screen-scroll {
+      overflow-y: hidden;
+      overscroll-behavior-y: auto;
+      touch-action: pan-x pan-y;
+      -webkit-overflow-scrolling: touch;
+      padding-top: 12px;
+    }
+    @media (max-width: 768px) { .device-screen-scroll { --card-w: 140px; } }
+    @media (max-width: 560px) { .device-screen-scroll { --card-w: 120px; } }
+    /* responsive.css задаёт padding и width с !important — перебиваем, чтобы центр был точным */
+    .device-screen-scroll { padding-inline: var(--center-pad) !important; }
+    .device-card { width: var(--card-w) !important; scroll-snap-align: center !important; }
+
+    .device-card {
+      position: relative;
+      flex-shrink: 0;
+    }
+    .device-card .frame { width: 100%; display: block; position: relative; z-index: 2; pointer-events: none; }
+    /* Update 2: экран обрезается PNG-маской (tools/make_screen_masks.py),
+       а не border-radius. / Screen is clipped by a PNG mask, not border-radius. */
+    .device-card .screen,
+    .device-card .screen-placeholder {
+      -webkit-mask-size: 100% 100%;
+              mask-size: 100% 100%;
+      -webkit-mask-repeat: no-repeat;
+              mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+              mask-position: center;
+      transform: translateZ(0); /* Safari */
+    }
+    .device-card .screen {
+      position: absolute;
+      z-index: 1;
+      object-fit: cover;
+      background: #000;
+    }
+    .device-card .screen-placeholder {
+      position: absolute;
+      z-index: 1;
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+    /* iPhone 18 Pro */
+    .frame-18pro .screen,
+    .frame-18pro .screen-placeholder {
+      top: 2.319%; left: 4.963%; width: 90.074%; height: 95.362%;
+      -webkit-mask-image: url("assets/mockups/masks/iPhone-18-Pro-mask.png");
+              mask-image: url("assets/mockups/masks/iPhone-18-Pro-mask.png");
+    }
+    /* iPhone 17 */
+    .frame-17 .screen,
+    .frame-17 .screen-placeholder {
+      top: 2.397%; left: 5.667%; width: 88.833%; height: 95.207%;
+      -webkit-mask-image: url("assets/mockups/masks/iPhone-17-mask.png");
+              mask-image: url("assets/mockups/masks/iPhone-17-mask.png");
+    }
+    /* iPhone 16 Pro */
+    .frame-16pro .screen,
+    .frame-16pro .screen-placeholder {
+      top: 1.790%; left: 4.167%; width: 91.500%; height: 96.338%;
+      -webkit-mask-image: url("assets/mockups/masks/iPhone-16-pro-mask.png");
+              mask-image: url("assets/mockups/masks/iPhone-16-pro-mask.png");
+    }
+    /* iPhone SE */
+    .frame-se .screen,
+    .frame-se .screen-placeholder {
+      top: 11.488%; left: 6.446%; width: 86.942%; height: 77.025%;
+      -webkit-mask-image: url("assets/mockups/masks/iPhone-SE-mask.png");
+              mask-image: url("assets/mockups/masks/iPhone-SE-mask.png");
+    }
+
+    .placeholder-label {
+      padding: 8px;
+      line-height: 1.4;
+      font-size: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="wrap nav">
+    <a class="brand" href="index.html">
+      <img class="brand-icon brand-icon--dark-theme" src="assets/icons/x1024_light.svg" alt="BalanceCleaner icon">
+      <img class="brand-icon brand-icon--light-theme" src="assets/icons/x1024_dark.svg" alt="" aria-hidden="true">
+      <span>BalanceCleaner</span>
+    </a>
+    <nav class="links nav-center">
+      <a href="index.html#" data-i18n="top">Home</a>
+      <a href="index.html#story" data-i18n="about">About</a>
+      <a href="index.html#screens" data-i18n="screens">Screens</a>
+      <a href="index.html#video" data-i18n="video">Video</a>
+      <a href="index.html#features" data-i18n="features">Features</a>
+    </nav>
+
+    <nav class="links">
+      <a href="support.html" data-i18n="support">Support</a>
+      <a href="privacy.html" data-i18n="privacy">Privacy</a>
+    </nav>
+    <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="actions">
+      <div class="custom-lang">
+        <button class="lang-btn" aria-label="Select language">
+          <span class="lang-label">EN</span>
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1L5 5L9 1"/></svg>
+        </button>
+        <div class="lang-menu lang-menu-down">
+          <button data-val="en">🇬🇧 English</button>
+          <button data-val="ru">🇷🇺 Русский</button>
+          <button data-val="fr">🇫🇷 Français</button>
+          <button data-val="de">🇩🇪 Deutsch</button>
+          <button data-val="es">🇪🇸 Español</button>
+          <button data-val="it">🇮🇹 Italiano</button>
+          <button data-val="hy">🇦🇲 Հայերեն</button>
+        </div>
+      </div>
+      <button class="theme" type="button" aria-label="Toggle theme">
+        <span class="theme-icon">☼</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap" style="padding-top: 20px;">
+    <div class="heading">
+      <div>
+        <div class="eyebrow" data-i18n="devicePreview">Device Preview</div>
+        <h1 data-i18n="devicePreviewTitle">All screens, all models.</h1>
+      </div>
+      <p data-i18n="devicePreviewDesc">Scroll horizontally within each model to see all screenshots. iPhone 18 Pro shows real screenshots — others are ready for your assets.</p>
+    </div>
+
+    <div class="device-grid">
+
+      <!-- ===== iPhone 18 Pro ===== -->
+      <div class="device-group">
+        <div class="device-group-title">iPhone 18 Pro</div>
+        <div class="device-screen-scroll">
+          <div class="device-card frame-18pro">
+            <img class="frame" src="assets/mockups/iPhone 18 Pro.png" alt="iPhone 18 Pro">
+            <video 
+              class="screen" 
+              preload="metadata" 
+              playsinline 
+              autoplay 
+              muted 
+              loop>
+              <source src="assets/video/Screenshot-iPhone-18-Pro-0.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="device-card frame-18pro">
+            <img class="frame" src="assets/mockups/iPhone 18 Pro.png" alt="iPhone 18 Pro">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-18-Pro-1.png" alt="Screen 1">
+          </div>
+          <div class="device-card frame-18pro">
+            <img class="frame" src="assets/mockups/iPhone 18 Pro.png" alt="iPhone 18 Pro">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-18-Pro-2.png" alt="Screen 2">
+          </div>
+          <div class="device-card frame-18pro">
+            <img class="frame" src="assets/mockups/iPhone 18 Pro.png" alt="iPhone 18 Pro">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-18-Pro-3.png" alt="Screen 3">
+          </div>
+          <div class="device-card frame-18pro">
+            <img class="frame" src="assets/mockups/iPhone 18 Pro.png" alt="iPhone 18 Pro">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-18-Pro-4.png" alt="Screen 4">
+          </div>
+          <div class="device-card frame-18pro">
+            <img class="frame" src="assets/mockups/iPhone 18 Pro.png" alt="iPhone 18 Pro">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-18-Pro-5.png" alt="Screen 5">
+          </div>
+          <div class="device-card frame-18pro">
+            <img class="frame" src="assets/mockups/iPhone 18 Pro.png" alt="iPhone 18 Pro">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-18-Pro-6.png" alt="Screen 6">
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== iPhone 17 ===== -->
+      <div class="device-group">
+        <div class="device-group-title">iPhone 17</div>
+        <div class="device-screen-scroll">
+          <div class="device-card frame-17">
+            <img class="frame" src="assets/mockups/iPhone 17.png" alt="iPhone 17">
+            <video 
+              class="screen" 
+              preload="metadata" 
+              playsinline 
+              autoplay 
+              muted 
+              loop>
+              <source src="assets/video/Screenshot-iPhone-17-0.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="device-card frame-17">
+            <img class="frame" src="assets/mockups/iPhone 17.png" alt="iPhone 17">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-17-1.png" alt="Screen 1">
+          </div>
+          <div class="device-card frame-17">
+            <img class="frame" src="assets/mockups/iPhone 17.png" alt="iPhone 17">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-17-2.png" alt="Screen 2">
+          </div>
+          <div class="device-card frame-17">
+            <img class="frame" src="assets/mockups/iPhone 17.png" alt="iPhone 17">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-17-3.png" alt="Screen 3">
+          </div>
+           <div class="device-card frame-17">
+            <img class="frame" src="assets/mockups/iPhone 17.png" alt="iPhone 17">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-17-4.png" alt="Screen 4">
+          </div>
+           <div class="device-card frame-17">
+            <img class="frame" src="assets/mockups/iPhone 17.png" alt="iPhone 17">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-17-5.png" alt="Screen 5">
+          </div>
+           <div class="device-card frame-17">
+            <img class="frame" src="assets/mockups/iPhone 17.png" alt="iPhone 17">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-17-6.png" alt="Screen 6">
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== iPhone 16 Pro ===== -->
+      <div class="device-group">
+        <div class="device-group-title">iPhone 16 Pro</div>
+        <div class="device-screen-scroll">
+          <div class="device-card frame-16pro">
+            <img class="frame" src="assets/mockups/iPhone 16 pro.png" alt="iPhone 16 Pro">
+            <video 
+              class="screen" 
+              preload="metadata" 
+              playsinline 
+              autoplay 
+              muted 
+              loop>
+              <source src="assets/video/Screenshot-iPhone-16-Pro-0.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="device-card frame-16pro">
+            <img class="frame" src="assets/mockups/iPhone 16 pro.png" alt="iPhone 16 Pro">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-16-Pro-1.png" alt="Screen 1">
+          </div>
+          <div class="device-card frame-16pro">
+            <img class="frame" src="assets/mockups/iPhone 16 pro.png" alt="iPhone 16 Pro">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-16-Pro-2.png" alt="Screen 2">
+          </div>
+          <div class="device-card frame-16pro">
+            <img class="frame" src="assets/mockups/iPhone 16 pro.png" alt="iPhone 16 Pro">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-16-Pro-3.png" alt="Screen 3">
+          </div>
+          <div class="device-card frame-16pro">
+            <img class="frame" src="assets/mockups/iPhone 16 pro.png" alt="iPhone 16 Pro">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-16-Pro-4.png" alt="Screen 4">
+          </div>
+          <div class="device-card frame-16pro">
+            <img class="frame" src="assets/mockups/iPhone 16 pro.png" alt="iPhone 16 Pro">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-16-Pro-5.png" alt="Screen 5">
+          </div>
+          <div class="device-card frame-16pro">
+            <img class="frame" src="assets/mockups/iPhone 16 pro.png" alt="iPhone 16 Pro">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-16-Pro-6.png" alt="Screen 6">
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== iPhone SE ===== -->
+      <div class="device-group">
+        <div class="device-group-title">iPhone SE</div>
+        <div class="device-screen-scroll">
+          <div class="device-card frame-se">
+            <img class="frame" src="assets/mockups/iPhone SE.png" alt="iPhone SE">
+            <video 
+              class="screen" 
+              preload="metadata" 
+              playsinline 
+              autoplay 
+              muted 
+              loop>
+              <source src="assets/video/Screenshot-iPhone-SE-0.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="device-card frame-se">
+            <img class="frame" src="assets/mockups/iPhone SE.png" alt="iPhone SE">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-SE-1.png" alt="Screen 1">
+          </div>
+          <div class="device-card frame-se">
+            <img class="frame" src="assets/mockups/iPhone SE.png" alt="iPhone SE">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-SE-2.png" alt="Screen 2">
+          </div>
+          <div class="device-card frame-se">
+            <img class="frame" src="assets/mockups/iPhone SE.png" alt="iPhone SE">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-SE-3.png" alt="Screen 3">
+          </div>
+          <div class="device-card frame-se">
+            <img class="frame" src="assets/mockups/iPhone SE.png" alt="iPhone SE">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-SE-4.png" alt="Screen 4">
+          </div>
+          <div class="device-card frame-se">
+            <img class="frame" src="assets/mockups/iPhone SE.png" alt="iPhone SE">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-SE-5.png" alt="Screen 5">
+          </div>
+          <div class="device-card frame-se">
+            <img class="frame" src="assets/mockups/iPhone SE.png" alt="iPhone SE">
+            <img class="screen" src="assets/screenshots/Screenshot-iPhone-SE-6.png" alt="Screen 6">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-left">
+        <strong>BalanceCleaner</strong>
+        <span>© 2026</span>
+        <a href="privacy.html" data-i18n="privacy">Privacy</a>
+      </div>
+      <div class="footer-right">
+        <div class="custom-lang">
+          <button class="lang-btn" aria-label="Select language">
+            <span class="lang-label">EN</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1L5 5L9 1"/></svg>
+          </button>
+          <div class="lang-menu lang-menu-up">
+            <button data-val="en">🇬🇧 English</button>
+            <button data-val="ru">🇷🇺 Русский</button>
+            <button data-val="fr">🇫🇷 Français</button>
+            <button data-val="de">🇩🇪 Deutsch</button>
+            <button data-val="es">🇪🇸 Español</button>
+            <button data-val="it">🇮🇹 Italiano</button>
+            <button data-val="hy">🇦🇲 Հայերեն</button>
+          </div>
+        </div>
+        <button class="theme" type="button" aria-label="Toggle theme">
+          <span class="theme-icon">☼</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "locale": "en-US",
+  "name": "BalanceCleaner",
+  "subtitle": "Clear Apple ID Balance. Change Region.",
+  "description": "Easily zero out your Apple ID balance to change your App Store region.\n\nBalanceCleaner uses Apple's official StoreKit In-App Purchase system to let you purchase exactly the amount you need to drain your remaining credit.\n\n● Smart Balance Matcher — automatically calculates the optimal combination of tiers to reach $0.00\n● Split Payment Breakdown — see exactly how much comes from balance vs. credit card\n● Transaction History — full log of every cleared balance\n● Region Checklist — step-by-step guide to switch App Store regions safely\n● Pro: PDF Export, Starfield background, custom Amount Ring design\n\nYour data never leaves your device. No account required. No ads.",
+  "keywords": "apple id balance, app store region change, clear balance, storekit, balance cleaner",
+  "promotional_text": "Zero out your Apple ID balance in seconds.",
+  "support_url": "https://balancecleaner.app/support.html",
+  "marketing_url": "https://balancecleaner.app",
+  "privacy_policy_url": "https://balancecleaner.app/privacy.html",
+  "tiers": [
+    {
+      "id": "tier1",
+      "price": "$0.99",
+      "display": "Tier 1 — 1 coin (~$0.99)"
+    },
+    {
+      "id": "tier2",
+      "price": "$1.99",
+      "display": "Tier 2 — 2 coins (~$1.99)"
+    },
+    {
+      "id": "tier3",
+      "price": "$2.99",
+      "display": "Tier 3 — 3 coins (~$2.99)"
+    },
+    {
+      "id": "tier4",
+      "price": "$3.99",
+      "display": "Tier 4 — 4 coins (~$3.99)"
+    },
+    {
+      "id": "tier5",
+      "price": "$4.99",
+      "display": "Tier 5 — 5 coins (~$4.99)"
+    },
+    {
+      "id": "tier10",
+      "price": "$9.99",
+      "display": "Tier 10 — 10 coins (~$9.99)"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07110d">
+  <title>Support — BalanceCleaner</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/theme-fixes.css">
+  <link rel="stylesheet" href="assets/responsive.css">
+</head>
+<body>
+
+  <header class="wrap nav">
+    <a class="brand" href="index.html">
+      <img class="brand-icon brand-icon--dark-theme" src="assets/icons/x1024_light.svg" alt="BalanceCleaner icon">
+      <img class="brand-icon brand-icon--light-theme" src="assets/icons/x1024_dark.svg" alt="" aria-hidden="true">
+      <span>BalanceCleaner</span>
+    </a>
+    <a href="../index.html" class="portfolio-back-link" title="Return to Hakob Ghlijyan Portfolio" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;text-decoration:none;opacity:0.7;transition:opacity 0.2s;color:inherit;margin-left:10px;padding:3px 8px;border-radius:6px;border:1px solid currentColor;">
+      &larr; Portfolio
+    </a>
+    <nav class="links nav-center">
+      <a href="index.html#" data-i18n="top">Home</a>
+      <a href="index.html#story" data-i18n="about">About</a>
+      <a href="index.html#screens" data-i18n="screens">Screens</a>
+      <a href="index.html#video" data-i18n="video">Video</a>
+      <a href="index.html#features" data-i18n="features">Features</a>
+    </nav>
+
+    <nav class="links">
+      <a href="support.html" data-i18n="support">Support</a>
+      <a href="privacy.html" data-i18n="privacy">Privacy</a>
+    </nav>
+    <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="actions">
+      <div class="custom-lang">
+        <button class="lang-btn" aria-label="Select language">
+          <span class="lang-label">EN</span>
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1L5 5L9 1"/></svg>
+        </button>
+        <div class="lang-menu lang-menu-down">
+          <button data-val="en">🇬🇧 English</button>
+          <button data-val="ru">🇷🇺 Русский</button>
+          <button data-val="fr">🇫🇷 Français</button>
+          <button data-val="de">🇩🇪 Deutsch</button>
+          <button data-val="es">🇪🇸 Español</button>
+          <button data-val="it">🇮🇹 Italiano</button>
+          <button data-val="hy">🇦🇲 Հայերեն</button>
+        </div>
+      </div>
+      <button class="theme" type="button" aria-label="Toggle theme">
+        <span class="theme-icon">☼</span>
+      </button>
+    </div>
+  </header>
+
+  
+
+  <main class="wrap" style="padding-top: 0;">
+
+    <section class="hero" style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
+      <div class="eyebrow" data-i18n="support">Support</div>
+      <h1 data-i18n="supportTitle">How can we help?</h1>
+      <p data-i18n="supportLead">Send a question, bug report, suggestion, or privacy request. We respond by email.</p>
+    </section>
+
+    <div class="story" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; align-items: start;">
+      <article class="panel">
+        <div class="eyebrow">Contact</div>
+        <h2 data-i18n="talk">Talk to the developer.</h2>
+        <p data-i18n="supportContact">Use the form or email <a href="mailto:balancecleanerapp@gmail.com">balancecleanerapp@gmail.com</a>.</p>
+        <p data-i18n="supportNote">For bug reports, include your device and app version. Never send passwords or payment details.</p>
+        <a class="button ghost" href="privacy.html">Read privacy policy →</a>
+      </article>
+
+      <article class="panel">
+        <form action="https://formsubmit.co/293c41b07af89f4fd053ff7bbb0cf770" method="POST">
+          <input type="hidden" name="_subject" value="BalanceCleaner support request">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <label><span data-i18n="supportName">Name</span><input name="name" required></label>
+          <label><span data-i18n="supportEmail">Email</span><input type="email" name="email" required></label>
+          <label><span data-i18n="supportMessage">Message</span><textarea name="message" required></textarea></label>
+          <button class="button" type="submit" data-i18n="supportSend">Send request →</button>
+        </form>
+      </article>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-left">
+        <strong>BalanceCleaner</strong>
+        <span>© 2026</span>
+        <a href="privacy.html" data-i18n="privacy">Privacy</a>
+      </div>
+      <div class="footer-right">
+        <a href="#" aria-label="Twitter/X" class="social-icon">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.05c0 2.08 1.48 3.82 3.44 4.21-.36.1-.74.15-1.13.15-.27 0-.54-.03-.8-.08.54 1.7 2.13 2.94 4 2.98-1.33 1.02-3.23 1.66-5.28 1.66-.34 0-.68-.02-1.02-.06C3.25 20.29 5.57 21 8.08 21c8.08 0 12.5-6.69 12.5-12.5 0-.19 0-.38-.01-.57.86-.62 1.6-1.39 2.19-2.26z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="social-icon">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.67 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.25-.15-4.77-1.69-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85C2.38 3.85 3.9 2.31 7.15 2.16c1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07c-4.27.19-6.78 2.7-6.97 6.98C.01 8.33 0 8.74 0 12s.01 3.67.08 4.95c.19 4.28 2.7 6.79 6.97 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.27-.19 6.78-2.7 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.19-4.28-2.7-6.79-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-11.53a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
+        </a>
+        <div class="custom-lang">
+          <button class="lang-btn" aria-label="Select language">
+            <span class="lang-label">EN</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1L5 5L9 1"/></svg>
+          </button>
+          <div class="lang-menu lang-menu-up">
+            <button data-val="en">🇬🇧 English</button>
+            <button data-val="ru">🇷🇺 Русский</button>
+            <button data-val="fr">🇫🇷 Français</button>
+            <button data-val="de">🇩🇪 Deutsch</button>
+            <button data-val="es">🇪🇸 Español</button>
+            <button data-val="it">🇮🇹 Italiano</button>
+            <button data-val="hy">🇦🇲 Հայերեն</button>
+          </div>
+        </div>
+        <button class="theme" type="button" aria-label="Toggle theme">
+          <span class="theme-icon">☼</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
