@@ -378,7 +378,7 @@
     const BIG_ROW = 4.2; // Вес активной строки (4.2fr vs 1fr)
 
     function isMobile() {
-      return window.innerWidth <= 820;
+      return window.innerWidth <= 960;
     }
 
     function reset() {
@@ -415,6 +415,16 @@
         c.classList.toggle('is-dim', j !== i);
       });
       activeIndex = i;
+
+      // Ensure active card is comfortably in viewport on mobile and tablet
+      if (isMobile()) {
+        setTimeout(() => {
+          const rect = cells[i].getBoundingClientRect();
+          if (rect.top < 80 || rect.bottom > window.innerHeight) {
+            cells[i].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        }, 220);
+      }
     }
 
     cells.forEach((cell, i) => {
