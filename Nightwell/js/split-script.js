@@ -11,41 +11,71 @@
   const APP_NAME = "Nightwell";
   const SIRI_APP_NAME = "Night Well";
 
-  // MARK: - Navigation: Panel Swapping / Переключение вкладок
+  // MARK: - Navigation: Panel Swapping & Hash Routing / Переключение вкладок и хэш-маршрутизация
   const navLinks = document.querySelectorAll('[data-nav]');
   const panels = document.querySelectorAll('.panel');
   const canvasImages = document.querySelectorAll('.canvas-image');
   const canvasContexts = document.querySelectorAll('.canvas-context');
   const placeholder = document.getElementById('placeholder');
-  let currentPanel = 'work';
+  let currentPanel = null;
   let currentSlide = -1;
 
-  function switchPanel(target) {
-    if (target === currentPanel) return;
-    currentPanel = target;
+  const PANEL_ALIASES = {
+    'work': 'work',
+    'features': 'work',
+    'screens': 'screens',
+    'screenshots': 'screens',
+    'about': 'about',
+    'story': 'about',
+    'support': 'support',
+    'contact': 'support',
+    'privacy': 'privacy'
+  };
+
+  function normalizePanel(name) {
+    if (!name) return 'work';
+    const clean = name.replace(/^#/, '').toLowerCase().trim();
+    return PANEL_ALIASES[clean] || (document.getElementById('panel-' + clean) ? clean : 'work');
+  }
+
+  function switchPanel(target, updateHash = true) {
+    const normalized = normalizePanel(target);
+    if (normalized === currentPanel) return;
+    currentPanel = normalized;
     currentSlide = -1;
 
     // Update nav active state
     navLinks.forEach(link => {
-      link.classList.toggle('nav-active', link.dataset.nav === target);
+      link.classList.toggle('nav-active', link.dataset.nav === normalized);
     });
 
     // Switch left panel
     panels.forEach(panel => {
-      panel.classList.toggle('panel-active', panel.id === 'panel-' + target);
+      const isActive = panel.id === 'panel-' + normalized;
+      panel.classList.toggle('panel-active', isActive);
+      if (isActive) panel.scrollTop = 0;
     });
 
     // Reset canvas visuals
     canvasImages.forEach(img => img.classList.remove('visible'));
     canvasContexts.forEach(ctx => ctx.classList.remove('visible'));
 
-    if (target === 'work' || target === 'screens') {
+    if (normalized === 'work' || normalized === 'screens') {
       placeholder.classList.remove('hidden');
     } else {
       placeholder.classList.add('hidden');
-      const contextImg = document.querySelector('[data-context="' + target + '"]');
+      const contextImg = document.querySelector('[data-context="' + normalized + '"]');
       if (contextImg) {
         setTimeout(() => contextImg.classList.add('visible'), 80);
+      }
+    }
+
+    // Update URL hash without scrolling
+    if (updateHash) {
+      if (history.replaceState) {
+        history.replaceState(null, '', '#' + (normalized === 'work' ? 'work' : normalized));
+      } else {
+        window.location.hash = '#' + normalized;
       }
     }
   }
@@ -53,9 +83,25 @@
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      switchPanel(link.dataset.nav);
+      switchPanel(link.dataset.nav, true);
     });
   });
+
+  // Handle browser back/forward and direct hash entry
+  window.addEventListener('hashchange', () => {
+    const hash = window.location.hash;
+    if (hash) {
+      switchPanel(hash, false);
+    }
+  });
+
+  // Initial panel routing based on URL hash (e.g. #privacy, #support, #about, #screens)
+  const initialHash = window.location.hash;
+  if (initialHash) {
+    switchPanel(initialHash, false);
+  } else {
+    switchPanel('work', false);
+  }
 
   // MARK: - Work & Screens: Interactive Hover & Preview
   const interactiveItems = document.querySelectorAll('.project-item, .screen-item');

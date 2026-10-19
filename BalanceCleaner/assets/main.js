@@ -795,14 +795,22 @@ document.addEventListener('DOMContentLoaded', () => {
   setupSupportForm();
   setupVideoPlayers();
 
-  // Check initial hash
-  const hash = window.location.hash.replace('#', '').toLowerCase();
-  const validPanels = ['features', 'screens', 'guide', 'about', 'support', 'privacy'];
-  if (validPanels.includes(hash)) {
-    switchPanel(hash);
-  } else if (hash === 'story') {
-    switchPanel('about');
-  } else {
-    switchPanel('features');
+  // Route helper
+  function routeFromHash() {
+    const hash = window.location.hash.replace('#', '').toLowerCase();
+    const validPanels = ['features', 'screens', 'guide', 'about', 'support', 'privacy'];
+    if (validPanels.includes(hash)) {
+      switchPanel(hash);
+    } else if (hash === 'story') {
+      switchPanel('about');
+    } else {
+      switchPanel('features');
+    }
   }
+
+  // Check initial hash
+  routeFromHash();
+
+  // Listen for hash changes (history navigation or direct URL hash updates)
+  window.addEventListener('hashchange', routeFromHash);
 });
