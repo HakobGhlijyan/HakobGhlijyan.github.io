@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iOS Project 06 — Hakob Ghlijyan</title>
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/split-style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-brand">
+      <a class="site-title" data-nav="work">Project 06</a>
+      <div class="site-divider-v"></div>
+      <span class="site-tagline">Native iOS Application</span>
+      <a href="../index.html" class="site-back-link" title="Return to Hakob Ghlijyan Portfolio">
+        &larr; Back to Portfolio
+      </a>
+    </div>
+    <nav class="site-header-nav">
+      <a data-nav="work" class="nav-active">Work</a>
+      <a data-nav="about">About</a>
+      <a data-nav="contact">Support</a>
+      <a data-nav="privacy">Privacy</a>
+    </nav>
+  </header>
+
+  <div class="split-container">
+    <div class="left-side">
+      <div class="panel panel-active" id="panel-work">
+        <div class="panel-header">
+          <span>Selected Works — iOS Engineering</span>
+        </div>
+        <ul class="project-list" id="projectList">
+          <li class="project-item" data-index="0">
+            <a href="#" class="project-link">
+              <span class="project-number">01</span>
+              <span class="project-title">Adaptive Layout Engine</span>
+              <span class="project-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              <span class="project-category">SwiftUI &amp; UIKit</span>
+            </a>
+          </li>
+          <li class="project-item" data-index="1">
+            <a href="#" class="project-link">
+              <span class="project-number">02</span>
+              <span class="project-title">Custom Navigation Coordinator</span>
+              <span class="project-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              <span class="project-category">Coordinator Pattern</span>
+            </a>
+          </li>
+          <li class="project-item" data-index="2">
+            <a href="#" class="project-link">
+              <span class="project-number">03</span>
+              <span class="project-title">Automated UI &amp; Snapshot Tests</span>
+              <span class="project-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              <span class="project-category">XCTest / XCUITest</span>
+            </a>
+          </li>
+        </ul>
+        <div class="panel-footer">
+          <span>Project Modules</span>
+          <span>Hover to Preview</span>
+        </div>
+      </div>
+
+      <div class="panel" id="panel-about">
+        <div class="about-content">
+          <span class="about-label">About this App</span>
+          <h2 class="about-headline">Continuous delivery with rock-solid architecture.</h2>
+          <p class="about-body">
+            Built with testability and resilience as priority. Features comprehensive integration tests, snapshot testing, and CI/CD automation.
+          </p>
+        </div>
+      </div>
+
+      <div class="panel" id="panel-contact">
+        <div class="contact-content">
+          <span class="contact-label">App Support &amp; Contact</span>
+          <h2 class="contact-headline">Need assistance?</h2>
+          <p class="about-body">For technical questions or issue reports, reach out directly to the developer.</p>
+          <div class="contact-details">
+            <span>Engineer</span>
+            <a href="../index.html">Hakob Ghlijyan</a>
+            <span>Support Email</span>
+            <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>
+            <span>Telegram</span>
+            <a href="https://t.me/hakobghlijyan" target="_blank" rel="noopener noreferrer">@hakobghlijyan</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" id="panel-privacy">
+        <div class="about-content">
+          <span class="about-label">Privacy Policy</span>
+          <h2 class="about-headline">Committed to user privacy.</h2>
+          <p class="about-body">
+            This app does not store or share sensitive user information. Privacy is respected in every interaction.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="split-divider"></div>
+
+    <div class="canvas-side" id="canvasSide">
+      <div class="canvas-placeholder" id="placeholder">
+        <div class="placeholder-icon">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 2v4m0 12v4m-10-10h4m12 0h4m-3.3-6.7-2.8 2.8m-5.8 5.8-2.8 2.8m0-11.3 2.8 2.8m5.8 5.8 2.8 2.8"/>
+          </svg>
+        </div>
+        <span class="placeholder-text">Hover over a module to inspect</span>
+      </div>
+
+      <div class="canvas-image" data-slide="0">
+        <img src="images/templatemo-split-01.jpg" alt="Layout Engine" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">Adaptive Layout Engine</div>
+          <div class="canvas-caption-year">Multi-Window &amp; iPad Support</div>
+        </div>
+      </div>
+
+      <div class="canvas-image" data-slide="1">
+        <img src="images/templatemo-split-02.jpg" alt="Coordinator" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">Custom Navigation Coordinator</div>
+          <div class="canvas-caption-year">Decoupled Navigation Routing</div>
+        </div>
+      </div>
+
+      <div class="canvas-image" data-slide="2">
+        <img src="images/templatemo-split-03.jpg" alt="Automated Tests" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">Automated UI &amp; Snapshot Tests</div>
+          <div class="canvas-caption-year">XCTest · Predictable Quality</div>
+        </div>
+      </div>
+
+      <div class="canvas-context" data-context="about">
+        <img src="images/templatemo-split-07.jpg" alt="About App" loading="lazy">
+      </div>
+      <div class="canvas-context" data-context="contact">
+        <img src="images/templatemo-split-10.jpg" alt="Contact" loading="lazy">
+      </div>
+      <div class="canvas-context" data-context="privacy">
+        <img src="images/templatemo-split-09.jpg" alt="Privacy Policy" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Hakob Ghlijyan · iOS Application Showcase</span>
+    <div class="footer-links">
+      <a href="../index.html">Main Portfolio</a>
+    </div>
+  </footer>
+
+  <script src="js/split-script.js"></script>
+</body>
+</html>

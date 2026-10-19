@@ -2,22 +2,28 @@
 
 ## Current Status
 - Репозиторий полностью переведен на эталонный дизайн **StackCraft** (`2162_stackcraft`).
-- Фотография профиля в секции About обновлена на актуальную `assets/profile.jpg`.
-- В секции Projects карточки переведены в режим `scale-to-fill` (`object-fit: cover` с полным заполнением контейнеров без черных полей).
-- Первый проект связан с рабочим сайтом **Balance Cleaner** (`https://hakobghlijyan.github.io/BalanceCleaner/`).
-- Для остальных проектов развернут эталонный шаблон **Split Index** (`templatemo_616_split_index`):
-  - `projects/nightwell.html` (интерактивный showcase приложения Nightwell с навигацией по модулям, аудио-движком, графиками и кнопкой возврата в портфолио).
-  - `projects/project-3.html` и `projects/project-4.html` (индивидуальные страницы на базе split-index, готовые к наполнению).
-- В секции Experience дата окончания работы в CDEK установлена на `June 2026` (`November 2023 — June 2026`).
+- Фотография профиля в секции About обновлена на `assets/profile.jpg`.
+- В секции Projects расширен каталог до **6 проектов** (все карточки в режиме `scale-to-fill`):
+  1. **Balance Cleaner**: ссылка на рабочий сайт `https://hakobghlijyan.github.io/BalanceCleaner/`.
+  2. **Nightwell**: переход на `projects/nightwell.html` (шаблон Split Index с разделами Work, About, Support, Privacy).
+  3. **Project 03**: переход на `projects/project-3.html`.
+  4. **Project 04**: переход на `projects/project-4.html`.
+  5. **Project 05**: переход на `projects/project-5.html`.
+  6. **Project 06**: переход на `projects/project-6.html`.
+- В хронологию достижений (Experience) добавлена актуальная позиция:
+  - `June 2026 — Present`: **Independent iOS Developer & Creator** (Balance Cleaner, Nightwell).
+  - `November 2023 — June 2026`: **CDEK (СДЭК)**.
+- В шаблон Split Index для отдельных приложений (`projects/nightwell.html` и др.) добавлены вкладки **Support** и **Privacy** по стандартам Apple App Store и структуре сайта Balance Cleaner.
+- В каталог `images/Night Welll - Screens iOS + WatchOS/` добавлены оригинальные промо-скриншоты приложения Nightwell.
 
 ## Working Branch
 `dev/FeaturesNewSiteDevelop`
 
 ## Decisions Made
-1. **Scale-to-fill для проектов**: Стили `.project-thumb` и `.project-thumb img` адаптированы с `align-self: stretch` и `object-fit: cover`, обеспечивая бесшовное заполнение карточек.
-2. **Архитектура подпроектов**: Создана модульная папка `projects/` со стилями `projects/css/split-style.css`, скриптами `projects/js/split-script.js`, картинками `projects/images/` и страницами проектов, имеющими кнопку «Back to Portfolio» для бесшовной навигации.
-3. **Прямой переход на Balance Cleaner**: Для первого проекта настроен внешний переход на существующий GitHub Pages репозиторий `BalanceCleaner`.
+1. **Сетка из 6 карточек**: Карточки 5 и 6 гармонично сбалансированы в двухколончатой сетке как горизонтальные плашки (по аналогии с карточками 2 и 3) с адаптивным переходом в один столбец на мобильных экранах.
+2. **Разделы Support и Privacy в Split Index**: Реализованы отдельные панели `#panel-contact` и `#panel-privacy` с контекстными фоновыми изображениями на canvas, отражающие нативную специфику (On-device processing, отсутствие трекеров, поддержка StoreKit 2).
+3. **Хронология карьеры**: Выстроена логическая цепочка: от корпоративного энтерпрайз-опыта в CDEK к разработке собственных независимых приложений (Balance Cleaner, Nightwell).
 
 ## Next Steps
-1. Дождаться подтверждения пользователя по визуалу и ссылкам.
-2. При необходимости кастомизировать контент конкретных страниц `projects/nightwell.html`, `project-3.html` и `project-4.html`.
+1. Согласовать подключение промо-скриншотов из `images/Night Welll - Screens iOS + WatchOS/` к карточкам и слайдам Nightwell.
+2. По указанию пользователя доработать тексты и метаданные конкретных страниц проектов.

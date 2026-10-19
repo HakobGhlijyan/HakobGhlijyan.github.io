@@ -68,6 +68,11 @@
   - Первый проект настроен на прямой переход в приложение **Balance Cleaner** (`https://hakobghlijyan.github.io/BalanceCleaner/`).
   - Развернута архитектура отдельных страниц приложений на базе шаблона `templatemo_616_split_index`: созданы `projects/nightwell.html`, `projects/project-3.html`, `projects/project-4.html` с интерактивным split-canvas превью и удобной навигационной кнопкой «Back to Portfolio».
 
+### Итерация 3: Расширение до 6 проектов, разделы Support & Privacy и хронология инди-разработки
+- **Сетка 6 проектов**: Добавлены карточки 5 и 6, стилизованные под пропорции карточек 2 и 3 в две колонки, с изображениями `project-5.jpg` и `project-6.jpg`. Созданы соответствующие страницы `projects/project-5.html` и `projects/project-6.html`.
+- **Инди-разработка в опыте работы**: Добавлена новая верхняя веха `June 2026 — Present: Independent iOS Developer & Creator` с фокусом на Balance Cleaner и веллнес-платформу Nightwell.
+- **Разделы Support и Privacy в Split Index**: По образцу и стандартам приложений Apple в шаблон `split_index` добавлены вкладки `Support` и `Privacy` с подробным описанием политики нулевого сбора данных (zero-knowledge, on-device processing, Apple HealthKit).
+
 ---
 
 ## 6. Engineer's Wisdom
