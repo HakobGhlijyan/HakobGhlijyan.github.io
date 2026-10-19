@@ -16,11 +16,11 @@ https://templatemo.com/tm-616-split-index
 }
 
 :root {
-	--paper: #F2F0ED;
+	--paper: #FFFFFF;
 	--ink: #1A1A1A;
-	--ink-light: #8A8580;
+	--ink-light: #706B66;
 	--accent: #C4553A;
-	--grain-opacity: 0.035;
+	--grain-opacity: 0.015;
 	--transition-panel: 0.55s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -694,8 +694,8 @@ body::before {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	padding: 2rem;
-	background: linear-gradient(to top, rgba(26, 26, 26, 0.5), transparent);
+	padding: 1.8rem 2rem 1.4rem;
+	background: linear-gradient(to top, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.75) 55%, transparent 100%);
 	opacity: 0;
 	transform: translateY(8px);
 	transition: opacity 0.5s ease 0.15s, transform 0.5s ease 0.15s;
@@ -709,17 +709,17 @@ body::before {
 .canvas-caption-title {
 	font-family: 'Instrument Sans', sans-serif;
 	font-weight: 600;
-	font-size: 0.75rem;
+	font-size: 0.78rem;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
-	color: rgba(255, 255, 255, 0.9);
+	color: #1A1A1A;
 }
 
 .canvas-caption-year {
 	font-family: 'DM Mono', monospace;
-	font-weight: 300;
-	font-size: 0.65rem;
-	color: rgba(255, 255, 255, 0.55);
+	font-weight: 400;
+	font-size: 0.68rem;
+	color: #6E6862;
 	margin-top: 0.25rem;
 }
 
@@ -937,9 +937,9 @@ body::before {
    MARK: - NIGHTWELL NATIVE APP STYLES & COMPONENTS
    ========================================================================= */
 
-/* Canvas Night Sky Background / Фон канваса в цвет приложения */
+/* Canvas White Clean Background / Белый фон канваса под PNG-скриншоты */
 .canvas-side {
-	background: #00112a !important;
+	background: #FFFFFF !important;
 }
 
 .canvas-image img,
