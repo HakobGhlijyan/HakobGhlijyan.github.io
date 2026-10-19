@@ -8,23 +8,127 @@ Free HTML CSS Template
    CSS CUSTOM PROPERTIES
    ======================================== */
 :root {
+  color-scheme: dark;
+
+  /* Backgrounds / Фоны */
   --bg-primary: #0f0e0b;
   --bg-secondary: #161510;
   --bg-card: #1c1a15;
   --bg-card-hover: #23211a;
   --bg-elevated: #1a1814;
+  --nav-bg: rgba(15, 14, 11, 0.85);
+  --nav-bg-scrolled: rgba(15, 14, 11, 0.95);
+  --hero-visual-bg: rgba(22, 21, 16, 0.72);
+
+  /* Typography / Типографика */
   --text-primary: #f0ece4;
   --text-secondary: #a8a295;
   --text-muted: #706b61;
+
+  /* Accents / Акценты (StackCraft Champagne Gold) */
   --accent: #c9a96e;
   --accent-light: #dfc596;
   --accent-dim: #8a7548;
+  --accent-glow: rgba(201, 169, 110, 0.16);
+  --btn-primary-text: #0f0e0b;
+
+  /* Borders & Shadows / Границы и тени */
   --border: rgba(201, 169, 110, 0.12);
   --border-strong: rgba(201, 169, 110, 0.25);
+  --card-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  --card-hover-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+
+  /* Theme Button / Кнопка темы */
+  --theme-btn-bg: #1c1a15;
+  --theme-btn-border: rgba(201, 169, 110, 0.2);
+  --theme-btn-color: #c9a96e;
+
+  /* Code Block Colors (Dark / Xcode Dark) */
+  --code-bg: #1c1a15;
+  --code-header-bg: rgba(255, 255, 255, 0.03);
+  --code-text: #a8a295;
+  --code-kw: #c792ea;
+  --code-fn: #82aaff;
+  --code-str: #c3e88d;
+  --code-cm: #706b61;
+  --code-num: #f78c6c;
+  --code-op: #89ddff;
+  --code-pr: #c9a96e;
+  --code-typ: #ffcb6b;
+
+  /* Contribution Grid / Сетка активности */
+  --contrib-empty: rgba(201, 169, 110, 0.06);
+  --contrib-l1: rgba(201, 169, 110, 0.16);
+  --contrib-l2: rgba(201, 169, 110, 0.32);
+  --contrib-l3: rgba(201, 169, 110, 0.55);
+  --contrib-l4: rgba(201, 169, 110, 0.85);
+
+  /* Fonts & Easing / Шрифты и плавность */
   --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================
+   LIGHT THEME (Warm Ivory & Champagne Bronze Editorial)
+   Светлая тема: благородная теплая слоновая кость, четкий контрастный текст и бронза
+   ======================================== */
+:root.light {
+  color-scheme: light;
+
+  /* Backgrounds / Фоны */
+  --bg-primary: #f8f6f0;
+  --bg-secondary: #efe9de;
+  --bg-card: #ffffff;
+  --bg-card-hover: #ffffff;
+  --bg-elevated: #ffffff;
+  --nav-bg: rgba(248, 246, 240, 0.88);
+  --nav-bg-scrolled: rgba(248, 246, 240, 0.97);
+  --hero-visual-bg: rgba(239, 233, 222, 0.72);
+
+  /* Typography / Типографика (WCAG AAA contrast) */
+  --text-primary: #191613;
+  --text-secondary: #544e45;
+  --text-muted: #827768;
+
+  /* Accents / Акценты (Rich Antique Warm Gold) */
+  --accent: #9a7233;
+  --accent-light: #b38641;
+  --accent-dim: #795721;
+  --accent-glow: rgba(154, 114, 51, 0.16);
+  --btn-primary-text: #ffffff;
+
+  /* Borders & Shadows / Границы и тени */
+  --border: rgba(154, 114, 51, 0.15);
+  --border-strong: rgba(154, 114, 51, 0.32);
+  --card-shadow: 0 10px 28px rgba(25, 22, 19, 0.05);
+  --card-hover-shadow: 0 20px 42px rgba(25, 22, 19, 0.10);
+
+  /* Theme Button / Кнопка темы */
+  --theme-btn-bg: #ffffff;
+  --theme-btn-border: rgba(154, 114, 51, 0.22);
+  --theme-btn-color: #9a7233;
+
+  /* Code Block Colors (Light / Xcode Light Mode) */
+  --code-bg: #fdfbf7;
+  --code-header-bg: rgba(25, 22, 19, 0.03);
+  --code-text: #3b3732;
+  --code-kw: #8a2be2;
+  --code-fn: #0b5fb3;
+  --code-str: #1f7a37;
+  --code-cm: #827768;
+  --code-num: #b84a00;
+  --code-op: #4a453e;
+  --code-pr: #9a7233;
+  --code-typ: #9e4200;
+
+  /* Contribution Grid / Сетка активности */
+  --contrib-empty: rgba(154, 114, 51, 0.08);
+  --contrib-l1: rgba(154, 114, 51, 0.22);
+  --contrib-l2: rgba(154, 114, 51, 0.44);
+  --contrib-l3: rgba(154, 114, 51, 0.68);
+  --contrib-l4: rgba(154, 114, 51, 0.95);
 }
 
 /* ========================================
@@ -41,6 +145,13 @@ html {
   scroll-padding-top: 80px;
 }
 
+/* Theme Blur Transition / Плавный переход смены темы без разрыва контекста */
+.theme-blur {
+  filter: blur(14px);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
 body {
   font-family: var(--font-body);
   font-weight: 300;
@@ -51,11 +162,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: filter 0.25s ease, opacity 0.25s ease, background 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
   background: var(--accent);
-  color: var(--bg-primary);
+  color: var(--btn-primary-text);
 }
 
 img {
@@ -78,14 +190,14 @@ a {
   width: 100%;
   z-index: 1000;
   padding: 0 clamp(1.5rem, 4vw, 3rem);
-  background: rgba(15, 14, 11, 0.85);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transition: background 0.5s var(--ease-smooth), box-shadow 0.5s var(--ease-smooth), padding 0.4s var(--ease-smooth);
 }
 
 .nav.scrolled {
-  background: rgba(15, 14, 11, 0.95);
+  background: var(--nav-bg-scrolled);
   box-shadow: 0 1px 0 var(--border);
 }
 
@@ -96,6 +208,7 @@ a {
   align-items: center;
   justify-content: space-between;
   height: 80px;
+  gap: 1.5rem;
 }
 
 /* MARK: - Navigation Logo / Логотип навигации */
@@ -218,9 +331,63 @@ a {
 
 .nav-cta:hover {
   background: var(--accent);
-  color: var(--bg-primary) !important;
+  color: var(--btn-primary-text) !important;
   border-color: var(--accent);
   letter-spacing: 0.12em !important;
+}
+
+/* MARK: - Navigation Actions & Theme Toggle / Кнопки навигации и переключатель темы */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.theme {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--theme-btn-border);
+  background: var(--theme-btn-bg);
+  color: var(--theme-btn-color);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-smooth);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.theme:hover {
+  border-color: var(--accent);
+  color: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px var(--accent-glow);
+}
+
+.theme-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.theme-icon svg {
+  width: 19px;
+  height: 19px;
+  display: block;
+}
+
+.theme.theme-transition .theme-icon {
+  transform: rotate(180deg) scale(1.15);
+}
+
+.theme-footer {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
 }
 
 /* Mobile menu */
@@ -264,6 +431,20 @@ a {
   max-width: 1280px;
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
+}
+
+/* MARK: - Hero Shimmering Sand & Dunes Canvas / Канва переливающегося золотого песка */
+.hero-sand-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.88;
+  transition: opacity 0.5s var(--ease-smooth);
 }
 
 .hero-content {
@@ -338,7 +519,7 @@ a {
   gap: 0.75rem;
   padding: 1rem 2.2rem;
   background: var(--accent);
-  color: var(--bg-primary);
+  color: var(--btn-primary-text);
   font-family: var(--font-body);
   font-size: 0.88rem;
   font-weight: 500;
@@ -363,7 +544,7 @@ a {
 .btn-primary:hover {
   background: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(201, 169, 110, 0.2);
+  box-shadow: 0 8px 30px var(--accent-glow);
 }
 
 .btn-primary:hover::before {
@@ -396,14 +577,17 @@ a {
   color: var(--accent);
 }
 
-/* Hero visual side */
+/* Hero visual side / Визуальная правая часть главного экрана */
 .hero-visual {
   position: relative;
-  background: var(--bg-secondary);
+  background: var(--hero-visual-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  z-index: 2;
 }
 
 .hero-visual::before {
@@ -411,21 +595,23 @@ a {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 30% 50%, rgba(201, 169, 110, 0.06) 0%, transparent 70%),
-    radial-gradient(ellipse at 80% 20%, rgba(201, 169, 110, 0.04) 0%, transparent 60%);
+    radial-gradient(ellipse at 30% 50%, var(--accent-glow) 0%, transparent 70%),
+    radial-gradient(ellipse at 80% 20%, var(--accent-glow) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .hero-code-block {
   position: relative;
   width: 80%;
   max-width: 420px;
-  background: var(--bg-card);
+  background: var(--code-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+  box-shadow: var(--card-hover-shadow);
   opacity: 0;
   animation: fadeScale 1s var(--ease-out) 0.5s forwards;
+  z-index: 3;
 }
 
 .code-header {
@@ -433,7 +619,7 @@ a {
   align-items: center;
   gap: 6px;
   padding: 14px 18px;
-  background: rgba(255,255,255,0.03);
+  background: var(--code-header-bg);
   border-bottom: 1px solid var(--border);
 }
 
@@ -461,17 +647,17 @@ a {
   font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
   font-size: 0.82rem;
   line-height: 1.9;
-  color: var(--text-secondary);
+  color: var(--code-text);
 }
 
-.code-body .kw { color: #c792ea; }
-.code-body .fn { color: #82aaff; }
-.code-body .str { color: #c3e88d; }
-.code-body .cm { color: var(--text-muted); font-style: italic; }
-.code-body .num { color: #f78c6c; }
-.code-body .op { color: #89ddff; }
-.code-body .pr { color: var(--accent); }
-.code-body .typ { color: #ffcb6b; }
+.code-body .kw { color: var(--code-kw); font-weight: 500; }
+.code-body .fn { color: var(--code-fn); }
+.code-body .str { color: var(--code-str); }
+.code-body .cm { color: var(--code-cm); font-style: italic; }
+.code-body .num { color: var(--code-num); }
+.code-body .op { color: var(--code-op); }
+.code-body .pr { color: var(--code-pr); }
+.code-body .typ { color: var(--code-typ); font-weight: 500; }
 
 /* Floating decorative elements */
 .hero-float {
@@ -1241,7 +1427,8 @@ a {
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: var(--accent-dim);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
 .form-group textarea {
@@ -1253,7 +1440,7 @@ a {
   align-self: flex-start;
   padding: 0.9rem 2rem;
   background: var(--accent);
-  color: var(--bg-primary);
+  color: var(--btn-primary-text);
   font-family: var(--font-body);
   font-size: 0.88rem;
   font-weight: 500;
@@ -1268,34 +1455,162 @@ a {
 .btn-submit:hover {
   background: var(--accent-light);
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--accent-glow);
 }
 
 /* ========================================
-   FOOTER
+   FOOTER (Clearwave-Inspired Architectural Design)
    ======================================== */
 .footer {
-  padding: 2.5rem clamp(1.5rem, 4vw, 3rem);
-  text-align: center;
+  background: var(--bg-secondary);
   border-top: 1px solid var(--border);
+  padding: 80px 0 40px;
+  transition: background 0.3s ease;
 }
 
-.footer p {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  letter-spacing: 0.05em;
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 3rem);
 }
 
-.footer p + p {
-  margin-top: 0.4rem;
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 56px;
 }
 
-.footer a {
-  color: var(--accent);
+.footer-brand .footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: inline-block;
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
   transition: color 0.3s;
 }
 
-.footer a:hover {
-  color: var(--accent-light);
+.footer-brand .footer-logo span {
+  color: var(--accent);
+}
+
+.footer-brand-desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 280px;
+  font-weight: 300;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all 0.3s var(--ease-smooth);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.social-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px var(--accent-glow);
+}
+
+.social-btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+.footer-col-label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: color 0.3s, transform 0.2s var(--ease-out);
+  font-weight: 300;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-top-btn {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.footer-top-btn svg {
+  width: 15px;
+  height: 15px;
+  transition: transform 0.25s var(--ease-smooth);
+}
+
+.footer-top-btn:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.footer-top-btn:hover svg {
+  transform: translateY(-2px);
 }
 
 /* ========================================
@@ -1366,9 +1681,24 @@ a {
     max-width: 100%;
     aspect-ratio: 16/10;
   }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
 }
 
 @media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
   .nav-links {
     position: fixed;
     top: 0;

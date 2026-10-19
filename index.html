@@ -6,7 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Hakob Ghlijyan — iOS Engineer portfolio. Clean code, Swift, SwiftUI, UIKit, and native Apple ecosystem architecture.">
   <meta name="author" content="Hakob Ghlijyan">
-  <meta name="theme-color" content="#0f0e0b">
+  <meta name="theme-color" content="#0f0e0b" id="metaThemeColor">
+
+  <!-- MARK: - Theme Preload Script (Zero-Flicker) / Предзагрузка темы без мерцания -->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('portfolio-theme') || localStorage.getItem('balance-theme') || 'dark';
+        if (saved === 'light') {
+          document.documentElement.classList.add('light');
+        }
+      } catch (e) {}
+    })();
+  </script>
 
   <!-- MARK: - Favicon & Page Title / Фавикон и заголовок -->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
@@ -46,10 +58,15 @@
         <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
       </ul>
 
-      <!-- Mobile Hamburger Toggle -->
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+      <!-- Theme Switcher & Mobile Menu Trigger / Переключатель темы и бургер -->
+      <div class="nav-actions">
+        <button class="theme" id="themeToggle" type="button" aria-label="Toggle light/dark theme">
+          <span class="theme-icon"></span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -58,6 +75,9 @@
        Introduction, headline, call-to-actions, and interactive Swift code card
        ========================================================================= -->
   <section class="hero" id="hero">
+    <!-- Shimmering Sand & Dunes Canvas / Канва переливающегося золотого песка -->
+    <canvas class="hero-sand-canvas" id="heroSandCanvas"></canvas>
+
     <div class="hero-content">
       <div class="hero-label">iOS Developer · 5+ Years Experience</div>
       <h1 class="hero-title">Clean code,<br><em>sharp solutions</em></h1>
@@ -456,22 +476,6 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
             <span>hakobghlijyan@gmail.com</span>
           </a>
-
-          <!-- Social Links -->
-          <div class="social-links">
-            <!-- GitHub -->
-            <a href="https://github.com/HakobGhlijyan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/hakob-ghlijyan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-            <!-- Telegram -->
-            <a href="https://t.me/hakobghlijyan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Telegram">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-            </a>
-          </div>
         </div>
 
         <!-- Interactive Contact Form (FormSubmit.co connected) -->
@@ -499,13 +503,91 @@
   </section>
 
   <!-- =========================================================================
-       MARK: - FOOTER / ПОДВАЛ САЙТА
-       Clean copyright and signature
+       MARK: - FOOTER / ПОДВАЛ САЙТА (Clearwave-Inspired Architectural Footer)
+       Multi-column brand layout, social links, portfolio navigation, and theme toggle
        ========================================================================= -->
   <footer class="footer">
-    <p>
-      &copy; 2026 Hakob Ghlijyan &mdash; iOS Engineer. Crafted with precision &amp; Clean Code.
-    </p>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Brand & Bio Column / Колонка бренда и соцсетей -->
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo">Hakob <span>Ghlijyan</span></a>
+          <p class="footer-brand-desc">
+            Senior iOS Engineer crafting native Apple platform experiences with Clean Architecture, Swift, and fluid performance.
+          </p>
+          <div class="footer-socials">
+            <!-- GitHub -->
+            <a href="https://github.com/HakobGhlijyan" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/hakob-ghlijyan" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <!-- Telegram -->
+            <a href="https://t.me/hakobghlijyan" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            </a>
+            <!-- Email -->
+            <a href="mailto:hakobghlijyan@gmail.com" class="social-btn" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Links Column / Навигация -->
+        <div>
+          <div class="footer-col-label">Navigation</div>
+          <div class="footer-links">
+            <a href="#about">About Engineer</a>
+            <a href="#skills">Skills &amp; Tech Stack</a>
+            <a href="#projects">Featured Work</a>
+            <a href="#experience">Career Journey</a>
+            <a href="#contact">Get in Touch</a>
+          </div>
+        </div>
+
+        <!-- Applications Column / Проекты -->
+        <div>
+          <div class="footer-col-label">Applications</div>
+          <div class="footer-links">
+            <a href="BalanceCleaner/">Balance Cleaner</a>
+            <a href="Nightwell/">Nightwell iOS</a>
+            <a href="Project-3/">Project 03</a>
+            <a href="Project-4/">Project 04</a>
+            <a href="Project-5/">Project 05</a>
+          </div>
+        </div>
+
+        <!-- Expertise Column / Экспертиза -->
+        <div>
+          <div class="footer-col-label">Expertise</div>
+          <div class="footer-links">
+            <a href="#skills">Swift 6 Concurrency</a>
+            <a href="#skills">SwiftUI &amp; Combine</a>
+            <a href="#skills">Clean Architecture (VIPER/TCA)</a>
+            <a href="#skills">watchOS &amp; HealthKit</a>
+            <a href="#skills">App Store Distribution</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom / Нижняя плашка футера -->
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 Hakob Ghlijyan &mdash; iOS Engineer. Crafted with precision &amp; Clean Code.
+        </div>
+        <div class="footer-actions">
+          <button class="theme theme-footer" id="footerThemeToggle" type="button" aria-label="Toggle theme">
+            <span class="theme-icon"></span>
+          </button>
+          <a href="#hero" class="footer-top-btn" aria-label="Scroll to top">
+            <span>Back to top</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <!-- MARK: - Scripts / Скрипты -->
