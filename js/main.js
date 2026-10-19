@@ -364,6 +364,92 @@
   window.addEventListener('resize', checkReveal, { passive: true });
 
   // =========================================================================
+  // MARK: - MATRIX ACCORDION / МАТРИЧНЫЙ АККОРДЕОН ПРОЕКТОВ (Kinetic Style)
+  // Dynamic 2D grid accordion: clicking any cell expands it while others collapse
+  // =========================================================================
+  (function initMatrixAccordion() {
+    const grid = document.getElementById('matrix');
+    if (!grid) return;
+    const cells = Array.from(grid.querySelectorAll('.cell'));
+    if (!cells.length) return;
+
+    let activeIndex = -1;
+    const BIG_COL = 5; // Вес активной колонки (5fr vs 1fr 1fr)
+    const BIG_ROW = 4.2; // Вес активной строки (4.2fr vs 1fr)
+
+    function isMobile() {
+      return window.innerWidth <= 820;
+    }
+
+    function reset() {
+      if (isMobile()) {
+        grid.style.gridTemplateColumns = '1fr';
+        grid.style.gridTemplateRows = 'repeat(6, 1fr)';
+      } else {
+        grid.style.gridTemplateColumns = '1fr 1fr 1fr';
+        grid.style.gridTemplateRows = '1fr 1fr';
+      }
+      cells.forEach(c => c.classList.remove('is-active', 'is-dim'));
+      activeIndex = -1;
+    }
+
+    function open(i) {
+      if (isMobile()) {
+        grid.style.gridTemplateColumns = '1fr';
+        const rows = ['1fr', '1fr', '1fr', '1fr', '1fr', '1fr'];
+        rows[i] = '4.5fr';
+        grid.style.gridTemplateRows = rows.join(' ');
+      } else {
+        const col = i % 3;
+        const row = Math.floor(i / 3);
+        const cols = ['1fr', '1fr', '1fr'];
+        const rows = ['1fr', '1fr'];
+        cols[col] = BIG_COL + 'fr';
+        rows[row] = BIG_ROW + 'fr';
+        grid.style.gridTemplateColumns = cols.join(' ');
+        grid.style.gridTemplateRows = rows.join(' ');
+      }
+
+      cells.forEach((c, j) => {
+        c.classList.toggle('is-active', j === i);
+        c.classList.toggle('is-dim', j !== i);
+      });
+      activeIndex = i;
+    }
+
+    cells.forEach((cell, i) => {
+      function toggle() {
+        if (activeIndex === i) {
+          reset();
+        } else {
+          open(i);
+        }
+      }
+
+      cell.addEventListener('click', toggle);
+
+      cell.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          if (e.target.tagName !== 'A') {
+            e.preventDefault();
+            toggle();
+          }
+        } else if (e.key === 'Escape') {
+          reset();
+        }
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      if (activeIndex !== -1) {
+        open(activeIndex);
+      } else {
+        reset();
+      }
+    }, { passive: true });
+  })();
+
+  // =========================================================================
   // MARK: - CONTACT FORM (FormSubmit AJAX) / ОБРАБОТКА КОНТАКТНОЙ ФОРМЫ
   // =========================================================================
 

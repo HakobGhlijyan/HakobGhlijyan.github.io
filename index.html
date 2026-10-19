@@ -310,84 +310,129 @@
     <div class="section-inner">
       <div class="section-label reveal">Selected Work</div>
       <div class="section-title reveal">Projects that <em>shipped</em></div>
-      <div class="section-subtitle reveal">A selection of recent builds — from developer tools to production platforms.</div>
+      <div class="section-subtitle reveal">Six works on an interactive matrix grid. Select any cell to force it open; the others collapse into strips.</div>
 
-      <div class="projects-grid">
-        <!-- Project 1: Balance Cleaner (Direct Live Project Link) -->
-        <div class="project-card reveal">
-          <div class="project-thumb">
-            <img src="images/project-1.jpg" alt="Balance Cleaner iOS application" loading="lazy">
-          </div>
-          <div class="project-info">
-            <div class="project-tags"><span class="project-tag">iOS</span><span class="project-tag">SwiftUI</span><span class="project-tag">PhotoKit</span><span class="project-tag">Storage</span></div>
-            <h3 class="project-name">Balance Cleaner</h3>
-            <p class="project-desc">A smart storage and photo optimization utility for iOS. Analyzes duplicated media, heavy cache, and simplifies device cleanup with native SwiftUI fluid interactions.</p>
-            <a href="BalanceCleaner/" class="project-link">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+      <!-- Kinetic Matrix Grid / Матричный аккордеон проектов -->
+      <div class="matrix reveal" id="matrix">
+        <!-- 01: Balance Cleaner -->
+        <div class="cell" tabindex="0" role="button" aria-label="Project Balance Cleaner">
+          <div class="cell-media" style="background-image:url('images/project-1.jpg')"></div>
+          <div class="cell-num">01</div>
+          <div class="cell-name">Balance Cleaner</div>
+          <div class="cell-cat">iOS · SwiftUI · PhotoKit · Storage</div>
+          <div class="cell-detail">
+            <p class="cell-desc">A smart storage and photo optimization utility for iOS. Analyzes duplicated media, heavy cache, and simplifies device cleanup with native SwiftUI fluid interactions.</p>
+            <div class="cell-tags">
+              <span class="project-tag">iOS</span>
+              <span class="project-tag">SwiftUI</span>
+              <span class="project-tag">PhotoKit</span>
+              <span class="project-tag">Storage</span>
+            </div>
+            <a href="BalanceCleaner/" class="cell-link-btn" onclick="event.stopPropagation()">
+              Open Balance Cleaner
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
 
-        <!-- Project 2: Nightwell (Dedicated Split-Index Showcase) -->
-        <div class="project-card reveal">
-          <div class="project-thumb">
-            <img src="images/project-2.jpg" alt="Nightwell iOS app" loading="lazy">
-          </div>
-          <div class="project-info">
-            <div class="project-tags"><span class="project-tag">SwiftUI</span><span class="project-tag">HealthKit</span><span class="project-tag">AVAudioEngine</span></div>
-            <h3 class="project-name">Nightwell</h3>
-            <p class="project-desc">Restorative nighttime wellness application with generative soundscapes, circadian rhythm charts, and ActivityKit lock-screen widgets.</p>
-            <a href="Nightwell/" class="project-link">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
-          </div>
-        </div>
-
-        <!-- Project 3: Selected Project 03 (Dedicated Split-Index Showcase) -->
-        <div class="project-card reveal">
-          <div class="project-thumb">
-            <img src="images/project-3.jpg" alt="iOS Project 03" loading="lazy">
-          </div>
-          <div class="project-info">
-            <div class="project-tags"><span class="project-tag">Swift</span><span class="project-tag">SwiftData</span><span class="project-tag">CloudKit</span></div>
-            <h3 class="project-name">Project 03</h3>
-            <p class="project-desc">Modular iOS application built with clean layer separation, offline-first SwiftData synchronization, and fluid interactive animations.</p>
-            <a href="Project-3/" class="project-link">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        <!-- 02: Nightwell -->
+        <div class="cell" tabindex="0" role="button" aria-label="Project Nightwell">
+          <div class="cell-media" style="background-image:url('images/project-2.jpg')"></div>
+          <div class="cell-num">02</div>
+          <div class="cell-name">Nightwell</div>
+          <div class="cell-cat">iOS · watchOS · HealthKit · Audio</div>
+          <div class="cell-detail">
+            <p class="cell-desc">Restorative nighttime wellness application with generative soundscapes, circadian rhythm charts, and ActivityKit lock-screen widgets.</p>
+            <div class="cell-tags">
+              <span class="project-tag">SwiftUI</span>
+              <span class="project-tag">HealthKit</span>
+              <span class="project-tag">AVAudioEngine</span>
+              <span class="project-tag">ActivityKit</span>
+            </div>
+            <a href="Nightwell/" class="cell-link-btn" onclick="event.stopPropagation()">
+              Open Nightwell iOS
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
 
-        <!-- Project 4: Selected Project 04 (Dedicated Split-Index Showcase) -->
-        <div class="project-card reveal">
-          <div class="project-thumb">
-            <img src="images/project-4.jpg" alt="iOS Project 04" loading="lazy">
-          </div>
-          <div class="project-info">
-            <div class="project-tags"><span class="project-tag">SwiftUI</span><span class="project-tag">Concurrency</span><span class="project-tag">Core Data</span></div>
-            <h3 class="project-name">Project 04</h3>
-            <p class="project-desc">High-load mobile architecture solution featuring custom design system tokens, resilient networking layer, and thread-safe local persistence.</p>
-            <a href="Project-4/" class="project-link">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
-          </div>
-        </div>
-
-        <!-- Project 5: Selected Project 05 (Dedicated Split-Index Showcase) -->
-        <div class="project-card reveal">
-          <div class="project-thumb">
-            <img src="images/project-5.jpg" alt="iOS Project 05" loading="lazy">
-          </div>
-          <div class="project-info">
-            <div class="project-tags"><span class="project-tag">SwiftUI</span><span class="project-tag">Gestures</span><span class="project-tag">Keychain</span></div>
-            <h3 class="project-name">Project 05</h3>
-            <p class="project-desc">Interactive mobile interface featuring fluid multi-touch canvas gestures, background thread safety, and encrypted biometric authentication.</p>
-            <a href="Project-5/" class="project-link">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        <!-- 03: Project 03 -->
+        <div class="cell" tabindex="0" role="button" aria-label="Project 03">
+          <div class="cell-media" style="background-image:url('images/project-3.jpg')"></div>
+          <div class="cell-num">03</div>
+          <div class="cell-name">Project 03</div>
+          <div class="cell-cat">Swift · SwiftData · CloudKit · Offline</div>
+          <div class="cell-detail">
+            <p class="cell-desc">Modular iOS application built with clean layer separation, offline-first SwiftData synchronization, and fluid interactive animations.</p>
+            <div class="cell-tags">
+              <span class="project-tag">Swift</span>
+              <span class="project-tag">SwiftData</span>
+              <span class="project-tag">CloudKit</span>
+            </div>
+            <a href="Project-3/" class="cell-link-btn" onclick="event.stopPropagation()">
+              Explore Project 03
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
 
-        <!-- Project 6: Selected Project 06 (Dedicated Split-Index Showcase) -->
-        <div class="project-card reveal">
-          <div class="project-thumb">
-            <img src="images/project-6.jpg" alt="iOS Project 06" loading="lazy">
+        <!-- 04: Project 04 -->
+        <div class="cell" tabindex="0" role="button" aria-label="Project 04">
+          <div class="cell-media" style="background-image:url('images/project-4.jpg')"></div>
+          <div class="cell-num">04</div>
+          <div class="cell-name">Project 04</div>
+          <div class="cell-cat">SwiftUI · Concurrency · Core Data</div>
+          <div class="cell-detail">
+            <p class="cell-desc">High-load mobile architecture solution featuring custom design system tokens, resilient networking layer, and thread-safe local persistence.</p>
+            <div class="cell-tags">
+              <span class="project-tag">SwiftUI</span>
+              <span class="project-tag">Concurrency</span>
+              <span class="project-tag">Core Data</span>
+            </div>
+            <a href="Project-4/" class="cell-link-btn" onclick="event.stopPropagation()">
+              Explore Project 04
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
-          <div class="project-info">
-            <div class="project-tags"><span class="project-tag">UIKit</span><span class="project-tag">Coordinator</span><span class="project-tag">XCTest</span></div>
-            <h3 class="project-name">Project 06</h3>
-            <p class="project-desc">Architecture-first iOS template with decoupled coordinator routing, custom layout components, and automated UI snapshot testing.</p>
-            <a href="Project-6/" class="project-link">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        </div>
+
+        <!-- 05: Project 05 -->
+        <div class="cell" tabindex="0" role="button" aria-label="Project 05">
+          <div class="cell-media" style="background-image:url('images/project-5.jpg')"></div>
+          <div class="cell-num">05</div>
+          <div class="cell-name">Project 05</div>
+          <div class="cell-cat">SwiftUI · Gestures · Keychain · Biometrics</div>
+          <div class="cell-detail">
+            <p class="cell-desc">Interactive mobile interface featuring fluid multi-touch canvas gestures, background thread safety, and encrypted biometric authentication.</p>
+            <div class="cell-tags">
+              <span class="project-tag">SwiftUI</span>
+              <span class="project-tag">Gestures</span>
+              <span class="project-tag">Keychain</span>
+            </div>
+            <a href="Project-5/" class="cell-link-btn" onclick="event.stopPropagation()">
+              Explore Project 05
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 06: Project 06 -->
+        <div class="cell" tabindex="0" role="button" aria-label="Project 06">
+          <div class="cell-media" style="background-image:url('images/project-6.jpg')"></div>
+          <div class="cell-num">06</div>
+          <div class="cell-name">Project 06</div>
+          <div class="cell-cat">UIKit · Coordinator · XCTest · Architecture</div>
+          <div class="cell-detail">
+            <p class="cell-desc">Architecture-first iOS template with decoupled coordinator routing, custom layout components, and automated UI snapshot testing.</p>
+            <div class="cell-tags">
+              <span class="project-tag">UIKit</span>
+              <span class="project-tag">Coordinator</span>
+              <span class="project-tag">XCTest</span>
+            </div>
+            <a href="Project-6/" class="cell-link-btn" onclick="event.stopPropagation()">
+              Explore Project 06
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
       </div>
