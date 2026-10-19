@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- MARK: - Meta & SEO / Метаданные -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nightwell — Sleep tracker, alarm & goals for iPhone and Apple Watch. Track your nights, wake up on time and see how your sleep changes. Widgets, Apple Watch, Live Activities and Siri included.">
+  <meta name="author" content="Hakob Ghlijyan">
+  <meta name="theme-color" content="#00112A">
+  <!-- <meta name="apple-itunes-app" content="app-id={{APP_STORE_ID}}"> -->
+
+  <!-- Canonical and Language alternates -->
+  <link rel="canonical" href="https://{{DOMAIN}}/Nightwell/">
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+
+  <!-- MARK: - Open Graph & Twitter Cards -->
+  <meta property="og:title" content="Nightwell — Sleep tracker, alarm & goals">
+  <meta property="og:description" content="Track your nights, wake up on time and see how your sleep changes. Widgets, Apple Watch, Live Activities and Siri.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://{{DOMAIN}}/Nightwell/">
+  <meta property="og:image" content="../assets/og/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- MARK: - Page Title -->
+  <title>Nightwell — Sleep tracker, alarm &amp; goals</title>
+
+  <!-- MARK: - Stylesheets (Self-contained, no external CDN tracking) -->
+  <link rel="stylesheet" href="css/split-style.css">
+
+  <!-- MARK: - Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Nightwell",
+    "operatingSystem": "iOS 26.1+, watchOS 26.1+",
+    "applicationCategory": "HealthApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       MARK: - SITE HEADER / ШАПКА САЙТА
+       Branding, project title, return link, navigation, and language switch
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="site-brand">
+      <a class="site-title" data-nav="work">{{APP_NAME}}</a>
+      <div class="site-divider-v"></div>
+      <span class="site-tagline" data-en="Sleep tracker, alarm &amp; goals" data-ru="Трекер сна, будильник и цели">
+        Sleep tracker, alarm &amp; goals
+      </span>
+      <a href="../index.html" class="site-back-link" title="Return to Hakob Ghlijyan Portfolio">
+        &larr; <span data-en="Portfolio" data-ru="Портфолио">Portfolio</span>
+      </a>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="site-header-nav">
+      <a data-nav="work" class="nav-active" data-en="Features" data-ru="Возможности">Features</a>
+      <a data-nav="screens" data-en="Screenshots" data-ru="Скриншоты">Screenshots</a>
+      <a data-nav="about" data-en="About" data-ru="О проекте">About</a>
+      <a data-nav="support" data-en="Support" data-ru="Поддержка">Support</a>
+      <a data-nav="privacy" data-en="Privacy" data-ru="Приватность">Privacy</a>
+      
+      <!-- Language Switcher -->
+      <div class="lang-switch">
+        <button type="button" class="lang-btn active" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="ru">RU</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================================
+       MARK: - MAIN SPLIT CONTAINER / ДВУХПАНЕЛЬНЫЙ ИНТЕРФЕЙС
+       Left: dynamic panels | Right: live canvas preview (object-fit: contain)
+       ========================================================================= -->
+  <div class="split-container">
+
+    <!-- LEFT: Swappable Panels -->
+    <div class="left-side">
+
+      <!-- =====================================================================
+           PANEL 1: WORK & FEATURES / ВОЗМОЖНОСТИ
+           ===================================================================== -->
+      <div class="panel panel-active" id="panel-work">
+        <div class="panel-header">
+          <span data-en="Nightwell for iPhone &amp; Apple Watch · iOS 26.1 / watchOS 26.1+" data-ru="Nightwell для iPhone и Apple Watch · iOS 26.1 / watchOS 26.1+">
+            Nightwell for iPhone &amp; Apple Watch · iOS 26.1 / watchOS 26.1+
+          </span>
+        </div>
+
+        <ul class="project-list" id="projectList">
+          <!-- 01: Tracking -->
+          <li class="project-item" data-index="0">
+            <a href="#" class="project-link">
+              <span class="project-number">01</span>
+              <span class="project-title" data-en="One-Tap Sleep Tracking" data-ru="Трекинг сна в одно касание">One-Tap Sleep Tracking</span>
+              <span class="project-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              <span class="project-category">Tracking</span>
+            </a>
+          </li>
+
+          <!-- 02: Audio Engine -->
+          <li class="project-item" data-index="1">
+            <a href="#" class="project-link">
+              <span class="project-number">02</span>
+              <span class="project-title" data-en="Ambient Soundscapes Engine" data-ru="Звуковые ландшафты для сна">Ambient Soundscapes Engine</span>
+              <span class="project-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              <span class="project-category">Audio</span>
+            </a>
+          </li>
+
+          <!-- 03: Wake Up & Alarms -->
+          <li class="project-item" data-index="2">
+            <a href="#" class="project-link">
+              <span class="project-number">03</span>
+              <span class="project-title" data-en="Alarm &amp; Smart Wake-Up Window" data-ru="Будильник и умное пробуждение">Alarm &amp; Smart Wake-Up Window</span>
+              <span class="project-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              <span class="project-category">Wake Up</span>
+            </a>
+          </li>
+
+          <!-- 04: Charts & Insights -->
+          <li class="project-item" data-index="3">
+            <a href="#" class="project-link">
+              <span class="project-number">04</span>
+              <span class="project-title" data-en="Charts, Streaks &amp; Sleep Debt" data-ru="Графики, серии и долг сна">Charts, Streaks &amp; Sleep Debt</span>
+              <span class="project-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              <span class="project-category">Insights</span>
+            </a>
+          </li>
+
+          <!-- 05: Live Activities -->
+          <li class="project-item" data-index="4">
+            <a href="#" class="project-link">
+              <span class="project-number">05</span>
+              <span class="project-title" data-en="Live Activity &amp; Dynamic Island" data-ru="Live Activity и Dynamic Island">Live Activity &amp; Dynamic Island</span>
+              <span class="project-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              <span class="project-category">iOS 26+</span>
+            </a>
+          </li>
+
+          <!-- 06: Apple Watch & Health -->
+          <li class="project-item" data-index="5">
+            <a href="#" class="project-link">
+              <span class="project-number">06</span>
+              <span class="project-title" data-en="Apple Watch &amp; Apple Health Sync" data-ru="Apple Watch и Apple Health">Apple Watch &amp; Apple Health Sync</span>
+              <span class="project-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              <span class="project-category">watchOS</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="panel-footer" style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="app-store-badge">
+            <span data-en="Coming soon to the App Store" data-ru="Скоро в App Store">Coming soon to the App Store</span>
+          </div>
+          <span style="font-size:0.65rem;" data-en="Hover module to inspect" data-ru="Наведите на модуль для просмотра">Hover module to inspect</span>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           PANEL 2: SCREENSHOTS GALLERY / ГАЛЕРЕЯ ВСЕХ УСТРОЙСТВ
+           ===================================================================== -->
+      <div class="panel" id="panel-screens">
+        <div class="panel-header">
+          <span data-en="Full Device Gallery — iPhone, iPad &amp; Apple Watch" data-ru="Галерея устройств — iPhone, iPad и Apple Watch">
+            Full Device Gallery — iPhone, iPad &amp; Apple Watch
+          </span>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="screens-nav">
+          <button type="button" class="screen-filter-btn active" data-filter="all">All</button>
+          <button type="button" class="screen-filter-btn" data-filter="duo">Duo</button>
+          <button type="button" class="screen-filter-btn" data-filter="phone">iPhone</button>
+          <button type="button" class="screen-filter-btn" data-filter="watch">Watch</button>
+          <button type="button" class="screen-filter-btn" data-filter="pad">iPad</button>
+        </div>
+
+        <ul class="project-list" style="overflow-y:auto; max-height:55vh;">
+          <li class="project-item screen-item" data-index="0" data-category="duo">
+            <a href="#" class="project-link">
+              <span class="project-number">D1</span>
+              <span class="project-title">Tonight &amp; Schedule Duo</span>
+              <span class="project-category">iPhone + Watch</span>
+            </a>
+          </li>
+          <li class="project-item screen-item" data-index="1" data-category="duo">
+            <a href="#" class="project-link">
+              <span class="project-number">D2</span>
+              <span class="project-title">Soundscapes Selection</span>
+              <span class="project-category">iPhone + Watch</span>
+            </a>
+          </li>
+          <li class="project-item screen-item" data-index="2" data-category="duo">
+            <a href="#" class="project-link">
+              <span class="project-number">D3</span>
+              <span class="project-title">Smart Wake-Up Window</span>
+              <span class="project-category">iPhone + Watch</span>
+            </a>
+          </li>
+          <li class="project-item screen-item" data-index="3" data-category="duo">
+            <a href="#" class="project-link">
+              <span class="project-number">D4</span>
+              <span class="project-title">Sleep Analytics Dashboard</span>
+              <span class="project-category">iPhone + Watch</span>
+            </a>
+          </li>
+          <li class="project-item screen-item" data-index="4" data-category="duo">
+            <a href="#" class="project-link">
+              <span class="project-number">D5</span>
+              <span class="project-title">Morning Rating &amp; Factors</span>
+              <span class="project-category">iPhone + Watch</span>
+            </a>
+          </li>
+          <li class="project-item screen-item" data-index="5" data-category="duo">
+            <a href="#" class="project-link">
+              <span class="project-number">D6</span>
+              <span class="project-title">Sleep Score Breakdown</span>
+              <span class="project-category">iPhone + Watch</span>
+            </a>
+          </li>
+          <li class="project-item screen-item" data-index="6" data-category="pad">
+            <a href="#" class="project-link">
+              <span class="project-number">P1</span>
+              <span class="project-title">iPad Large Screen Dashboard</span>
+              <span class="project-category">iPad Landscape</span>
+            </a>
+          </li>
+          <li class="project-item screen-item" data-index="7" data-category="watch">
+            <a href="#" class="project-link">
+              <span class="project-number">W1</span>
+              <span class="project-title">Apple Watch Night Clock</span>
+              <span class="project-category">watchOS Complication</span>
+            </a>
+          </li>
+          <li class="project-item screen-item" data-index="8" data-category="phone">
+            <a href="#" class="project-link">
+              <span class="project-number">M1</span>
+              <span class="project-title">Standalone iPhone Night Clock</span>
+              <span class="project-category">iPhone Display</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- =====================================================================
+           PANEL 3: ABOUT / О ПРИЛОЖЕНИИ И РАЗРАБОТЧИКЕ
+           ===================================================================== -->
+      <div class="panel" id="panel-about">
+        <div class="about-content" style="padding:2rem 3rem;">
+          <span class="about-label" data-en="About Nightwell" data-ru="О приложении Nightwell">About Nightwell</span>
+          <h2 class="about-headline" data-en="A calm sleep tracker built around a <em>rhythm you choose</em>." data-ru="Спокойный трекер сна, созданный вокруг <em>выбранного вами ритма</em>.">
+            A calm sleep tracker built around a <em>rhythm you choose</em>.
+          </h2>
+          <p class="about-body" data-en="Nightwell helps you sleep on your own schedule without noise, subscriptions traps, or intrusive accounts. Set your bedtime and wake time, press one button when you go to sleep and see the night take shape. In the morning rate how you slept and track what affected it: coffee, stress, exercise, a late meal or room temperature." data-ru="Nightwell помогает выстроить здоровый режим сна без лишнего шума, скрытых подписок и обязательных учетных записей. Задайте время отхода ко сну и пробуждения, нажмите одну кнопку перед сном и наблюдайте за ритмом ночи. Утром оцените самочувствие и отметьте факторы: кофеин, стресс, тренировки или поздний ужин.">
+            Nightwell helps you sleep on your own schedule without noise, subscriptions traps, or intrusive accounts. Set your bedtime and wake time, press one button when you go to sleep and see the night take shape. In the morning rate how you slept and track what affected it: coffee, stress, exercise, a late meal or room temperature.
+          </p>
+          <p class="about-body" style="margin-top:1rem;" data-en="Built by Hakob Ghlijyan, an independent iOS developer based in Yerevan, Armenia. Nightwell is crafted natively with Swift and SwiftUI, honoring Apple design principles and respecting user privacy at every touchpoint." data-ru="Разработано независимым iOS-инженером Акобом Клиджяном (Ереван, Армения). Nightwell создан нативно на Swift и SwiftUI с уважением к принципам дизайна Apple и приватности пользователей.">
+            Built by Hakob Ghlijyan, an independent iOS developer based in Yerevan, Armenia. Nightwell is crafted natively with Swift and SwiftUI, honoring Apple design principles and respecting user privacy at every touchpoint.
+          </p>
+
+          <div class="about-stats" style="margin-top:2rem;">
+            <div class="stat-item">
+              <span class="stat-number">0</span>
+              <span class="stat-label" data-en="Accounts Required" data-ru="Без аккаунтов">Accounts Required</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label" data-en="Private iCloud" data-ru="Личный iCloud">Private iCloud</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">6</span>
+              <span class="stat-label" data-en="Languages" data-ru="Языков">Languages</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           PANEL 4: SUPPORT / ПОДДЕРЖКА ПО СТАНДАРТАМ APP STORE
+           ===================================================================== -->
+      <div class="panel" id="panel-support">
+        <div class="contact-content" style="padding:2rem 3rem; overflow-y:auto; max-height:80vh;">
+          <span class="contact-label" data-en="Customer Support" data-ru="Служба поддержки">Customer Support</span>
+          <h2 class="contact-headline" data-en="How can we help?" data-ru="Чем мы можем помочь?">How can we help?</h2>
+
+          <!-- Contact Support Box -->
+          <div style="background:rgba(255,255,255,0.7); border:1px solid rgba(26,26,26,0.15); border-radius:10px; padding:1.2rem; margin:1rem 0;">
+            <p style="font-size:0.85rem; font-weight:600; margin-bottom:0.4rem;" data-en="Contact Support Directly" data-ru="Связаться с поддержкой">Contact Support Directly</p>
+            <p style="font-size:0.8rem; color:var(--ink-light); margin-bottom:0.8rem;" data-en="Write to {{SUPPORT_EMAIL}} with subject 'Nightwell support'. To help resolve issues faster, please mention: device model, iOS/watchOS version, app version (found in Settings → About), and what happened." data-ru="Напишите на {{SUPPORT_EMAIL}} с темой 'Nightwell support'. Чтобы быстрее решить вопрос, укажите: модель устройства, версию iOS/watchOS, версию приложения (в Настройках → О приложении) и описание ситуации.">
+              Write to <a href="mailto:{{SUPPORT_EMAIL}}?subject=Nightwell%20support" style="text-decoration:underline; font-weight:600;">{{SUPPORT_EMAIL}}</a> with subject <em>"Nightwell support"</em>.<br>
+              <strong>Please include:</strong> device model, iOS/watchOS version, app version (found in Settings &rarr; About), and steps to reproduce.
+            </p>
+            <span style="font-size:0.75rem; color:var(--ink-light);" data-en="We reply as soon as possible." data-ru="Мы отвечаем в кратчайшие возможные сроки.">We reply as soon as possible.</span>
+          </div>
+
+          <!-- Getting Started -->
+          <div style="margin:1.2rem 0;">
+            <p style="font-family:'DM Mono',monospace; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--ink-light);" data-en="Getting Started (4 Steps)" data-ru="С чего начать (4 шага)">Getting Started (4 Steps)</p>
+            <p style="font-size:0.82rem; line-height:1.6; margin-top:0.4rem;" data-en="1. Set your bedtime and wake time in Settings.<br>2. Tap 'Start sleep' on the Tonight tab.<br>3. In the morning, finish sleep or stop the alarm.<br>4. Rate how you slept and mark what affected your rest." data-ru="1. Установите время сна и подъема в Настройках.<br>2. Нажмите 'Начать сон' на вкладке Сегодня.<br>3. Утром завершите сон или отключите будильник.<br>4. Оцените сон и отметьте повлиявшие факторы.">
+              1. Set your bedtime and wake time in Settings.<br>
+              2. Tap "Start sleep" on the Tonight tab.<br>
+              3. In the morning, finish sleep or stop the alarm.<br>
+              4. Rate how you slept and mark what affected your rest.
+            </p>
+          </div>
+
+          <!-- FAQ Accordions (Pure HTML details/summary, no JavaScript) -->
+          <p style="font-family:'DM Mono',monospace; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--ink-light); margin-top:1.5rem;" data-en="Frequently Asked Questions" data-ru="Частые вопросы">Frequently Asked Questions</p>
+          
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary data-en="What devices and software do I need?" data-ru="Какие устройства и версии ОС нужны?">What devices and software do I need?</summary>
+              <div class="faq-answer" data-en="You need an iPhone running iOS 26.1 or later. An Apple Watch with watchOS 26.1 or later is completely optional but enhances tracking with haptics and bedtime wrist complications." data-ru="Вам потребуется iPhone с iOS 26.1 или новее. Apple Watch с watchOS 26.1 или новее — полностью опциональны, но делают использование еще удобнее благодаря тактильным будильникам и виджетам.">
+                You need an iPhone running iOS 26.1 or later. An Apple Watch with watchOS 26.1 or later is completely optional.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary data-en="The alarm did not ring. What should I check?" data-ru="Будильник не сработал. Что проверить?">The alarm did not ring. What should I check?</summary>
+              <div class="faq-answer" data-en="Check that alarm permissions are granted (Settings → Night Well), that the night session was started, and that Wake Alarm is turned on in app Settings. The alarm uses Apple AlarmKit and sounds even on silent mode." data-ru="Убедитесь, что выдано разрешение на будильники (Настройки → Night Well), сессия ночи была запущена, а будильник включен в настройках приложения. Будильник использует Apple AlarmKit и звучит даже в беззвучном режиме.">
+                Check that alarm permissions are granted (Settings → Night Well), that the night session was started, and that Wake Alarm is turned on in app Settings. The alarm uses Apple AlarmKit and sounds even on silent mode.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary data-en="What is the early wake-up window?" data-ru="Что такое окно раннего пробуждения?">What is the early wake-up window?</summary>
+              <div class="faq-answer" data-en="It is an optional 15 or 30-minute window before your scheduled alarm. The app may gently wake you at the end of a typical sleep cycle. It is an estimate and will never sound later than your wake time." data-ru="Это опциональный интервал в 15 или 30 минут перед заданным временем. Будильник может сработать в конце цикла сна. Это расчетная оценка, и он никогда не сработает позже установленного времени.">
+                It is an optional 15 or 30-minute window before your scheduled alarm. The app may wake you at the end of a typical sleep cycle. It is an estimate and will never sound later than your wake time.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary data-en="How does iCloud synchronization work?" data-ru="Как работает синхронизация через iCloud?">How does iCloud synchronization work?</summary>
+              <div class="faq-answer" data-en="Sessions, settings, and ratings sync seamlessly through your personal private iCloud account using CloudKit. There is no custom third-party account; the developer has zero access to your data." data-ru="Сессии, заметки и настройки синхронизируются через ваш личный защищенный iCloud (CloudKit). Никаких сторонних аккаунтов нет, а у разработчика нет доступа к вашим записям.">
+                Sessions, settings, and ratings sync through your personal private iCloud account using CloudKit. The developer has zero access to your data.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary data-en="How is Apple Health data used?" data-ru="Как используются данные Apple Health?">How is Apple Health data used?</summary>
+              <div class="faq-answer" data-en="Saving finished nights to Apple Health is optional (Settings → Apple Health). Reading sleep stages from Apple Watch is off by default and only displayed on screen: it is never saved, synced, or sent anywhere." data-ru="Сохранение завершенных ночей в Apple Health опционально (Настройки → Apple Health). Чтение фаз сна с Apple Watch выключено по умолчанию и только отображается на экране: данные не сохраняются и никуда не передаются.">
+                Writing finished nights to Apple Health is optional. Reading sleep stages from Apple Watch is off by default and only displayed on screen: it is never saved, synced, or sent anywhere.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary data-en="How can I export or delete my data?" data-ru="Как экспортировать или удалить данные?">How can I export or delete my data?</summary>
+              <div class="faq-answer" data-en="You can export your nights as CSV or JSON in Settings → Export Data. To delete all data: delete the app, then go to iPhone Settings → [Your Name] → iCloud → Storage → Night Well → Delete Data." data-ru="Экспорт доступен в формате CSV или JSON (Настройки → Экспорт данных). Для полного удаления удалите приложение, затем перейдите в Настройки iPhone → [Ваше имя] → iCloud → Хранилище → Night Well → Удалить данные.">
+                You can export your nights as CSV or JSON in Settings → Export Data. To delete all data: delete the app, then remove iCloud storage in iOS Settings.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary data-en="Is Nightwell a medical device?" data-ru="Является ли Nightwell медицинским прибором?">Is Nightwell a medical device?</summary>
+              <div class="faq-answer" data-en="No. Nightwell is an informational lifestyle sleep tracker and alarm. It is not a medical device and does not diagnose, treat, or prevent any medical condition." data-ru="Нет. Nightwell — это информационный трекер сна и будильник. Он не является медицинским устройством и не предназначен для диагностики или лечения каких-либо заболеваний.">
+                No. Nightwell is an informational sleep tracker and alarm. It is not a medical device and does not diagnose or treat any medical conditions.
+              </div>
+            </details>
+          </div>
+
+          <p style="font-size:0.75rem; color:var(--ink-light); margin-top:1.5rem;" data-en="Legal note: Nightwell is a sleep tracker and not a medical device. Requirements: iOS 26.1 / watchOS 26.1 or later." data-ru="Правовая информация: Nightwell — это трекер сна, а не медицинский прибор. Требования: iOS 26.1 / watchOS 26.1 или новее.">
+            Nightwell is a sleep tracker and not a medical device. Requirements: iOS 26.1 / watchOS 26.1 or later.
+          </p>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           PANEL 5: PRIVACY POLICY / ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ ПО СТАНДАРТАМ
+           ===================================================================== -->
+      <div class="panel" id="panel-privacy">
+        <div class="about-content" style="padding:2rem 3rem; overflow-y:auto; max-height:80vh;">
+          <!-- Not legal advice. Review before publishing. -->
+          <span class="about-label">Privacy Policy</span>
+          <h2 class="about-headline" data-en="We do not collect <em>your personal data</em>." data-ru="Мы не собираем <em>ваши личные данные</em>.">
+            We do not collect <em>your personal data</em>.
+          </h2>
+          <p style="font-family:'DM Mono',monospace; font-size:0.68rem; color:var(--ink-light); margin-bottom:1.5rem;">
+            Last updated: {{LAST_UPDATED}}
+          </p>
+
+          <div style="font-size:0.84rem; line-height:1.65; color:var(--ink);">
+            <p><strong>1. Summary:</strong> We do not collect your personal data. No accounts, no advertising, no tracking, and no third-party analytics SDKs. Your data stays on your devices and in your own private iCloud.</p>
+            <p style="margin-top:0.8rem;"><strong>2. Who we are:</strong> Hakob Ghlijyan, independent developer based in Yerevan, Armenia. Contact: <a href="mailto:{{SUPPORT_EMAIL}}" style="text-decoration:underline;">{{SUPPORT_EMAIL}}</a>.</p>
+            <p style="margin-top:0.8rem;"><strong>3. What the app stores on device:</strong> Sleep sessions (start and end times), ratings, optional factors (e.g. coffee, exercise, stress), settings (bedtime, wake time, alarms), and local cache for widgets and Apple Watch.</p>
+            <p style="margin-top:0.8rem;"><strong>4. iCloud:</strong> Data syncs solely through your personal iCloud container (CloudKit). The developer cannot access or view your records.</p>
+            <p style="margin-top:0.8rem;"><strong>5. Apple Health:</strong> Writing finished nights to Health is optional. Reading sleep stages from Apple Watch is read-only, on-demand, shown on screen, and never stored, synced, or monetized.</p>
+            <p style="margin-top:0.8rem;"><strong>6. Permissions:</strong> Alarms (AlarmKit to ring even on silent), Notifications (bedtime reminders), Health (optional). No location, contacts, camera, or advertising identifier are ever accessed.</p>
+            <p style="margin-top:0.8rem;"><strong>7. What we do not do:</strong> No sale of data, no tracking, no behavioral profiling, no marketing SDKs, and no third-party trackers.</p>
+            <p style="margin-top:0.8rem;"><strong>8. Diagnostic logs:</strong> Only local system logs in case of crashes. No health data or personal notes are included.</p>
+            <p style="margin-top:0.8rem;"><strong>9. Data export and deletion:</strong> Export anytime as CSV or JSON in app Settings. Delete all records via iOS iCloud settings.</p>
+            <p style="margin-top:0.8rem;"><strong>10. Children:</strong> The app does not collect personal data from anyone, including children.</p>
+            <p style="margin-top:0.8rem;"><strong>11. Security:</strong> Guarded by Apple device encryption and iCloud security architectures. The app runs without external servers.</p>
+            <p style="margin-top:0.8rem;"><strong>12. Contact:</strong> If you have privacy questions, write to <a href="mailto:{{SUPPORT_EMAIL}}" style="text-decoration:underline;">{{SUPPORT_EMAIL}}</a>.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="split-divider"></div>
+
+    <!-- RIGHT: The Canvas Preview (Object-fit: contain, no clipping!) -->
+    <div class="canvas-side" id="canvasSide">
+
+      <!-- Default Placeholder -->
+      <div class="canvas-placeholder" id="placeholder">
+        <div class="placeholder-icon">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 2v4m0 12v4m-10-10h4m12 0h4m-3.3-6.7-2.8 2.8m-5.8 5.8-2.8 2.8m0-11.3 2.8 2.8m5.8 5.8 2.8 2.8"/>
+          </svg>
+        </div>
+        <span class="placeholder-text" data-en="Hover over an item to inspect" data-ru="Наведите на пункт для просмотра">
+          Hover over an item to inspect
+        </span>
+      </div>
+
+      <!-- Real Promotional Screenshots from images/ (Scale-to-fit with full phone & watch visible) -->
+      <div class="canvas-image" data-slide="0">
+        <img src="images/duo1ai-store-black.jpg" alt="Tonight Sleep Tracking — iPhone and Apple Watch" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">One-Tap Sleep Tracking</div>
+          <div class="canvas-caption-year">iPhone + Apple Watch · iOS 26.1</div>
+        </div>
+      </div>
+
+      <div class="canvas-image" data-slide="1">
+        <img src="images/duo2ai-store-black.jpg" alt="Ambient Soundscapes Engine" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">Ambient Soundscapes Engine</div>
+          <div class="canvas-caption-year">AVAudioEngine · Low Latency</div>
+        </div>
+      </div>
+
+      <div class="canvas-image" data-slide="2">
+        <img src="images/duo3ai-store-black.jpg" alt="Alarm &amp; Smart Wake-Up Window" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">Alarm &amp; Smart Wake-Up Window</div>
+          <div class="canvas-caption-year">AlarmKit · Rings on Silent</div>
+        </div>
+      </div>
+
+      <div class="canvas-image" data-slide="3">
+        <img src="images/duo4ai-store-black.jpg" alt="Charts, Streaks &amp; Sleep Debt" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">Charts, Streaks &amp; Sleep Debt</div>
+          <div class="canvas-caption-year">Swift Charts · Predictive Insights</div>
+        </div>
+      </div>
+
+      <div class="canvas-image" data-slide="4">
+        <img src="images/duo5ai-store-black.jpg" alt="Live Activities &amp; Dynamic Island" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">Morning Rating &amp; Factors</div>
+          <div class="canvas-caption-year">ActivityKit · Dynamic Island</div>
+        </div>
+      </div>
+
+      <div class="canvas-image" data-slide="5">
+        <img src="images/duo6ai-store-black.jpg" alt="Apple Watch &amp; Apple Health Sync" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">Apple Watch Ecosystem</div>
+          <div class="canvas-caption-year">watchOS · Standalone Complications</div>
+        </div>
+      </div>
+
+      <div class="canvas-image" data-slide="6">
+        <img src="images/pad1ai-store-black.jpg" alt="iPad Large Screen Dashboard" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">iPad Landscape Mode</div>
+          <div class="canvas-caption-year">iPadOS 26.1 · Multi-Window</div>
+        </div>
+      </div>
+
+      <div class="canvas-image" data-slide="7">
+        <img src="images/w1.jpg" alt="Apple Watch Night Clock" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">Apple Watch Night Clock</div>
+          <div class="canvas-caption-year">Always-On Display · Bedside Mode</div>
+        </div>
+      </div>
+
+      <div class="canvas-image" data-slide="8">
+        <img src="images/p1ai-store-black.jpg" alt="Standalone iPhone Night Clock" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">iPhone Standalone Display</div>
+          <div class="canvas-caption-year">OLED Pure Black · Night Clock</div>
+        </div>
+      </div>
+
+      <!-- Context Images for Panels -->
+      <div class="canvas-context" data-context="about">
+        <img src="images/duo9ai-store-black.jpg" alt="About Nightwell" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">Crafted with Swift &amp; SwiftUI</div>
+          <div class="canvas-caption-year">Independent Engineering · Hakob Ghlijyan</div>
+        </div>
+      </div>
+
+      <div class="canvas-context" data-context="support">
+        <img src="images/duo7ai-store-black.jpg" alt="Nightwell Support" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">Customer Support &amp; Assistance</div>
+          <div class="canvas-caption-year">Direct Developer Contact</div>
+        </div>
+      </div>
+
+      <div class="canvas-context" data-context="privacy">
+        <img src="images/duo8ai-store-black.jpg" alt="Zero-Knowledge Privacy" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">Zero-Knowledge Architecture</div>
+          <div class="canvas-caption-year">On-Device Processing · No Trackers</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- MARK: - Footer / Подвал -->
+  <footer class="site-footer">
+    <span>&copy; {{YEAR}} Hakob Ghlijyan &middot; Nightwell is a sleep tracker and not a medical device.</span>
+    <div class="footer-links">
+      <a href="../index.html" data-en="Portfolio" data-ru="Портфолио">Portfolio</a>
+      <span class="footer-dot">&bull;</span>
+      <span style="font-size:0.58rem; color:var(--ink-light);">Apple, iPhone, Apple Watch, App Store and Siri are trademarks of Apple Inc.</span>
+    </div>
+  </footer>
+
+  <!-- MARK: - Scripts -->
+  <script src="js/split-script.js"></script>
+
+</body>
+</html>
