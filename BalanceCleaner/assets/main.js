@@ -79,8 +79,9 @@ const dictionaries = {
     donationFooter: 'Thank you for helping keep this tool alive and free of ads!',
     guideNeedHelp: 'Need Help?',
     guideSupportTitle: 'Contact Apple Support',
-    guideSupportDesc: 'If your balance is lower than the lowest purchase price, contact Apple Support directly to manually zero it out.',
     guideSupportWeb: 'Apple Billing & Subscriptions',
+    stepVideoTitle: 'iPhone 18 Pro Video Demo',
+    stepVideoDesc: 'Watch interactive zero-balance calculation and StoreKit flow in real time.',
 
     privacyEyebrow: 'YOUR PRIVACY MATTERS',
     privacyTitle: 'Privacy Policy',
@@ -93,6 +94,20 @@ const dictionaries = {
     proFeaturesTitle: 'Premium Features',
     proFeaturesDesc: 'Unlock full transaction history, export records to PDF, customize the Amount Ring glow, and set a Starfield background.',
     top: 'Home',
+    featuresHeader: 'BalanceCleaner for iPhone & iPad · Native StoreKit 2',
+    hoverInspect: 'Hover module to inspect',
+    feat1Title: 'Choose Custom Clear',
+    feat1Tag: 'Dial & Input',
+    feat2Title: 'Calculate & Split Preview',
+    feat2Tag: 'Split Math',
+    feat3Title: 'StoreKit Secure Settlement',
+    feat3Tag: 'StoreKit 2',
+    feat4Title: 'Clearance History & Logs',
+    feat4Tag: 'History',
+    feat5Title: 'Privacy & How It Works',
+    feat5Tag: 'Zero Tracking',
+    feat6Title: 'Premium Features & Glow',
+    feat6Tag: 'Pro Glow',
     devicePreview: 'Device Preview', devicePreviewTitle: 'All screens, all models.', devicePreviewDesc: 'Scroll horizontally within each model to see all screenshots. iPhone 18 Pro shows real screenshots — others are ready for your assets.', comingSoon: 'Coming soon'
   }
 };
@@ -103,12 +118,25 @@ function fill(code, overrides) {
 
 fill('ru', {
   about: 'О продукте', screens: 'Экраны', video: 'Видео', features: 'Возможности',
-  support: 'Поддержка', privacy: 'Приватность',
   subHeaderText: 'Доступно для iPhone', subHeaderBtn: 'Загрузить',
   eyebrow: 'Более спокойная цифровая жизнь',
   title: 'Обнулите баланс Apple ID.<br>Смените регион свободно.',
   lead: 'BalanceCleaner позволяет очистить остаток на Apple ID через реальные покупки — чтобы вы могли сменить регион App Store без ограничений.',
   explore: 'Открыть продукт →',
+  featuresHeader: 'BalanceCleaner для iPhone и iPad · Нативный StoreKit 2',
+  hoverInspect: 'Наведите на модуль для просмотра',
+  feat1Title: 'Выбор точной суммы',
+  feat1Tag: 'Ввод и шкала',
+  feat2Title: 'Предпросмотр разбивки',
+  feat2Tag: 'Расчет частей',
+  feat3Title: 'Безопасный StoreKit',
+  feat3Tag: 'StoreKit 2',
+  feat4Title: 'История и журналы',
+  feat4Tag: 'История',
+  feat5Title: 'Приватность и принципы',
+  feat5Tag: '0 трекеров',
+  feat6Title: 'Премиум-возможности',
+  feat6Tag: 'Pro Glow',
   ideaLabel: 'Идея',
   storyTitle: 'Меньше шума.<br>Больше баланса.',
   storyLead: 'Спокойный продукт, построенный на ясности, контроле и уважении к пользователю.',
@@ -170,6 +198,8 @@ fill('ru', {
   guideSupportTitle: 'Обратитесь в службу поддержки Apple',
   guideSupportDesc: 'Если ваш баланс меньше минимальной цены покупки — свяжитесь с Apple Support напрямую.',
   guideSupportWeb: 'Биллинг и подписки Apple',
+  stepVideoTitle: 'Видеодемо iPhone 18 Pro',
+  stepVideoDesc: 'Посмотрите расчёт обнуления баланса и процесс StoreKit в реальном времени.',
   privacyEyebrow: 'ВАША ПРИВАТНОСТЬ ВАЖНА',
   privacyTitle: 'Политика конфиденциальности',
   privCard1Title: 'Защита Apple StoreKit',
@@ -484,35 +514,12 @@ const savedLang = localStorage.getItem('balance-language') || 'en';
 applyLanguage(savedLang);
 
 // =========================================================================
-// THEME SWITCHING — Ripple from click point, 2s
+// MARK: - THEME INITIALIZATION (Permanent Dark Theme per design specification)
 // =========================================================================
-const THEME_ICON_SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>';
-const THEME_ICON_MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
-
-function applyTheme(mode) {
-  document.documentElement.classList.toggle('light', mode === 'light');
-  // SVG вместо символов ☼/☾: одинаково выглядит на macOS и iOS
-  const icon = mode === 'light' ? THEME_ICON_MOON : THEME_ICON_SUN;
-  document.querySelectorAll('.theme-icon').forEach(el => el.innerHTML = icon);
-  document.querySelectorAll('.theme').forEach(btn => {
-    btn.setAttribute('aria-label', mode === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
-  });
-  localStorage.setItem('balance-theme', mode);
-}
-
-applyTheme(localStorage.getItem('balance-theme') || 'dark');
-
-
-document.addEventListener('click', function(e) {
-  const btn = e.target.closest('.theme');
-  if (!btn) return;
-  
-  const next = document.documentElement.classList.contains('light') ? 'dark' : 'light';
-  
-  document.body.classList.add('theme-blur');
-  setTimeout(() => { applyTheme(next); }, 250);
-  setTimeout(() => { document.body.classList.remove('theme-blur'); }, 500);
-});
+document.documentElement.classList.remove('light');
+try {
+  localStorage.removeItem('balance-theme');
+} catch (e) {}
 
 // =========================================================================
 // LANGUAGE SWITCHER DROPDOWNS (multiple on page)
@@ -543,201 +550,259 @@ document.addEventListener('click', function(e) {
 });
 
 // =========================================================================
-// SCROLL REVEAL
+// MARK: - SPLIT SCREEN PANEL SYSTEM & CANVAS CONTROLLER
 // =========================================================================
-function revealOnScroll() {
-  document.querySelectorAll('.reveal').forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 80) {
-      el.classList.add('active');
+
+let currentPanel = 'features';
+let currentSlide = null;
+
+function switchPanel(target) {
+  if (!target) return;
+  currentPanel = target;
+  currentSlide = null;
+
+  // 1. Update navigation active state
+  document.querySelectorAll('[data-nav]').forEach(link => {
+    link.classList.toggle('nav-active', link.dataset.nav === target);
+  });
+
+  // 2. Switch left panel
+  document.querySelectorAll('.panel').forEach(panel => {
+    const isActive = panel.id === 'panel-' + target;
+    panel.classList.toggle('panel-active', isActive);
+    if (isActive) panel.scrollTop = 0;
+  });
+
+  // 3. Reset visual canvas
+  const canvasImages = document.querySelectorAll('.canvas-image');
+  const canvasContexts = document.querySelectorAll('.canvas-context');
+  const placeholder = document.getElementById('placeholder');
+
+  // Pause any playing videos
+  document.querySelectorAll('.canvas-image video').forEach(v => {
+    try { v.pause(); } catch (e) {}
+  });
+
+  canvasImages.forEach(img => img.classList.remove('visible'));
+  canvasContexts.forEach(ctx => ctx.classList.remove('visible'));
+
+  // If panel has dedicated context image, show it after smooth delay
+  const contextImg = document.querySelector(`.canvas-context[data-context="${target}"]`);
+  if (contextImg) {
+    if (placeholder) placeholder.classList.add('hidden');
+    setTimeout(() => contextImg.classList.add('visible'), 60);
+  } else if (target === 'guide') {
+    const firstStep = document.querySelector('#panel-guide [data-slide]');
+    if (firstStep) {
+      setTimeout(() => firstStep.click(), 60);
     }
+  } else {
+    // Show placeholder or wait for hover
+    if (placeholder) placeholder.classList.remove('hidden');
+  }
+
+  // Update URL hash without jumping
+  if (history.replaceState) {
+    history.replaceState(null, '', '#' + target);
+  } else {
+    window.location.hash = '#' + target;
+  }
+}
+
+// Global Nav click listener
+document.addEventListener('click', (e) => {
+  const navLink = e.target.closest('[data-nav]');
+  if (navLink) {
+    e.preventDefault();
+    const target = navLink.dataset.nav;
+    switchPanel(target);
+    const mobileNav = document.getElementById('mobileNav');
+    if (mobileNav) mobileNav.classList.remove('open');
+  }
+});
+
+// Interactive hover & click on item rows
+function setupInteractivePreview() {
+  const interactiveItems = document.querySelectorAll('[data-slide]');
+  const slides = document.querySelectorAll('.canvas-image');
+  const placeholder = document.getElementById('placeholder');
+
+  interactiveItems.forEach(item => {
+    const showSlide = () => {
+      const slideKey = item.dataset.slide;
+      if (!slideKey || slideKey === currentSlide) return;
+      currentSlide = slideKey;
+
+      if (placeholder) placeholder.classList.add('hidden');
+
+      // Pause non-active videos and reset stage state
+      document.querySelectorAll('.canvas-image video').forEach(v => {
+        try {
+          v.pause();
+          v.closest('.mockup-stage')?.classList.remove('is-playing');
+        } catch (e) {}
+      });
+
+      // Hide all context and images
+      document.querySelectorAll('.canvas-context').forEach(c => c.classList.remove('visible'));
+      slides.forEach(s => {
+        const matches = s.dataset.slide === slideKey;
+        s.classList.toggle('visible', matches);
+      });
+
+      // Highlight active row in list
+      interactiveItems.forEach(i => i.classList.toggle('active', i === item));
+    };
+
+    item.addEventListener('mouseenter', showSlide);
+    item.addEventListener('click', showSlide);
   });
 }
-window.addEventListener('scroll', revealOnScroll, { passive: true });
-revealOnScroll();
 
-// =========================================================================
-// COVERFLOW CAROUSEL
-// =========================================================================
-class Coverflow {
-  constructor() {
-    this.items = Array.from(document.querySelectorAll('.coverflow-item'));
-    if (!this.items.length) return;
-    this.dots = Array.from(document.querySelectorAll('.indicator'));
-    this.total = this.items.length;
-    this.current = Math.floor(this.total / 2);
-    this.playing = true;
-    this.timer = null;
-    this.speed = 3200;
-    this.render();
-    this.bindEvents();
-    this.autoplay();
-  }
+// Sticky Screens Model Filter
+function setupModelFilter() {
+  const filterBtns = document.querySelectorAll('.filter-pill');
+  const screenItems = document.querySelectorAll('#panel-screens .interactive-item');
 
-  render() {
-    const mobile = window.innerWidth < 768;
-    const spacing = mobile ? 160 : 260;
-    this.items.forEach((item, i) => {
-      let off = i - this.current;
-      if (off > this.total / 2) off -= this.total;
-      if (off < -this.total / 2) off += this.total;
-      const x = off * spacing;
-      const z = off === 0 ? 200 : Math.abs(off) === 1 ? 0 : -140;
-      const ry = off === 0 ? 0 : off * -35;
-      const sc = off === 0 ? 1 : Math.abs(off) === 1 ? 0.85 : Math.abs(off) === 2 ? 0.7 : 0.5;
-      const op = Math.abs(off) > 2 ? 0 : Math.abs(off) === 2 ? 0.45 : Math.abs(off) === 1 ? 0.78 : 1;
-      item.style.transform = `translate(-50%,-50%) translateX(${x}px) translateZ(${z}px) rotateY(${ry}deg) scale(${sc})`;
-      item.style.opacity = op;
-      item.style.zIndex = this.total - Math.abs(off);
-      item.style.pointerEvents = Math.abs(off) > 1 ? 'none' : 'auto';
-    });
-    this.dots.forEach((d, i) => d.classList.toggle('active', i === this.current));
-  }
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const model = btn.dataset.filter;
+      filterBtns.forEach(b => b.classList.toggle('active', b === btn));
 
-  prev() { this.current = (this.current - 1 + this.total) % this.total; this.render(); }
-  next() { this.current = (this.current + 1) % this.total; this.render(); }
-  goTo(i) { this.current = i; this.render(); }
+      let firstVisible = null;
+      screenItems.forEach(item => {
+        const match = (model === 'all' || item.dataset.model === model);
+        if (match) {
+          item.style.display = 'block';
+          if (!firstVisible) firstVisible = item;
+        } else {
+          item.style.display = 'none';
+        }
+      });
 
-  autoplay() {
-    this.timer = setInterval(() => this.next(), this.speed);
-    this.playing = true;
-  }
-  pause() {
-    clearInterval(this.timer);
-    this.playing = false;
-    const btn = document.getElementById('playPauseBtn');
-    if (btn) btn.innerHTML = '▶';
-  }
-  resume() {
-    this.autoplay();
-    const btn = document.getElementById('playPauseBtn');
-    if (btn) btn.innerHTML = '❚❚';
-  }
-
-  bindEvents() {
-    document.getElementById('prevBtn')?.addEventListener('click', () => { this.pause(); this.prev(); });
-    document.getElementById('nextBtn')?.addEventListener('click', () => { this.pause(); this.next(); });
-    document.getElementById('playPauseBtn')?.addEventListener('click', () => {
-      this.playing ? this.pause() : this.resume();
-    });
-    this.dots.forEach((d, i) => d.addEventListener('click', () => { this.pause(); this.goTo(i); }));
-    this.items.forEach((item, i) => item.addEventListener('click', () => {
-      if (i !== this.current) { this.pause(); this.goTo(i); }
-    }));
-
-    // Swipe
-    let sx = 0;
-    const cnt = document.getElementById('coverflowContainer');
-    if (cnt) {
-      cnt.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
-      cnt.addEventListener('touchend', e => {
-        const dx = sx - e.changedTouches[0].clientX;
-        if (Math.abs(dx) > 40) { this.pause(); dx > 0 ? this.next() : this.prev(); }
-      }, { passive: true });
-    }
-
-    window.addEventListener('resize', () => this.render());
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => { if (document.querySelector('.coverflow-container')) new Coverflow(); });
-
-// =========================================================================
-// ACTIVE NAV STATE ON SCROLL
-// =========================================================================
-function setActiveLink(href) {
-  document.querySelectorAll('.links a, .nav-center a').forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === href);
-  });
-}
-
-function setupScrollSpy() {
-  // Only run on index page
-  if (!document.querySelector('main > section')) return;
-
-  const homeLink = document.querySelector('.links a[href="#"], .links a[href="index.html"], .nav-center a[href="#"], .nav-center a[href="index.html"]');
-  const sections = Array.from(document.querySelectorAll('main > section[id]'));
-  if (!sections.length) return;
-
-  // Mark Home active when near top
-  function checkTop() {
-    if (window.scrollY < 80) {
-      document.querySelectorAll('.links a, .nav-center a').forEach(l => l.classList.remove('active'));
-      if (homeLink) homeLink.classList.add('active');
-      return true;
-    }
-    return false;
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    if (checkTop()) return;
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        const matchHref = '#' + id;
-        const altHref = 'index.html#' + id;
-        document.querySelectorAll('.links a, .nav-center a').forEach(link => {
-          const href = link.getAttribute('href');
-          link.classList.toggle('active', href === matchHref || href === altHref);
-        });
+      if (firstVisible) {
+        firstVisible.click();
       }
     });
-  }, { rootMargin: '-50% 0px -50% 0px' });
-
-  sections.forEach(sec => observer.observe(sec));
-
-  window.addEventListener('scroll', () => { checkTop(); }, { passive: true });
-
-  // Set initial state
-  checkTop() || (() => {
-    // If not at top, find first visible section
-    for (const sec of sections) {
-      const rect = sec.getBoundingClientRect();
-      if (rect.top <= window.innerHeight / 2 && rect.bottom >= 0) {
-        const id = sec.getAttribute('id');
-        document.querySelectorAll('.links a, .nav-center a').forEach(link => {
-          const href = link.getAttribute('href');
-          link.classList.toggle('active', href === '#' + id || href === 'index.html#' + id);
-        });
-        break;
-      }
-    }
-  })();
+  });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  setupScrollSpy();
+// Support AJAX form submission via FormSubmit
+function setupSupportForm() {
+  const form = document.querySelector('.support-form');
+  if (!form) return;
 
-  // Privacy page: language tabs click
-  document.querySelectorAll('.lang-tab').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const code = btn.getAttribute('data-lang');
-      if (code) applyLanguage(code);
-    });
-  });
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('.btn-submit');
+    const origText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending... / Отправка...';
 
-  // Static page active state (for Support and Privacy)
-  const path = window.location.pathname;
-  if (path.includes('support.html')) {
-    const link = document.querySelector('.links a[href="support.html"]');
-    if (link) link.classList.add('active');
-  } else if (path.includes('privacy.html')) {
-    const link = document.querySelector('.links a[href="privacy.html"]');
-    if (link) link.classList.add('active');
-  }
+    try {
+      const formData = new FormData(form);
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
 
-  // Video play/pause toggle on click
-  const promoVideo = document.getElementById('promo-video');
-  if (promoVideo) {
-    promoVideo.addEventListener('click', (e) => {
-      // Игнорируем клики по панели управления (controls), чтобы не мешать кнопке Play/Pause
-      if (e.target !== promoVideo) return;
-
-      if (promoVideo.paused) {
-        promoVideo.play();
+      if (res.ok) {
+        form.innerHTML = `
+          <div style="padding: 1.5rem 1rem; text-align: center;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--green);">✓</div>
+            <h3 style="color: var(--green); margin-bottom: 0.5rem; font-size: 1rem;">Message Sent! / Сообщение отправлено!</h3>
+            <p style="color: var(--text-secondary); font-size: 0.8rem;">Thank you! We will reply to your email as soon as possible.</p>
+          </div>
+        `;
       } else {
-        promoVideo.pause();
+        throw new Error('Server response not ok');
       }
-    });
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = origText;
+      alert('Could not send message automatically. Please write directly to balancecleanerapp@gmail.com');
+    }
+  });
+}
+
+// Interactive Video Players with Play Button & Controls
+function setupVideoPlayers() {
+  document.querySelectorAll('.mockup-stage').forEach(stage => {
+    const video = stage.querySelector('video');
+    const playBtn = stage.querySelector('.mockup-play-btn');
+    const toggleBtn = stage.querySelector('.btn-play-toggle');
+    const soundBtn = stage.querySelector('.btn-sound-toggle');
+
+    if (!video) return;
+
+    const updateUI = () => {
+      const isPlaying = !video.paused && !video.ended;
+      stage.classList.toggle('is-playing', isPlaying);
+      if (toggleBtn) {
+        const icon = toggleBtn.querySelector('.ctrl-icon');
+        const text = toggleBtn.querySelector('.ctrl-text');
+        if (icon) icon.textContent = isPlaying ? '❚❚' : '▶';
+        if (text) text.textContent = isPlaying ? 'Pause' : 'Play Demo';
+      }
+    };
+
+    const togglePlay = (e) => {
+      if (e) e.stopPropagation();
+      if (video.paused) {
+        // Pause any other videos across all slides
+        document.querySelectorAll('.canvas-image video').forEach(v => {
+          if (v !== video) {
+            v.pause();
+            v.closest('.mockup-stage')?.classList.remove('is-playing');
+          }
+        });
+        video.play().then(updateUI).catch(err => {
+          console.warn('Playback error or policy:', err);
+        });
+      } else {
+        video.pause();
+        updateUI();
+      }
+    };
+
+    if (playBtn) playBtn.addEventListener('click', togglePlay);
+    if (toggleBtn) toggleBtn.addEventListener('click', togglePlay);
+    const wrap = stage.querySelector('.mockup-wrap');
+    if (wrap) wrap.addEventListener('click', togglePlay);
+
+    if (soundBtn) {
+      soundBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        video.muted = !video.muted;
+        const icon = soundBtn.querySelector('.ctrl-icon');
+        const text = soundBtn.querySelector('.ctrl-text');
+        if (icon) icon.textContent = video.muted ? '🔇' : '🔊';
+        if (text) text.textContent = video.muted ? 'Muted' : 'Sound On';
+      });
+    }
+
+    video.addEventListener('play', updateUI);
+    video.addEventListener('pause', updateUI);
+    video.addEventListener('ended', updateUI);
+  });
+}
+
+// Initial hash routing & DOM setup
+document.addEventListener('DOMContentLoaded', () => {
+  setupInteractivePreview();
+  setupModelFilter();
+  setupSupportForm();
+  setupVideoPlayers();
+
+  // Check initial hash
+  const hash = window.location.hash.replace('#', '').toLowerCase();
+  const validPanels = ['features', 'screens', 'guide', 'about', 'support', 'privacy'];
+  if (validPanels.includes(hash)) {
+    switchPanel(hash);
+  } else if (hash === 'story') {
+    switchPanel('about');
+  } else {
+    switchPanel('features');
   }
 });

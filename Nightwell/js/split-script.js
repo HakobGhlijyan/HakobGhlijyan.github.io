@@ -63,14 +63,15 @@
 
   interactiveItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
-      const idx = parseInt(item.dataset.index, 10);
-      if (idx === currentSlide) return;
-      currentSlide = idx;
+      const key = item.dataset.slide || item.dataset.index;
+      if (!key || key === currentSlide) return;
+      currentSlide = key;
 
       placeholder.classList.add('hidden');
 
       slides.forEach(slide => {
-        slide.classList.toggle('visible', parseInt(slide.dataset.slide, 10) === idx);
+        const slideKey = slide.dataset.slide || slide.dataset.index;
+        slide.classList.toggle('visible', slideKey === key);
       });
     });
   });
@@ -79,7 +80,7 @@
   if (panelWork) {
     panelWork.addEventListener('mouseleave', () => {
       if (currentPanel !== 'work') return;
-      currentSlide = -1;
+      currentSlide = null;
       slides.forEach(s => s.classList.remove('visible'));
       placeholder.classList.remove('hidden');
     });
@@ -89,7 +90,7 @@
   if (panelScreens) {
     panelScreens.addEventListener('mouseleave', () => {
       if (currentPanel !== 'screens') return;
-      currentSlide = -1;
+      currentSlide = null;
       slides.forEach(s => s.classList.remove('visible'));
       placeholder.classList.remove('hidden');
     });
@@ -100,14 +101,15 @@
     interactiveItems.forEach(item => {
       item.addEventListener('click', (e) => {
         e.preventDefault();
-        const idx = parseInt(item.dataset.index, 10);
+        const key = item.dataset.slide || item.dataset.index;
 
         placeholder.classList.add('hidden');
         interactiveItems.forEach(i => i.classList.remove('active'));
         item.classList.add('active');
 
         slides.forEach(slide => {
-          const match = parseInt(slide.dataset.slide, 10) === idx;
+          const slideKey = slide.dataset.slide || slide.dataset.index;
+          const match = slideKey === key;
           slide.classList.toggle('visible', match);
           if (match && window.innerWidth <= 900) {
             slide.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

@@ -6,7 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Hakob Ghlijyan — iOS Engineer portfolio. Clean code, Swift, SwiftUI, UIKit, and native Apple ecosystem architecture.">
   <meta name="author" content="Hakob Ghlijyan">
-  <meta name="theme-color" content="#0f0e0b">
+  <meta name="theme-color" content="#0f0e0b" id="metaThemeColor">
+
+  <!-- MARK: - Theme Preload Script (Zero-Flicker) / Предзагрузка темы без мерцания -->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('portfolio-theme') || localStorage.getItem('balance-theme') || 'dark';
+        if (saved === 'light') {
+          document.documentElement.classList.add('light');
+        }
+      } catch (e) {}
+    })();
+  </script>
 
   <!-- MARK: - Favicon & Page Title / Фавикон и заголовок -->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
@@ -43,13 +55,19 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Work</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#apps">Apps</a></li>
         <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
       </ul>
 
-      <!-- Mobile Hamburger Toggle -->
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+      <!-- Theme Switcher & Mobile Menu Trigger / Переключатель темы и бургер -->
+      <div class="nav-actions">
+        <button class="theme" id="themeToggle" type="button" aria-label="Toggle light/dark theme">
+          <span class="theme-icon"></span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -58,6 +76,9 @@
        Introduction, headline, call-to-actions, and interactive Swift code card
        ========================================================================= -->
   <section class="hero" id="hero">
+    <!-- Shimmering Sand & Dunes Canvas / Канва переливающегося золотого песка -->
+    <canvas class="hero-sand-canvas" id="heroSandCanvas"></canvas>
+
     <div class="hero-content">
       <div class="hero-label">iOS Developer · 5+ Years Experience</div>
       <h1 class="hero-title">Clean code,<br><em>sharp solutions</em></h1>
@@ -290,84 +311,129 @@
     <div class="section-inner">
       <div class="section-label reveal">Selected Work</div>
       <div class="section-title reveal">Projects that <em>shipped</em></div>
-      <div class="section-subtitle reveal">A selection of recent builds — from developer tools to production platforms.</div>
+      <div class="section-subtitle reveal">Six works on an interactive matrix grid. Select any cell to force it open; the others collapse into strips.</div>
 
-      <div class="projects-grid">
-        <!-- Project 1: Balance Cleaner (Direct Live Project Link) -->
-        <div class="project-card reveal">
-          <div class="project-thumb">
-            <img src="images/project-1.jpg" alt="Balance Cleaner iOS application" loading="lazy">
-          </div>
-          <div class="project-info">
-            <div class="project-tags"><span class="project-tag">iOS</span><span class="project-tag">SwiftUI</span><span class="project-tag">PhotoKit</span><span class="project-tag">Storage</span></div>
-            <h3 class="project-name">Balance Cleaner</h3>
-            <p class="project-desc">A smart storage and photo optimization utility for iOS. Analyzes duplicated media, heavy cache, and simplifies device cleanup with native SwiftUI fluid interactions.</p>
-            <a href="BalanceCleaner/" class="project-link">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+      <!-- Kinetic Matrix Grid / Матричный аккордеон проектов -->
+      <div class="matrix reveal" id="matrix">
+        <!-- 01: Balance Cleaner -->
+        <div class="cell" tabindex="0" role="button" aria-label="Project Balance Cleaner">
+          <div class="cell-media" style="background-image:url('images/project-1.jpg')"></div>
+          <div class="cell-num">01</div>
+          <div class="cell-name">Balance Cleaner</div>
+          <div class="cell-cat">iOS · SwiftUI · PhotoKit · Storage</div>
+          <div class="cell-detail">
+            <p class="cell-desc">A smart storage and photo optimization utility for iOS. Analyzes duplicated media, heavy cache, and simplifies device cleanup with native SwiftUI fluid interactions.</p>
+            <div class="cell-tags">
+              <span class="project-tag">iOS</span>
+              <span class="project-tag">SwiftUI</span>
+              <span class="project-tag">PhotoKit</span>
+              <span class="project-tag">Storage</span>
+            </div>
+            <a href="BalanceCleaner/" class="cell-link-btn" onclick="event.stopPropagation()">
+              Open Balance Cleaner
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
 
-        <!-- Project 2: Nightwell (Dedicated Split-Index Showcase) -->
-        <div class="project-card reveal">
-          <div class="project-thumb">
-            <img src="images/project-2.jpg" alt="Nightwell iOS app" loading="lazy">
-          </div>
-          <div class="project-info">
-            <div class="project-tags"><span class="project-tag">SwiftUI</span><span class="project-tag">HealthKit</span><span class="project-tag">AVAudioEngine</span></div>
-            <h3 class="project-name">Nightwell</h3>
-            <p class="project-desc">Restorative nighttime wellness application with generative soundscapes, circadian rhythm charts, and ActivityKit lock-screen widgets.</p>
-            <a href="Nightwell/" class="project-link">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
-          </div>
-        </div>
-
-        <!-- Project 3: Selected Project 03 (Dedicated Split-Index Showcase) -->
-        <div class="project-card reveal">
-          <div class="project-thumb">
-            <img src="images/project-3.jpg" alt="iOS Project 03" loading="lazy">
-          </div>
-          <div class="project-info">
-            <div class="project-tags"><span class="project-tag">Swift</span><span class="project-tag">SwiftData</span><span class="project-tag">CloudKit</span></div>
-            <h3 class="project-name">Project 03</h3>
-            <p class="project-desc">Modular iOS application built with clean layer separation, offline-first SwiftData synchronization, and fluid interactive animations.</p>
-            <a href="Project-3/" class="project-link">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        <!-- 02: Nightwell -->
+        <div class="cell" tabindex="0" role="button" aria-label="Project Nightwell">
+          <div class="cell-media" style="background-image:url('images/project-2.jpg')"></div>
+          <div class="cell-num">02</div>
+          <div class="cell-name">Nightwell</div>
+          <div class="cell-cat">iOS · watchOS · HealthKit · Audio</div>
+          <div class="cell-detail">
+            <p class="cell-desc">Restorative nighttime wellness application with generative soundscapes, circadian rhythm charts, and ActivityKit lock-screen widgets.</p>
+            <div class="cell-tags">
+              <span class="project-tag">SwiftUI</span>
+              <span class="project-tag">HealthKit</span>
+              <span class="project-tag">AVAudioEngine</span>
+              <span class="project-tag">ActivityKit</span>
+            </div>
+            <a href="Nightwell/" class="cell-link-btn" onclick="event.stopPropagation()">
+              Open Nightwell iOS
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
 
-        <!-- Project 4: Selected Project 04 (Dedicated Split-Index Showcase) -->
-        <div class="project-card reveal">
-          <div class="project-thumb">
-            <img src="images/project-4.jpg" alt="iOS Project 04" loading="lazy">
-          </div>
-          <div class="project-info">
-            <div class="project-tags"><span class="project-tag">SwiftUI</span><span class="project-tag">Concurrency</span><span class="project-tag">Core Data</span></div>
-            <h3 class="project-name">Project 04</h3>
-            <p class="project-desc">High-load mobile architecture solution featuring custom design system tokens, resilient networking layer, and thread-safe local persistence.</p>
-            <a href="Project-4/" class="project-link">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
-          </div>
-        </div>
-
-        <!-- Project 5: Selected Project 05 (Dedicated Split-Index Showcase) -->
-        <div class="project-card reveal">
-          <div class="project-thumb">
-            <img src="images/project-5.jpg" alt="iOS Project 05" loading="lazy">
-          </div>
-          <div class="project-info">
-            <div class="project-tags"><span class="project-tag">SwiftUI</span><span class="project-tag">Gestures</span><span class="project-tag">Keychain</span></div>
-            <h3 class="project-name">Project 05</h3>
-            <p class="project-desc">Interactive mobile interface featuring fluid multi-touch canvas gestures, background thread safety, and encrypted biometric authentication.</p>
-            <a href="Project-5/" class="project-link">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        <!-- 03: Project 03 -->
+        <div class="cell" tabindex="0" role="button" aria-label="Project 03">
+          <div class="cell-media" style="background-image:url('images/project-3.jpg')"></div>
+          <div class="cell-num">03</div>
+          <div class="cell-name">Project 03</div>
+          <div class="cell-cat">Swift · SwiftData · CloudKit · Offline</div>
+          <div class="cell-detail">
+            <p class="cell-desc">Modular iOS application built with clean layer separation, offline-first SwiftData synchronization, and fluid interactive animations.</p>
+            <div class="cell-tags">
+              <span class="project-tag">Swift</span>
+              <span class="project-tag">SwiftData</span>
+              <span class="project-tag">CloudKit</span>
+            </div>
+            <a href="Project-3/" class="cell-link-btn" onclick="event.stopPropagation()">
+              Explore Project 03
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
 
-        <!-- Project 6: Selected Project 06 (Dedicated Split-Index Showcase) -->
-        <div class="project-card reveal">
-          <div class="project-thumb">
-            <img src="images/project-6.jpg" alt="iOS Project 06" loading="lazy">
+        <!-- 04: Project 04 -->
+        <div class="cell" tabindex="0" role="button" aria-label="Project 04">
+          <div class="cell-media" style="background-image:url('images/project-4.jpg')"></div>
+          <div class="cell-num">04</div>
+          <div class="cell-name">Project 04</div>
+          <div class="cell-cat">SwiftUI · Concurrency · Core Data</div>
+          <div class="cell-detail">
+            <p class="cell-desc">High-load mobile architecture solution featuring custom design system tokens, resilient networking layer, and thread-safe local persistence.</p>
+            <div class="cell-tags">
+              <span class="project-tag">SwiftUI</span>
+              <span class="project-tag">Concurrency</span>
+              <span class="project-tag">Core Data</span>
+            </div>
+            <a href="Project-4/" class="cell-link-btn" onclick="event.stopPropagation()">
+              Explore Project 04
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
-          <div class="project-info">
-            <div class="project-tags"><span class="project-tag">UIKit</span><span class="project-tag">Coordinator</span><span class="project-tag">XCTest</span></div>
-            <h3 class="project-name">Project 06</h3>
-            <p class="project-desc">Architecture-first iOS template with decoupled coordinator routing, custom layout components, and automated UI snapshot testing.</p>
-            <a href="Project-6/" class="project-link">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        </div>
+
+        <!-- 05: Project 05 -->
+        <div class="cell" tabindex="0" role="button" aria-label="Project 05">
+          <div class="cell-media" style="background-image:url('images/project-5.jpg')"></div>
+          <div class="cell-num">05</div>
+          <div class="cell-name">Project 05</div>
+          <div class="cell-cat">SwiftUI · Gestures · Keychain · Biometrics</div>
+          <div class="cell-detail">
+            <p class="cell-desc">Interactive mobile interface featuring fluid multi-touch canvas gestures, background thread safety, and encrypted biometric authentication.</p>
+            <div class="cell-tags">
+              <span class="project-tag">SwiftUI</span>
+              <span class="project-tag">Gestures</span>
+              <span class="project-tag">Keychain</span>
+            </div>
+            <a href="Project-5/" class="cell-link-btn" onclick="event.stopPropagation()">
+              Explore Project 05
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 06: Project 06 -->
+        <div class="cell" tabindex="0" role="button" aria-label="Project 06">
+          <div class="cell-media" style="background-image:url('images/project-6.jpg')"></div>
+          <div class="cell-num">06</div>
+          <div class="cell-name">Project 06</div>
+          <div class="cell-cat">UIKit · Coordinator · XCTest · Architecture</div>
+          <div class="cell-detail">
+            <p class="cell-desc">Architecture-first iOS template with decoupled coordinator routing, custom layout components, and automated UI snapshot testing.</p>
+            <div class="cell-tags">
+              <span class="project-tag">UIKit</span>
+              <span class="project-tag">Coordinator</span>
+              <span class="project-tag">XCTest</span>
+            </div>
+            <a href="Project-6/" class="cell-link-btn" onclick="event.stopPropagation()">
+              Explore Project 06
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
       </div>
@@ -433,6 +499,177 @@
   </section>
 
   <!-- =========================================================================
+       MARK: - APPS ON APP STORE / ПРИЛОЖЕНИЯ В APP STORE
+       Curated ecosystem strip with app icons, platform categories, and App Store badges
+       ========================================================================= -->
+  <div class="divider"></div>
+  <section class="section apps-section" id="apps">
+    <div class="section-inner">
+      <div class="section-label reveal">Apple Ecosystem &amp; Distribution</div>
+      <div class="section-title reveal">Apps on the <em>App Store</em></div>
+      <div class="section-subtitle reveal">Native iOS and watchOS software engineered with Swift, Clean Architecture, and fluid performance. Tap to download from the App Store or explore interactive web showcases.</div>
+
+      <div class="apps-showcase-grid reveal">
+        <!-- 01: Balance Cleaner -->
+        <div class="app-card">
+          <div class="app-card-top">
+            <div class="app-card-icon" style="background:#07110d; border-color:rgba(87, 217, 159, 0.35);">
+              <img src="BalanceCleaner/assets/icons/x1024_light.svg" alt="Balance Cleaner App Icon" loading="lazy">
+            </div>
+            <div class="app-card-meta">
+              <div class="app-card-title"><a href="BalanceCleaner/">Balance Cleaner</a></div>
+              <span class="app-card-cat">Storage &amp; Apple ID Zeroing</span>
+              <div class="app-card-tags">
+                <span class="app-badge-tag">iOS 17+</span>
+                <span class="app-badge-tag">StoreKit 2</span>
+              </div>
+            </div>
+          </div>
+          <div class="app-card-bottom">
+            <a href="https://apps.apple.com/app/balance-cleaner/id6741703648" target="_blank" rel="noopener noreferrer" class="app-store-badge-link" aria-label="Download Balance Cleaner on the App Store">
+              <img src="assets/images/app-store-badge.svg" alt="Download on the App Store">
+            </a>
+            <a href="BalanceCleaner/" class="app-web-link">
+              <span>Showcase</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 02: Nightwell -->
+        <div class="app-card">
+          <div class="app-card-top">
+            <div class="app-card-icon" style="background:#030c18; border-color:rgba(56, 189, 248, 0.35);">
+              <img src="images/project-2.jpg" alt="Nightwell App Icon" loading="lazy">
+            </div>
+            <div class="app-card-meta">
+              <div class="app-card-title"><a href="Nightwell/">Nightwell</a></div>
+              <span class="app-card-cat">Sleep Tracking &amp; Generative Audio</span>
+              <div class="app-card-tags">
+                <span class="app-badge-tag">iOS &amp; watchOS</span>
+                <span class="app-badge-tag">HealthKit</span>
+              </div>
+            </div>
+          </div>
+          <div class="app-card-bottom">
+            <a href="https://apps.apple.com/app/nightwell/id6741703649" target="_blank" rel="noopener noreferrer" class="app-store-badge-link" aria-label="Download Nightwell on the App Store">
+              <img src="assets/images/app-store-badge.svg" alt="Download on the App Store">
+            </a>
+            <a href="Nightwell/" class="app-web-link">
+              <span>Showcase</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 03: Project 03 -->
+        <div class="app-card">
+          <div class="app-card-top">
+            <div class="app-card-icon" style="background:#121316; border-color:rgba(201, 169, 110, 0.25);">
+              <img src="images/project-3.jpg" alt="Project 03 Icon" loading="lazy">
+            </div>
+            <div class="app-card-meta">
+              <div class="app-card-title"><a href="Project-3/">Project 03</a></div>
+              <span class="app-card-cat">Cloud Persistence &amp; Sync</span>
+              <div class="app-card-tags">
+                <span class="app-badge-tag">SwiftData</span>
+                <span class="app-badge-tag">CloudKit</span>
+              </div>
+            </div>
+          </div>
+          <div class="app-card-bottom">
+            <a href="https://apps.apple.com/app/project-03/id" target="_blank" rel="noopener noreferrer" class="app-store-badge-link" aria-label="Download Project 03 on the App Store">
+              <img src="assets/images/app-store-badge.svg" alt="Download on the App Store">
+            </a>
+            <a href="Project-3/" class="app-web-link">
+              <span>Showcase</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 04: Project 04 -->
+        <div class="app-card">
+          <div class="app-card-top">
+            <div class="app-card-icon" style="background:#151412; border-color:rgba(201, 169, 110, 0.25);">
+              <img src="images/project-4.jpg" alt="Project 04 Icon" loading="lazy">
+            </div>
+            <div class="app-card-meta">
+              <div class="app-card-title"><a href="Project-4/">Project 04</a></div>
+              <span class="app-card-cat">High-Load Concurrency &amp; Core Data</span>
+              <div class="app-card-tags">
+                <span class="app-badge-tag">Swift 6</span>
+                <span class="app-badge-tag">Core Data</span>
+              </div>
+            </div>
+          </div>
+          <div class="app-card-bottom">
+            <a href="https://apps.apple.com/app/project-04/id" target="_blank" rel="noopener noreferrer" class="app-store-badge-link" aria-label="Download Project 04 on the App Store">
+              <img src="assets/images/app-store-badge.svg" alt="Download on the App Store">
+            </a>
+            <a href="Project-4/" class="app-web-link">
+              <span>Showcase</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 05: Project 05 -->
+        <div class="app-card">
+          <div class="app-card-top">
+            <div class="app-card-icon" style="background:#121514; border-color:rgba(201, 169, 110, 0.25);">
+              <img src="images/project-5.jpg" alt="Project 05 Icon" loading="lazy">
+            </div>
+            <div class="app-card-meta">
+              <div class="app-card-title"><a href="Project-5/">Project 05</a></div>
+              <span class="app-card-cat">Interactive Gestures &amp; Biometrics</span>
+              <div class="app-card-tags">
+                <span class="app-badge-tag">SwiftUI</span>
+                <span class="app-badge-tag">Face ID</span>
+              </div>
+            </div>
+          </div>
+          <div class="app-card-bottom">
+            <a href="https://apps.apple.com/app/project-05/id" target="_blank" rel="noopener noreferrer" class="app-store-badge-link" aria-label="Download Project 05 on the App Store">
+              <img src="assets/images/app-store-badge.svg" alt="Download on the App Store">
+            </a>
+            <a href="Project-5/" class="app-web-link">
+              <span>Showcase</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 06: Project 06 -->
+        <div class="app-card">
+          <div class="app-card-top">
+            <div class="app-card-icon" style="background:#161214; border-color:rgba(201, 169, 110, 0.25);">
+              <img src="images/project-6.jpg" alt="Project 06 Icon" loading="lazy">
+            </div>
+            <div class="app-card-meta">
+              <div class="app-card-title"><a href="Project-6/">Project 06</a></div>
+              <span class="app-card-cat">Decoupled Architecture &amp; Tests</span>
+              <div class="app-card-tags">
+                <span class="app-badge-tag">UIKit</span>
+                <span class="app-badge-tag">XCTest</span>
+              </div>
+            </div>
+          </div>
+          <div class="app-card-bottom">
+            <a href="https://apps.apple.com/app/project-06/id" target="_blank" rel="noopener noreferrer" class="app-store-badge-link" aria-label="Download Project 06 on the App Store">
+              <img src="assets/images/app-store-badge.svg" alt="Download on the App Store">
+            </a>
+            <a href="Project-6/" class="app-web-link">
+              <span>Showcase</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
        MARK: - CONTACT / КОНТАКТЫ
        Email, direct social links (GitHub, LinkedIn, Telegram), and message form
        ========================================================================= -->
@@ -456,26 +693,14 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
             <span>hakobghlijyan@gmail.com</span>
           </a>
-
-          <!-- Social Links -->
-          <div class="social-links">
-            <!-- GitHub -->
-            <a href="https://github.com/HakobGhlijyan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/hakob-ghlijyan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-            <!-- Telegram -->
-            <a href="https://t.me/hakobghlijyan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Telegram">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-            </a>
-          </div>
         </div>
 
-        <!-- Interactive Contact Form -->
-        <form class="contact-form reveal" id="contactForm">
+        <!-- Interactive Contact Form (FormSubmit.co connected) -->
+        <form class="contact-form reveal" id="contactForm" action="https://formsubmit.co/293c41b07af89f4fd053ff7bbb0cf770" method="POST">
+          <input type="hidden" name="_subject" value="New Portfolio Message from HakobGhlijyan.github.io">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -488,20 +713,99 @@
             <label for="message">Message</label>
             <textarea id="message" name="message" placeholder="Tell me about your project, idea, or role..." required></textarea>
           </div>
-          <button class="btn-submit" type="button" id="submitBtn">Send Message</button>
+          <button class="btn-submit" type="submit" id="submitBtn">Send Message</button>
         </form>
       </div>
     </div>
   </section>
 
   <!-- =========================================================================
-       MARK: - FOOTER / ПОДВАЛ САЙТА
-       Clean copyright and signature
+       MARK: - FOOTER / ПОДВАЛ САЙТА (Clearwave-Inspired Architectural Footer)
+       Multi-column brand layout, social links, portfolio navigation, and theme toggle
        ========================================================================= -->
   <footer class="footer">
-    <p>
-      &copy; 2026 Hakob Ghlijyan &mdash; iOS Engineer. Crafted with precision &amp; Clean Code.
-    </p>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Brand & Bio Column / Колонка бренда и соцсетей -->
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo">Hakob <span>Ghlijyan</span></a>
+          <p class="footer-brand-desc">
+            Senior iOS Engineer crafting native Apple platform experiences with Clean Architecture, Swift, and fluid performance.
+          </p>
+          <div class="footer-socials">
+            <!-- GitHub -->
+            <a href="https://github.com/HakobGhlijyan" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/hakobghlijyan/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <!-- Telegram -->
+            <a href="https://t.me/hakobghlijyan" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            </a>
+            <!-- Email -->
+            <a href="mailto:hakobghlijyan@gmail.com" class="social-btn" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Links Column / Навигация -->
+        <div>
+          <div class="footer-col-label">Navigation</div>
+          <div class="footer-links">
+            <a href="#about">About Engineer</a>
+            <a href="#skills">Skills &amp; Tech Stack</a>
+            <a href="#projects">Featured Work</a>
+            <a href="#experience">Career Journey</a>
+            <a href="#apps">Apps on App Store</a>
+            <a href="#contact">Get in Touch</a>
+          </div>
+        </div>
+
+        <!-- Applications Column / Проекты -->
+        <div>
+          <div class="footer-col-label">Applications</div>
+          <div class="footer-links">
+            <a href="BalanceCleaner/">Balance Cleaner</a>
+            <a href="Nightwell/">Nightwell iOS</a>
+            <a href="Project-3/">Project 03</a>
+            <a href="Project-4/">Project 04</a>
+            <a href="Project-5/">Project 05</a>
+          </div>
+        </div>
+
+        <!-- Expertise Column / Экспертиза -->
+        <div>
+          <div class="footer-col-label">Expertise</div>
+          <div class="footer-links">
+            <a href="#skills">Swift 6 Concurrency</a>
+            <a href="#skills">SwiftUI &amp; Combine</a>
+            <a href="#skills">Clean Architecture (VIPER/TCA)</a>
+            <a href="#skills">watchOS &amp; HealthKit</a>
+            <a href="#skills">App Store Distribution</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom / Нижняя плашка футера -->
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 Hakob Ghlijyan &mdash; iOS Engineer. Crafted with precision &amp; Clean Code.
+        </div>
+        <div class="footer-actions">
+          <button class="theme theme-footer" id="footerThemeToggle" type="button" aria-label="Toggle theme">
+            <span class="theme-icon"></span>
+          </button>
+          <a href="#hero" class="footer-top-btn" aria-label="Scroll to top">
+            <span>Back to top</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <!-- MARK: - Scripts / Скрипты -->
