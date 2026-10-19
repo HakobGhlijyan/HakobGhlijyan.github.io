@@ -1,23 +1,25 @@
 # Session Handoff
 
 ## Current Status
-- Репозиторий полностью переведен на эталонный дизайн **StackCraft** (`2162_stackcraft`).
-- Все фотографии профиля бережно сохранены в `assets/` (`profile.jpg`, `avatar-mini.png`, `Hakob_profile+smallSize.png`).
-- Для проекта **Nightwell** создана индивидуальная структура каталога:
-  - `projects/nightwell/index.html` (интерактивный showcase с 4 панелями: Work, About, Support, Privacy).
-  - `projects/nightwell/images/` (32 оригинальных промо-скриншота приложения для iPhone, iPad и Apple Watch).
-  - Все скриншоты подключены к интерактивным слайдам превью.
-  - Превью-карточка Nightwell на главной странице обновлена реальным скриншотом приложения.
-- Ссылка в главной странице ведет на `projects/nightwell/`.
-- Подготовлен подробный ответ по интеграции Balance Cleaner прямо в этот репозиторий (`BalanceCleaner/`).
+- Главное портфолио работает на дизайн-системе **StackCraft** (`index.html`, `css/style.css`, `js/main.js`).
+- Для **Nightwell** создан выделенный корневой каталог `Nightwell/`:
+  - `Nightwell/index.html` — полноценный статический маркетинговый, саппорт и юридический сайт для App Store Connect.
+  - Содержит 5 вкладок: **Features (Work)**, **Screenshots** (галерея с фильтрами Duo, iPhone, iPad, Watch), **About** (автор Акоб Клиджян, Swift/SwiftUI стек), **Support** (12 FAQ-аккордеонов, чек-лист, контакты), **Privacy** (13 разделов политики с нулевым трекингом и HealthKit on-device).
+  - Скриншоты в правой канве настроены на `object-fit: contain` и фон `#00112A`, исключая обрезку и гарантируя точное отображение устройств.
+  - Двуязычный переключатель **EN / RU** с запоминанием выбора в `localStorage`.
+  - Все 32 промо-скриншота находятся в `Nightwell/images/`.
+  - Создана подробная документация `Nightwell/README.md` со всеми токенами и ссылками для App Store Connect.
+- Ссылка в карточке Nightwell на главной странице теперь ведет напрямую в корневой каталог `Nightwell/` (`hakobghlijyan.github.io/Nightwell/`).
+- Старый маршрут `projects/nightwell.html` снабжен редиректом на `../Nightwell/`.
 
 ## Working Branch
 `dev/FeaturesNewSiteDevelop`
 
 ## Decisions Made
-1. **Структура подпроектов**: Каждый отдельный проект получает собственную изолированную директорию (`projects/nightwell/` и т.д.) со своими промо-материалами и ссылкой возврата в главное портфолио.
-2. **Интеграция Balance Cleaner**: Рекомендовано перенести сайт Balance Cleaner в папку `BalanceCleaner/` внутри текущего репозитория, что позволит сохранить URL `hakobghlijyan.github.io/BalanceCleaner/` и управлять всем сайтом из единой ветки.
+1. **Корневая структура проектов для GitHub Pages**: Каждый проект размещается в персональном каталоге первого уровня в корне репозитория (`/Nightwell/`, `/BalanceCleaner/`), исключая промежуточную папку `/projects/` из публичных URL. Это дает чистые ссылки: `https://hakobghlijyan.github.io/Nightwell/` и `https://hakobghlijyan.github.io/BalanceCleaner/`.
+2. **App Store Connect Compliance**: Сайт Nightwell полностью автономен, не использует внешние CDN и трекеры, не требует баннеров согласия на куки и удовлетворяет строгим требованиям Apple к Marketing, Support и Privacy URL.
 
 ## Next Steps
-1. Дождаться подтверждения пользователя по переносу исходников Balance Cleaner в репозиторий.
-2. При согласии скопировать код Balance Cleaner в папку `BalanceCleaner/` и добавить кнопку «Back to Portfolio».
+1. Дождаться добавления файлов проекта `BalanceCleaner` от пользователя в директорию проекта.
+2. При получении файлов разместить их в корневой папке `BalanceCleaner/` и добавить кнопку быстрого возврата в главное портфолио (`../index.html`).
+3. При необходимости актуализировать ссылки на остальные проекты (03–06) по мере их готовности.
