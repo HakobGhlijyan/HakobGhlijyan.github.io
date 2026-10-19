@@ -1,0 +1,45 @@
+{
+  "language": "Español",
+  "code": "es",
+  "hero": {
+    "eyebrow": "Una vida digital más tranquila",
+    "title": "Haz espacio para lo que importa.",
+    "lead": "BalanceCleaner aporta claridad a tu mundo digital con herramientas reflexivas y privacidad en el centro.",
+    "explore": "Explorar el producto →",
+    "download": "Descargar"
+  },
+  "tiers": {
+    "label": "Purchase Tiers",
+    "title": "Cómo funciona la compensación de saldo",
+    "items": [
+      {
+        "id": "tier1",
+        "icon": "tier1.jpeg"
+      },
+      {
+        "id": "tier2",
+        "icon": "tier2.jpeg"
+      },
+      {
+        "id": "tier3",
+        "icon": "tier3.jpeg"
+      },
+      {
+        "id": "tier4",
+        "icon": "tier4.jpeg"
+      },
+      {
+        "id": "tier5",
+        "icon": "tier5.jpeg"
+      },
+      {
+        "id": "tier10",
+        "icon": "tier10.jpeg"
+      }
+    ],
+    "note": "Smart Balance Matcher selecciona automáticamente la combinación óptima de niveles para llegar exactamente a 0 €."
+  },
+  "features": {
+    "title": "Sencillo con el primer toque."
+  }
+}

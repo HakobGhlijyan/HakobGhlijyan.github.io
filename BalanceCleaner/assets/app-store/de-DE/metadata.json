@@ -1,0 +1,40 @@
+{
+  "locale": "de-DE",
+  "name": "BalanceCleaner",
+  "subtitle": "Apple ID Guthaben auf Null. Region wechseln.",
+  "description": "Setze dein Apple ID-Guthaben einfach auf Null, um deine App Store-Region zu ändern.\n\nBalanceCleaner nutzt Apples offizielles StoreKit-System.",
+  "keywords": "apple id guthaben, app store region wechseln, guthaben leeren, storekit",
+  "promotional_text": "Dein Apple ID-Guthaben in Sekunden auf Null.",
+  "tiers": [
+    {
+      "id": "tier1",
+      "price": "~0,99 €",
+      "display": "Stufe 1 — 1 Münze (~0,99 €)"
+    },
+    {
+      "id": "tier2",
+      "price": "~1,99 €",
+      "display": "Stufe 2 — 2 Münzen (~1,99 €)"
+    },
+    {
+      "id": "tier3",
+      "price": "~2,99 €",
+      "display": "Stufe 3 — 3 Münzen (~2,99 €)"
+    },
+    {
+      "id": "tier4",
+      "price": "~3,99 €",
+      "display": "Stufe 4 — 4 Münzen (~3,99 €)"
+    },
+    {
+      "id": "tier5",
+      "price": "~4,99 €",
+      "display": "Stufe 5 — 5 Münzen (~4,99 €)"
+    },
+    {
+      "id": "tier10",
+      "price": "~9,99 €",
+      "display": "Stufe 10 — 10 Münzen (~9,99 €)"
+    }
+  ]
+}

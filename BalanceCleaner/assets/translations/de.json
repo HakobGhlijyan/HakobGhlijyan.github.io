@@ -1,0 +1,45 @@
+{
+  "language": "Deutsch",
+  "code": "de",
+  "hero": {
+    "eyebrow": "Ein ruhigeres digitales Leben",
+    "title": "Mach Platz für das Wesentliche.",
+    "lead": "BalanceCleaner bringt Klarheit in dein digitales Leben mit durchdachten Werkzeugen und Datenschutz im Mittelpunkt.",
+    "explore": "Produkt erkunden →",
+    "download": "Herunterladen"
+  },
+  "tiers": {
+    "label": "Purchase Tiers",
+    "title": "Wie das Guthaben-Clearing funktioniert",
+    "items": [
+      {
+        "id": "tier1",
+        "icon": "tier1.jpeg"
+      },
+      {
+        "id": "tier2",
+        "icon": "tier2.jpeg"
+      },
+      {
+        "id": "tier3",
+        "icon": "tier3.jpeg"
+      },
+      {
+        "id": "tier4",
+        "icon": "tier4.jpeg"
+      },
+      {
+        "id": "tier5",
+        "icon": "tier5.jpeg"
+      },
+      {
+        "id": "tier10",
+        "icon": "tier10.jpeg"
+      }
+    ],
+    "note": "Smart Balance Matcher wählt automatisch die optimale Kombination aus Stufen, um genau 0 € zu erreichen."
+  },
+  "features": {
+    "title": "Durchdacht einfach."
+  }
+}

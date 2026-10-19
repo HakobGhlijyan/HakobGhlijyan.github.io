@@ -1,0 +1,40 @@
+{
+  "locale": "it-IT",
+  "name": "BalanceCleaner",
+  "subtitle": "Saldo Apple ID a zero. Cambia regione.",
+  "description": "Azzera facilmente il saldo Apple ID per cambiare la tua regione App Store.",
+  "keywords": "saldo apple id, cambia regione app store, svuota saldo, storekit",
+  "promotional_text": "Il tuo saldo Apple ID a zero in pochi secondi.",
+  "tiers": [
+    {
+      "id": "tier1",
+      "price": "~0,99 €",
+      "display": "Livello 1 — 1 moneta (~0,99 €)"
+    },
+    {
+      "id": "tier2",
+      "price": "~1,99 €",
+      "display": "Livello 2 — 2 monete (~1,99 €)"
+    },
+    {
+      "id": "tier3",
+      "price": "~2,99 €",
+      "display": "Livello 3 — 3 monete (~2,99 €)"
+    },
+    {
+      "id": "tier4",
+      "price": "~3,99 €",
+      "display": "Livello 4 — 4 monete (~3,99 €)"
+    },
+    {
+      "id": "tier5",
+      "price": "~4,99 €",
+      "display": "Livello 5 — 5 monete (~4,99 €)"
+    },
+    {
+      "id": "tier10",
+      "price": "~9,99 €",
+      "display": "Livello 10 — 10 monete (~9,99 €)"
+    }
+  ]
+}

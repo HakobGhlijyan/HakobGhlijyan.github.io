@@ -1,0 +1,45 @@
+{
+  "language": "Հայերեն",
+  "code": "hy",
+  "hero": {
+    "eyebrow": "Հանգիստ թվային կյանք",
+    "title": "Տեղ բացիր կարևորի համար։",
+    "lead": "BalanceCleaner-ը ձեր Apple ID-ի մնացորդը մաքրում է հստակ և թափանցիկ կերպով։",
+    "explore": "Ուսումնասիրել →",
+    "download": "Ներբեռնել"
+  },
+  "tiers": {
+    "label": "Purchase Tiers",
+    "title": "Ինչպես է աշխատում մնացորդի մաքրումը",
+    "items": [
+      {
+        "id": "tier1",
+        "icon": "tier1.jpeg"
+      },
+      {
+        "id": "tier2",
+        "icon": "tier2.jpeg"
+      },
+      {
+        "id": "tier3",
+        "icon": "tier3.jpeg"
+      },
+      {
+        "id": "tier4",
+        "icon": "tier4.jpeg"
+      },
+      {
+        "id": "tier5",
+        "icon": "tier5.jpeg"
+      },
+      {
+        "id": "tier10",
+        "icon": "tier10.jpeg"
+      }
+    ],
+    "note": "Smart Balance Matcher-ը ավտոմատ կընտրի լավագույն համակցությունը՝ ստանալու ճշիշ 0 մնացորդ։"
+  },
+  "features": {
+    "title": "Պարզ առաջին հպումից։"
+  }
+}
