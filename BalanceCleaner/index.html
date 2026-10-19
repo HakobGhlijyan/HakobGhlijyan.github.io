@@ -73,6 +73,12 @@
 
     <!-- Actions: Language & Mobile Menu (Default Dark Theme) -->
     <div class="site-actions">
+      <!-- Direct App Store Download Button -->
+      <a href="https://apps.apple.com/app/balance-cleaner/id6741703648" target="_blank" rel="noopener noreferrer" class="header-appstore-btn" title="Download BalanceCleaner on App Store" aria-label="Download on App Store">
+        <img src="assets/apple.logo@1x.png" alt="Apple" class="header-apple-logo">
+        <span>App Store</span>
+      </a>
+
       <!-- 7-Language Switcher Dropdown -->
       <div class="custom-lang">
         <button class="lang-btn" aria-label="Select language">
@@ -101,6 +107,7 @@
   <div class="mobile-nav-overlay" id="mobileNav">
     <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</button>
     <a href="../index.html">&larr; Main Portfolio</a>
+    <a href="https://apps.apple.com/app/balance-cleaner/id6741703648" target="_blank" rel="noopener noreferrer" style="color:var(--green); font-weight:700;"> Download on App Store</a>
     <a data-nav="features" data-i18n="features">Features</a>
     <a data-nav="screens" data-i18n="screens">Screens</a>
     <a data-nav="guide" data-i18n="guideLabel">Guide</a>
@@ -122,92 +129,94 @@
            PANEL 1: FEATURES (Возможности приложения)
            ===================================================================== -->
       <div class="panel panel-active" id="panel-features">
-        <div class="panel-hero">
-          <span class="panel-eyebrow" data-i18n="eyebrow">A calmer digital life</span>
-          <h1 class="panel-title" data-i18n="title">Zero your Apple ID balance.<br>Change region freely.</h1>
-          <p class="panel-lead" data-i18n="lead">BalanceCleaner lets you clear your Apple ID leftover balance using real in-app purchases — so you can switch your App Store region without restriction.</p>
-          <div class="app-badge-box">
-            <span class="app-badge" data-i18n="comingSoon">Coming soon to the App Store</span>
-          </div>
+        <div class="panel-header">
+          <span data-i18n="featuresHeader">BalanceCleaner for iPhone &amp; iPad · Native StoreKit 2</span>
         </div>
 
-        <ul class="interactive-list">
-          <!-- Feature 1: Clear by design -->
-          <li class="interactive-item" data-slide="feat-clear">
+        <ul class="interactive-list" id="featuresList">
+          <!-- Feature 1: Choose Custom Clear -->
+          <li class="interactive-item active" data-slide="feat-1">
             <div class="interactive-link">
               <span class="item-num">01</span>
-              <span class="item-title" data-i18n="clear">Clear by design</span>
-              <span class="item-tag">Precision $0.05–$50</span>
+              <span class="item-title" data-i18n="feat1Title">Choose Custom Clear</span>
               <div class="item-arrow">
                 <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
+              <span class="item-tag" data-i18n="feat1Tag">Dial &amp; Input</span>
             </div>
           </li>
 
-          <!-- Feature 2: Balance Split Breakdown -->
-          <li class="interactive-item" data-slide="feat-split">
+          <!-- Feature 2: Calculate & Split Preview -->
+          <li class="interactive-item" data-slide="feat-2">
             <div class="interactive-link">
               <span class="item-num">02</span>
-              <span class="item-title" data-i18n="faq2q">How balance split works</span>
-              <span class="item-tag">Calculated Parts</span>
+              <span class="item-title" data-i18n="feat2Title">Calculate &amp; Split Preview</span>
               <div class="item-arrow">
                 <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
+              <span class="item-tag" data-i18n="feat2Tag">Split Math</span>
             </div>
           </li>
 
-          <!-- Feature 3: StoreKit 2 Native Confirmation -->
-          <li class="interactive-item" data-slide="feat-storekit">
+          <!-- Feature 3: StoreKit Secure Settlement -->
+          <li class="interactive-item" data-slide="feat-3">
             <div class="interactive-link">
               <span class="item-num">03</span>
-              <span class="item-title" data-i18n="privCard1Title">Apple StoreKit Secure</span>
-              <span class="item-tag">Official In-App Purchases</span>
+              <span class="item-title" data-i18n="feat3Title">StoreKit Secure Settlement</span>
               <div class="item-arrow">
                 <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
+              <span class="item-tag" data-i18n="feat3Tag">StoreKit 2</span>
             </div>
           </li>
 
-          <!-- Feature 4: Privacy First -->
-          <li class="interactive-item" data-slide="feat-privacy">
+          <!-- Feature 4: Clearance History & Logs -->
+          <li class="interactive-item" data-slide="feat-4">
             <div class="interactive-link">
               <span class="item-num">04</span>
-              <span class="item-title" data-i18n="private">Privacy first</span>
-              <span class="item-tag">0 Tracking · No Account</span>
+              <span class="item-title" data-i18n="feat4Title">Clearance History &amp; Logs</span>
               <div class="item-arrow">
                 <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
+              <span class="item-tag" data-i18n="feat4Tag">History</span>
             </div>
           </li>
 
-          <!-- Feature 5: Starfield & Glow Intent -->
-          <li class="interactive-item" data-slide="feat-pro">
+          <!-- Feature 5: Privacy & How It Works -->
+          <li class="interactive-item" data-slide="feat-5">
             <div class="interactive-link">
               <span class="item-num">05</span>
-              <span class="item-title" data-i18n="proFeaturesTitle">Premium Features</span>
-              <span class="item-tag">Starfield · Apple Glow</span>
+              <span class="item-title" data-i18n="feat5Title">Privacy &amp; How It Works</span>
               <div class="item-arrow">
                 <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
+              <span class="item-tag" data-i18n="feat5Tag">Zero Tracking</span>
             </div>
           </li>
 
-          <!-- Feature 6: Region Change Checklist -->
-          <li class="interactive-item" data-slide="feat-checklist">
+          <!-- Feature 6: Premium Features & Glow -->
+          <li class="interactive-item" data-slide="feat-6">
             <div class="interactive-link">
               <span class="item-num">06</span>
-              <span class="item-title" data-i18n="faq6q">Region Change Checklist</span>
-              <span class="item-tag">Step-by-step Guide</span>
+              <span class="item-title" data-i18n="feat6Title">Premium Features &amp; Glow</span>
               <div class="item-arrow">
                 <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
+              <span class="item-tag" data-i18n="feat6Tag">Pro Glow</span>
             </div>
           </li>
         </ul>
+
+        <div class="panel-footer">
+          <a href="https://apps.apple.com/app/balance-cleaner/id6741703648" target="_blank" rel="noopener noreferrer" class="app-store-badge-btn" aria-label="Download BalanceCleaner on the App Store">
+            <img src="assets/images/app-store-badge.svg" alt="Download on the App Store" class="app-store-badge-img">
+          </a>
+          <span style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-secondary);" data-i18n="hoverInspect">Hover module to inspect</span>
+        </div>
       </div>
 
       <!-- =====================================================================
-           PANEL 2: SCREENS GALLERY (Галерея экранов по моделям iPhone)
+           PANEL 2: SCREENS GALLERY (Галерея экранов по моделям и устройствам)
            ===================================================================== -->
       <div class="panel" id="panel-screens">
         <div class="screens-sticky-header">
@@ -217,108 +226,110 @@
           <!-- Sticky Model Filters -->
           <div class="model-filter-nav">
             <button type="button" class="filter-pill active" data-filter="all">All</button>
-            <button type="button" class="filter-pill" data-filter="p18">iPhone 18 Pro</button>
+            <button type="button" class="filter-pill" data-filter="cover">Cover</button>
+            <button type="button" class="filter-pill" data-filter="duo">Duo</button>
             <button type="button" class="filter-pill" data-filter="p17">iPhone 17</button>
-            <button type="button" class="filter-pill" data-filter="p16">iPhone 16 Pro</button>
+            <button type="button" class="filter-pill" data-filter="iphone">iPhone</button>
+            <button type="button" class="filter-pill" data-filter="ipad">iPad</button>
             <button type="button" class="filter-pill" data-filter="pse">iPhone SE</button>
-            <button type="button" class="filter-pill" data-filter="store">Store Banners</button>
+            <button type="button" class="filter-pill" data-filter="video">Videos</button>
           </div>
         </div>
 
         <ul class="interactive-list">
-          <!-- Store Banners (Original App Store Carousel Order) -->
-          <li class="interactive-item" data-slide="store-1" data-model="store">
+          <!-- Item 00: Initial All-Devices Cover -->
+          <li class="interactive-item active" data-slide="screen-cover" data-model="cover">
             <div class="interactive-link">
-              <span class="item-num">01</span>
-              <span class="item-title">Smart Balance Cleaner</span>
-              <span class="item-tag">Store Banner 1</span>
-              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </div>
-          </li>
-          <li class="interactive-item" data-slide="store-2" data-model="store">
-            <div class="interactive-link">
-              <span class="item-num">02</span>
-              <span class="item-title">Calculate &amp; Split</span>
-              <span class="item-tag">Store Banner 2</span>
-              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </div>
-          </li>
-          <li class="interactive-item" data-slide="store-3" data-model="store">
-            <div class="interactive-link">
-              <span class="item-num">03</span>
-              <span class="item-title">Track Every Cleared Balance</span>
-              <span class="item-tag">Store Banner 3</span>
-              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </div>
-          </li>
-          <li class="interactive-item" data-slide="store-4" data-model="store">
-            <div class="interactive-link">
-              <span class="item-num">04</span>
-              <span class="item-title">How It Works</span>
-              <span class="item-tag">Store Banner 4</span>
-              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </div>
-          </li>
-          <li class="interactive-item" data-slide="store-5" data-model="store">
-            <div class="interactive-link">
-              <span class="item-num">05</span>
-              <span class="item-title">Pro Features</span>
-              <span class="item-tag">Store Banner 5</span>
+              <span class="item-num">00</span>
+              <span class="item-title">All Devices Ecosystem</span>
+              <span class="item-tag">Cover · All Models</span>
               <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </div>
           </li>
 
-          <!-- iPhone 18 Pro (Real App Screens) -->
-          <li class="interactive-item" data-slide="p18-1" data-model="p18">
+          <!-- Duo Series (10 Screens) -->
+          <li class="interactive-item" data-slide="duo-1" data-model="duo">
             <div class="interactive-link">
-              <span class="item-num">18-1</span>
-              <span class="item-title">Main Cleaner Dial</span>
-              <span class="item-tag">iPhone 18 Pro</span>
+              <span class="item-num">D-01</span>
+              <span class="item-title">Dual Dial Cleaner</span>
+              <span class="item-tag">Duo</span>
               <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </div>
           </li>
-          <li class="interactive-item" data-slide="p18-2" data-model="p18">
+          <li class="interactive-item" data-slide="duo-2" data-model="duo">
             <div class="interactive-link">
-              <span class="item-num">18-2</span>
-              <span class="item-title">Custom Amount Entry</span>
-              <span class="item-tag">iPhone 18 Pro</span>
+              <span class="item-num">D-02</span>
+              <span class="item-title">Split Math &amp; Presets</span>
+              <span class="item-tag">Duo</span>
               <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </div>
           </li>
-          <li class="interactive-item" data-slide="p18-3" data-model="p18">
+          <li class="interactive-item" data-slide="duo-3" data-model="duo">
             <div class="interactive-link">
-              <span class="item-num">18-3</span>
-              <span class="item-title">Split Calculation Preview</span>
-              <span class="item-tag">iPhone 18 Pro</span>
+              <span class="item-num">D-03</span>
+              <span class="item-title">Calculated Parts Breakdown</span>
+              <span class="item-tag">Duo</span>
               <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </div>
           </li>
-          <li class="interactive-item" data-slide="p18-4" data-model="p18">
+          <li class="interactive-item" data-slide="duo-4" data-model="duo">
             <div class="interactive-link">
-              <span class="item-num">18-4</span>
-              <span class="item-title">StoreKit In-App Confirmation</span>
-              <span class="item-tag">iPhone 18 Pro</span>
+              <span class="item-num">D-04</span>
+              <span class="item-title">Native StoreKit Sheet</span>
+              <span class="item-tag">Duo</span>
               <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </div>
           </li>
-          <li class="interactive-item" data-slide="p18-5" data-model="p18">
+          <li class="interactive-item" data-slide="duo-5" data-model="duo">
             <div class="interactive-link">
-              <span class="item-num">18-5</span>
-              <span class="item-title">Region Change Checklist</span>
-              <span class="item-tag">iPhone 18 Pro</span>
+              <span class="item-num">D-05</span>
+              <span class="item-title">Region Change Readiness</span>
+              <span class="item-tag">Duo</span>
               <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </div>
           </li>
-          <li class="interactive-item" data-slide="p18-6" data-model="p18">
+          <li class="interactive-item" data-slide="duo-6" data-model="duo">
             <div class="interactive-link">
-              <span class="item-num">18-6</span>
-              <span class="item-title">Pro Glow Customizer</span>
-              <span class="item-tag">iPhone 18 Pro</span>
+              <span class="item-num">D-06</span>
+              <span class="item-title">Apple Glow &amp; Starfield Themes</span>
+              <span class="item-tag">Duo</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="duo-7" data-model="duo">
+            <div class="interactive-link">
+              <span class="item-num">D-07</span>
+              <span class="item-title">Precision Keypad Input</span>
+              <span class="item-tag">Duo</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="duo-8" data-model="duo">
+            <div class="interactive-link">
+              <span class="item-num">D-08</span>
+              <span class="item-title">Clearance History &amp; Logs</span>
+              <span class="item-tag">Duo</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="duo-9" data-model="duo">
+            <div class="interactive-link">
+              <span class="item-num">D-09</span>
+              <span class="item-title">Rounding Rules &amp; Currencies</span>
+              <span class="item-tag">Duo</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="duo-10" data-model="duo">
+            <div class="interactive-link">
+              <span class="item-num">D-10</span>
+              <span class="item-title">Settings &amp; Support Channel</span>
+              <span class="item-tag">Duo</span>
               <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </div>
           </li>
 
-          <!-- iPhone 17 Screens -->
+          <!-- iPhone 17 Screens (6 Screens) -->
           <li class="interactive-item" data-slide="p17-1" data-model="p17">
             <div class="interactive-link">
               <span class="item-num">17-1</span>
@@ -368,57 +379,91 @@
             </div>
           </li>
 
-          <!-- iPhone 16 Pro Screens -->
-          <li class="interactive-item" data-slide="p16-1" data-model="p16">
+          <!-- iPhone Standard Screens (5 Screens) -->
+          <li class="interactive-item" data-slide="p-1" data-model="iphone">
             <div class="interactive-link">
-              <span class="item-num">16-1</span>
-              <span class="item-title">Cleaner Overview</span>
-              <span class="item-tag">iPhone 16 Pro</span>
+              <span class="item-num">P-1</span>
+              <span class="item-title">Zero Balance Dashboard</span>
+              <span class="item-tag">iPhone</span>
               <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </div>
           </li>
-          <li class="interactive-item" data-slide="p16-2" data-model="p16">
+          <li class="interactive-item" data-slide="p-2" data-model="iphone">
             <div class="interactive-link">
-              <span class="item-num">16-2</span>
-              <span class="item-title">Custom Amount Input</span>
-              <span class="item-tag">iPhone 16 Pro</span>
+              <span class="item-num">P-2</span>
+              <span class="item-title">Calculate &amp; Split Breakdown</span>
+              <span class="item-tag">iPhone</span>
               <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </div>
           </li>
-          <li class="interactive-item" data-slide="p16-3" data-model="p16">
+          <li class="interactive-item" data-slide="p-3" data-model="iphone">
             <div class="interactive-link">
-              <span class="item-num">16-3</span>
-              <span class="item-title">Split Math Engine</span>
-              <span class="item-tag">iPhone 16 Pro</span>
+              <span class="item-num">P-3</span>
+              <span class="item-title">StoreKit Confirmation Sheet</span>
+              <span class="item-tag">iPhone</span>
               <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </div>
           </li>
-          <li class="interactive-item" data-slide="p16-4" data-model="p16">
+          <li class="interactive-item" data-slide="p-4" data-model="iphone">
             <div class="interactive-link">
-              <span class="item-num">16-4</span>
-              <span class="item-title">Native StoreKit Sheet</span>
-              <span class="item-tag">iPhone 16 Pro</span>
+              <span class="item-num">P-4</span>
+              <span class="item-title">Region Change Checklist</span>
+              <span class="item-tag">iPhone</span>
               <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </div>
           </li>
-          <li class="interactive-item" data-slide="p16-5" data-model="p16">
+          <li class="interactive-item" data-slide="p-5" data-model="iphone">
             <div class="interactive-link">
-              <span class="item-num">16-5</span>
-              <span class="item-title">Checklist Validation</span>
-              <span class="item-tag">iPhone 16 Pro</span>
-              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </div>
-          </li>
-          <li class="interactive-item" data-slide="p16-6" data-model="p16">
-            <div class="interactive-link">
-              <span class="item-num">16-6</span>
-              <span class="item-title">Pro Themes Customizer</span>
-              <span class="item-tag">iPhone 16 Pro</span>
+              <span class="item-num">P-5</span>
+              <span class="item-title">Settings &amp; Support Contact</span>
+              <span class="item-tag">iPhone</span>
               <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </div>
           </li>
 
-          <!-- iPhone SE Screens -->
+          <!-- iPad Screens (5 Screens) -->
+          <li class="interactive-item" data-slide="pad-1" data-model="ipad">
+            <div class="interactive-link">
+              <span class="item-num">iPad-1</span>
+              <span class="item-title">Canvas Dial &amp; Presets</span>
+              <span class="item-tag">iPad</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="pad-2" data-model="ipad">
+            <div class="interactive-link">
+              <span class="item-num">iPad-2</span>
+              <span class="item-title">Balance Calculation Engine</span>
+              <span class="item-tag">iPad</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="pad-3" data-model="ipad">
+            <div class="interactive-link">
+              <span class="item-num">iPad-3</span>
+              <span class="item-title">StoreKit Payment Confirmation</span>
+              <span class="item-tag">iPad</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="pad-4" data-model="ipad">
+            <div class="interactive-link">
+              <span class="item-num">iPad-4</span>
+              <span class="item-title">Region Migration Checklist</span>
+              <span class="item-tag">iPad</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="pad-5" data-model="ipad">
+            <div class="interactive-link">
+              <span class="item-num">iPad-5</span>
+              <span class="item-title">Settings &amp; Support Hub</span>
+              <span class="item-tag">iPad</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+
+          <!-- iPhone SE Screens (6 Screens) -->
           <li class="interactive-item" data-slide="pse-1" data-model="pse">
             <div class="interactive-link">
               <span class="item-num">SE-1</span>
@@ -467,6 +512,40 @@
               <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </div>
           </li>
+
+          <!-- Video Demos with Mockup Frames -->
+          <li class="interactive-item" data-slide="video-p18" data-model="video">
+            <div class="interactive-link">
+              <span class="item-num">V-1</span>
+              <span class="item-title">iPhone 18 Pro Demo</span>
+              <span class="item-tag">Video Walkthrough</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="video-p17" data-model="video">
+            <div class="interactive-link">
+              <span class="item-num">V-2</span>
+              <span class="item-title">iPhone 17 Demo</span>
+              <span class="item-tag">Video Walkthrough</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="video-p16" data-model="video">
+            <div class="interactive-link">
+              <span class="item-num">V-3</span>
+              <span class="item-title">iPhone 16 Pro Demo</span>
+              <span class="item-tag">Video Walkthrough</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="video-pse" data-model="video">
+            <div class="interactive-link">
+              <span class="item-num">V-4</span>
+              <span class="item-title">iPhone SE Demo</span>
+              <span class="item-tag">Video Walkthrough</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
         </ul>
       </div>
 
@@ -482,8 +561,8 @@
 
         <div class="panel-body-content" style="padding-top:0;">
           <div class="guide-cards">
-            <!-- Step 1 -->
-            <div class="guide-step-card" data-slide="guide-step1">
+            <!-- Step 1: Check your balance (p1ai-store-black.png) -->
+            <div class="guide-step-card active" data-slide="guide-step1">
               <div class="guide-step-header">
                 <span class="guide-step-badge">STEP 1</span>
                 <span class="guide-step-title" data-i18n="step1Title">Check Your Remaining Balance</span>
@@ -491,7 +570,7 @@
               <p class="guide-step-desc" data-i18n="step1Desc">Open App Store account settings and find your exact remaining store credit.</p>
             </div>
 
-            <!-- Step 2 -->
+            <!-- Step 2: Calculate & Split (p2ai-store-black.png) -->
             <div class="guide-step-card" data-slide="guide-step2">
               <div class="guide-step-header">
                 <span class="guide-step-badge">STEP 2</span>
@@ -500,31 +579,31 @@
               <p class="guide-step-desc" data-i18n="step2Desc">Buy an item or tip in the app. If price exceeds balance, Apple charges the rest from your credit card.</p>
             </div>
 
-            <!-- Step 3 -->
+            <!-- Step 3: Change region checklist (p4ai-store-black.png) -->
             <div class="guide-step-card" data-slide="guide-step3">
               <div class="guide-step-header">
                 <span class="guide-step-badge">STEP 3</span>
-                <span class="guide-step-title" data-i18n="step3Title">Change Region Successfully</span>
+                <span class="guide-step-title" data-i18n="step3Title">Change Region Checklist</span>
               </div>
-              <p class="guide-step-desc" data-i18n="step3Desc">Once zeroed, return to Apple ID settings and freely switch to your new region.</p>
+              <p class="guide-step-desc" data-i18n="step3Desc">Step-by-step checklist to verify zero balance, subscriptions canceled, and prepare for region change.</p>
             </div>
 
-            <!-- Donation Note -->
+            <!-- Step 4: Settings & Contact Support (p5ai-store-black.png) -->
             <div class="guide-step-card" data-slide="guide-step4">
               <div class="guide-step-header">
-                <span class="guide-step-badge">SUPPORT</span>
-                <span class="guide-step-title" data-i18n="donationTitle">Your Payment as a Donation</span>
+                <span class="guide-step-badge">STEP 4</span>
+                <span class="guide-step-title" data-i18n="guideSupportTitle">Settings &amp; Contact Support</span>
               </div>
-              <p class="guide-step-desc" data-i18n="donationDesc">When you pay your remaining balance ($0.50, $1.00, etc.), you are donating directly to support independent iOS development.</p>
+              <p class="guide-step-desc" data-i18n="guideSupportDesc">Access settings, view transaction history, or contact developer and Apple Support if assistance is needed.</p>
             </div>
 
-            <!-- Apple Support -->
-            <div class="guide-step-card" data-slide="guide-step5">
+            <!-- Video Demo: iPhone 18 Pro Walkthrough -->
+            <div class="guide-step-card guide-video-card" data-slide="guide-video">
               <div class="guide-step-header">
-                <span class="guide-step-badge">ASSISTANCE</span>
-                <span class="guide-step-title" data-i18n="guideSupportTitle">Contact Apple Support</span>
+                <span class="guide-step-badge" style="background:rgba(87,217,159,0.18); color:var(--green); border-color:var(--green);">▶ VIDEO DEMO</span>
+                <span class="guide-step-title" data-i18n="stepVideoTitle">iPhone 18 Pro Video Demo</span>
               </div>
-              <p class="guide-step-desc" data-i18n="guideSupportDesc">If your balance is lower than the lowest purchase price, contact Apple Support directly to manually zero it out.</p>
+              <p class="guide-step-desc" data-i18n="stepVideoDesc">Watch interactive zero-balance calculation and StoreKit flow in real time.</p>
             </div>
           </div>
         </div>
@@ -571,35 +650,53 @@
             </p>
 
             <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:0.6rem; margin-bottom:0.9rem;">
-              <div style="background:var(--surface2); border:1px solid var(--line); border-radius:6px; padding:0.6rem 0.8rem;">
-                <span style="font-weight:700; font-size:0.8rem; color:var(--text); display:block;">Tier 1</span>
-                <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--green); font-weight:600;" data-i18n="tier1Price">~$0.99 / ~1 coin</span>
-                <p style="font-size:0.7rem; color:var(--muted); margin-top:2px;" data-i18n="tier1Desc">Clears balance of ~$0.99.</p>
+              <div style="background:var(--surface2); border:1px solid var(--line); border-radius:8px; padding:0.6rem 0.8rem; display:flex; align-items:center; gap:0.7rem;">
+                <img src="assets/images/tier1.jpeg" alt="Tier 1 Icon" style="width:38px; height:38px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid rgba(87, 217, 159, 0.25);">
+                <div>
+                  <span style="font-weight:700; font-size:0.8rem; color:var(--text); display:block;">Tier 1</span>
+                  <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--green); font-weight:600;" data-i18n="tier1Price">~$0.99 / ~1 coin</span>
+                  <p style="font-size:0.68rem; color:var(--muted); margin-top:2px;" data-i18n="tier1Desc">Clears balance of ~$0.99.</p>
+                </div>
               </div>
-              <div style="background:var(--surface2); border:1px solid var(--line); border-radius:6px; padding:0.6rem 0.8rem;">
-                <span style="font-weight:700; font-size:0.8rem; color:var(--text); display:block;">Tier 2</span>
-                <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--green); font-weight:600;" data-i18n="tier2Price">~$1.99 / ~2 coins</span>
-                <p style="font-size:0.7rem; color:var(--muted); margin-top:2px;" data-i18n="tier2Desc">Clears balance of ~$1.99.</p>
+              <div style="background:var(--surface2); border:1px solid var(--line); border-radius:8px; padding:0.6rem 0.8rem; display:flex; align-items:center; gap:0.7rem;">
+                <img src="assets/images/tier2.jpeg" alt="Tier 2 Icon" style="width:38px; height:38px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid rgba(87, 217, 159, 0.25);">
+                <div>
+                  <span style="font-weight:700; font-size:0.8rem; color:var(--text); display:block;">Tier 2</span>
+                  <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--green); font-weight:600;" data-i18n="tier2Price">~$1.99 / ~2 coins</span>
+                  <p style="font-size:0.68rem; color:var(--muted); margin-top:2px;" data-i18n="tier2Desc">Clears balance of ~$1.99.</p>
+                </div>
               </div>
-              <div style="background:var(--surface2); border:1px solid var(--line); border-radius:6px; padding:0.6rem 0.8rem;">
-                <span style="font-weight:700; font-size:0.8rem; color:var(--text); display:block;">Tier 3</span>
-                <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--green); font-weight:600;" data-i18n="tier3Price">~$2.99 / ~3 coins</span>
-                <p style="font-size:0.7rem; color:var(--muted); margin-top:2px;" data-i18n="tier3Desc">Use when balance is around $2–3.</p>
+              <div style="background:var(--surface2); border:1px solid var(--line); border-radius:8px; padding:0.6rem 0.8rem; display:flex; align-items:center; gap:0.7rem;">
+                <img src="assets/images/tier3.jpeg" alt="Tier 3 Icon" style="width:38px; height:38px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid rgba(87, 217, 159, 0.25);">
+                <div>
+                  <span style="font-weight:700; font-size:0.8rem; color:var(--text); display:block;">Tier 3</span>
+                  <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--green); font-weight:600;" data-i18n="tier3Price">~$2.99 / ~3 coins</span>
+                  <p style="font-size:0.68rem; color:var(--muted); margin-top:2px;" data-i18n="tier3Desc">Use when balance is around $2–3.</p>
+                </div>
               </div>
-              <div style="background:var(--surface2); border:1px solid var(--line); border-radius:6px; padding:0.6rem 0.8rem;">
-                <span style="font-weight:700; font-size:0.8rem; color:var(--text); display:block;">Tier 4</span>
-                <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--green); font-weight:600;" data-i18n="tier4Price">~$3.99 / ~4 coins</span>
-                <p style="font-size:0.7rem; color:var(--muted); margin-top:2px;" data-i18n="tier4Desc">Best for a $3–4 leftover balance.</p>
+              <div style="background:var(--surface2); border:1px solid var(--line); border-radius:8px; padding:0.6rem 0.8rem; display:flex; align-items:center; gap:0.7rem;">
+                <img src="assets/images/tier4.jpeg" alt="Tier 4 Icon" style="width:38px; height:38px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid rgba(87, 217, 159, 0.25);">
+                <div>
+                  <span style="font-weight:700; font-size:0.8rem; color:var(--text); display:block;">Tier 4</span>
+                  <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--green); font-weight:600;" data-i18n="tier4Price">~$3.99 / ~4 coins</span>
+                  <p style="font-size:0.68rem; color:var(--muted); margin-top:2px;" data-i18n="tier4Desc">Best for a $3–4 leftover balance.</p>
+                </div>
               </div>
-              <div style="background:var(--surface2); border:1px solid var(--line); border-radius:6px; padding:0.6rem 0.8rem;">
-                <span style="font-weight:700; font-size:0.8rem; color:var(--text); display:block;">Tier 5</span>
-                <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--green); font-weight:600;" data-i18n="tier5Price">~$4.99 / ~5 coins</span>
-                <p style="font-size:0.7rem; color:var(--muted); margin-top:2px;" data-i18n="tier5Desc">Handles balances around $4–5.</p>
+              <div style="background:var(--surface2); border:1px solid var(--line); border-radius:8px; padding:0.6rem 0.8rem; display:flex; align-items:center; gap:0.7rem;">
+                <img src="assets/images/tier5.jpeg" alt="Tier 5 Icon" style="width:38px; height:38px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid rgba(87, 217, 159, 0.25);">
+                <div>
+                  <span style="font-weight:700; font-size:0.8rem; color:var(--text); display:block;">Tier 5</span>
+                  <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--green); font-weight:600;" data-i18n="tier5Price">~$4.99 / ~5 coins</span>
+                  <p style="font-size:0.68rem; color:var(--muted); margin-top:2px;" data-i18n="tier5Desc">Handles balances around $4–5.</p>
+                </div>
               </div>
-              <div style="background:var(--surface2); border:1px solid var(--line); border-radius:6px; padding:0.6rem 0.8rem;">
-                <span style="font-weight:700; font-size:0.8rem; color:var(--text); display:block;">Tier 10</span>
-                <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--green); font-weight:600;" data-i18n="tier10Price">~$9.99 / ~10 coins</span>
-                <p style="font-size:0.7rem; color:var(--muted); margin-top:2px;" data-i18n="tier10Desc">Clears larger balances up to $10.</p>
+              <div style="background:var(--surface2); border:1px solid var(--line); border-radius:8px; padding:0.6rem 0.8rem; display:flex; align-items:center; gap:0.7rem;">
+                <img src="assets/images/tier10.jpeg" alt="Tier 10 Icon" style="width:38px; height:38px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid rgba(87, 217, 159, 0.25);">
+                <div>
+                  <span style="font-weight:700; font-size:0.8rem; color:var(--text); display:block;">Tier 10</span>
+                  <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--green); font-weight:600;" data-i18n="tier10Price">~$9.99 / ~10 coins</span>
+                  <p style="font-size:0.68rem; color:var(--muted); margin-top:2px;" data-i18n="tier10Desc">Clears larger balances up to $10.</p>
+                </div>
               </div>
             </div>
 
@@ -757,53 +854,53 @@
             </div>
           </div>
 
-          <!-- Structured Privacy Accordions (Nightwell Style) -->
-          <div class="faq-list" style="margin-bottom:1.5rem;">
-            <details class="faq-item" open>
+          <!-- Structured Privacy Cards (Support FAQ Style, Opened by Default) -->
+          <div class="faq-container" style="margin-top:1.2rem; margin-bottom:1.5rem;">
+            <details class="faq-card" open>
               <summary>1. Scope &amp; Core Purpose</summary>
-              <div class="faq-answer">
+              <div class="faq-body">
                 This Privacy Policy applies to the <strong>BalanceCleaner</strong> iOS application and this website. The app is designed exclusively to help users zero out leftover Apple ID balances (such as before changing App Store region) through verified in-app purchases.
               </div>
             </details>
 
-            <details class="faq-item">
+            <details class="faq-card" open>
               <summary>2. Apple ID &amp; StoreKit 2 Processing</summary>
-              <div class="faq-answer">
+              <div class="faq-body">
                 BalanceCleaner operates strictly within Apple’s native StoreKit 2 framework. All financial transactions are processed directly and securely by Apple Inc. The developer <strong>never receives</strong> access to your Apple ID password, payment credentials, credit card details, or full billing history.
               </div>
             </details>
 
-            <details class="faq-item">
+            <details class="faq-card" open>
               <summary>3. Information We Collect (Zero Personal Data)</summary>
-              <div class="faq-answer">
+              <div class="faq-body">
                 The BalanceCleaner app does not collect personal information. It contains no advertising, no third-party tracking libraries, and no analytics SDKs. We do not receive your Apple ID, payment methods, or cleanup history.
               </div>
             </details>
 
-            <details class="faq-item">
+            <details class="faq-card" open>
               <summary>4. On-Device Storage &amp; iCloud Sync</summary>
-              <div class="faq-answer">
+              <div class="faq-body">
                 All transaction logs and app settings are stored locally in on-device sandbox storage. If you choose to enable iCloud sync, data synchronizes exclusively through Apple CloudKit within your private Apple ID container. The developer has zero access to this private database.
               </div>
             </details>
 
-            <details class="faq-item">
+            <details class="faq-card" open>
               <summary>5. Website &amp; Support Communications</summary>
-              <div class="faq-answer">
+              <div class="faq-body">
                 This website uses browser <code>localStorage</code> solely to remember your language choice. When you send a message through the support form, your name, email, and message are forwarded directly to our email via FormSubmit solely to respond to your request.
               </div>
             </details>
 
-            <details class="faq-item">
+            <details class="faq-card" open>
               <summary>6. GDPR, CCPA &amp; Permanent Deletion Rights</summary>
-              <div class="faq-answer">
+              <div class="faq-body">
                 Under GDPR and CCPA regulations, you have the full right to inspect, export, or permanently delete any support communications sent to us. Simply contact us at <a href="mailto:balancecleanerapp@gmail.com" style="color:var(--green); text-decoration:underline;">balancecleanerapp@gmail.com</a> to request immediate deletion.
               </div>
             </details>
 
-            <details class="faq-item">
+            <details class="faq-card" open>
               <summary>7. Contact &amp; Developer Information</summary>
-              <div class="faq-answer">
+              <div class="faq-body">
                 BalanceCleaner is developed independently by Hakob Ghlijyan, an iOS engineer based in Yerevan, Armenia. For any privacy or technical questions, please email <a href="mailto:balancecleanerapp@gmail.com" style="color:var(--green); text-decoration:underline;">balancecleanerapp@gmail.com</a>.
               </div>
             </details>
@@ -819,263 +916,379 @@
     <!-- RIGHT SIDE: Visual Canvas Showcase -->
     <div class="canvas-side" id="canvasSide">
 
-      <!-- Default Placeholder -->
-      <div class="canvas-placeholder" id="placeholder">
+      <!-- Default Placeholder (hidden on landing because feat-1 is visible) -->
+      <div class="canvas-placeholder hidden" id="placeholder">
         <div class="placeholder-icon">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4m-10-10h4m12 0h4m-3.3-6.7-2.8 2.8m-5.8 5.8-2.8 2.8m0-11.3 2.8 2.8m5.8 5.8 2.8 2.8"/></svg>
         </div>
         <span class="placeholder-label">Hover over an item to inspect</span>
       </div>
 
-      <!-- Feature Canvas Images -->
-      <div class="canvas-image" data-slide="feat-clear">
-        <img src="assets/screenshots/Page 1ai-store-black.png" alt="Clear by design" loading="lazy">
+      <!-- Feature Canvas Images (Features 1-6 from assets/images/) -->
+      <div class="canvas-image visible" data-slide="feat-1">
+        <img src="assets/images/features1ai-store-black.png" alt="Choose Custom Clear" loading="eager">
         <div class="canvas-caption">
-          <div class="canvas-caption-title">Zero Apple ID Balance</div>
-          <div class="canvas-caption-sub">Precision presets from $0.05 to $50.00 &middot; BalanceCleaner</div>
+          <div class="canvas-caption-title">Choose Custom Clear</div>
+          <div class="canvas-caption-sub">Direct custom amount entry &middot; Precision dial &middot; BalanceCleaner</div>
         </div>
       </div>
 
-      <div class="canvas-image" data-slide="feat-split">
-        <img src="assets/screenshots/Page 2ai-store-black.png" alt="Balance Split Calculation" loading="lazy">
+      <div class="canvas-image" data-slide="feat-2">
+        <img src="assets/images/features2ai-store-black.png" alt="Calculate & Split Preview" loading="lazy">
         <div class="canvas-caption">
-          <div class="canvas-caption-title">Balance Calculation &amp; Split</div>
-          <div class="canvas-caption-sub">Calculated parts before confirming purchase &middot; BalanceCleaner</div>
+          <div class="canvas-caption-title">Calculate &amp; Split Preview</div>
+          <div class="canvas-caption-sub">Intelligent part combination &amp; split math &middot; BalanceCleaner</div>
         </div>
       </div>
 
-      <div class="canvas-image" data-slide="feat-storekit">
-        <img src="assets/screenshots/Page 3ai-store-black.png" alt="Official Apple StoreKit" loading="lazy">
+      <div class="canvas-image" data-slide="feat-3">
+        <img src="assets/images/features3ai-store-black.png" alt="StoreKit Secure Settlement" loading="lazy">
         <div class="canvas-caption">
-          <div class="canvas-caption-title">Transparent Remaining Parts</div>
-          <div class="canvas-caption-sub">Exact breakdown verified before checkout &middot; BalanceCleaner</div>
+          <div class="canvas-caption-title">StoreKit Secure Settlement</div>
+          <div class="canvas-caption-sub">Official Apple In-App Purchase APIs &middot; BalanceCleaner</div>
         </div>
       </div>
 
-      <div class="canvas-image" data-slide="feat-privacy">
-        <img src="assets/screenshots/Page 4ai-store-black.png" alt="Zero Payment Access" loading="lazy">
+      <div class="canvas-image" data-slide="feat-4">
+        <img src="assets/images/features4ai-store-black.png" alt="Clearance History & Logs" loading="lazy">
         <div class="canvas-caption">
-          <div class="canvas-caption-title">StoreKit 2 Native Security</div>
-          <div class="canvas-caption-sub">Direct on-device Apple Pay confirmation &middot; BalanceCleaner</div>
+          <div class="canvas-caption-title">Clearance History &amp; Logs</div>
+          <div class="canvas-caption-sub">Track every cleared balance on-device &middot; BalanceCleaner</div>
         </div>
       </div>
 
-      <div class="canvas-image" data-slide="feat-pro">
-        <img src="assets/screenshots/Page 5ai-store-black.png" alt="Pro Themes" loading="lazy">
+      <div class="canvas-image" data-slide="feat-5">
+        <img src="assets/images/features5ai-store-black.png" alt="Privacy & How It Works" loading="lazy">
         <div class="canvas-caption">
-          <div class="canvas-caption-title">Apple Glow &amp; Starfield Themes</div>
-          <div class="canvas-caption-sub">Customizable ambient UI for Pro users &middot; BalanceCleaner</div>
+          <div class="canvas-caption-title">Privacy &amp; How It Works</div>
+          <div class="canvas-caption-sub">Zero personal data &amp; zero tracking architecture &middot; BalanceCleaner</div>
         </div>
       </div>
 
-      <div class="canvas-image" data-slide="feat-checklist">
-        <img src="assets/screenshots/Screenshot-iPhone-18-Pro-5.png" alt="Region Checklist" loading="lazy">
+      <div class="canvas-image" data-slide="feat-6">
+        <img src="assets/images/features6ai-store-black.png" alt="Premium Features & Glow" loading="lazy">
         <div class="canvas-caption">
-          <div class="canvas-caption-title">Region Change Readiness</div>
-          <div class="canvas-caption-sub">Validate subscriptions &amp; family sharing &middot; BalanceCleaner</div>
+          <div class="canvas-caption-title">Premium Features &amp; Glow</div>
+          <div class="canvas-caption-sub">Ambient Starfield &amp; Apple Glow design &middot; BalanceCleaner</div>
         </div>
       </div>
 
-      <!-- Store Banners (Original App Store Carousel Order) -->
-      <div class="canvas-image" data-slide="store-1">
-        <img src="assets/screenshots/Page 1ai-store-black.png" alt="Smart Balance Cleaner" loading="lazy">
+      <!-- Cover: All Devices Initial Showcase -->
+      <div class="canvas-image" data-slide="screen-cover">
+        <img src="assets/screenshots/cover.png" alt="All Devices Ecosystem Cover" loading="lazy">
         <div class="canvas-caption">
-          <div class="canvas-caption-title">Smart Balance Cleaner</div>
-          <div class="canvas-caption-sub">Zero leftover balance with precision &middot; App Store Banner 1</div>
-        </div>
-      </div>
-      <div class="canvas-image" data-slide="store-2">
-        <img src="assets/screenshots/Page 2ai-store-black.png" alt="Calculate & Split" loading="lazy">
-        <div class="canvas-caption">
-          <div class="canvas-caption-title">Calculate &amp; Split</div>
-          <div class="canvas-caption-sub">Smart breakdown &amp; combination matcher &middot; App Store Banner 2</div>
-        </div>
-      </div>
-      <div class="canvas-image" data-slide="store-3">
-        <img src="assets/screenshots/Page 3ai-store-black.png" alt="Track Every Cleared Balance" loading="lazy">
-        <div class="canvas-caption">
-          <div class="canvas-caption-title">Track Every Cleared Balance</div>
-          <div class="canvas-caption-sub">Local transaction history &amp; export logs &middot; App Store Banner 3</div>
-        </div>
-      </div>
-      <div class="canvas-image" data-slide="store-4">
-        <img src="assets/screenshots/Page 4ai-store-black.png" alt="How It Works" loading="lazy">
-        <div class="canvas-caption">
-          <div class="canvas-caption-title">How It Works</div>
-          <div class="canvas-caption-sub">3 easy steps to zero your Apple ID balance &middot; App Store Banner 4</div>
-        </div>
-      </div>
-      <div class="canvas-image" data-slide="store-5">
-        <img src="assets/screenshots/Page 5ai-store-black.png" alt="Pro Features" loading="lazy">
-        <div class="canvas-caption">
-          <div class="canvas-caption-title">Pro Features</div>
-          <div class="canvas-caption-sub">Advanced calculator, custom tiers &amp; themes &middot; App Store Banner 5</div>
+          <div class="canvas-caption-title">All Devices Ecosystem</div>
+          <div class="canvas-caption-sub">iPhone, iPad &amp; Duo Screens &middot; BalanceCleaner</div>
         </div>
       </div>
 
-      <!-- iPhone 18 Pro Screens -->
-      <div class="canvas-image" data-slide="p18-1">
-        <img src="assets/screenshots/Screenshot-iPhone-18-Pro-1.png" alt="Main Dial" loading="lazy">
-        <div class="canvas-caption">
-          <div class="canvas-caption-title">Main Cleaner Dial</div>
-          <div class="canvas-caption-sub">iPhone 18 Pro &middot; Screen 1</div>
-        </div>
+      <!-- Duo Series (10 Screens) -->
+      <div class="canvas-image" data-slide="duo-1">
+        <img src="assets/screenshots/d1ai-store-black.png" alt="Duo Screen 1" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Dual Dial Cleaner</div><div class="canvas-caption-sub">Duo &middot; Screen 1</div></div>
       </div>
-      <div class="canvas-image" data-slide="p18-2">
-        <img src="assets/screenshots/Screenshot-iPhone-18-Pro-2.png" alt="Custom Amount" loading="lazy">
-        <div class="canvas-caption">
-          <div class="canvas-caption-title">Custom Amount Keypad</div>
-          <div class="canvas-caption-sub">iPhone 18 Pro &middot; Screen 2</div>
-        </div>
+      <div class="canvas-image" data-slide="duo-2">
+        <img src="assets/screenshots/d2ai-store-black.png" alt="Duo Screen 2" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Split Math &amp; Presets</div><div class="canvas-caption-sub">Duo &middot; Screen 2</div></div>
       </div>
-      <div class="canvas-image" data-slide="p18-3">
-        <img src="assets/screenshots/Screenshot-iPhone-18-Pro-3.png" alt="Split Preview" loading="lazy">
-        <div class="canvas-caption">
-          <div class="canvas-caption-title">Split Calculation Preview</div>
-          <div class="canvas-caption-sub">iPhone 18 Pro &middot; Screen 3</div>
-        </div>
+      <div class="canvas-image" data-slide="duo-3">
+        <img src="assets/screenshots/d3ai-store-black.png" alt="Duo Screen 3" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Calculated Parts Breakdown</div><div class="canvas-caption-sub">Duo &middot; Screen 3</div></div>
       </div>
-      <div class="canvas-image" data-slide="p18-4">
-        <img src="assets/screenshots/Screenshot-iPhone-18-Pro-4.png" alt="StoreKit Confirmation" loading="lazy">
-        <div class="canvas-caption">
-          <div class="canvas-caption-title">StoreKit In-App Confirmation</div>
-          <div class="canvas-caption-sub">iPhone 18 Pro &middot; Screen 4</div>
-        </div>
+      <div class="canvas-image" data-slide="duo-4">
+        <img src="assets/screenshots/d4ai-store-black.png" alt="Duo Screen 4" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Native StoreKit Sheet</div><div class="canvas-caption-sub">Duo &middot; Screen 4</div></div>
       </div>
-      <div class="canvas-image" data-slide="p18-5">
-        <img src="assets/screenshots/Screenshot-iPhone-18-Pro-5.png" alt="Region Checklist" loading="lazy">
-        <div class="canvas-caption">
-          <div class="canvas-caption-title">Region Change Checklist</div>
-          <div class="canvas-caption-sub">iPhone 18 Pro &middot; Screen 5</div>
-        </div>
+      <div class="canvas-image" data-slide="duo-5">
+        <img src="assets/screenshots/d5ai-store-black.png" alt="Duo Screen 5" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Region Change Readiness</div><div class="canvas-caption-sub">Duo &middot; Screen 5</div></div>
       </div>
-      <div class="canvas-image" data-slide="p18-6">
-        <img src="assets/screenshots/Screenshot-iPhone-18-Pro-6.png" alt="Pro Themes" loading="lazy">
-        <div class="canvas-caption">
-          <div class="canvas-caption-title">Pro Glow Customizer</div>
-          <div class="canvas-caption-sub">iPhone 18 Pro &middot; Screen 6</div>
-        </div>
+      <div class="canvas-image" data-slide="duo-6">
+        <img src="assets/screenshots/d6ai-store-black.png" alt="Duo Screen 6" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Apple Glow &amp; Starfield Themes</div><div class="canvas-caption-sub">Duo &middot; Screen 6</div></div>
+      </div>
+      <div class="canvas-image" data-slide="duo-7">
+        <img src="assets/screenshots/d7ai-store-black.png" alt="Duo Screen 7" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Precision Keypad Input</div><div class="canvas-caption-sub">Duo &middot; Screen 7</div></div>
+      </div>
+      <div class="canvas-image" data-slide="duo-8">
+        <img src="assets/screenshots/d8ai-store-black.png" alt="Duo Screen 8" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Clearance History &amp; Logs</div><div class="canvas-caption-sub">Duo &middot; Screen 8</div></div>
+      </div>
+      <div class="canvas-image" data-slide="duo-9">
+        <img src="assets/screenshots/d9ai-store-black.png" alt="Duo Screen 9" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Rounding Rules &amp; Currencies</div><div class="canvas-caption-sub">Duo &middot; Screen 9</div></div>
+      </div>
+      <div class="canvas-image" data-slide="duo-10">
+        <img src="assets/screenshots/d10ai-store-black.png" alt="Duo Screen 10" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Settings &amp; Support Channel</div><div class="canvas-caption-sub">Duo &middot; Screen 10</div></div>
       </div>
 
-      <!-- iPhone 17 Screens -->
+      <!-- iPhone 17 Screens (6 Screens) -->
       <div class="canvas-image" data-slide="p17-1">
-        <img src="assets/screenshots/Screenshot-iPhone-17-1.png" alt="iPhone 17 Screen 1" loading="lazy">
+        <img src="assets/screenshots/p17-1ai-store-black.png" alt="iPhone 17 Screen 1" loading="lazy">
         <div class="canvas-caption"><div class="canvas-caption-title">Dashboard &amp; Amount Ring</div><div class="canvas-caption-sub">iPhone 17 &middot; Screen 1</div></div>
       </div>
       <div class="canvas-image" data-slide="p17-2">
-        <img src="assets/screenshots/Screenshot-iPhone-17-2.png" alt="iPhone 17 Screen 2" loading="lazy">
+        <img src="assets/screenshots/p17-2ai-store-black.png" alt="iPhone 17 Screen 2" loading="lazy">
         <div class="canvas-caption"><div class="canvas-caption-title">Balance Input &amp; Presets</div><div class="canvas-caption-sub">iPhone 17 &middot; Screen 2</div></div>
       </div>
       <div class="canvas-image" data-slide="p17-3">
-        <img src="assets/screenshots/Screenshot-iPhone-17-3.png" alt="iPhone 17 Screen 3" loading="lazy">
+        <img src="assets/screenshots/p17-3ai-store-black.png" alt="iPhone 17 Screen 3" loading="lazy">
         <div class="canvas-caption"><div class="canvas-caption-title">Purchase Calculation</div><div class="canvas-caption-sub">iPhone 17 &middot; Screen 3</div></div>
       </div>
       <div class="canvas-image" data-slide="p17-4">
-        <img src="assets/screenshots/Screenshot-iPhone-17-4.png" alt="iPhone 17 Screen 4" loading="lazy">
+        <img src="assets/screenshots/p17-4ai-store-black.png" alt="iPhone 17 Screen 4" loading="lazy">
         <div class="canvas-caption"><div class="canvas-caption-title">StoreKit Payment Modal</div><div class="canvas-caption-sub">iPhone 17 &middot; Screen 4</div></div>
       </div>
       <div class="canvas-image" data-slide="p17-5">
-        <img src="assets/screenshots/Screenshot-iPhone-17-5.png" alt="iPhone 17 Screen 5" loading="lazy">
+        <img src="assets/screenshots/p17-5ai-store-black.png" alt="iPhone 17 Screen 5" loading="lazy">
         <div class="canvas-caption"><div class="canvas-caption-title">Ready for Region Change</div><div class="canvas-caption-sub">iPhone 17 &middot; Screen 5</div></div>
       </div>
       <div class="canvas-image" data-slide="p17-6">
-        <img src="assets/screenshots/Screenshot-iPhone-17-6.png" alt="iPhone 17 Screen 6" loading="lazy">
+        <img src="assets/screenshots/p17-6ai-store-black.png" alt="iPhone 17 Screen 6" loading="lazy">
         <div class="canvas-caption"><div class="canvas-caption-title">Settings &amp; Appearance</div><div class="canvas-caption-sub">iPhone 17 &middot; Screen 6</div></div>
       </div>
 
-      <!-- iPhone 16 Pro Screens -->
-      <div class="canvas-image" data-slide="p16-1">
-        <img src="assets/screenshots/Screenshot-iPhone-16-Pro-1.png" alt="iPhone 16 Pro Screen 1" loading="lazy">
-        <div class="canvas-caption"><div class="canvas-caption-title">Cleaner Overview</div><div class="canvas-caption-sub">iPhone 16 Pro &middot; Screen 1</div></div>
+      <!-- iPhone Standard Screens (5 Screens) -->
+      <div class="canvas-image" data-slide="p-1">
+        <img src="assets/screenshots/p1ai-store-black.png" alt="iPhone Screen 1" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Zero Balance Dashboard</div><div class="canvas-caption-sub">iPhone &middot; Screen 1</div></div>
       </div>
-      <div class="canvas-image" data-slide="p16-2">
-        <img src="assets/screenshots/Screenshot-iPhone-16-Pro-2.png" alt="iPhone 16 Pro Screen 2" loading="lazy">
-        <div class="canvas-caption"><div class="canvas-caption-title">Custom Amount Input</div><div class="canvas-caption-sub">iPhone 16 Pro &middot; Screen 2</div></div>
+      <div class="canvas-image" data-slide="p-2">
+        <img src="assets/screenshots/p2ai-store-black.png" alt="iPhone Screen 2" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Calculate &amp; Split Breakdown</div><div class="canvas-caption-sub">iPhone &middot; Screen 2</div></div>
       </div>
-      <div class="canvas-image" data-slide="p16-3">
-        <img src="assets/screenshots/Screenshot-iPhone-16-Pro-3.png" alt="iPhone 16 Pro Screen 3" loading="lazy">
-        <div class="canvas-caption"><div class="canvas-caption-title">Split Math Engine</div><div class="canvas-caption-sub">iPhone 16 Pro &middot; Screen 3</div></div>
+      <div class="canvas-image" data-slide="p-3">
+        <img src="assets/screenshots/p3ai-store-black.png" alt="iPhone Screen 3" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">StoreKit Confirmation Sheet</div><div class="canvas-caption-sub">iPhone &middot; Screen 3</div></div>
       </div>
-      <div class="canvas-image" data-slide="p16-4">
-        <img src="assets/screenshots/Screenshot-iPhone-16-Pro-4.png" alt="iPhone 16 Pro Screen 4" loading="lazy">
-        <div class="canvas-caption"><div class="canvas-caption-title">Native StoreKit Sheet</div><div class="canvas-caption-sub">iPhone 16 Pro &middot; Screen 4</div></div>
+      <div class="canvas-image" data-slide="p-4">
+        <img src="assets/screenshots/p4ai-store-black.png" alt="iPhone Screen 4" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Region Change Checklist</div><div class="canvas-caption-sub">iPhone &middot; Screen 4</div></div>
       </div>
-      <div class="canvas-image" data-slide="p16-5">
-        <img src="assets/screenshots/Screenshot-iPhone-16-Pro-5.png" alt="iPhone 16 Pro Screen 5" loading="lazy">
-        <div class="canvas-caption"><div class="canvas-caption-title">Checklist Validation</div><div class="canvas-caption-sub">iPhone 16 Pro &middot; Screen 5</div></div>
-      </div>
-      <div class="canvas-image" data-slide="p16-6">
-        <img src="assets/screenshots/Screenshot-iPhone-16-Pro-6.png" alt="iPhone 16 Pro Screen 6" loading="lazy">
-        <div class="canvas-caption"><div class="canvas-caption-title">Pro Themes Customizer</div><div class="canvas-caption-sub">iPhone 16 Pro &middot; Screen 6</div></div>
+      <div class="canvas-image" data-slide="p-5">
+        <img src="assets/screenshots/p5ai-store-black.png" alt="iPhone Screen 5" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Settings &amp; Support Contact</div><div class="canvas-caption-sub">iPhone &middot; Screen 5</div></div>
       </div>
 
-      <!-- iPhone SE Screens -->
+      <!-- iPad Screens (5 Screens) -->
+      <div class="canvas-image" data-slide="pad-1">
+        <img src="assets/screenshots/pad1ai-store-black.png" alt="iPad Screen 1" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Canvas Dial &amp; Presets</div><div class="canvas-caption-sub">iPad &middot; Screen 1</div></div>
+      </div>
+      <div class="canvas-image" data-slide="pad-2">
+        <img src="assets/screenshots/pad2ai-store-black.png" alt="iPad Screen 2" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Balance Calculation Engine</div><div class="canvas-caption-sub">iPad &middot; Screen 2</div></div>
+      </div>
+      <div class="canvas-image" data-slide="pad-3">
+        <img src="assets/screenshots/pad3ai-store-black.png" alt="iPad Screen 3" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">StoreKit Payment Confirmation</div><div class="canvas-caption-sub">iPad &middot; Screen 3</div></div>
+      </div>
+      <div class="canvas-image" data-slide="pad-4">
+        <img src="assets/screenshots/pad4ai-store-black.png" alt="iPad Screen 4" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Region Migration Checklist</div><div class="canvas-caption-sub">iPad &middot; Screen 4</div></div>
+      </div>
+      <div class="canvas-image" data-slide="pad-5">
+        <img src="assets/screenshots/pad5ai-store-black.png" alt="iPad Screen 5" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Settings &amp; Support Hub</div><div class="canvas-caption-sub">iPad &middot; Screen 5</div></div>
+      </div>
+
+      <!-- iPhone SE Screens (6 Screens) -->
       <div class="canvas-image" data-slide="pse-1">
-        <img src="assets/screenshots/Screenshot-iPhone-SE-1.png" alt="iPhone SE Screen 1" loading="lazy">
+        <img src="assets/screenshots/se1ai-store-black.png" alt="iPhone SE Screen 1" loading="lazy">
         <div class="canvas-caption"><div class="canvas-caption-title">Compact Dial Interface</div><div class="canvas-caption-sub">iPhone SE &middot; Screen 1</div></div>
       </div>
       <div class="canvas-image" data-slide="pse-2">
-        <img src="assets/screenshots/Screenshot-iPhone-SE-2.png" alt="iPhone SE Screen 2" loading="lazy">
+        <img src="assets/screenshots/se2ai-store-black.png" alt="iPhone SE Screen 2" loading="lazy">
         <div class="canvas-caption"><div class="canvas-caption-title">Compact Keypad Input</div><div class="canvas-caption-sub">iPhone SE &middot; Screen 2</div></div>
       </div>
       <div class="canvas-image" data-slide="pse-3">
-        <img src="assets/screenshots/Screenshot-iPhone-SE-3.png" alt="iPhone SE Screen 3" loading="lazy">
+        <img src="assets/screenshots/se3ai-store-black.png" alt="iPhone SE Screen 3" loading="lazy">
         <div class="canvas-caption"><div class="canvas-caption-title">Split Calculation Results</div><div class="canvas-caption-sub">iPhone SE &middot; Screen 3</div></div>
       </div>
       <div class="canvas-image" data-slide="pse-4">
-        <img src="assets/screenshots/Screenshot-iPhone-SE-4.png" alt="iPhone SE Screen 4" loading="lazy">
+        <img src="assets/screenshots/se4ai-store-black.png" alt="iPhone SE Screen 4" loading="lazy">
         <div class="canvas-caption"><div class="canvas-caption-title">StoreKit Confirmation</div><div class="canvas-caption-sub">iPhone SE &middot; Screen 4</div></div>
       </div>
       <div class="canvas-image" data-slide="pse-5">
-        <img src="assets/screenshots/Screenshot-iPhone-SE-5.png" alt="iPhone SE Screen 5" loading="lazy">
+        <img src="assets/screenshots/se5ai-store-black.png" alt="iPhone SE Screen 5" loading="lazy">
         <div class="canvas-caption"><div class="canvas-caption-title">Region Checklist</div><div class="canvas-caption-sub">iPhone SE &middot; Screen 5</div></div>
       </div>
       <div class="canvas-image" data-slide="pse-6">
-        <img src="assets/screenshots/Screenshot-iPhone-SE-6.png" alt="iPhone SE Screen 6" loading="lazy">
+        <img src="assets/screenshots/se6ai-store-black.png" alt="iPhone SE Screen 6" loading="lazy">
         <div class="canvas-caption"><div class="canvas-caption-title">App Settings &amp; History</div><div class="canvas-caption-sub">iPhone SE &middot; Screen 6</div></div>
+      </div>
+
+      <!-- Video Demos with Mockup Frames & Masks -->
+      <div class="canvas-image" data-slide="video-p18">
+        <div class="mockup-stage">
+          <div class="mockup-wrap" style="--vid-top:1.790%; --vid-left:4.167%; --vid-w:91.500%; --vid-h:96.338%; --vid-radius:42px;">
+            <img src="assets/mockups/iPhone 18 Pro.png" class="mockup-frame" alt="iPhone 18 Pro Mockup Frame">
+            <div class="mockup-screen">
+              <video class="mockup-video" playsinline loop preload="auto" muted>
+                <source src="assets/video/Screenshot-iPhone-18-Pro-0.mp4" type="video/mp4">
+              </video>
+            </div>
+            <button class="mockup-play-btn" type="button" aria-label="Play or Pause Video">
+              <svg class="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="pause-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+          </div>
+          <div class="mockup-controls">
+            <button class="mockup-ctrl-btn btn-play-toggle" type="button">
+              <span class="ctrl-icon">▶</span>
+              <span class="ctrl-text">Play Demo</span>
+            </button>
+          </div>
+        </div>
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">iPhone 18 Pro Video Demo</div>
+          <div class="canvas-caption-sub">Dynamic Island &amp; Pro Motion &middot; Video Walkthrough</div>
+        </div>
+      </div>
+
+      <div class="canvas-image" data-slide="video-p17">
+        <div class="mockup-stage">
+          <div class="mockup-wrap" style="--vid-top:2.397%; --vid-left:5.667%; --vid-w:88.833%; --vid-h:95.207%; --vid-radius:40px;">
+            <img src="assets/mockups/iPhone 17.png" class="mockup-frame" alt="iPhone 17 Mockup Frame">
+            <div class="mockup-screen">
+              <video class="mockup-video" playsinline loop preload="auto" muted>
+                <source src="assets/video/Screenshot-iPhone-17-0.mp4" type="video/mp4">
+              </video>
+            </div>
+            <button class="mockup-play-btn" type="button" aria-label="Play or Pause Video">
+              <svg class="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="pause-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+          </div>
+          <div class="mockup-controls">
+            <button class="mockup-ctrl-btn btn-play-toggle" type="button">
+              <span class="ctrl-icon">▶</span>
+              <span class="ctrl-text">Play Demo</span>
+            </button>
+          </div>
+        </div>
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">iPhone 17 Video Demo</div>
+          <div class="canvas-caption-sub">Full Screen Layout &middot; Video Walkthrough</div>
+        </div>
+      </div>
+
+      <div class="canvas-image" data-slide="video-p16">
+        <div class="mockup-stage">
+          <div class="mockup-wrap" style="--vid-top:1.790%; --vid-left:4.167%; --vid-w:91.500%; --vid-h:96.338%; --vid-radius:42px;">
+            <img src="assets/mockups/iPhone 16 pro.png" class="mockup-frame" alt="iPhone 16 Pro Mockup Frame">
+            <div class="mockup-screen">
+              <video class="mockup-video" playsinline loop preload="auto" muted>
+                <source src="assets/video/Screenshot-iPhone-16-Pro-0.mp4" type="video/mp4">
+              </video>
+            </div>
+            <button class="mockup-play-btn" type="button" aria-label="Play or Pause Video">
+              <svg class="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="pause-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+          </div>
+          <div class="mockup-controls">
+            <button class="mockup-ctrl-btn btn-play-toggle" type="button">
+              <span class="ctrl-icon">▶</span>
+              <span class="ctrl-text">Play Demo</span>
+            </button>
+          </div>
+        </div>
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">iPhone 16 Pro Video Demo</div>
+          <div class="canvas-caption-sub">Pro Motion Display &middot; Video Walkthrough</div>
+        </div>
+      </div>
+
+      <div class="canvas-image" data-slide="video-pse">
+        <div class="mockup-stage">
+          <div class="mockup-wrap" style="--vid-top:11.488%; --vid-left:6.446%; --vid-w:86.942%; --vid-h:77.025%; --vid-radius:0px;">
+            <img src="assets/mockups/iPhone SE.png" class="mockup-frame" alt="iPhone SE Mockup Frame">
+            <div class="mockup-screen">
+              <video class="mockup-video" playsinline loop preload="auto" muted>
+                <source src="assets/video/Screenshot-iPhone-SE-0.mp4" type="video/mp4">
+              </video>
+            </div>
+            <button class="mockup-play-btn" type="button" aria-label="Play or Pause Video">
+              <svg class="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="pause-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+          </div>
+          <div class="mockup-controls">
+            <button class="mockup-ctrl-btn btn-play-toggle" type="button">
+              <span class="ctrl-icon">▶</span>
+              <span class="ctrl-text">Play Demo</span>
+            </button>
+          </div>
+        </div>
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">iPhone SE Video Demo</div>
+          <div class="canvas-caption-sub">Compact Form Factor &middot; Video Walkthrough</div>
+        </div>
       </div>
 
       <!-- Guide Steps Context Images -->
       <div class="canvas-image" data-slide="guide-step1">
-        <img src="assets/screenshots/Page 1ai-store-black.png" alt="Step 1" loading="lazy">
-        <div class="canvas-caption"><div class="canvas-caption-title">Step 1: Check Apple ID Credit</div><div class="canvas-caption-sub">Locate your exact remaining store balance</div></div>
+        <img src="assets/screenshots/p1ai-store-black.png" alt="Step 1: Check Apple ID Credit" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 1: Check Apple ID Credit</div><div class="canvas-caption-sub">Locate your exact remaining store balance &middot; BalanceCleaner</div></div>
       </div>
       <div class="canvas-image" data-slide="guide-step2">
-        <img src="assets/screenshots/Page 2ai-store-black.png" alt="Step 2" loading="lazy">
-        <div class="canvas-caption"><div class="canvas-caption-title">Step 2: Calculate &amp; Purchase</div><div class="canvas-caption-sub">Cleanly zero out using real in-app products</div></div>
+        <img src="assets/screenshots/p2ai-store-black.png" alt="Step 2: Calculate & Purchase" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 2: Calculate &amp; Purchase</div><div class="canvas-caption-sub">Cleanly zero out using real in-app products &middot; BalanceCleaner</div></div>
       </div>
       <div class="canvas-image" data-slide="guide-step3">
-        <img src="assets/screenshots/Screenshot-iPhone-18-Pro-5.png" alt="Step 3" loading="lazy">
-        <div class="canvas-caption"><div class="canvas-caption-title">Step 3: Switch Store Region</div><div class="canvas-caption-sub">Select your new App Store country freely</div></div>
+        <img src="assets/screenshots/p4ai-store-black.png" alt="Step 3: Region Change Checklist" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 3: Region Change Checklist</div><div class="canvas-caption-sub">Step-by-step checklist to prepare account &middot; BalanceCleaner</div></div>
       </div>
       <div class="canvas-image" data-slide="guide-step4">
-        <img src="assets/screenshots/Page 4ai-store-black.png" alt="Support indie development" loading="lazy">
-        <div class="canvas-caption"><div class="canvas-caption-title">Support Independent iOS Dev</div><div class="canvas-caption-sub">Your payment fuels ongoing app updates</div></div>
-      </div>
-      <div class="canvas-image" data-slide="guide-step5">
-        <img src="assets/screenshots/Page 3ai-store-black.png" alt="Apple Support" loading="lazy">
-        <div class="canvas-caption"><div class="canvas-caption-title">Apple Support Assistance</div><div class="canvas-caption-sub">Official billing channels if below minimum</div></div>
+        <img src="assets/screenshots/p5ai-store-black.png" alt="Step 4: Settings & Contact Support" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 4: Settings &amp; Contact Support</div><div class="canvas-caption-sub">Direct assistance and app settings &middot; BalanceCleaner</div></div>
       </div>
 
-      <!-- Context Showcases for Panels -->
-      <div class="canvas-context" data-context="about">
-        <img src="assets/screenshots/Page 1ai-store-black.png" alt="About BalanceCleaner" loading="lazy">
+      <!-- Guide Video Demo Slide in Overview (iPhone 18 Pro) -->
+      <div class="canvas-image" data-slide="guide-video">
+        <div class="mockup-stage">
+          <div class="mockup-wrap" style="--vid-top:1.790%; --vid-left:4.167%; --vid-w:91.500%; --vid-h:96.338%; --vid-radius:42px;">
+            <img src="assets/mockups/iPhone 18 Pro.png" class="mockup-frame" alt="iPhone 18 Pro Mockup Frame">
+            <div class="mockup-screen">
+              <video class="mockup-video" playsinline loop preload="auto" muted>
+                <source src="assets/video/Screenshot-iPhone-18-Pro-0.mp4" type="video/mp4">
+              </video>
+            </div>
+            <button class="mockup-play-btn" type="button" aria-label="Play or Pause Video">
+              <svg class="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="pause-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+          </div>
+          <div class="mockup-controls">
+            <button class="mockup-ctrl-btn btn-play-toggle" type="button">
+              <span class="ctrl-icon">▶</span>
+              <span class="ctrl-text">Play Demo</span>
+            </button>
+          </div>
+        </div>
         <div class="canvas-caption">
-          <div class="canvas-caption-title">BalanceCleaner Architecture</div>
-          <div class="canvas-caption-sub">Crafted natively for iOS with Swift &middot; Hakob Ghlijyan</div>
+          <div class="canvas-caption-title">iPhone 18 Pro Video Demo</div>
+          <div class="canvas-caption-sub">Zero Balance Calculation &amp; StoreKit Flow &middot; Walkthrough Demo</div>
         </div>
       </div>
 
-      <div class="canvas-context" data-context="guide">
-        <img src="assets/screenshots/Screenshot-iPhone-18-Pro-5.png" alt="Guide Overview" loading="lazy">
+      <!-- Context Showcases for Panels (Cover on Right Side) -->
+      <div class="canvas-context" data-context="about">
+        <div class="canvas-vstack">
+          <img src="assets/screenshots/cover.png" alt="BalanceCleaner Ecosystem" loading="lazy">
+          <img src="assets/images/cover-2.png" alt="BalanceCleaner Tiers Showcase" loading="lazy">
+        </div>
         <div class="canvas-caption">
-          <div class="canvas-caption-title">Apple ID Region Guide</div>
-          <div class="canvas-caption-sub">Complete step-by-step checklist for seamless migration</div>
+          <div class="canvas-caption-title">BalanceCleaner Ecosystem</div>
+          <div class="canvas-caption-sub">iPhone &amp; iPad Native Architecture &middot; Tiers Overview</div>
         </div>
       </div>
 
       <div class="canvas-context" data-context="support">
-        <img src="assets/screenshots/Screenshot-iPhone-18-Pro-3.png" alt="Direct Support" loading="lazy">
+        <img src="assets/screenshots/cover.png" alt="Direct Support" loading="lazy">
         <div class="canvas-caption">
           <div class="canvas-caption-title">Support &amp; User Inquiries</div>
           <div class="canvas-caption-sub">Direct developer assistance &middot; balancecleanerapp@gmail.com</div>
@@ -1083,7 +1296,7 @@
       </div>
 
       <div class="canvas-context" data-context="privacy">
-        <img src="assets/screenshots/Page 4ai-store-black.png" alt="Privacy Architecture" loading="lazy">
+        <img src="assets/screenshots/cover.png" alt="Privacy Architecture" loading="lazy">
         <div class="canvas-caption">
           <div class="canvas-caption-title">StoreKit 2 Native Privacy</div>
           <div class="canvas-caption-sub">Zero payment access &middot; 0 Analytics &middot; No user tracking</div>

@@ -79,8 +79,9 @@ const dictionaries = {
     donationFooter: 'Thank you for helping keep this tool alive and free of ads!',
     guideNeedHelp: 'Need Help?',
     guideSupportTitle: 'Contact Apple Support',
-    guideSupportDesc: 'If your balance is lower than the lowest purchase price, contact Apple Support directly to manually zero it out.',
     guideSupportWeb: 'Apple Billing & Subscriptions',
+    stepVideoTitle: 'iPhone 18 Pro Video Demo',
+    stepVideoDesc: 'Watch interactive zero-balance calculation and StoreKit flow in real time.',
 
     privacyEyebrow: 'YOUR PRIVACY MATTERS',
     privacyTitle: 'Privacy Policy',
@@ -93,6 +94,20 @@ const dictionaries = {
     proFeaturesTitle: 'Premium Features',
     proFeaturesDesc: 'Unlock full transaction history, export records to PDF, customize the Amount Ring glow, and set a Starfield background.',
     top: 'Home',
+    featuresHeader: 'BalanceCleaner for iPhone & iPad · Native StoreKit 2',
+    hoverInspect: 'Hover module to inspect',
+    feat1Title: 'Choose Custom Clear',
+    feat1Tag: 'Dial & Input',
+    feat2Title: 'Calculate & Split Preview',
+    feat2Tag: 'Split Math',
+    feat3Title: 'StoreKit Secure Settlement',
+    feat3Tag: 'StoreKit 2',
+    feat4Title: 'Clearance History & Logs',
+    feat4Tag: 'History',
+    feat5Title: 'Privacy & How It Works',
+    feat5Tag: 'Zero Tracking',
+    feat6Title: 'Premium Features & Glow',
+    feat6Tag: 'Pro Glow',
     devicePreview: 'Device Preview', devicePreviewTitle: 'All screens, all models.', devicePreviewDesc: 'Scroll horizontally within each model to see all screenshots. iPhone 18 Pro shows real screenshots — others are ready for your assets.', comingSoon: 'Coming soon'
   }
 };
@@ -103,12 +118,25 @@ function fill(code, overrides) {
 
 fill('ru', {
   about: 'О продукте', screens: 'Экраны', video: 'Видео', features: 'Возможности',
-  support: 'Поддержка', privacy: 'Приватность',
   subHeaderText: 'Доступно для iPhone', subHeaderBtn: 'Загрузить',
   eyebrow: 'Более спокойная цифровая жизнь',
   title: 'Обнулите баланс Apple ID.<br>Смените регион свободно.',
   lead: 'BalanceCleaner позволяет очистить остаток на Apple ID через реальные покупки — чтобы вы могли сменить регион App Store без ограничений.',
   explore: 'Открыть продукт →',
+  featuresHeader: 'BalanceCleaner для iPhone и iPad · Нативный StoreKit 2',
+  hoverInspect: 'Наведите на модуль для просмотра',
+  feat1Title: 'Выбор точной суммы',
+  feat1Tag: 'Ввод и шкала',
+  feat2Title: 'Предпросмотр разбивки',
+  feat2Tag: 'Расчет частей',
+  feat3Title: 'Безопасный StoreKit',
+  feat3Tag: 'StoreKit 2',
+  feat4Title: 'История и журналы',
+  feat4Tag: 'История',
+  feat5Title: 'Приватность и принципы',
+  feat5Tag: '0 трекеров',
+  feat6Title: 'Премиум-возможности',
+  feat6Tag: 'Pro Glow',
   ideaLabel: 'Идея',
   storyTitle: 'Меньше шума.<br>Больше баланса.',
   storyLead: 'Спокойный продукт, построенный на ясности, контроле и уважении к пользователю.',
@@ -170,6 +198,8 @@ fill('ru', {
   guideSupportTitle: 'Обратитесь в службу поддержки Apple',
   guideSupportDesc: 'Если ваш баланс меньше минимальной цены покупки — свяжитесь с Apple Support напрямую.',
   guideSupportWeb: 'Биллинг и подписки Apple',
+  stepVideoTitle: 'Видеодемо iPhone 18 Pro',
+  stepVideoDesc: 'Посмотрите расчёт обнуления баланса и процесс StoreKit в реальном времени.',
   privacyEyebrow: 'ВАША ПРИВАТНОСТЬ ВАЖНА',
   privacyTitle: 'Политика конфиденциальности',
   privCard1Title: 'Защита Apple StoreKit',
@@ -548,6 +578,11 @@ function switchPanel(target) {
   const canvasContexts = document.querySelectorAll('.canvas-context');
   const placeholder = document.getElementById('placeholder');
 
+  // Pause any playing videos
+  document.querySelectorAll('.canvas-image video').forEach(v => {
+    try { v.pause(); } catch (e) {}
+  });
+
   canvasImages.forEach(img => img.classList.remove('visible'));
   canvasContexts.forEach(ctx => ctx.classList.remove('visible'));
 
@@ -556,6 +591,11 @@ function switchPanel(target) {
   if (contextImg) {
     if (placeholder) placeholder.classList.add('hidden');
     setTimeout(() => contextImg.classList.add('visible'), 60);
+  } else if (target === 'guide') {
+    const firstStep = document.querySelector('#panel-guide [data-slide]');
+    if (firstStep) {
+      setTimeout(() => firstStep.click(), 60);
+    }
   } else {
     // Show placeholder or wait for hover
     if (placeholder) placeholder.classList.remove('hidden');
@@ -595,6 +635,14 @@ function setupInteractivePreview() {
 
       if (placeholder) placeholder.classList.add('hidden');
 
+      // Pause non-active videos and reset stage state
+      document.querySelectorAll('.canvas-image video').forEach(v => {
+        try {
+          v.pause();
+          v.closest('.mockup-stage')?.classList.remove('is-playing');
+        } catch (e) {}
+      });
+
       // Hide all context and images
       document.querySelectorAll('.canvas-context').forEach(c => c.classList.remove('visible'));
       slides.forEach(s => {
@@ -621,13 +669,20 @@ function setupModelFilter() {
       const model = btn.dataset.filter;
       filterBtns.forEach(b => b.classList.toggle('active', b === btn));
 
+      let firstVisible = null;
       screenItems.forEach(item => {
-        if (model === 'all' || item.dataset.model === model) {
+        const match = (model === 'all' || item.dataset.model === model);
+        if (match) {
           item.style.display = 'block';
+          if (!firstVisible) firstVisible = item;
         } else {
           item.style.display = 'none';
         }
       });
+
+      if (firstVisible) {
+        firstVisible.click();
+      }
     });
   });
 }
@@ -671,11 +726,74 @@ function setupSupportForm() {
   });
 }
 
+// Interactive Video Players with Play Button & Controls
+function setupVideoPlayers() {
+  document.querySelectorAll('.mockup-stage').forEach(stage => {
+    const video = stage.querySelector('video');
+    const playBtn = stage.querySelector('.mockup-play-btn');
+    const toggleBtn = stage.querySelector('.btn-play-toggle');
+    const soundBtn = stage.querySelector('.btn-sound-toggle');
+
+    if (!video) return;
+
+    const updateUI = () => {
+      const isPlaying = !video.paused && !video.ended;
+      stage.classList.toggle('is-playing', isPlaying);
+      if (toggleBtn) {
+        const icon = toggleBtn.querySelector('.ctrl-icon');
+        const text = toggleBtn.querySelector('.ctrl-text');
+        if (icon) icon.textContent = isPlaying ? '❚❚' : '▶';
+        if (text) text.textContent = isPlaying ? 'Pause' : 'Play Demo';
+      }
+    };
+
+    const togglePlay = (e) => {
+      if (e) e.stopPropagation();
+      if (video.paused) {
+        // Pause any other videos across all slides
+        document.querySelectorAll('.canvas-image video').forEach(v => {
+          if (v !== video) {
+            v.pause();
+            v.closest('.mockup-stage')?.classList.remove('is-playing');
+          }
+        });
+        video.play().then(updateUI).catch(err => {
+          console.warn('Playback error or policy:', err);
+        });
+      } else {
+        video.pause();
+        updateUI();
+      }
+    };
+
+    if (playBtn) playBtn.addEventListener('click', togglePlay);
+    if (toggleBtn) toggleBtn.addEventListener('click', togglePlay);
+    const wrap = stage.querySelector('.mockup-wrap');
+    if (wrap) wrap.addEventListener('click', togglePlay);
+
+    if (soundBtn) {
+      soundBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        video.muted = !video.muted;
+        const icon = soundBtn.querySelector('.ctrl-icon');
+        const text = soundBtn.querySelector('.ctrl-text');
+        if (icon) icon.textContent = video.muted ? '🔇' : '🔊';
+        if (text) text.textContent = video.muted ? 'Muted' : 'Sound On';
+      });
+    }
+
+    video.addEventListener('play', updateUI);
+    video.addEventListener('pause', updateUI);
+    video.addEventListener('ended', updateUI);
+  });
+}
+
 // Initial hash routing & DOM setup
 document.addEventListener('DOMContentLoaded', () => {
   setupInteractivePreview();
   setupModelFilter();
   setupSupportForm();
+  setupVideoPlayers();
 
   // Check initial hash
   const hash = window.location.hash.replace('#', '').toLowerCase();

@@ -1092,6 +1092,69 @@ body::before {
 	margin-top: 1rem;
 }
 
+/* Header App Store Button / Кнопка App Store в шапке Nightwell */
+.header-appstore-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	background: rgba(56, 189, 248, 0.12);
+	border: 1px solid rgba(56, 189, 248, 0.35);
+	border-radius: 20px;
+	padding: 0.35rem 0.85rem;
+	color: #FFFFFF;
+	font-family: 'DM Mono', monospace;
+	font-size: 0.68rem;
+	letter-spacing: 0.04em;
+	text-decoration: none;
+	transition: all 0.25s ease;
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+}
+
+.header-appstore-btn:hover {
+	background: var(--accent);
+	color: #030c18;
+	border-color: var(--accent);
+	box-shadow: 0 4px 14px rgba(56, 189, 248, 0.35);
+	transform: translateY(-1px);
+}
+
+.header-appstore-btn svg {
+	width: 13px;
+	height: 13px;
+	fill: currentColor;
+	flex-shrink: 0;
+}
+
+/* App Store Badge Link in Panel Footer */
+.app-store-badge-btn {
+	display: inline-flex;
+	align-items: center;
+	transition: transform 0.25s ease, filter 0.25s ease;
+	text-decoration: none;
+}
+
+.app-store-badge-btn:hover {
+	transform: scale(1.05);
+	filter: drop-shadow(0 4px 14px rgba(56, 189, 248, 0.45));
+}
+
+.header-apple-logo {
+	height: 14px;
+	width: auto;
+	display: inline-block;
+	vertical-align: middle;
+	object-fit: contain;
+}
+
+.app-store-badge-img {
+	height: 38px;
+	width: auto;
+	display: block;
+	border-radius: 0;
+}
+
+
 /* MARK: - Language Switcher / Переключатель языка с высоким контрастом */
 .lang-switch {
 	display: inline-flex;

@@ -269,6 +269,48 @@ a {
 	font-weight: 600;
 }
 
+/* Header App Store Button / Кнопка App Store в шапке */
+.header-appstore-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	background: rgba(87, 217, 159, 0.1);
+	border: 1px solid rgba(87, 217, 159, 0.35);
+	border-radius: 20px;
+	padding: 0.35rem 0.85rem;
+	color: #FFFFFF;
+	font-family: var(--font-mono);
+	font-size: 0.68rem;
+	letter-spacing: 0.04em;
+	text-decoration: none;
+	transition: all 0.25s ease;
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+}
+
+.header-appstore-btn:hover {
+	background: var(--green);
+	color: #07110d;
+	border-color: var(--green);
+	box-shadow: 0 4px 14px var(--green-glow);
+	transform: translateY(-1px);
+}
+
+.header-appstore-btn svg {
+	width: 13px;
+	height: 13px;
+	fill: currentColor;
+	flex-shrink: 0;
+}
+
+.header-apple-logo {
+	height: 14px;
+	width: auto;
+	display: inline-block;
+	vertical-align: middle;
+	object-fit: contain;
+}
+
 /* Theme Toggle Button / Кнопка переключения темы */
 .theme-btn {
 	background: var(--surface);
@@ -558,6 +600,72 @@ a {
 .interactive-item.active .item-arrow {
 	width: 20px;
 }
+
+/* ── Panel: Features (Nightwell-Style Layout & Typography) ── */
+#panel-features {
+	justify-content: center;
+	padding: 1.4rem 0;
+}
+
+#panel-features .panel-header {
+	padding: 0 2.8rem 1.3rem;
+}
+
+#panel-features .panel-header span {
+	font-family: var(--font-mono);
+	font-weight: 400;
+	font-size: 0.68rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--text-secondary);
+}
+
+#panel-features .interactive-link {
+	padding: 1.15rem 2.8rem;
+}
+
+#panel-features .item-title {
+	font-family: var(--font-serif);
+	font-weight: 800;
+	font-size: clamp(1.05rem, 1.45vw, 1.35rem);
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	line-height: 1.15;
+	color: var(--text);
+	transition: color 0.3s ease;
+}
+
+#panel-features .interactive-item:hover .item-title,
+#panel-features .interactive-item.active .item-title {
+	color: #FFFFFF;
+}
+
+#panel-features .panel-footer {
+	padding: 1.5rem 2.8rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.app-store-badge-btn {
+	display: inline-flex;
+	align-items: center;
+	transition: transform 0.25s ease, filter 0.25s ease;
+	text-decoration: none;
+}
+
+.app-store-badge-btn:hover {
+	transform: scale(1.05);
+	filter: drop-shadow(0 4px 14px var(--green-glow));
+}
+
+.app-store-badge-img {
+	height: 38px;
+	width: auto;
+	display: block;
+	border-radius: 0;
+}
+
 
 /* =========================================================================
    MARK: - 6. SCREENS STICKY FILTER (Липкий фильтр моделей устройств)
@@ -984,6 +1092,170 @@ a {
 	object-position: center center;
 	display: block;
 	filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.3));
+}
+
+/* Video Mockup Frame & Screen with Mask / Видео-мокапы в холсте */
+.mockup-stage {
+	position: relative;
+	max-height: 85%;
+	max-width: 320px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.45));
+}
+
+.mockup-wrap {
+	position: relative;
+	width: 100%;
+	max-width: 100%;
+	isolation: isolate;
+	cursor: pointer;
+}
+
+.mockup-frame {
+	position: relative;
+	z-index: 2;
+	display: block;
+	width: 100%;
+	height: auto;
+	pointer-events: none;
+	user-select: none;
+}
+
+.mockup-screen {
+	position: absolute;
+	z-index: 1;
+	top: var(--vid-top);
+	left: var(--vid-left);
+	width: var(--vid-w);
+	height: var(--vid-h);
+	border-radius: var(--vid-radius, 40px);
+	overflow: hidden;
+	background: #000;
+}
+
+.mockup-video {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	background: #000;
+	cursor: pointer;
+}
+
+/* Big Interactive Center Play Button */
+.mockup-play-btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: rgba(7, 17, 13, 0.82);
+	border: 2px solid var(--green);
+	color: var(--green);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 10;
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px var(--green-glow);
+	transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+	pointer-events: auto;
+}
+
+.mockup-play-btn:hover {
+	transform: translate(-50%, -50%) scale(1.12);
+	background: var(--green);
+	color: #07110d;
+}
+
+.mockup-play-btn svg {
+	width: 24px;
+	height: 24px;
+	fill: currentColor;
+}
+
+.mockup-play-btn .pause-icon {
+	display: none;
+}
+
+.mockup-stage.is-playing .mockup-play-btn {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.mockup-stage.is-playing:hover .mockup-play-btn {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.mockup-stage.is-playing .mockup-play-btn .play-icon {
+	display: none;
+}
+
+.mockup-stage.is-playing .mockup-play-btn .pause-icon {
+	display: block;
+}
+
+/* Control Pills Bar below Mockup */
+.mockup-controls {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	margin-top: 0.75rem;
+	z-index: 5;
+}
+
+.mockup-ctrl-btn {
+	background: rgba(13, 30, 23, 0.85);
+	border: 1px solid var(--line-strong);
+	border-radius: 20px;
+	padding: 0.38rem 0.85rem;
+	color: var(--text);
+	font-family: var(--font-mono);
+	font-size: 0.68rem;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	cursor: pointer;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	transition: all 0.2s ease;
+}
+
+.mockup-ctrl-btn:hover {
+	border-color: var(--green);
+	color: var(--green);
+	background: rgba(87, 217, 159, 0.15);
+}
+
+/* VStack for About Showcase (Two stacked photos) */
+.canvas-vstack {
+	display: flex;
+	flex-direction: column;
+	gap: 0.9rem;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.canvas-vstack img {
+	width: 100%;
+	max-height: 48%;
+	object-fit: contain;
+	object-position: center center;
+	display: block;
+	filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.35));
+	border-radius: 8px;
 }
 
 /* Canvas Bottom Caption / Подпись к экрану */
