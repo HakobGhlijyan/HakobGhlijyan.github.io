@@ -1,96 +1,474 @@
 <!DOCTYPE html>
-<html lang="ru">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Hakob Ghlijyan — iOS Developer specializing in SwiftUI, UIKit, SwiftData, Combine, Clean Architecture, and App Store-ready native apps." />
-        <meta name="author" content="Hakob Ghlijyan" />
-        <title>Hakob Ghlijyan — iOS Developer</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body class="d-flex flex-column h-100">
-        <main class="flex-shrink-0">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-                <div class="container px-5">
-                    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><img class="brand-avatar rounded-circle" src="assets/avatar-mini.png" alt="Hakob Ghlijyan mini avatar" /><span class="fw-bolder text-primary">Hakob Ghlijyan</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <header class="py-5">
-                <div class="container px-5 pb-5">
-                    <div class="row gx-5 align-items-center">
-                        <div class="col-xxl-5">
-                            <div class="text-center text-xxl-start">
-                                <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">SwiftUI &middot; UIKit &middot; SwiftData &middot; App Store</div></div>
-                                <div class="fs-3 fw-light text-muted">Hi, I am Hakob</div>
-                                <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">iOS Developer building clean native apps</span></h1>
-                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                                    <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="resume.html">Resume</a>
-                                    <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="projects.html">Projects</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xxl-7">
-                            <div class="d-flex justify-content-center mt-5 mt-xxl-0">
-                                <div class="profile bg-gradient-primary-to-secondary">
-                                    <img class="profile-img" src="assets/profile.png" alt="Portrait of Hakob Ghlijyan" />
-                                    <div class="dots-1"></div>
-                                    <div class="dots-2"></div>
-                                    <div class="dots-3"></div>
-                                    <div class="dots-4"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <section class="bg-light py-5">
-                <div class="container px-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-xxl-8">
-                            <div class="text-center my-5">
-                                <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About Me</span></h2>
-                                <p class="lead fw-light mb-4">Native iOS engineer with 5+ years of full-cycle mobile development experience.</p>
-                                <p class="text-muted">I work with modern Apple technologies and classic production stacks: SwiftUI, UIKit, Combine, SwiftData, Core Data, async/await, REST APIs, WebSockets, offline caching, and App Store delivery. My engineering style is practical: Clean Architecture where it matters, MVVM and Coordinators for clarity, and simple maintainable code guided by SOLID, DRY, KISS, and YAGNI.</p>
-                                <div class="d-flex justify-content-center fs-2 gap-4">
-                                    <a class="text-gradient" href="mailto:support@hakob.dev" aria-label="Email Hakob"><i class="bi bi-envelope"></i></a>
-                                    <a class="text-gradient" href="https://github.com/HakobGhlijyan" target="_blank" rel="noopener noreferrer" aria-label="Hakob on GitHub"><i class="bi bi-github"></i></a>
-                                    <a class="text-gradient" href="contact.html" aria-label="Contact page"><i class="bi bi-chat-dots"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer class="bg-white py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0">Copyright &copy; Hakob Ghlijyan 2026</div></div>
-                    <div class="col-auto">
-                        <a class="small" href="projects.html">Projects</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="resume.html">Resume</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="contact.html">Contact</a>
-                    </div>
-                </div>
+<html lang="en">
+<head>
+  <!-- MARK: - Meta Tags / Мета-теги -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hakob Ghlijyan — iOS Engineer portfolio. Clean code, Swift, SwiftUI, UIKit, and native Apple ecosystem architecture.">
+  <meta name="author" content="Hakob Ghlijyan">
+  <meta name="theme-color" content="#0f0e0b">
+
+  <!-- MARK: - Favicon & Page Title / Фавикон и заголовок -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <title>Hakob Ghlijyan — iOS Developer · Clean Code</title>
+
+  <!-- MARK: - Fonts / Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- MARK: - Stylesheets / Таблицы стилей -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       MARK: - NAVIGATION / НАВИГАЦИЯ
+       Header with profile photo, name branding, and smooth scroll links
+       ========================================================================= -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <!-- Brand & Profile Avatar -->
+      <a href="#hero" class="nav-logo" aria-label="Hakob Ghlijyan home">
+        <img class="nav-avatar" src="assets/avatar-mini.png" alt="Hakob Ghlijyan avatar">
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Hakob <span>Ghlijyan</span></span>
+          <span class="nav-logo-tagline">Clean Code · iOS</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- =========================================================================
+       MARK: - HERO / ГЛАВНЫЙ ЭКРАН
+       Introduction, headline, call-to-actions, and interactive Swift code card
+       ========================================================================= -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-label">iOS Developer · 5+ Years Experience</div>
+      <h1 class="hero-title">Clean code,<br><em>sharp solutions</em></h1>
+      <p class="hero-tagline">
+        I design and engineer native Apple applications built to last — thoughtful architecture, maintainable Swift codebases, and interfaces that feel fluid and natural.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">
+          View My Work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn-ghost">Let's connect</a>
+      </div>
+    </div>
+
+    <!-- Hero Visual Side: Swift Code Window -->
+    <div class="hero-visual">
+      <div class="hero-float hero-float-1"></div>
+      <div class="hero-float hero-float-2"></div>
+      <div class="hero-float hero-float-3"></div>
+
+      <div class="hero-code-block">
+        <div class="code-header">
+          <div class="code-dot"></div>
+          <div class="code-dot"></div>
+          <div class="code-dot"></div>
+          <span class="code-title">Developer.swift</span>
+        </div>
+        <div class="code-body">
+          <span class="cm">// MARK: - Native iOS Engineering</span><br>
+          <span class="kw">struct</span> <span class="typ">iOSDeveloper</span> {<br>
+          &nbsp;&nbsp;<span class="kw">let</span> <span class="pr">name</span>: <span class="typ">String</span> <span class="op">=</span> <span class="str">"Hakob Ghlijyan"</span><br>
+          &nbsp;&nbsp;<span class="kw">let</span> <span class="pr">craft</span>: <span class="typ">String</span> <span class="op">=</span> <span class="str">"Clean Architecture"</span><br>
+          &nbsp;&nbsp;<span class="kw">let</span> <span class="pr">stack</span>: [<span class="typ">String</span>] <span class="op">=</span> [<span class="str">"SwiftUI"</span>, <span class="str">"UIKit"</span>, <span class="str">"Combine"</span>]<br>
+          }<br><br>
+          <span class="kw">func</span> <span class="fn">shipNativeExperience</span>() <span class="kw">async</span> <span class="kw">throws</span> <span class="op">-></span> <span class="typ">App</span> {<br>
+          &nbsp;&nbsp;<span class="kw">let</span> arch <span class="op">=</span> <span class="kw">await</span> <span class="fn">designCleanLayers</span>()<br>
+          &nbsp;&nbsp;<span class="kw">let</span> product <span class="op">=</span> <span class="kw">try</span> <span class="kw">await</span> <span class="fn">build</span>(with: arch)<br>
+          &nbsp;&nbsp;<span class="kw">return</span> <span class="fn">deployToAppStore</span>(product)<br>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       MARK: - ABOUT / О РАЗРАБОТЧИКЕ
+       Full portrait photo, bio, philosophy, and key career metrics
+       ========================================================================= -->
+  <div class="divider"></div>
+  <section class="section" id="about">
+    <div class="section-inner">
+      <div class="section-label reveal">About</div>
+      <div class="about-grid">
+        <!-- Full Vertical Portrait -->
+        <div class="about-photo reveal">
+          <img src="assets/profile.png" alt="Hakob Ghlijyan portrait" loading="lazy">
+        </div>
+
+        <!-- Bio & Overview -->
+        <div class="about-text reveal">
+          <h3>Engineer by trade, architect by instinct</h3>
+          <p>
+            I am an iOS developer with 5+ years of experience specializing in the modern Apple technology stack. My expertise covers both bleeding-edge approaches (SwiftUI, Combine, SwiftData, Structured Concurrency) and classic production-tested fundamentals (UIKit, Core Data, AutoLayout, SnapKit).
+          </p>
+          <p>
+            Experience across the entire mobile application lifecycle: from architecture design (MVP, MVVM, VIPER, Clean Architecture) and modular UI kit libraries to App Store publication, CI/CD pipelines, and deep memory/performance profiling with Instruments.
+          </p>
+          <!-- Highlights & Stats -->
+          <div class="about-stats">
+            <div>
+              <div class="stat-number">5+</div>
+              <div class="stat-label">Years of Experience</div>
             </div>
-        </footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="js/scripts.js"></script>
-    </body>
+            <div>
+              <div class="stat-number">3</div>
+              <div class="stat-label">Scaled Production Apps</div>
+            </div>
+            <div>
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Native Swift &amp; Apple Stack</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       MARK: - SKILLS / СТЕК И НАВЫКИ
+       Competency bars, tech stack icons, and GitHub contribution activity
+       ========================================================================= -->
+  <section class="section skills-section" id="skills">
+    <div class="section-inner">
+      <div class="section-label reveal">Skills &amp; Tools</div>
+      <div class="section-title reveal">What I work with</div>
+      <div class="section-subtitle reveal">A curated toolkit refined through 5+ years of engineering production iOS software.</div>
+
+      <!-- Skill Categories Grid -->
+      <div class="skills-grid">
+        <!-- Column 1: Core Apple Stack -->
+        <div class="skill-category reveal">
+          <h4>iOS &amp; Apple Technologies</h4>
+          <div class="skill-bar">
+            <div class="skill-bar-header"><span class="skill-bar-name">Swift / SwiftUI</span><span class="skill-bar-pct">95%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:95%"></div></div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-header"><span class="skill-bar-name">UIKit / AutoLayout / Hybrid UI</span><span class="skill-bar-pct">92%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:92%"></div></div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-header"><span class="skill-bar-name">Combine &amp; Swift Concurrency (async/await)</span><span class="skill-bar-pct">90%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:90%"></div></div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-header"><span class="skill-bar-name">Core Data / SwiftData / Persistence</span><span class="skill-bar-pct">88%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:88%"></div></div>
+          </div>
+        </div>
+
+        <!-- Column 2: Architecture & Engineering -->
+        <div class="skill-category reveal">
+          <h4>Architecture &amp; Engineering</h4>
+          <div class="skill-bar">
+            <div class="skill-bar-header"><span class="skill-bar-name">Clean Architecture / MVVM / VIPER</span><span class="skill-bar-pct">95%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:95%"></div></div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-header"><span class="skill-bar-name">REST API / URLSession / WebSockets</span><span class="skill-bar-pct">92%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:92%"></div></div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-header"><span class="skill-bar-name">Profiling (Instruments, Leaks, Time Profiler)</span><span class="skill-bar-pct">88%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:88%"></div></div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-header"><span class="skill-bar-name">Testing (XCTest, XCUITest) &amp; CI/CD</span><span class="skill-bar-pct">85%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:85%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Stack Icons -->
+      <div class="tech-stack reveal">
+        <h4>Tech Stack &amp; Tools</h4>
+        <div class="tech-icons">
+          <!-- Swift -->
+          <div class="tech-icon" title="Swift">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21.32 17.52c-.17.31-.38.6-.62.88-.2.23-.42.45-.66.65-2.28 1.93-5.26 2.37-7.9 1.48-1.57-.53-2.97-1.46-4.04-2.7-1.3-1.51-2.13-3.41-2.38-5.42-.03-.23-.05-.46-.05-.69 0-.44.05-.88.15-1.31.25-1.07.75-2.06 1.46-2.91.43-.51.94-.96 1.5-1.33.28-.18.57-.34.88-.47-.44.62-.77 1.32-.98 2.06-.32 1.15-.36 2.36-.12 3.53.25 1.19.78 2.31 1.56 3.26.93 1.14 2.15 2 3.52 2.5 1.09.4 2.26.51 3.4.32.72-.12 1.41-.37 2.05-.73-.24-.07-.48-.16-.71-.27-1.68-.81-2.97-2.18-3.66-3.88-.6-1.48-.68-3.1-.24-4.63.38-1.31 1.14-2.48 2.18-3.37.58-.5 1.25-.89 1.97-1.16.27-.1.54-.18.82-.24-.46.33-.88.72-1.24 1.16-.92 1.12-1.47 2.49-1.57 3.93-.11 1.45.24 2.91.99 4.15.82 1.36 2.05 2.38 3.5 2.92.57.21 1.17.33 1.77.36.42.02.83-.02 1.24-.12-.22.37-.47.72-.75 1.04z"/>
+            </svg>
+            Swift
+          </div>
+          <!-- SwiftUI / Apple -->
+          <div class="tech-icon" title="SwiftUI">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.36c.64-.78 1.08-1.86.96-2.95-.93.04-2.07.62-2.73 1.4-.58.67-1.09 1.77-.96 2.83 1.04.08 2.1-.51 2.73-1.28z"/>
+            </svg>
+            SwiftUI
+          </div>
+          <!-- UIKit -->
+          <div class="tech-icon" title="UIKit">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm2 3v12h12V6H6zm2 2h8v2H8V8zm0 4h8v2H8v-2z"/>
+            </svg>
+            UIKit
+          </div>
+          <!-- Xcode -->
+          <div class="tech-icon" title="Xcode">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5v-3.5h3.5v-2H13V7.5h-2V11H7.5v2H11v3.5h2z"/>
+            </svg>
+            Xcode
+          </div>
+          <!-- Core Data -->
+          <div class="tech-icon" title="Core Data &amp; SwiftData">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 4.02 2 6.5v11C2 19.98 6.48 22 12 22s10-2.02 10-4.5v-11C22 4.02 17.52 2 12 2zm0 3c4.41 0 8 1.34 8 2s-3.59 2-8 2-8-1.34-8-2 3.59-2 8-2zm0 5c-4.41 0-8-1.34-8-2V9.8c1.9 1.13 4.8 1.7 8 1.7s6.1-.57 8-1.7V10c0 .66-3.59 2-8 2zm0 5.5c-4.41 0-8-1.34-8-2v-1.7c1.9 1.13 4.8 1.7 8 1.7s6.1-.57 8-1.7v1.7c0 .66-3.59 2-8 2zm0 4c-4.41 0-8-1.34-8-2v-1.7c1.9 1.13 4.8 1.7 8 1.7s6.1-.57 8-1.7v1.7c0 .66-3.59 2-8 2z"/>
+            </svg>
+            Core Data
+          </div>
+          <!-- GitHub -->
+          <div class="tech-icon" title="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75z"/>
+            </svg>
+            GitHub
+          </div>
+          <!-- Figma -->
+          <div class="tech-icon" title="Figma">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 24c2.21 0 4-1.79 4-4v-4H8c-2.21 0-4 1.79-4 4s1.79 4 4 4zm0-16V0h4v8H8c-2.21 0-4 1.79-4 4s1.79 4 4 4h4V8H8c-2.21 0-4-1.79-4-4s1.79-4 4-4zm8 0V0h-4v8h4c2.21 0 4-1.79 4-4s-1.79-4-4-4zm0 8c0-2.21-1.79-4-4-4v8c2.21 0 4-1.79 4-4z"/>
+            </svg>
+            Figma
+          </div>
+          <!-- Firebase -->
+          <div class="tech-icon" title="Firebase">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0 1 10.3 18.2c-.25-2.14.37-4.128 2.287-5.7 0 0-.684 2.542.086 4.37.462 1.092 1.348 2.066 1.81 2.584.313.352.68.638 1.093.842a6.154 6.154 0 0 0 .662-2.47c.07-1.032-.09-2.073-.464-3.034-.358-.937-.927-1.78-1.58-2.237z"/>
+            </svg>
+            Firebase
+          </div>
+        </div>
+      </div>
+
+      <!-- GitHub Contributions Grid / Сетка контрибьюций -->
+      <div class="github-section reveal">
+        <h4>Contribution Activity</h4>
+        <p class="github-subtitle">Daily commits, clean architecture patterns &amp; production features</p>
+        <div class="contrib-grid" id="contribGrid"><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell l3"></div><div class="contrib-cell l4"></div><div class="contrib-cell l2"></div><div class="contrib-cell l3"></div><div class="contrib-cell l2"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell l1"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell l3"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l4"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l4"></div><div class="contrib-cell l1"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell l1"></div><div class="contrib-cell l4"></div><div class="contrib-cell l4"></div><div class="contrib-cell l1"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l2"></div><div class="contrib-cell l4"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l4"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l4"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l4"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l4"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell l3"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell l3"></div><div class="contrib-cell l4"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell l4"></div><div class="contrib-cell l1"></div><div class="contrib-cell l1"></div><div class="contrib-cell l1"></div><div class="contrib-cell l4"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell l4"></div><div class="contrib-cell l2"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l2"></div><div class="contrib-cell l1"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l3"></div><div class="contrib-cell l2"></div><div class="contrib-cell l4"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l4"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l4"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell l4"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l4"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l4"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l4"></div><div class="contrib-cell l3"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell l4"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l4"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell l4"></div><div class="contrib-cell l3"></div><div class="contrib-cell l1"></div><div class="contrib-cell l1"></div><div class="contrib-cell l3"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l4"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l4"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell l2"></div><div class="contrib-cell l1"></div><div class="contrib-cell l1"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l2"></div><div class="contrib-cell l3"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l4"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell l3"></div><div class="contrib-cell l2"></div><div class="contrib-cell l4"></div><div class="contrib-cell l3"></div><div class="contrib-cell l3"></div><div class="contrib-cell l4"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l4"></div><div class="contrib-cell l3"></div><div class="contrib-cell l3"></div><div class="contrib-cell l1"></div><div class="contrib-cell l3"></div><div class="contrib-cell l4"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l1"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l4"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell l3"></div><div class="contrib-cell l1"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l1"></div><div class="contrib-cell l4"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell"></div><div class="contrib-cell l2"></div><div class="contrib-cell l1"></div><div class="contrib-cell l3"></div><div class="contrib-cell"></div><div class="contrib-cell l4"></div><div class="contrib-cell l1"></div><div class="contrib-cell l3"></div></div>
+        <div class="contrib-legend">
+          <span>Less</span>
+          <div class="contrib-legend-cell" style="background: rgba(201,169,110,0.06)"></div>
+          <div class="contrib-legend-cell" style="background: rgba(201,169,110,0.14)"></div>
+          <div class="contrib-legend-cell" style="background: rgba(201,169,110,0.28)"></div>
+          <div class="contrib-legend-cell" style="background: rgba(201,169,110,0.48)"></div>
+          <div class="contrib-legend-cell" style="background: rgba(201,169,110,0.75)"></div>
+          <span>More</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       MARK: - PROJECTS / ПРОЕКТЫ
+       Selected work grid — ready for upcoming section customizations
+       ========================================================================= -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <div class="section-label reveal">Selected Work</div>
+      <div class="section-title reveal">Projects that <em>shipped</em></div>
+      <div class="section-subtitle reveal">A selection of recent builds — from developer tools to production platforms.</div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card reveal">
+          <div class="project-thumb">
+            <img src="images/project-1.jpg" alt="Velocitor project" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span class="project-tag">Next.js</span><span class="project-tag">Prisma</span><span class="project-tag">Stripe</span></div>
+            <h3 class="project-name">Velocitor</h3>
+            <p class="project-desc">A real-time analytics dashboard for SaaS teams. Features live metrics, custom event tracking, and Slack-integrated alerts for critical thresholds.</p>
+            <a href="#" class="project-link">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal">
+          <div class="project-thumb">
+            <img src="images/project-2.jpg" alt="Gridlock task board" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span class="project-tag">React</span><span class="project-tag">WebSocket</span><span class="project-tag">Go</span></div>
+            <h3 class="project-name">Gridlock</h3>
+            <p class="project-desc">Collaborative task board with real-time sync, drag-and-drop workflows, and role-based permissions. Built for distributed engineering teams.</p>
+            <a href="#" class="project-link">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card reveal">
+          <div class="project-thumb">
+            <img src="images/project-3.jpg" alt="Scaffold CLI tool" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span class="project-tag">TypeScript</span><span class="project-tag">CLI</span><span class="project-tag">Open Source</span></div>
+            <h3 class="project-name">Scaffold CLI</h3>
+            <p class="project-desc">An opinionated project scaffolding tool that generates production-ready boilerplates with CI/CD, linting, testing, and deployment configs baked in.</p>
+            <a href="#" class="project-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card reveal">
+          <div class="project-thumb">
+            <img src="images/project-4.jpg" alt="Meridian edge network" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span class="project-tag">Rust</span><span class="project-tag">WASM</span><span class="project-tag">Edge</span></div>
+            <h3 class="project-name">Meridian</h3>
+            <p class="project-desc">A lightweight edge computing framework for deploying serverless functions closer to users. Sub-millisecond cold starts with built-in observability.</p>
+            <a href="#" class="project-link">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       MARK: - EXPERIENCE / ОПЫТ РАБОТЫ
+       Career timeline based on actual resume data (CDEK, FinKeeper, SmartHome Keys)
+       ========================================================================= -->
+  <section class="section experience-section" id="experience">
+    <div class="section-inner">
+      <div class="section-label reveal">Experience</div>
+      <div class="section-title reveal">Where I've been</div>
+      <div class="section-subtitle reveal">A career trajectory shaped by complex mobile architecture, high-impact features, and clean code.</div>
+
+      <div class="timeline">
+        <!-- Position 1: CDEK -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">November 2023 — Present</div>
+          <div class="timeline-role">iOS Developer</div>
+          <div class="timeline-company">CDEK (СДЭК) · Moscow</div>
+          <div class="timeline-desc">
+            Mobile delivery application with hybrid architecture (UIKit + SwiftUI). Evolved client architecture (MVP → MVVM → SwiftUI), designed reusable modules, rewrote "Tracking" and "Checkout" screens in SwiftUI accelerating rendering by ~25% and reducing memory usage by ~15%. Engineered resilient local push notification system and optimized performance via Instruments profiling.
+          </div>
+        </div>
+
+        <!-- Position 2: FinKeeper -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">June 2022 — September 2023</div>
+          <div class="timeline-role">iOS Developer</div>
+          <div class="timeline-company">FinKeeper · Financial Sector</div>
+          <div class="timeline-desc">
+            Financial analytics and budgeting application with cross-modular architecture. Built custom Swift Charts animations, optimized Core Data transaction queries by ~20%, integrated StoreKit subscriptions boosting conversion by 15%, and implemented secure Keychain &amp; biometrics (FaceID/TouchID) authentication.
+          </div>
+        </div>
+
+        <!-- Position 3: SmartHome Keys -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">April 2021 — May 2022</div>
+          <div class="timeline-role">iOS Developer</div>
+          <div class="timeline-company">SmartHome Keys · IoT Startup</div>
+          <div class="timeline-desc">
+            Engineered IoT access management app from scratch using SwiftUI + MVVM + Combine. Delivered stable real-time device control, created reusable internal UI Kit library reducing new screen development time by 30%, implemented FileManager offline caching, and configured multi-language localization.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       MARK: - CONTACT / КОНТАКТЫ
+       Email, direct social links (GitHub, LinkedIn, Telegram), and message form
+       ========================================================================= -->
+  <div class="divider"></div>
+  <section class="section" id="contact">
+    <div class="section-inner">
+      <div class="section-label reveal">Contact</div>
+      <div class="section-title reveal">Let's build something</div>
+      <div class="section-subtitle reveal">Whether it's an iOS engineering collaboration, an architecture deep dive, or discussing Clean Code — I'd like to hear from you.</div>
+
+      <div class="contact-grid">
+        <!-- Contact Info & Direct Links -->
+        <div class="contact-text reveal">
+          <h3>Get in touch</h3>
+          <p>
+            I am currently open to exciting iOS engineering opportunities and challenging mobile projects. Feel free to reach out directly via email, Telegram, or social networks.
+          </p>
+
+          <!-- Direct Email Link -->
+          <a href="mailto:hakobghlijyan@gmail.com" class="contact-email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
+            <span>hakobghlijyan@gmail.com</span>
+          </a>
+
+          <!-- Social Links -->
+          <div class="social-links">
+            <!-- GitHub -->
+            <a href="https://github.com/HakobGhlijyan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/hakob-ghlijyan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <!-- Telegram -->
+            <a href="https://t.me/hakobghlijyan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Contact Form -->
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about your project, idea, or role..." required></textarea>
+          </div>
+          <button class="btn-submit" type="button" id="submitBtn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       MARK: - FOOTER / ПОДВАЛ САЙТА
+       Clean copyright and signature
+       ========================================================================= -->
+  <footer class="footer">
+    <p>
+      &copy; 2026 Hakob Ghlijyan &mdash; iOS Engineer. Crafted with precision &amp; Clean Code.
+    </p>
+  </footer>
+
+  <!-- MARK: - Scripts / Скрипты -->
+  <script src="js/main.js"></script>
+
+</body>
 </html>
