@@ -60,6 +60,14 @@
 4. Добавлены реальные контакты: Email (`hakobghlijyan@gmail.com`), GitHub, LinkedIn, Telegram (`@hakobghlijyan`).
 5. Настроен вывод вертикального фото пользователя в секции About с сохранением пропорций и аккуратной композиции.
 
+### Итерация 2: Доработка карточек проектов и интеграция шаблона Split Index
+- **Scale-to-fill для изображений проектов**: В карточках проектов скорректированы стили `.project-thumb` и дочерних изображений: применены `align-self: stretch`, `width: 100%`, `height: 100%` и `object-fit: cover`, благодаря чему фотографии теперь полностью заполняют контейнеры карточек без пустых полей.
+- **Фото профиля**: Фотография профиля обновлена на `assets/profile.jpg`.
+- **Даты в опыте работы**: Уточнена дата окончания позиции в CDEK — `November 2023 — June 2026`.
+- **Интеграция Split Index для отдельных приложений**:
+  - Первый проект настроен на прямой переход в приложение **Balance Cleaner** (`https://hakobghlijyan.github.io/BalanceCleaner/`).
+  - Развернута архитектура отдельных страниц приложений на базе шаблона `templatemo_616_split_index`: созданы `projects/nightwell.html`, `projects/project-3.html`, `projects/project-4.html` с интерактивным split-canvas превью и удобной навигационной кнопкой «Back to Portfolio».
+
 ---
 
 ## 6. Engineer's Wisdom

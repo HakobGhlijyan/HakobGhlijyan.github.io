@@ -1,25 +1,23 @@
 # Session Handoff
 
 ## Current Status
-- Репозиторий переведен на базу эталонного шаблона **StackCraft** (`2162_stackcraft`).
-- Старые неиспользуемые страницы Bootstrap (`contact.html`, `resume.html`, `projects.html`, старые CSS/JS и assets) удалены.
-- Все персональные данные и опыт обновлены на основе актуального резюме Акоба Клиджяна (5+ лет в iOS, CDEK, FinKeeper, SmartHome Keys).
-- Фотографии профиля (`assets/avatar-mini.png` и `assets/profile.png`) бережно сохранены и внедрены в навигацию и секцию About.
-- Hero-секция оформлена под iOS: блок кода переписан на Swift (`Developer.swift` со Swift Concurrency).
-- Добавлена активная контактная форма и прямые ссылки на Telegram, LinkedIn, GitHub и Email.
-- Структурированы и документированы файлы `index.html`, `css/style.css`, `js/main.js` в стиле Apple (`// MARK: -`).
+- Репозиторий полностью переведен на эталонный дизайн **StackCraft** (`2162_stackcraft`).
+- Фотография профиля в секции About обновлена на актуальную `assets/profile.jpg`.
+- В секции Projects карточки переведены в режим `scale-to-fill` (`object-fit: cover` с полным заполнением контейнеров без черных полей).
+- Первый проект связан с рабочим сайтом **Balance Cleaner** (`https://hakobghlijyan.github.io/BalanceCleaner/`).
+- Для остальных проектов развернут эталонный шаблон **Split Index** (`templatemo_616_split_index`):
+  - `projects/nightwell.html` (интерактивный showcase приложения Nightwell с навигацией по модулям, аудио-движком, графиками и кнопкой возврата в портфолио).
+  - `projects/project-3.html` и `projects/project-4.html` (индивидуальные страницы на базе split-index, готовые к наполнению).
+- В секции Experience дата окончания работы в CDEK установлена на `June 2026` (`November 2023 — June 2026`).
 
 ## Working Branch
 `dev/FeaturesNewSiteDevelop`
 
 ## Decisions Made
-1. **Дизайн-система**: Использована цветовая гамма и шрифты StackCraft (`Cormorant Garamond` + `Outfit` + `#c9a96e` акцент).
-2. **Шапка / Хедер**: Включен круглый аватар профиля, имя `Hakob Ghlijyan` и подзаголовок `Clean Code · iOS`.
-3. **Секция Projects**: Оставлена сетка из 4 проектов в качестве базы; готова к расширению/замене на секцию из других примеров по указанию пользователя.
-4. **Секция Experience**: Заполнена тремя коммерческими ролями (CDEK, FinKeeper, SmartHome Keys).
-5. **Секция Skills**: Адаптирована под стек iOS (Swift, SwiftUI, UIKit, Combine, Concurrency, Core Data, Clean Architecture, Instruments).
+1. **Scale-to-fill для проектов**: Стили `.project-thumb` и `.project-thumb img` адаптированы с `align-self: stretch` и `object-fit: cover`, обеспечивая бесшовное заполнение карточек.
+2. **Архитектура подпроектов**: Создана модульная папка `projects/` со стилями `projects/css/split-style.css`, скриптами `projects/js/split-script.js`, картинками `projects/images/` и страницами проектов, имеющими кнопку «Back to Portfolio» для бесшовной навигации.
+3. **Прямой переход на Balance Cleaner**: Для первого проекта настроен внешний переход на существующий GitHub Pages репозиторий `BalanceCleaner`.
 
 ## Next Steps
-1. Получить обратную связь пользователя по отображению сайта и секций.
-2. По указанию пользователя внедрить дополнительную секцию из выбранного шаблона (`Reference Examples Site/`).
-3. При необходимости настроить кастомную отправку формы через бэкенд / Formspree / EmailJS.
+1. Дождаться подтверждения пользователя по визуалу и ссылкам.
+2. При необходимости кастомизировать контент конкретных страниц `projects/nightwell.html`, `project-3.html` и `project-4.html`.
