@@ -257,14 +257,27 @@ body::before {
 	inset: 0;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	padding: 1rem 0;
+	justify-content: flex-start;
+	padding: 0;
 	opacity: 0;
 	transform: translateY(20px);
 	transition: opacity var(--transition-panel),
 		transform var(--transition-panel);
 	pointer-events: none;
 	overflow-y: auto;
+	scrollbar-width: none !important;
+	-ms-overflow-style: none !important;
+}
+
+.panel::-webkit-scrollbar {
+	display: none !important;
+	width: 0 !important;
+	height: 0 !important;
+}
+
+#panel-work {
+	justify-content: center;
+	padding: 1rem 0;
 }
 
 .panel.panel-active {
@@ -1055,12 +1068,19 @@ body::before {
 }
 
 /* MARK: - Screenshots Gallery Filter / Фильтры скриншотов */
+.screens-header-sticky {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background: #FFFFFF;
+	padding: 5.5rem 3rem 0.5rem;
+	border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+}
+
 .screens-nav {
 	display: flex;
 	gap: 0.5rem;
-	padding: 0 3rem 1rem;
-	border-bottom: 1px solid rgba(26, 26, 26, 0.08);
-	margin-bottom: 1rem;
+	padding: 0.5rem 0 0.2rem;
 }
 
 .screen-filter-btn {
@@ -1082,4 +1102,28 @@ body::before {
 	background: var(--ink);
 	color: #ffffff;
 	border-color: var(--ink);
+}
+
+/* Hide scrollbars across all components while preserving scroll */
+.no-scrollbar,
+.about-content,
+.contact-content,
+.project-list {
+	scrollbar-width: none !important;
+	-ms-overflow-style: none !important;
+}
+
+.no-scrollbar::-webkit-scrollbar,
+.about-content::-webkit-scrollbar,
+.contact-content::-webkit-scrollbar,
+.project-list::-webkit-scrollbar {
+	display: none !important;
+	width: 0 !important;
+	height: 0 !important;
+}
+
+#panel-about .about-content,
+#panel-support .contact-content,
+#panel-privacy .about-content {
+	padding-top: 5.5rem !important;
 }
