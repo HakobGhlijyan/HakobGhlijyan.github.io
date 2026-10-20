@@ -73,10 +73,12 @@
 
     <!-- Actions: Language & Mobile Menu (Default Dark Theme) -->
     <div class="site-actions">
-      <!-- Direct App Store Download Button -->
-      <a href="https://apps.apple.com/app/balance-cleaner/**********" target="_blank" rel="noopener noreferrer" class="header-appstore-btn" title="Download BalanceCleaner on App Store" aria-label="Download on App Store">
+      <!-- App Store button: «Coming soon» (no link until release).
+           После релиза заменить на:
+           <a href="https://apps.apple.com/app/balance-cleaner/idXXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="header-appstore-btn" title="Download BalanceCleaner on App Store" aria-label="Download on App Store"> -->
+      <a role="button" aria-disabled="true" tabindex="-1" class="header-appstore-btn is-soon" title="Coming soon on the App Store" aria-label="App Store — coming soon">
         <img src="assets/apple.logo@1x.png" alt="Apple" class="header-apple-logo">
-        <span>App Store</span>
+        <span data-i18n="comingSoon">Coming soon</span>
       </a>
 
       <!-- 7-Language Switcher Dropdown -->
@@ -107,7 +109,8 @@
   <div class="mobile-nav-overlay" id="mobileNav">
     <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</button>
     <a href="../index.html">&larr; Main Portfolio</a>
-    <a href="https://apps.apple.com/app/balance-cleaner/id6741703648" target="_blank" rel="noopener noreferrer" style="color:var(--green); font-weight:700;"> Download on App Store</a>
+    <!-- «Coming soon»: после релиза вернуть ссылку на App Store -->
+    <a role="button" aria-disabled="true" tabindex="-1" class="is-soon" style="color:var(--green); font-weight:700;" data-i18n="comingSoonStore">Coming soon on the App Store</a>
     <a data-nav="features" data-i18n="features">Features</a>
     <a data-nav="screens" data-i18n="screens">Screens</a>
     <a data-nav="guide" data-i18n="guideLabel">Guide</a>
@@ -208,8 +211,10 @@
         </ul>
 
         <div class="panel-footer">
-          <a href="https://apps.apple.com/app/balance-cleaner/id6741703648" target="_blank" rel="noopener noreferrer" class="app-store-badge-btn" aria-label="Download BalanceCleaner on the App Store">
-            <img src="assets/images/app-store-badge.svg" alt="Download on the App Store" class="app-store-badge-img">
+          <!-- «Coming soon»: после релиза вернуть ссылку https://apps.apple.com/app/balance-cleaner/idXXXXXXXXXX и бейдж assets/images/app-store-badge.svg -->
+          <a role="button" aria-disabled="true" tabindex="-1" class="header-appstore-btn is-soon" aria-label="App Store — coming soon">
+            <img src="assets/apple.logo@1x.png" alt="Apple" class="header-apple-logo">
+            <span data-i18n="comingSoonStore">Coming soon on the App Store</span>
           </a>
           <span style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-secondary);" data-i18n="hoverInspect">Hover module to inspect</span>
         </div>

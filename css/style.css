@@ -2123,6 +2123,40 @@ a {
   border-radius: 0;
 }
 
+/* MARK: - Coming Soon badge / Кнопка «Скоро» вместо бейджа App Store
+   RU: Пока приложения не вышли — вместо ссылки показывается неактивная плашка.
+       После релиза вернуть <a class="app-store-badge-link"> (см. комментарии в index.html).
+   EN: Until the apps are released a disabled pill replaces the App Store link. */
+.app-store-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 38px;
+  padding: 0 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  cursor: default;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.app-store-soon-logo {
+  height: 14px;
+  width: auto;
+  display: block;
+}
+
+:root.light .app-store-soon-logo {
+  filter: invert(1);
+}
+
 .app-web-link {
   font-size: 0.78rem;
   font-weight: 500;

@@ -1420,3 +1420,55 @@ a {
 		text-align: center;
 	}
 }
+
+/* =========================================================================
+   MARK: - 11. COMING SOON (Кнопка App Store до релиза)
+   RU: Выглядит как кнопка, но ничего не делает. После релиза убрать класс
+       is-soon и вернуть ссылку на App Store (см. комментарии в index.html).
+   EN: Looks like a button but does nothing. After release, drop the
+       is-soon class and restore the App Store link (see comments in index.html).
+   ========================================================================= */
+.is-soon {
+	opacity: 0.7;
+	cursor: default;
+	pointer-events: none;
+}
+
+/* =========================================================================
+   MARK: - 12. HEADER ON TABLETS & PHONES (Шапка на планшетах и телефонах)
+   ========================================================================= */
+
+/* RU: Вкладки разделов уходят в бургер-меню уже на ширине ≤ 1100px.
+       Раньше порог был 920px, и на 921–1000px вкладки вплотную упирались
+       в логотип и кнопки справа.
+   EN: Section tabs collapse into the burger menu at ≤ 1100px. The old
+       920px breakpoint left the tabs touching the logo and the buttons
+       between 921–1000px. */
+@media (max-width: 1100px) {
+	.site-nav-tabs {
+		display: none;
+	}
+
+	.hamburger-btn {
+		display: inline-flex;
+	}
+}
+
+/* RU: На ширине iPhone (≤ 640px) шапка не помещалась — кнопка меню выходила
+       за экран. «← Portfolio» и кнопка App Store уже есть в выезжающем меню,
+       поэтому в самой шапке их прячем.
+   EN: On iPhone-width screens (≤ 640px) the header overflowed and the menu
+       button was pushed off-screen. "← Portfolio" and the App Store button
+       already live in the slide-out menu, so they are hidden in the bar itself. */
+@media (max-width: 640px) {
+	.portfolio-back-link,
+	.header-appstore-btn {
+		display: none;
+	}
+}
+
+/* RU: Подсветка текущего раздела в выезжающем меню.
+   EN: Highlight the current section in the slide-out menu. */
+.mobile-nav-overlay a.nav-active {
+	color: var(--green);
+}
