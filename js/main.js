@@ -487,7 +487,7 @@
       const originalText = submitBtn.textContent;
       submitBtn.textContent = 'Sending...';
 
-      fetch('https://formsubmit.co/ajax/293c41b07af89f4fd053ff7bbb0cf770', {
+      fetch('https://formsubmit.co/ajax/hakobghlijyan@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
