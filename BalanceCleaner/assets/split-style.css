@@ -1500,3 +1500,98 @@ a {
 .form-status.is-error {
 	color: #ff8a80;
 }
+
+
+/* =========================================================================
+   MARK: - 13. LIVE ON APP STORE (Блок «Уже в App Store»)
+   RU: Иконка, бейдж и QR-код приложения под шапкой панели Features.
+       QR скрыт на телефонах — там достаточно нажать на бейдж.
+   EN: App icon, badge and QR code under the Features panel header.
+       The QR is hidden on phones, where tapping the badge is enough.
+   ========================================================================= */
+.live-card {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin: 0 42px 1.2rem; /* RU: выровнено по тексту заголовка. EN: aligned with the header text. */
+	padding: 0.9rem 1.1rem;
+	background: var(--surface-card);
+	border: 1px solid var(--line);
+	border-radius: 14px;
+}
+
+.live-icon {
+	flex-shrink: 0;
+	width: 64px;
+	height: 64px;
+	border-radius: 15px;
+}
+
+.live-text {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.35rem;
+	min-width: 0;
+	flex: 1;
+}
+
+.live-text strong {
+	font-size: 0.95rem;
+	color: var(--text);
+}
+
+.live-text span {
+	font-size: 0.78rem;
+	line-height: 1.45;
+	color: var(--text-secondary);
+}
+
+.live-badge {
+	display: inline-flex;
+	margin-top: 0.25rem;
+	transition: transform 0.25s ease;
+}
+
+.live-badge:hover {
+	transform: scale(1.04);
+}
+
+.live-badge img {
+	height: 38px;
+	width: auto;
+	display: block;
+}
+
+.live-qr {
+	flex-shrink: 0;
+	margin: 0;
+	text-align: center;
+}
+
+.live-qr img {
+	display: block;
+	width: 84px;
+	height: 84px;
+	border-radius: 8px;
+}
+
+.live-qr figcaption {
+	margin-top: 0.3rem;
+	font-family: var(--font-mono);
+	font-size: 0.58rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+	.live-qr {
+		display: none;
+	}
+
+	.live-icon {
+		width: 52px;
+		height: 52px;
+	}
+}
