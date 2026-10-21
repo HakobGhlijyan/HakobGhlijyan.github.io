@@ -701,45 +701,6 @@ function setupModelFilter() {
   });
 }
 
-// Support AJAX form submission via FormSubmit
-function setupSupportForm() {
-  const form = document.querySelector('.support-form');
-  if (!form) return;
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('.btn-submit');
-    const origText = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = 'Sending... / Отправка...';
-
-    try {
-      const formData = new FormData(form);
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (res.ok) {
-        form.innerHTML = `
-          <div style="padding: 1.5rem 1rem; text-align: center;">
-            <div style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--green);">✓</div>
-            <h3 style="color: var(--green); margin-bottom: 0.5rem; font-size: 1rem;">Message Sent! / Сообщение отправлено!</h3>
-            <p style="color: var(--text-secondary); font-size: 0.8rem;">Thank you! We will reply to your email as soon as possible.</p>
-          </div>
-        `;
-      } else {
-        throw new Error('Server response not ok');
-      }
-    } catch (err) {
-      btn.disabled = false;
-      btn.textContent = origText;
-      alert('Could not send message automatically. Please write directly to balancecleanerapp@gmail.com');
-    }
-  });
-}
-
 // Interactive Video Players with Play Button & Controls
 function setupVideoPlayers() {
   document.querySelectorAll('.mockup-stage').forEach(stage => {
@@ -806,7 +767,6 @@ function setupVideoPlayers() {
 document.addEventListener('DOMContentLoaded', () => {
   setupInteractivePreview();
   setupModelFilter();
-  setupSupportForm();
   setupVideoPlayers();
 
   // Route helper

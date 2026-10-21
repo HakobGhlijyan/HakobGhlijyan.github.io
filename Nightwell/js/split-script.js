@@ -84,8 +84,26 @@
     link.addEventListener('click', (e) => {
       e.preventDefault();
       switchPanel(link.dataset.nav, true);
+      setMenu(false);
     });
   });
+
+  // MARK: - Mobile Menu / Мобильное меню (бургер)
+  const mobileNav = document.getElementById('mobileNav');
+  const burger = document.getElementById('navBurger');
+  const navClose = document.getElementById('navClose');
+
+  function setMenu(open) {
+    if (!mobileNav) return;
+    mobileNav.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
+    if (burger) burger.setAttribute('aria-expanded', String(open));
+  }
+
+  if (burger) burger.addEventListener('click', () => setMenu(true));
+  if (navClose) navClose.addEventListener('click', () => setMenu(false));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 1100) setMenu(false); }, { passive: true });
 
   // Handle browser back/forward and direct hash entry
   window.addEventListener('hashchange', () => {

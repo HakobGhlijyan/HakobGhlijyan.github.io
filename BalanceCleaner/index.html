@@ -763,8 +763,11 @@
           </div>
 
           <!-- Live FormSubmit Form -->
-          <form class="support-form" action="https://formsubmit.co/293c41b07af89f4fd053ff7bbb0cf770" method="POST">
-            <input type="hidden" name="_subject" value="BalanceCleaner Web Support Request">
+          <form class="support-form" data-contact-form
+                action="https://formsubmit.co/293c41b07af89f4fd053ff7bbb0cf770" method="POST"
+                data-subject="[BalanceCleaner] Support request"
+                data-fallback-email="balancecleanerapp@gmail.com">
+            <input type="hidden" name="_subject" value="[BalanceCleaner] Support request">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
             <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
@@ -1327,6 +1330,7 @@
   </footer>
 
   <!-- MARK: - Main Application Scripts -->
+  <script src="assets/contact-form.js"></script>
   <script src="assets/main.js"></script>
 </body>
 </html>
