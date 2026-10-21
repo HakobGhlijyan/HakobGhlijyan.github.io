@@ -1331,11 +1331,6 @@ body::before {
 	border-bottom: none;
 }
 
-.mobile-nav-lang {
-	align-self: flex-start;
-	margin-left: 0;
-}
-
 body.menu-open {
 	overflow: hidden;
 }
@@ -1356,8 +1351,12 @@ body.menu-open {
 	}
 
 	.site-back-link,
-	.site-header-nav .header-appstore-btn,
-	.site-header-nav .lang-switch {
+	.site-header-nav .header-appstore-btn {
 		display: none;
+	}
+
+	/* RU: язык остаётся рядом с бургером. EN: language switch stays next to the burger. */
+	.site-header-nav .lang-switch {
+		margin-left: 0;
 	}
 }
