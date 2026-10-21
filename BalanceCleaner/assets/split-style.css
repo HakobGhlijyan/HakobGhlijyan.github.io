@@ -1472,3 +1472,31 @@ a {
 .mobile-nav-overlay a.nav-active {
 	color: var(--green);
 }
+
+/* =========================================================================
+   MARK: - 13. FORM STATUS (Статус отправки формы — contact-form.js)
+   RU: Строка под кнопкой: «Отправка…», «Сообщение отправлено», ошибка.
+   EN: Line under the submit button: sending / sent / error.
+   ========================================================================= */
+.form-status {
+	margin: 0;
+	font-size: 0.78rem;
+	line-height: 1.5;
+}
+
+.form-status:empty {
+	display: none;
+}
+
+.form-status.is-sending {
+	color: var(--text-secondary);
+}
+
+.form-status.is-success {
+	color: var(--green);
+	font-weight: 600;
+}
+
+.form-status.is-error {
+	color: #ff8a80;
+}

@@ -497,7 +497,7 @@
           name: name,
           email: email,
           message: message,
-          _subject: `New Portfolio Message from ${name}`
+          _subject: `[Portfolio] Contact request — ${name}`
         })
       })
       .then(response => {
