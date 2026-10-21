@@ -1261,3 +1261,103 @@ body::before {
 #panel-privacy .about-content {
 	padding-top: 5.5rem !important;
 }
+
+/* =========================================================================
+   MARK: - Mobile Menu (Burger) / Мобильное меню (бургер)
+   RU: Вкладки уходят в бургер на экранах до 1100px; на телефонах в шапке
+       остаются только бренд и бургер. Язык и ссылка на портфолио — в меню.
+   EN: Tabs collapse into a burger up to 1100px; on phones only the brand and
+       the burger remain in the header. Language and portfolio link live in the menu.
+   ========================================================================= */
+.hamburger-btn {
+	display: none;
+	flex-shrink: 0;
+	width: 34px;
+	height: 34px;
+	margin-left: 0.5rem;
+	align-items: center;
+	justify-content: center;
+	background: var(--ocean-glass);
+	border: 1px solid var(--ocean-border-strong);
+	border-radius: 6px;
+	color: var(--ink);
+	cursor: pointer;
+}
+
+.mobile-nav-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 99;
+	display: none;
+	flex-direction: column;
+	gap: 1.1rem;
+	padding: 1.5rem 1.8rem 2rem;
+	overflow-y: auto;
+	background: rgba(3, 12, 24, 0.96);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+}
+
+.mobile-nav-overlay.open {
+	display: flex;
+}
+
+.mobile-nav-close {
+	align-self: flex-end;
+	background: transparent;
+	border: none;
+	color: var(--ink);
+	font-size: 2rem;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.mobile-nav-overlay > a {
+	font-size: 1.1rem;
+	font-weight: 600;
+	padding: 0.55rem 0;
+	border-bottom: 1px solid var(--ocean-border);
+	color: var(--ink);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.mobile-nav-overlay > a.nav-active {
+	color: var(--accent);
+}
+
+.mobile-nav-overlay > a.mobile-nav-soon {
+	color: var(--accent);
+	border-bottom: none;
+}
+
+.mobile-nav-lang {
+	align-self: flex-start;
+	margin-left: 0;
+}
+
+body.menu-open {
+	overflow: hidden;
+}
+
+@media (max-width: 1100px) {
+	.site-header-nav > a[data-nav] {
+		display: none;
+	}
+
+	.hamburger-btn {
+		display: inline-flex;
+	}
+}
+
+@media (max-width: 640px) {
+	.site-header {
+		padding: 0.8rem 1rem;
+	}
+
+	.site-back-link,
+	.site-header-nav .header-appstore-btn,
+	.site-header-nav .lang-switch {
+		display: none;
+	}
+}

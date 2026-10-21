@@ -1815,10 +1815,16 @@ a {
   }
 
   /* Matrix 1-Column Responsive Kinetic Stack / Одноколоночный кинетический стек для планшетов и мобильных */
+  /* RU: каждая карточка сохраняет «десктопный» размер (почти квадрат) и не сжимается;
+         раскрытие меняет высоту строки (её задаёт JS через --cell-h).
+     EN: every card keeps its desktop-like size (near-square) and never shrinks;
+         expanding changes the row height (set by JS via --cell-h). */
   .matrix {
-    grid-template-columns: 1fr !important;
-    grid-template-rows: repeat(6, 1fr) !important;
-    height: clamp(660px, 90vh, 880px);
+    --cell-h: clamp(300px, 92vw, 400px);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, var(--cell-h));
+    height: auto;
+    min-height: 0;
     transition: grid-template-rows 0.65s var(--ease-smooth);
   }
 
@@ -1912,10 +1918,6 @@ a {
 
   .stat-number {
     font-size: 1.8rem;
-  }
-
-  .matrix {
-    height: clamp(620px, 88vh, 780px);
   }
 
   .cell {

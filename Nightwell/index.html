@@ -117,8 +117,30 @@
         <button type="button" class="lang-btn active" data-lang="en">EN</button>
         <button type="button" class="lang-btn" data-lang="ru">RU</button>
       </div>
+
+      <!-- Mobile Hamburger Button / Кнопка бургер-меню (виден на узких экранах) -->
+      <button type="button" class="hamburger-btn" id="navBurger" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </nav>
   </header>
+
+  <!-- Mobile Navigation Overlay / Мобильное меню -->
+  <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menu">
+    <button type="button" class="mobile-nav-close" id="navClose" aria-label="Close menu">&times;</button>
+    <a href="../index.html">&larr; <span data-en="Portfolio" data-ru="Портфолио">Portfolio</span></a>
+    <a data-nav="work" href="#work" class="nav-active" data-en="Features" data-ru="Возможности">Features</a>
+    <a data-nav="screens" href="#screens" data-en="Screenshots" data-ru="Скриншоты">Screenshots</a>
+    <a data-nav="about" href="#about" data-en="About" data-ru="О проекте">About</a>
+    <a data-nav="support" href="#support" data-en="Support" data-ru="Поддержка">Support</a>
+    <a data-nav="privacy" href="#privacy" data-en="Privacy" data-ru="Приватность">Privacy</a>
+    <!-- «Coming soon»: после релиза заменить на ссылку App Store -->
+    <a role="button" aria-disabled="true" tabindex="-1" class="is-soon mobile-nav-soon" data-en="Coming soon on the App Store" data-ru="Скоро в App Store">Coming soon on the App Store</a>
+    <div class="lang-switch mobile-nav-lang">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ru">RU</button>
+    </div>
+  </div>
 
   <!-- =========================================================================
        MARK: - MAIN SPLIT CONTAINER / ДВУХПАНЕЛЬНЫЙ ИНТЕРФЕЙС

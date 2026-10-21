@@ -383,8 +383,8 @@
 
     function reset() {
       if (isMobile()) {
-        grid.style.gridTemplateColumns = '1fr';
-        grid.style.gridTemplateRows = 'repeat(6, 1fr)';
+        grid.style.gridTemplateColumns = '';
+        grid.style.gridTemplateRows = '';
       } else {
         grid.style.gridTemplateColumns = '1fr 1fr 1fr';
         grid.style.gridTemplateRows = '1fr 1fr';
@@ -395,9 +395,11 @@
 
     function open(i) {
       if (isMobile()) {
-        grid.style.gridTemplateColumns = '1fr';
-        const rows = ['1fr', '1fr', '1fr', '1fr', '1fr', '1fr'];
-        rows[i] = '4.5fr';
+        // RU: остальные строки остаются размера --cell-h, активная — выше (контент помещается).
+        // EN: other rows keep --cell-h, the active one grows so the detail fits.
+        grid.style.gridTemplateColumns = '';
+        const rows = cells.map(() => 'var(--cell-h)');
+        rows[i] = 'calc(var(--cell-h) * 1.55)';
         grid.style.gridTemplateRows = rows.join(' ');
       } else {
         const col = i % 3;
