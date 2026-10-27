@@ -203,14 +203,18 @@
     });
   });
 
-  // MARK: - Bilingual Language Switcher (EN / RU)
-  const langBtns = document.querySelectorAll('.lang-btn');
+  // MARK: - Bilingual Language Switcher (EN / RU) Dropdown
   const translatableElements = document.querySelectorAll('[data-en][data-ru]');
 
   function setLanguage(lang) {
     document.documentElement.lang = lang;
-    langBtns.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.lang === lang);
+    document.querySelectorAll('.lang-label').forEach(lbl => {
+      lbl.textContent = lang.toUpperCase();
+    });
+    document.querySelectorAll('.lang-menu button').forEach(btn => {
+      const isActive = btn.dataset.val === lang;
+      btn.classList.toggle('active', isActive);
+      btn.style.fontWeight = isActive ? '700' : 'normal';
     });
 
     translatableElements.forEach(el => {
@@ -222,11 +226,26 @@
     } catch (e) {}
   }
 
-  langBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      setLanguage(btn.dataset.lang);
-    });
+  document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.lang-btn');
+    if (btn) {
+      e.stopPropagation();
+      const menu = btn.closest('.custom-lang').querySelector('.lang-menu');
+      const isOpen = menu.classList.contains('show');
+      document.querySelectorAll('.lang-menu').forEach(m => m.classList.remove('show'));
+      if (!isOpen) menu.classList.add('show');
+      return;
+    }
+
+    const menuBtn = e.target.closest('.lang-menu button');
+    if (menuBtn) {
+      const code = menuBtn.dataset.val;
+      if (code) setLanguage(code);
+      document.querySelectorAll('.lang-menu').forEach(m => m.classList.remove('show'));
+      return;
+    }
+
+    document.querySelectorAll('.lang-menu').forEach(m => m.classList.remove('show'));
   });
 
   // Restore preferred language
@@ -234,6 +253,10 @@
     const savedLang = localStorage.getItem('nightwell_lang');
     if (savedLang === 'ru') {
       setLanguage('ru');
+    } else {
+      setLanguage('en');
     }
-  } catch (e) {}
+  } catch (e) {
+    setLanguage('en');
+  }
 })();

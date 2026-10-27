@@ -123,9 +123,10 @@ a {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.6rem;
-	font-weight: 700;
-	font-size: 1.05rem;
-	letter-spacing: -0.01em;
+	font-family: var(--font-serif);
+	font-weight: 800;
+	font-size: 1.15rem;
+	letter-spacing: 0.01em;
 	color: var(--text);
 	cursor: pointer;
 }
@@ -624,7 +625,8 @@ a {
 	padding: 1.15rem 2.8rem;
 }
 
-#panel-features .item-title {
+#panel-features .item-title,
+#panel-screens .item-title {
 	font-family: var(--font-serif);
 	font-weight: 800;
 	font-size: clamp(1.05rem, 1.45vw, 1.35rem);
@@ -636,7 +638,9 @@ a {
 }
 
 #panel-features .interactive-item:hover .item-title,
-#panel-features .interactive-item.active .item-title {
+#panel-features .interactive-item.active .item-title,
+#panel-screens .interactive-item:hover .item-title,
+#panel-screens .interactive-item.active .item-title {
 	color: #FFFFFF;
 }
 
@@ -1312,10 +1316,23 @@ a {
 	-webkit-backdrop-filter: blur(14px);
 	border-top: 1px solid var(--line);
 	font-family: var(--font-mono);
-	font-size: 0.62rem;
-	letter-spacing: 0.06em;
+	font-size: 0.6rem;
+	font-weight: 300;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
 	color: var(--text-secondary);
 	pointer-events: none;
+}
+
+.site-footer span,
+.site-footer a {
+	font-family: var(--font-mono);
+	font-weight: 300;
+	font-size: 0.6rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--text-secondary);
+	text-decoration: none;
 }
 
 .site-footer > * {

@@ -67,140 +67,121 @@ body::before {
 }
 
 /* ── Site Header ── */
+/* =========================================================================
+   MARK: - SITE HEADER & BRAND (Шапка, бренд, меню и переключатели)
+   ========================================================================= */
 .site-header {
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 10;
+	z-index: 20;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 1.2rem 3rem;
+	padding: 0.9rem 2.2rem;
 	pointer-events: none;
 	animation: fadeIn 0.5s ease backwards;
-	background: linear-gradient(to bottom, rgba(3, 12, 24, 0.85) 0%, rgba(6, 19, 37, 0.55) 70%, transparent 100%);
-	backdrop-filter: blur(12px);
-	-webkit-backdrop-filter: blur(12px);
+	background: linear-gradient(to bottom, rgba(3, 12, 24, 0.96) 0%, rgba(6, 19, 37, 0.80) 65%, transparent 100%);
+	backdrop-filter: blur(14px);
+	-webkit-backdrop-filter: blur(14px);
+	border-bottom: 1px solid var(--ocean-border);
 }
 
-.site-header>* {
+.site-header > * {
 	pointer-events: auto;
 }
 
-.site-brand {
+.site-brand-group {
 	display: flex;
-	align-items: baseline;
-	gap: 1rem;
+	align-items: center;
+	gap: 0.85rem;
 }
 
-.site-title {
-	font-family: 'Playfair Display', serif;
-	font-weight: 900;
-	font-size: 1.15rem;
-	letter-spacing: 0.02em;
-	text-transform: uppercase;
-	color: var(--ink);
-	text-decoration: none;
-	line-height: 1;
-	cursor: pointer;
-	text-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
-}
-
-.site-divider-v {
-	width: 1px;
-	height: 14px;
-	background: var(--ocean-border);
-	flex-shrink: 0;
-}
-
-.site-tagline {
-	font-family: 'DM Mono', monospace;
-	font-weight: 300;
-	font-size: 0.62rem;
-	letter-spacing: 0.14em;
-	text-transform: uppercase;
-	color: var(--ink-light);
-	line-height: 1;
-}
-
-/* MARK: - Back to Main Portfolio Link */
-.site-back-link {
+.site-brand {
 	display: inline-flex;
 	align-items: center;
-	gap: 0.4rem;
-	font-family: 'DM Mono', monospace;
-	font-size: 0.7rem;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
+	gap: 0.6rem;
+	font-family: 'Playfair Display', serif;
+	font-weight: 800;
+	font-size: 1.15rem;
+	letter-spacing: 0.01em;
 	color: var(--ink);
 	text-decoration: none;
-	padding: 0.35rem 0.75rem;
-	border: 1px solid var(--ocean-border-strong);
-	border-radius: 4px;
-	transition: all 0.25s ease;
+	cursor: pointer;
+}
+
+.site-brand-icon {
+	width: 26px;
+	height: 26px;
+	display: block;
+}
+
+.portfolio-back-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	font-family: 'DM Mono', monospace;
+	font-size: 0.68rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--ink-light);
+	padding: 0.32rem 0.68rem;
+	border: 1px solid var(--ocean-border);
+	border-radius: 5px;
 	background: var(--ocean-glass);
-	backdrop-filter: blur(8px);
-	-webkit-backdrop-filter: blur(8px);
-	margin-left: 0.75rem;
+	transition: all 0.2s ease;
+	text-decoration: none;
 }
 
-.site-back-link:hover {
-	background: var(--accent);
-	color: var(--ocean-deep);
+.portfolio-back-link:hover {
+	color: var(--accent);
 	border-color: var(--accent);
-	box-shadow: 0 0 16px rgba(56, 189, 248, 0.4);
+	background: var(--ocean-glass-hover);
 }
 
+/* Navigation Tabs / Вкладки разделов */
+.site-nav-tabs,
 .site-header-nav {
 	display: flex;
-	gap: 0.35rem;
+	align-items: center;
+	gap: 0.3rem;
 }
 
+.site-nav-tabs a,
 .site-header-nav a {
 	font-family: 'Instrument Sans', sans-serif;
 	font-weight: 500;
-	font-size: 0.72rem;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
+	font-size: 0.76rem;
+	letter-spacing: 0.02em;
 	color: var(--ink-light);
-	text-decoration: none;
+	padding: 0.35rem 0.75rem;
+	border-radius: 6px;
 	position: relative;
-	padding: 0.35rem 0.7rem;
-	transition: color 0.35s ease;
+	transition: all 0.2s ease;
 	cursor: pointer;
-	border-radius: 4px;
+	text-decoration: none;
 }
 
-.site-header-nav a::before {
-	content: '';
-	position: absolute;
-	inset: 0;
-	background: rgba(56, 189, 248, 0.15);
-	border-radius: 4px;
-	transform: scaleX(0);
-	transform-origin: right;
-	transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-	z-index: -1;
-}
-
+.site-nav-tabs a:hover,
 .site-header-nav a:hover {
 	color: var(--ink);
+	background: rgba(56, 189, 248, 0.12);
 }
 
-.site-header-nav a:hover::before {
-	transform: scaleX(1);
-	transform-origin: left;
-}
-
+.site-nav-tabs a.nav-active,
 .site-header-nav a.nav-active {
-	color: var(--accent);
+	color: var(--ocean-deep) !important;
+	background: var(--accent);
+	font-weight: 700;
+	box-shadow: 0 0 14px rgba(56, 189, 248, 0.4);
 }
 
-.site-header-nav a.nav-active::before {
-	background: rgba(56, 189, 248, 0.18);
-	box-shadow: inset 0 0 0 1px var(--ocean-border-strong);
-	transform: scaleX(1);
+/* Header Actions / Язык, Меню */
+.site-actions {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
 }
 
 /* ── Site Footer ── */
@@ -209,16 +190,17 @@ body::before {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	z-index: 10;
+	z-index: 20;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 1rem 3rem;
+	padding: 0.75rem 2.2rem;
 	pointer-events: none;
 	animation: fadeIn 0.5s ease backwards;
-	background: linear-gradient(to top, rgba(3, 12, 24, 0.85) 0%, rgba(6, 19, 37, 0.5) 70%, transparent 100%);
-	backdrop-filter: blur(12px);
-	-webkit-backdrop-filter: blur(12px);
+	background: linear-gradient(to top, rgba(3, 12, 24, 0.96) 0%, rgba(6, 19, 37, 0.8) 70%, transparent 100%);
+	backdrop-filter: blur(14px);
+	-webkit-backdrop-filter: blur(14px);
+	border-top: 1px solid var(--ocean-border);
 }
 
 .site-footer>* {
@@ -395,10 +377,10 @@ body::before {
 .project-title {
 	font-family: 'Playfair Display', serif;
 	font-weight: 800;
-	font-size: clamp(1.4rem, 2.2vw, 2.1rem);
+	font-size: clamp(1.05rem, 1.45vw, 1.35rem);
 	text-transform: uppercase;
 	letter-spacing: 0.02em;
-	line-height: 1.1;
+	line-height: 1.15;
 	color: var(--ink);
 	transition: color 0.3s ease;
 }
@@ -951,7 +933,7 @@ body::before {
 	}
 
 	.project-title {
-		font-size: clamp(1.2rem, 5vw, 1.6rem);
+		font-size: clamp(1.02rem, 3.8vw, 1.3rem);
 	}
 
 	.project-category {
@@ -1154,41 +1136,163 @@ body::before {
 	border-radius: 0;
 }
 
-
-/* MARK: - Language Switcher / Переключатель языка с высоким контрастом */
-.lang-switch {
-	display: inline-flex;
+/* =========================================================================
+   MARK: - LIVE ON APP STORE (Блок «Уже в App Store»)
+   RU: Иконка, бейдж и QR-код приложения под шапкой панели Features.
+       QR скрыт на телефонах — там достаточно нажать на бейдж.
+   EN: App icon, badge and QR code under the Features panel header.
+       The QR is hidden on phones, where tapping the badge is enough.
+   ========================================================================= */
+.live-card {
+	display: flex;
 	align-items: center;
-	border: 1px solid rgba(56, 189, 248, 0.3);
-	border-radius: 6px;
-	overflow: hidden;
-	margin-left: 0.5rem;
-	background: rgba(7, 25, 48, 0.85);
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+	gap: 1rem;
+	margin: 0 3rem 1.2rem;
+	padding: 0.9rem 1.1rem;
+	background: var(--ocean-glass);
+	border: 1px solid var(--ocean-border);
+	border-radius: 14px;
+}
+
+.live-icon {
+	flex-shrink: 0;
+	width: 64px;
+	height: 64px;
+	border-radius: 14px;
+	display: block;
+}
+
+.live-text {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.35rem;
+	min-width: 0;
+	flex: 1;
+}
+
+.live-text strong {
+	font-size: 0.95rem;
+	color: var(--ink);
+}
+
+.live-text span {
+	font-size: 0.78rem;
+	line-height: 1.45;
+	color: var(--ink-light);
+}
+
+.live-badge {
+	display: inline-flex;
+	margin-top: 0.25rem;
+	transition: transform 0.25s ease;
+}
+
+.live-badge:hover {
+	transform: scale(1.04);
+}
+
+.live-badge img {
+	height: 38px;
+	width: auto;
+	display: block;
+}
+
+.live-qr {
+	flex-shrink: 0;
+	margin: 0;
+	text-align: center;
+}
+
+.live-qr img,
+.live-qr-placeholder {
+	display: block;
+	width: 84px;
+	height: 84px;
+	border-radius: 8px;
+	background: #000000;
+	border: 1px solid var(--ocean-border);
+}
+
+.live-qr figcaption {
+	margin-top: 0.3rem;
+	font-family: 'DM Mono', monospace;
+	font-size: 0.58rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--ink-light);
+}
+
+/* MARK: - Custom Language Dropdown (EN / RU) */
+.custom-lang {
+	position: relative;
 }
 
 .lang-btn {
-	background: transparent;
-	border: none;
-	padding: 0.4rem 0.7rem;
+	background: var(--ocean-glass);
+	border: 1px solid var(--ocean-border);
+	border-radius: 6px;
+	padding: 0.35rem 0.65rem;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
 	font-family: 'DM Mono', monospace;
 	font-size: 0.7rem;
-	font-weight: 500;
-	color: #94AEC7;
+	font-weight: 600;
+	color: var(--ink);
 	cursor: pointer;
-	transition: all 0.25s ease;
+	transition: all 0.2s ease;
 }
 
 .lang-btn:hover {
-	color: #FFFFFF;
-	background: rgba(56, 189, 248, 0.12);
+	border-color: var(--accent);
 }
 
-.lang-btn.active {
-	background: var(--accent);
-	color: var(--ocean-deep) !important;
+.lang-menu {
+	position: absolute;
+	top: calc(100% + 6px);
+	right: 0;
+	min-width: 145px;
+	background: #071930;
+	border: 1px solid var(--ocean-border);
+	border-radius: 8px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+	padding: 0.35rem 0;
+	display: none;
+	flex-direction: column;
+	z-index: 100;
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+}
+
+.lang-menu.show {
+	display: flex;
+}
+
+.lang-menu button {
+	background: transparent;
+	border: none;
+	padding: 0.45rem 0.85rem;
+	font-family: 'Instrument Sans', sans-serif;
+	font-size: 0.76rem;
+	color: var(--ink-light);
+	text-align: left;
+	cursor: pointer;
+	transition: all 0.15s ease;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	width: 100%;
+}
+
+.lang-menu button:hover {
+	background: rgba(56, 189, 248, 0.12);
+	color: var(--ink);
+}
+
+.lang-menu button.active {
+	color: var(--accent);
 	font-weight: 700;
-	box-shadow: 0 0 12px rgba(56, 189, 248, 0.45);
 }
 
 /* MARK: - Screenshots Gallery Filter / Фильтры скриншотов в стеклянном стиле */
@@ -1358,5 +1462,18 @@ body.menu-open {
 	/* RU: язык остаётся рядом с бургером. EN: language switch stays next to the burger. */
 	.site-header-nav .lang-switch {
 		margin-left: 0;
+	}
+
+	.live-card {
+		margin: 0 1.5rem 1rem;
+	}
+
+	.live-qr {
+		display: none;
+	}
+
+	.live-icon {
+		width: 52px;
+		height: 52px;
 	}
 }
