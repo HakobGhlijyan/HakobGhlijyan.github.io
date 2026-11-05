@@ -1,13 +1,13 @@
 /**
  * contact-form.js — единый обработчик формы обратной связи / shared contact-form handler
  *
- * RU: Один и тот же файл лежит в каждом сайте приложения (BalanceCleaner, Nightwell, ...).
+ * RU: Один и тот же файл лежит в каждом сайте приложения (CentSweep, Nightwell, ...).
  *     Он отправляет форму через FormSubmit в фоне, без перезагрузки страницы, и сразу
  *     показывает под кнопкой статус: «Отправка…», «Сообщение отправлено» или ошибку.
  *     Адрес получателя берётся ТОЛЬКО из атрибута action формы (токен или e-mail).
  *     Больше нигде адрес не указывается.
  *
- * EN: The very same file ships with every app site (BalanceCleaner, Nightwell, ...).
+ * EN: The very same file ships with every app site (CentSweep, Nightwell, ...).
  *     It submits the form to FormSubmit in the background (no page reload) and shows a
  *     status line right under the button: "Sending…", "Message sent" or an error.
  *     The recipient comes ONLY from the form's action attribute (token or e-mail).

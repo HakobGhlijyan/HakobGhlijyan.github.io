@@ -43,14 +43,14 @@
 
     try {
       localStorage.setItem('portfolio-theme', mode);
-      localStorage.setItem('balance-theme', mode); // Синхронизация с Balance Cleaner
+      localStorage.setItem('centsweep-theme', mode); // Синхронизация с CentSweep
     } catch (e) {}
   }
 
   // Определение сохраненной темы или дефолтная темная тема
   const savedTheme = (function() {
     try {
-      return localStorage.getItem('portfolio-theme') || localStorage.getItem('balance-theme') || 'dark';
+      return localStorage.getItem('portfolio-theme') || localStorage.getItem('centsweep-theme') || localStorage.getItem('balance-theme') || 'dark';
     } catch (e) {
       return 'dark';
     }

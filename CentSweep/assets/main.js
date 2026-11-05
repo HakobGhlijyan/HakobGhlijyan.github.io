@@ -1,5 +1,5 @@
 /**
- * BalanceCleaner — main.js
+ * CentSweep — main.js
  * Handles: i18n, theme switching (ripple), language switcher, scroll reveal, coverflow carousel.
  */
 
@@ -13,13 +13,13 @@ const dictionaries = {
     subHeaderText: 'Available for iPhone', subHeaderBtn: 'Download',
     eyebrow: 'A calmer digital life',
     title: 'Zero your Apple ID balance.<br>Change region freely.',
-    lead: 'BalanceCleaner lets you clear your Apple ID leftover balance using real in-app purchases — so you can switch your App Store region freely.',
+    lead: 'CentSweep lets you clear your Apple ID leftover balance using real in-app purchases — so you can switch your App Store region freely.',
     explore: 'Explore the product →',
     ideaLabel: 'The idea',
     storyTitle: 'Less noise.<br>More balance.',
     storyLead: 'A calm product story built around clarity, control and a respectful digital experience.',
     storyCardTitle: 'Your digital space, understood.',
-    storyText: 'BalanceCleaner helps people see what is taking up space, make confident decisions and keep their everyday devices feeling lighter.',
+    storyText: 'CentSweep helps people see what is taking up space, make confident decisions and keep their everyday devices feeling lighter.',
     demoNotice: 'The website currently presents demo screens. Final App Store materials will be added after launch.',
     understand: 'Understand', choose: 'Choose', balance: 'Balance',
     thoughtful: 'Built thoughtfully',
@@ -28,7 +28,7 @@ const dictionaries = {
 
     supportTitle: 'How can we help?',
     supportLead: 'Send a question, bug report, suggestion, or privacy request. We respond by email.',
-    supportContact: 'Use the form or email <a href="mailto:balancecleanerapp@gmail.com">balancecleanerapp@gmail.com</a>.',
+    supportContact: 'Use the form or email <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
     supportNote: 'For bug reports, include your device and app version. Never send passwords or payment details.',
     supportName: 'Name',
     supportEmail: 'Email',
@@ -37,14 +37,14 @@ const dictionaries = {
     talk: 'Talk to the developer →',
     getOnAppStore: "Download on the App Store",
     liveTitle: "Now available on the App Store",
-    liveDesc: "Download Balance Cleaner and zero out your Apple ID balance in seconds.",
+    liveDesc: "Download CentSweep and zero out your Apple ID balance in seconds.",
     liveQr: "Scan to download",
     screenLabel: 'Product screens',
     screenTitle: 'See the app<br>before it ships.',
     videoLabel: 'Product demo',
     videoTitle: 'See how it works.',
     videoLead: 'Demo across all supported iPhone models.',
-    why: 'Why BalanceCleaner',
+    why: 'Why CentSweep',
     featuresTitle: 'Thoughtfully simple.',
     clear: 'Clear by design', clearText: 'Focused tools that feel easy from the first tap.',
     private: 'Privacy first', privateText: 'Transparent choices and respect for your information.',
@@ -54,8 +54,8 @@ const dictionaries = {
     ideaText: 'Send feedback, report a problem or ask a question through our support page.',
     openSupport: 'Open support →',
     faqTitle: 'Frequently Asked Questions',
-    faq1q: 'What is BalanceCleaner?',
-    faq1a: 'BalanceCleaner lets you easily select or enter the exact custom amount to zero out your Apple ID account balance — no account registration required.',
+    faq1q: 'What is CentSweep?',
+    faq1a: 'CentSweep lets you easily select or enter the exact custom amount to zero out your Apple ID account balance — no account registration required.',
     faq2q: 'How does the balance split work?',
     faq2a: 'See the precise breakdown of your remaining balance and calculated parts before confirming any operation. Everything is shown clearly before you proceed.',
     faq3q: 'Is my data safe?',
@@ -63,7 +63,7 @@ const dictionaries = {
     faq4q: 'Do I need an account?',
     faq4a: 'No account is required. Download and start immediately.',
     faq5q: 'What is Pro?',
-    faq5a: 'Pro unlocks full transaction history, PDF export, and advanced settings. The core cleaner is free for everyone.',
+    faq5a: 'Pro unlocks full transaction history, PDF export, and advanced settings. The core app is free for everyone.',
     faq6q: 'What is the Region Checklist?',
     faq6a: 'A step-by-step guide to prepare your account for a region change. It checks if your Apple ID balance is zero, subscriptions are canceled, and Family Sharing is left.',
     faq7q: 'What Pro customization is available?',
@@ -98,7 +98,7 @@ const dictionaries = {
     proFeaturesTitle: 'Premium Features',
     proFeaturesDesc: 'Unlock full transaction history, export records to PDF, customize the Amount Ring glow, and set a Starfield background.',
     top: 'Home',
-    featuresHeader: 'BalanceCleaner for iPhone & iPad · Native StoreKit 2',
+    featuresHeader: 'CentSweep for iPhone & iPad · Native StoreKit 2',
     hoverInspect: 'Hover module to inspect',
     feat1Title: 'Choose Custom Clear',
     feat1Tag: 'Dial & Input',
@@ -125,9 +125,9 @@ fill('ru', {
   subHeaderText: 'Доступно для iPhone', subHeaderBtn: 'Загрузить',
   eyebrow: 'Более спокойная цифровая жизнь',
   title: 'Обнулите баланс Apple ID.<br>Смените регион свободно.',
-  lead: 'BalanceCleaner позволяет очистить остаток на Apple ID через реальные покупки — чтобы вы могли сменить регион App Store без ограничений.',
+  lead: 'CentSweep позволяет очистить остаток на Apple ID через реальные покупки — чтобы вы могли сменить регион App Store без ограничений.',
   explore: 'Открыть продукт →',
-  featuresHeader: 'BalanceCleaner для iPhone и iPad · Нативный StoreKit 2',
+  featuresHeader: 'CentSweep для iPhone и iPad · Нативный StoreKit 2',
   hoverInspect: 'Наведите на модуль для просмотра',
   feat1Title: 'Выбор точной суммы',
   feat1Tag: 'Ввод и шкала',
@@ -145,7 +145,7 @@ fill('ru', {
   storyTitle: 'Меньше шума.<br>Больше баланса.',
   storyLead: 'Спокойный продукт, построенный на ясности, контроле и уважении к пользователю.',
   storyCardTitle: 'Ваше цифровое пространство — понятно.',
-  storyText: 'BalanceCleaner помогает увидеть, что занимает место, и принимать уверенные решения.',
+  storyText: 'CentSweep помогает увидеть, что занимает место, и принимать уверенные решения.',
   demoNotice: 'Сайт пока показывает demo-экраны. Финальные материалы App Store будут добавлены после запуска.',
   understand: 'Понять', choose: 'Выбрать', balance: 'Сбалансировать',
   thoughtful: 'Продумано с заботой',
@@ -154,7 +154,7 @@ fill('ru', {
 
   supportTitle: 'Чем мы можем помочь?',
   supportLead: 'Задайте вопрос, сообщите об ошибке или предложите идею. Мы отвечаем по email.',
-  supportContact: 'Используйте форму или напишите на <a href="mailto:balancecleanerapp@gmail.com">balancecleanerapp@gmail.com</a>.',
+  supportContact: 'Используйте форму или напишите на <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
   supportNote: 'Для отчетов об ошибках укажите устройство и версию приложения. Не отправляйте пароли и данные карт.',
   supportName: 'Имя',
   supportEmail: 'Email',
@@ -163,14 +163,14 @@ fill('ru', {
   talk: 'Связаться с разработчиком →',
   getOnAppStore: "Скачать в App Store",
   liveTitle: "Уже доступно в App Store",
-  liveDesc: "Скачайте Balance Cleaner и обнулите баланс Apple ID за считанные секунды.",
+  liveDesc: "Скачайте CentSweep и обнулите баланс Apple ID за считанные секунды.",
   liveQr: "Сканируйте, чтобы скачать",
   screenLabel: 'Экраны продукта',
   screenTitle: 'Посмотрите приложение<br>до запуска.',
   videoLabel: 'Демо продукта',
   videoTitle: 'Посмотрите, как это работает.',
   videoLead: 'Демо на всех поддерживаемых моделях iPhone.',
-  why: 'Почему BalanceCleaner',
+  why: 'Почему CentSweep',
   featuresTitle: 'Продумано и просто.',
   clear: 'Понятный дизайн', clearText: 'Инструменты, которыми легко пользоваться с первого нажатия.',
   private: 'Приватность прежде всего', privateText: 'Прозрачные решения и уважение к информации.',
@@ -180,8 +180,8 @@ fill('ru', {
   ideaText: 'Отправьте отзыв или задайте вопрос через поддержку.',
   openSupport: 'Открыть поддержку →',
   faqTitle: 'Часто задаваемые вопросы',
-  faq1q: 'Что такое BalanceCleaner?',
-  faq1a: 'BalanceCleaner позволяет выбрать точную сумму для обнуления остатка Apple ID — без регистрации аккаунта.',
+  faq1q: 'Что такое CentSweep?',
+  faq1a: 'CentSweep позволяет выбрать точную сумму для обнуления остатка Apple ID — без регистрации аккаунта.',
   faq2q: 'Как работает разбивка баланса?',
   faq2a: 'Перед подтверждением операции вы видите точную разбивку остатка и расчётных частей. Всё прозрачно.',
   faq3q: 'Безопасны ли мои данные?',
@@ -226,20 +226,20 @@ fill('fr', {
   subHeaderText: 'Disponible pour iPhone', subHeaderBtn: 'Télécharger',
   eyebrow: 'Une vie numérique plus calme',
   title: 'Faites de la place à l\'essentiel.',
-  lead: 'BalanceCleaner apporte clarté et sérénité à votre univers numérique.',
+  lead: 'CentSweep apporte clarté et sérénité à votre univers numérique.',
   explore: 'Découvrir le produit →',
   ideaLabel: 'L\'idée',
   storyTitle: 'Moins de bruit.<br>Plus d\'équilibre.',
 
   supportTitle: 'Comment pouvons-nous aider ?',
   supportLead: 'Envoyez une question, signalez un bug ou proposez une idée. Nous répondons par email.',
-  supportContact: 'Utilisez le formulaire ou écrivez à <a href="mailto:balancecleanerapp@gmail.com">balancecleanerapp@gmail.com</a>.',
+  supportContact: 'Utilisez le formulaire ou écrivez à <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
   supportNote: 'Pour les rapports de bugs, incluez votre appareil et la version de l\'application.',
   supportName: 'Nom', supportEmail: 'Email', supportMessage: 'Message', supportSend: 'Envoyer →',
   talk: 'Parler au développeur →',
   getOnAppStore: "Télécharger sur l'App Store",
   liveTitle: "Disponible dès maintenant sur l'App Store",
-  liveDesc: "Téléchargez Balance Cleaner et ramenez le solde de votre identifiant Apple à zéro en quelques secondes.",
+  liveDesc: "Téléchargez CentSweep et ramenez le solde de votre identifiant Apple à zéro en quelques secondes.",
   liveQr: "Scannez pour télécharger",
   openSupport: 'Ouvrir l\'assistance →',
   faqTitle: 'Questions fréquentes',
@@ -249,7 +249,7 @@ fill('fr', {
   privCard2Title: 'Zéro accès aux paiements',
   privCard3Title: 'Aucune vente de données',
   top: 'Accueil',
-  devicePreview: 'Aperçu des appareils', devicePreviewTitle: 'Tous les écrans, tous les modèles.', devicePreviewDesc: 'Faites défiler horizontalement pour voir toutes les captures d\'écran. L\'iPhone 18 Pro affiche de vraies captures.', comingSoon: 'Bientôt'
+  devicePreview: 'Aperçu des appareils', devicePreviewTitle: 'Tous les экраны, tous les modèles.', devicePreviewDesc: 'Faites défiler horizontalement pour voir toutes les captures d\'écran. L\'iPhone 18 Pro affiche de vraies captures.', comingSoon: 'Bientôt'
 });
 
 fill('de', {
@@ -258,20 +258,20 @@ fill('de', {
   subHeaderText: 'Verfügbar für iPhone', subHeaderBtn: 'Laden',
   eyebrow: 'Ein ruhigeres digitales Leben',
   title: 'Schaffe Raum für das Wesentliche.',
-  lead: 'BalanceCleaner bringt Klarheit in deine digitale Welt.',
+  lead: 'CentSweep bringt Klarheit in deine digitale Welt.',
   explore: 'Produkt entdecken →',
   ideaLabel: 'Die Idee',
   storyTitle: 'Weniger Lärm.<br>Mehr Balance.',
 
   supportTitle: 'Wie können wir helfen?',
   supportLead: 'Senden Sie eine Frage, einen Fehlerbericht oder einen Vorschlag. Wir antworten per E-Mail.',
-  supportContact: 'Nutzen Sie das Formular oder schreiben Sie an <a href="mailto:balancecleanerapp@gmail.com">balancecleanerapp@gmail.com</a>.',
+  supportContact: 'Nutzen Sie das Formular oder schreiben Sie an <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
   supportNote: 'Fügen Sie für Fehlerberichte Ihr Gerät und die App-Version hinzu.',
   supportName: 'Name', supportEmail: 'E-Mail', supportMessage: 'Nachricht', supportSend: 'Senden →',
   talk: 'Entwickler kontaktieren →',
   getOnAppStore: "Laden im App Store",
   liveTitle: "Jetzt im App Store erhältlich",
-  liveDesc: "Laden Sie Balance Cleaner herunter und bringen Sie Ihr Apple-ID-Guthaben in Sekunden auf null.",
+  liveDesc: "Laden Sie CentSweep herunter und bringen Sie Ihr Apple-ID-Guthaben in Sekunden auf null.",
   liveQr: "Zum Laden scannen",
   openSupport: 'Support öffnen →',
   faqTitle: 'Häufige Fragen',
@@ -290,20 +290,20 @@ fill('es', {
   subHeaderText: 'Disponible para iPhone', subHeaderBtn: 'Descargar',
   eyebrow: 'Una vida digital más tranquila',
   title: 'Haz espacio para lo importante.',
-  lead: 'BalanceCleaner aporta claridad a tu mundo digital.',
+  lead: 'CentSweep aporta claridad a tu mundo digital.',
   explore: 'Explorar el producto →',
   ideaLabel: 'La idea',
   storyTitle: 'Menos ruido.<br>Más balance.',
 
   supportTitle: '¿Cómo podemos ayudar?',
   supportLead: 'Envíe una pregunta, un informe de error o una sugerencia. Respondemos por correo electrónico.',
-  supportContact: 'Use el formulario o escriba a <a href="mailto:balancecleanerapp@gmail.com">balancecleanerapp@gmail.com</a>.',
+  supportContact: 'Use el formulario o escriba a <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
   supportNote: 'Para informes de errores, incluya su dispositivo y la versión de la aplicación.',
   supportName: 'Nombre', supportEmail: 'Correo', supportMessage: 'Mensaje', supportSend: 'Enviar →',
   talk: 'Hablar con el desarrollador →',
   getOnAppStore: "Descargar en App Store",
   liveTitle: "Ya disponible en App Store",
-  liveDesc: "Descarga Balance Cleaner y deja el saldo de tu ID de Apple a cero en segundos.",
+  liveDesc: "Descarga CentSweep y deja el saldo de tu ID de Apple a cero en segundos.",
   liveQr: "Escanea para descargar",
   openSupport: 'Abrir soporte →',
   faqTitle: 'Preguntas frecuentes',
@@ -322,20 +322,20 @@ fill('it', {
   subHeaderText: 'Disponibile per iPhone', subHeaderBtn: 'Scarica',
   eyebrow: 'Una vita digitale più serena',
   title: 'Fai spazio a ciò che conta.',
-  lead: 'BalanceCleaner porta chiarezza nel tuo mondo digitale.',
+  lead: 'CentSweep porta chiarezza nel tuo mondo digitale.',
   explore: 'Scopri il prodotto →',
   ideaLabel: 'L\'idea',
   storyTitle: 'Meno rumore.<br>Più equilibrio.',
 
   supportTitle: 'Come possiamo aiutare?',
   supportLead: 'Invia una domanda, un rapporto su un bug o un suggerimento. Rispondiamo via email.',
-  supportContact: 'Usa il modulo o scrivi a <a href="mailto:balancecleanerapp@gmail.com">balancecleanerapp@gmail.com</a>.',
+  supportContact: 'Usa il modulo o scrivi a <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
   supportNote: 'Per i bug, includi il tuo dispositivo e la versione dell\'app.',
   supportName: 'Nome', supportEmail: 'Email', supportMessage: 'Messaggio', supportSend: 'Invia →',
   talk: 'Parla con lo sviluppatore →',
   getOnAppStore: "Scarica su App Store",
   liveTitle: "Ora disponibile su App Store",
-  liveDesc: "Scarica Balance Cleaner e azzera il saldo del tuo ID Apple in pochi secondi.",
+  liveDesc: "Scarica CentSweep e azzera il saldo del tuo ID Apple in pochi secondi.",
   liveQr: "Scansiona per scaricare",
   openSupport: 'Apri supporto →',
   faqTitle: 'Domande frequenti',
@@ -354,13 +354,13 @@ fill('hy', {
     subHeaderText: 'Հասանելի է iPhone-ի համար', subHeaderBtn: 'Ներբեռնել',
     eyebrow: 'Ավելի հանգիստ թվային կյանք',
     title: 'Զրոյացրեք Apple ID-ի մնացորդը:<br>Փոխեք տարածաշրջանը:',
-    lead: 'BalanceCleaner-ը թույլ է տալիս զրոյացնել մնացորդը իրական գնումների միջոցով՝ որպեսզի առանց խոչընդոտների փոխեք App Store-ի տարածաշրջանը:',
+    lead: 'CentSweep-ը թույլ է տալիս զրոյացնել մնացորդը իրական գնումների միջոցով՝ որպեսզի առանց խոչընդոտների փոխեք App Store-ի տարածաշրջանը:',
     explore: 'Բացահայտել →',
     ideaLabel: 'Գաղափարը',
     storyTitle: 'Ավելի քիչ աղմուկ:<br>Ավելի շատ բալանս:',
     storyLead: 'Հանգիստ պրոդուկտ՝ ստեղծված պարզության, վերահսկողության և հարգանքի հիման վրա:',
     storyCardTitle: 'Ձեր թվային տարածքը՝ պարզ:',
-    storyText: 'BalanceCleaner-ը օգնում է տեսնել, թե ինչն է զբաղեցնում տարածքը, և վստահ որոշումներ կայացնել:',
+    storyText: 'CentSweep-ը օգնում է տեսնել, թե ինչն է զբաղեցնում տարածքը, և վստահ որոշումներ կայացնել:',
     understand: 'Հասկանալ', choose: 'Ընտրել', balance: 'Բալանսավորել',
     thoughtful: 'Մտածված մանրամասներ',
     simple: 'Պարզ առաջին իսկ հպումից:',
@@ -368,20 +368,20 @@ fill('hy', {
 
     supportTitle: 'Ինչպե՞ս կարող ենք օգնել:',
     supportLead: 'Ուղարկեք հարց, սխալի մասին զեկույց կամ առաջարկ: Մենք պատասխանում ենք էլ. փոստով:',
-    supportContact: 'Օգտագործեք ձևը կամ գրեք <a href="mailto:balancecleanerapp@gmail.com">balancecleanerapp@gmail.com</a>:',
+    supportContact: 'Օգտագործեք ձևը կամ գրեք <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>:',
     supportNote: 'Սխալների դեպքում նշեք ձեր սարքը և տարբերակը:',
     supportName: 'Անուն', supportEmail: 'Էլ. փոստ', supportMessage: 'Հաղորդագրություն', supportSend: 'Ուղարկել →',
     talk: 'Կապվել ծրագրավորողի հետ →',
     getOnAppStore: "Ներբեռնել App Store-ից",
     liveTitle: "Արդեն հասանելի է App Store-ում",
-    liveDesc: "Ներբեռնեք Balance Cleaner-ը և մի քանի վայրկյանում զրոյացրեք ձեր Apple ID-ի մնացորդը։",
+    liveDesc: "Ներբեռնեք CentSweep-ը և մի քանի վայրկյանում զրոյացրեք ձեր Apple ID-ի մնացորդը։",
     liveQr: "Սկանավորեք՝ ներբեռնելու համար",
     screenLabel: 'Պրոդուկտի էկրանները',
     screenTitle: 'Տեսեք հավելվածը<br>մինչև թողարկումը:',
     videoLabel: 'Վիդեո ցուցադրություն',
     videoTitle: 'Տեսեք, թե ինչպես է այն աշխատում:',
     videoLead: 'Ցուցադրություն բոլոր աջակցվող iPhone մոդելներով:',
-    why: 'Ինչու BalanceCleaner',
+    why: 'Ինչու CentSweep',
     featuresTitle: 'Պարզ և մտածված:',
     clear: 'Պարզ դիզայն', clearText: 'Գործիքներ, որոնք հեշտ է օգտագործել առաջին իսկ հպումից:',
     private: 'Գաղտնիություն', privateText: 'Թափանցիկ որոշումներ և հարգանք ձեր տվյալների նկատմամբ:',
@@ -391,8 +391,8 @@ fill('hy', {
     ideaText: 'Ուղարկեք ձեր կարծիքը կամ հարցը աջակցության բաժնի միջոցով:',
     openSupport: 'Բացել աջակցությունը →',
     faqTitle: 'Հաճախ տրվող հարցեր',
-    faq1q: 'Ի՞նչ է BalanceCleaner-ը:',
-    faq1a: 'BalanceCleaner-ը թույլ է տալիս զրոյացնել Apple ID-ի մնացորդը՝ առանց գրանցման:',
+    faq1q: 'Ի՞նչ է CentSweep-ը:',
+    faq1a: 'CentSweep-ը թույլ է տալիս զրոյացնել Apple ID-ի մնացորդը՝ առանց գրանցման:',
     faq2q: 'Ինչպե՞ս է աշխատում բալանսի զրոյացումը:',
     faq2a: 'Մինչ հաստատելը դուք տեսնում եք մնացորդի և հաշվարկի ճշգրիտ բաշխումը:',
     faq3q: 'Արդյո՞ք իմ տվյալները ապահով են:',
@@ -516,7 +516,7 @@ function applyLanguage(code) {
     const val = t[el.dataset.i18n];
     if (val != null) el.innerHTML = val;
   });
-  localStorage.setItem('balance-language', code);
+  localStorage.setItem('centsweep-language', code);
   // Update all lang labels
   document.querySelectorAll('.lang-label').forEach(lbl => {
     lbl.textContent = code.toUpperCase();
@@ -538,7 +538,7 @@ function applyLanguage(code) {
 }
 
 // Initialize language
-const savedLang = localStorage.getItem('balance-language') || 'en';
+const savedLang = localStorage.getItem('centsweep-language') || localStorage.getItem('balance-language') || 'en';
 applyLanguage(savedLang);
 
 // =========================================================================
@@ -546,6 +546,7 @@ applyLanguage(savedLang);
 // =========================================================================
 document.documentElement.classList.remove('light');
 try {
+  localStorage.removeItem('centsweep-theme');
   localStorage.removeItem('balance-theme');
 } catch (e) {}
 
