@@ -28,7 +28,7 @@ const dictionaries = {
 
     supportTitle: 'How can we help?',
     supportLead: 'Send a question, bug report, suggestion, or privacy request. We respond by email.',
-    supportContact: 'Use the form or email <a href="mailto:centsweepapp@gmail.com">centsweepapp@gmail.com</a>.',
+    supportContact: 'Use the form or email <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
     supportNote: 'For bug reports, include your device and app version. Never send passwords or payment details.',
     supportName: 'Name',
     supportEmail: 'Email',
@@ -154,7 +154,7 @@ fill('ru', {
 
   supportTitle: 'Чем мы можем помочь?',
   supportLead: 'Задайте вопрос, сообщите об ошибке или предложите идею. Мы отвечаем по email.',
-  supportContact: 'Используйте форму или напишите на <a href="mailto:centsweepapp@gmail.com">centsweepapp@gmail.com</a>.',
+  supportContact: 'Используйте форму или напишите на <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
   supportNote: 'Для отчетов об ошибках укажите устройство и версию приложения. Не отправляйте пароли и данные карт.',
   supportName: 'Имя',
   supportEmail: 'Email',
@@ -233,7 +233,7 @@ fill('fr', {
 
   supportTitle: 'Comment pouvons-nous aider ?',
   supportLead: 'Envoyez une question, signalez un bug ou proposez une idée. Nous répondons par email.',
-  supportContact: 'Utilisez le formulaire ou écrivez à <a href="mailto:centsweepapp@gmail.com">centsweepapp@gmail.com</a>.',
+  supportContact: 'Utilisez le formulaire ou écrivez à <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
   supportNote: 'Pour les rapports de bugs, incluez votre appareil et la version de l\'application.',
   supportName: 'Nom', supportEmail: 'Email', supportMessage: 'Message', supportSend: 'Envoyer →',
   talk: 'Parler au développeur →',
@@ -265,7 +265,7 @@ fill('de', {
 
   supportTitle: 'Wie können wir helfen?',
   supportLead: 'Senden Sie eine Frage, einen Fehlerbericht oder einen Vorschlag. Wir antworten per E-Mail.',
-  supportContact: 'Nutzen Sie das Formular oder schreiben Sie an <a href="mailto:centsweepapp@gmail.com">centsweepapp@gmail.com</a>.',
+  supportContact: 'Nutzen Sie das Formular oder schreiben Sie an <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
   supportNote: 'Fügen Sie für Fehlerberichte Ihr Gerät und die App-Version hinzu.',
   supportName: 'Name', supportEmail: 'E-Mail', supportMessage: 'Nachricht', supportSend: 'Senden →',
   talk: 'Entwickler kontaktieren →',
@@ -297,7 +297,7 @@ fill('es', {
 
   supportTitle: '¿Cómo podemos ayudar?',
   supportLead: 'Envíe una pregunta, un informe de error o una sugerencia. Respondemos por correo electrónico.',
-  supportContact: 'Use el formulario o escriba a <a href="mailto:centsweepapp@gmail.com">centsweepapp@gmail.com</a>.',
+  supportContact: 'Use el formulario o escriba a <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
   supportNote: 'Para informes de errores, incluya su dispositivo y la versión de la aplicación.',
   supportName: 'Nombre', supportEmail: 'Correo', supportMessage: 'Mensaje', supportSend: 'Enviar →',
   talk: 'Hablar con el desarrollador →',
@@ -329,7 +329,7 @@ fill('it', {
 
   supportTitle: 'Come possiamo aiutare?',
   supportLead: 'Invia una domanda, un rapporto su un bug o un suggerimento. Rispondiamo via email.',
-  supportContact: 'Usa il modulo o scrivi a <a href="mailto:centsweepapp@gmail.com">centsweepapp@gmail.com</a>.',
+  supportContact: 'Usa il modulo o scrivi a <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
   supportNote: 'Per i bug, includi il tuo dispositivo e la versione dell\'app.',
   supportName: 'Nome', supportEmail: 'Email', supportMessage: 'Messaggio', supportSend: 'Invia →',
   talk: 'Parla con lo sviluppatore →',
@@ -368,7 +368,7 @@ fill('hy', {
 
     supportTitle: 'Ինչպե՞ս կարող ենք օգնել:',
     supportLead: 'Ուղարկեք հարց, սխալի մասին զեկույց կամ առաջարկ: Մենք պատասխանում ենք էլ. փոստով:',
-    supportContact: 'Օգտագործեք ձևը կամ գրեք <a href="mailto:centsweepapp@gmail.com">centsweepapp@gmail.com</a>:',
+    supportContact: 'Օգտագործեք ձևը կամ գրեք <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>:',
     supportNote: 'Սխալների դեպքում նշեք ձեր սարքը և տարբերակը:',
     supportName: 'Անուն', supportEmail: 'Էլ. փոստ', supportMessage: 'Հաղորդագրություն', supportSend: 'Ուղարկել →',
     talk: 'Կապվել ծրագրավորողի հետ →',

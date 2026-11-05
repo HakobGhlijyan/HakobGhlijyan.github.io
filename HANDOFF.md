@@ -13,7 +13,10 @@
   - **Nightwell Top Banner (`.live-card`)**: Added below Features header with app icon, bilingual description, App Store badge, and 84×84 black QR placeholder with "Scan to download".
   - **Panel Footer Action**: Replaced coming-soon placeholder with active ` Download on the App Store` link.
   - **Mobile Menu**: Updated coming-soon text to active App Store link.
+- **CentSweep Rebrand & Unified Support Email:**
+  - **Product Rename**: Full rebrand from Balance Cleaner / BalanceCleaner to CentSweep across folder structure, HTML/JS, 7 language dictionaries, and documentation.
+  - **Single Contact & Support Email**: FormSubmit endpoint and all direct email links across the portfolio, CentSweep, Nightwell, and project showcases unified strictly to `hakobghlijyan@gmail.com`.
 
 ## Working Branch / Repository Location
-- `/Users/hakobghlijyan/Library/Mobile Documents/com~apple~CloudDocs/Developer/GitHub/HakobGhlijyan.github.io`
-- Branch: `dev/FeaturesDevelop2026.10`
+- Working Tree: `/Users/hakobghlijyan/Developer/GItHub/HakobGhlijyan.github.io`
+- Branch: `dev/UpdateBalanceWithToCentSweep`
