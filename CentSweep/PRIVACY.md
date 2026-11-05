@@ -1,6 +1,6 @@
-# Privacy Guidelines for BalanceCleaner
+# Privacy Guidelines for CentSweep
 
-BalanceCleaner is built on the principle of absolute privacy and zero data collection.
+CentSweep is built on the principle of absolute privacy and zero data collection.
 
 ## Core Tenets
 1. **No Backend**: The app and website do not rely on a custom backend server to process user data.
@@ -9,4 +9,4 @@ BalanceCleaner is built on the principle of absolute privacy and zero data colle
 4. **No Tracking**: The website does not use Google Analytics or Facebook Pixels.
 
 ## Support Data
-When a user contacts support via `balancecleanerapp@gmail.com`, we only retain their email and message content for the duration needed to resolve the issue. We do not sell or share this data.
+When a user contacts support via `centsweepapp@gmail.com`, we only retain their email and message content for the duration needed to resolve the issue. We do not sell or share this data.

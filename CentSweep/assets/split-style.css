@@ -1,7 +1,7 @@
 @charset "utf-8";
 /**
- * BalanceCleaner — Split Screen Native Showcase
- * Architecture inspired by Split Index & Nightwell with authentic BalanceCleaner emerald/mint design.
+ * CentSweep — Split Screen Native Showcase
+ * Architecture inspired by Split Index & Nightwell with authentic CentSweep emerald/mint design.
  * Bilingual Apple-style documentation (Russian / English).
  */
 
@@ -9,7 +9,7 @@
    MARK: - 1. DESIGN TOKENS & THEMING (Цветовые токены и темы оформления)
    ========================================================================= */
 :root {
-	/* MARK: - Dark Theme Palette (Основная темная тема BalanceCleaner) */
+	/* MARK: - Dark Theme Palette (Основная темная тема CentSweep) */
 	color-scheme: dark;
 	--bg: #07110d;
 	--bg-gradient: radial-gradient(circle at 18% 0%, rgba(87, 217, 159, 0.16) 0%, transparent 45%), linear-gradient(160deg, #07110d 0%, #0d1e17 50%, #050d0a 100%);
