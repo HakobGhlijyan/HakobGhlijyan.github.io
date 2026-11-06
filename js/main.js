@@ -462,7 +462,7 @@
   })();
 
   // =========================================================================
-  // MARK: - CONTACT FORM (FormSubmit AJAX) / ОБРАБОТКА КОНТАКТНОЙ ФОРМЫ
+  // MARK: - CONTACT FORM (Web3Forms AJAX) / ОБРАБОТКА КОНТАКТНОЙ ФОРМЫ
   // =========================================================================
 
   const contactForm = document.getElementById('contactForm');
@@ -485,25 +485,33 @@
         return;
       }
 
+      // Honeypot check: bot filled hidden field
+      const botcheck = contactForm.querySelector('input[name="botcheck"]');
+      if (botcheck && botcheck.checked) {
+        contactForm.reset();
+        submitBtn.textContent = '✓ Message Sent! Thank you.';
+        return;
+      }
+
       submitBtn.disabled = true;
       const originalText = submitBtn.textContent;
       submitBtn.textContent = 'Sending...';
 
-      fetch('https://formsubmit.co/ajax/hakobghlijyan@gmail.com', {
+      const formData = new FormData(contactForm);
+      const payload = Object.fromEntries(formData.entries());
+      payload.subject = `[Portfolio] Contact request — ${name}`;
+
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          message: message,
-          _subject: `[Portfolio] Contact request — ${name}`
-        })
+        body: JSON.stringify(payload)
       })
-      .then(response => {
-        if (response.ok) {
+      .then(response => response.json().then(data => ({ status: response.status, ok: response.ok, data })))
+      .then(res => {
+        if (res.ok && res.data && res.data.success) {
           submitBtn.textContent = '✓ Message Sent! Thank you.';
           submitBtn.style.background = '#28a745';
           contactForm.reset();
@@ -513,10 +521,11 @@
             submitBtn.disabled = false;
           }, 4500);
         } else {
-          throw new Error('Form error');
+          throw new Error(res.data?.message || 'Form error');
         }
       })
-      .catch(() => {
+      .catch((err) => {
+        console.warn('[Web3Forms]', err);
         contactForm.submit();
       });
     });

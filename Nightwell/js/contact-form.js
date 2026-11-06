@@ -2,27 +2,25 @@
  * contact-form.js — единый обработчик формы обратной связи / shared contact-form handler
  *
  * RU: Один и тот же файл лежит в каждом сайте приложения (CentSweep, Nightwell, ...).
- *     Он отправляет форму через FormSubmit в фоне, без перезагрузки страницы, и сразу
+ *     Он отправляет форму через Web3Forms в фоне, без перезагрузки страницы, и сразу
  *     показывает под кнопкой статус: «Отправка…», «Сообщение отправлено» или ошибку.
- *     Адрес получателя берётся ТОЛЬКО из атрибута action формы (токен или e-mail).
- *     Больше нигде адрес не указывается.
+ *     Параметры (access_key, action) берутся из HTML-разметки формы.
  *
  * EN: The very same file ships with every app site (CentSweep, Nightwell, ...).
- *     It submits the form to FormSubmit in the background (no page reload) and shows a
+ *     It submits the form to Web3Forms in the background (no page reload) and shows a
  *     status line right under the button: "Sending…", "Message sent" or an error.
- *     The recipient comes ONLY from the form's action attribute (token or e-mail).
- *     The address is never repeated anywhere else.
+ *     Parameters (access_key, action) come from the form's HTML markup.
  *
  * MARK: - Как подключить новый проект / How to wire a new project
  *
  *   <form class="support-form" data-contact-form
- *         action="https://formsubmit.co/TOKEN_OR_EMAIL" method="POST"
+ *         action="https://api.web3forms.com/submit" method="POST"
  *         data-subject="[AppName] Support request"
  *         data-fallback-email="you@example.com">
- *     <input type="hidden" name="_subject" value="[AppName] Support request">
- *     <input type="hidden" name="_template" value="table">
- *     <input type="hidden" name="_captcha" value="false">
- *     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+ *     <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+ *     <input type="hidden" name="from_name" value="AppName Support">
+ *     <input type="hidden" name="subject" value="[AppName] Support request">
+ *     <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off">
  *     <input type="text" name="name" required>
  *     <input type="email" name="email" required>
  *     <textarea name="message" required></textarea>
@@ -75,7 +73,7 @@
     it: {
       sending: 'Invio in corso…',
       sent: 'Messaggio inviato! Grazie — risponderemo alla tua email il prima possibile.',
-      error: 'Impossibile inviare il messaggio. Scrivi direttamente a {email}.'
+      error: 'Impossibile inviare il messaggio. Scrivi непосредственно a {email}.'
     },
     hy: {
       sending: 'Ուղարկվում է…',
@@ -91,10 +89,6 @@
     const lang = (document.documentElement.lang || 'en').slice(0, 2).toLowerCase();
     return (MESSAGES[lang] ?? MESSAGES.en)[key].replace('{email}', email);
   };
-
-  /** RU: FormSubmit принимает ответ в JSON на /ajax/-адресе. EN: FormSubmit's JSON endpoint. */
-  const ajaxURL = (action) =>
-    action.includes('/ajax/') ? action : action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
 
   // MARK: - Form setup / Инициализация формы
   function init(form) {
@@ -122,19 +116,19 @@
       event.preventDefault();
       if (busy) return; // RU: защита от двойной отправки. EN: no double submit.
 
-      const data = new FormData(form);
-
-      // RU: honeypot — бот заполнил скрытое поле, делаем вид, что всё ок.
-      // EN: honeypot — a bot filled the hidden field, pretend success.
-      if (data.get('_honey')) {
+      // RU: honeypot (botcheck) — бот заполнил скрытое поле, имитируем успех.
+      // EN: honeypot (botcheck) — a bot filled the hidden field, pretend success.
+      const botcheck = form.querySelector('input[name="botcheck"]');
+      if (botcheck && botcheck.checked) {
         form.reset();
         show('success', `✓ ${text('sent')}`);
         return;
       }
 
-      const name = String(data.get('name') ?? '').trim();
+      const formData = new FormData(form);
+      const name = String(formData.get('name') ?? '').trim();
       const baseSubject = form.dataset.subject || document.title;
-      data.set('_subject', name ? `${baseSubject} — ${name}` : baseSubject);
+      formData.set('subject', name ? `${baseSubject} — ${name}` : baseSubject);
 
       busy = true;
       if (button) button.disabled = true;
@@ -145,15 +139,15 @@
       const timer = setTimeout(() => controller.abort(), timeoutMs);
 
       try {
-        const response = await fetch(ajaxURL(form.getAttribute('action')), {
+        const response = await fetch(form.getAttribute('action') || 'https://api.web3forms.com/submit', {
           method: 'POST',
-          body: data,
+          body: formData,
           headers: { Accept: 'application/json' },
           signal: controller.signal
         });
         const payload = await response.json().catch(() => null);
         const accepted =
-          response.ok && (payload === null || payload.success === true || payload.success === 'true');
+          response.ok && payload && (payload.success === true || payload.success === 'true');
         if (!accepted) throw new Error(payload?.message ?? `HTTP ${response.status}`);
 
         form.reset();
