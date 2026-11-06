@@ -703,12 +703,12 @@
           </a>
         </div>
 
-        <!-- Interactive Contact Form (FormSubmit.co connected) -->
-        <form class="contact-form reveal" id="contactForm" action="https://formsubmit.co/hakobghlijyan@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="[Portfolio] Contact request">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <!-- Interactive Contact Form (Web3Forms connected) -->
+        <form class="contact-form reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="f9d7c944-0919-486e-bdf5-05f78f6d0bea">
+          <input type="hidden" name="from_name" value="Portfolio Contact">
+          <input type="hidden" name="subject" value="[Portfolio] Contact request">
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your name" required>
