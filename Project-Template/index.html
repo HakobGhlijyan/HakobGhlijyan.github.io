@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d0f12">
+  <meta name="description" content="Template App — Native iOS Application Showcase. High-performance Swift architecture with privacy by design.">
+  <meta name="author" content="Hakob Ghlijyan">
+
+  <link rel="canonical" href="https://hakobghlijyan.github.io/Project-Template/">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+
+  <title>Template App — Native iOS Application</title>
+  <link rel="stylesheet" href="assets/split-style.css">
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="site-brand-group">
+      <a class="site-brand" data-nav="features">
+        <span>Template App</span>
+      </a>
+      <a href="../index.html" class="portfolio-back-link" title="Return to Hakob Ghlijyan Portfolio">
+        &larr; <span data-i18n="portfolio">Portfolio</span>
+      </a>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="site-nav-tabs">
+      <a data-nav="features" class="nav-active" data-i18n="features">Features</a>
+      <a data-nav="screens" data-i18n="screens">Screens</a>
+      <a data-nav="guide" data-i18n="guideLabel">Overview</a>
+      <a data-nav="about" data-i18n="about">About</a>
+      <a data-nav="support" data-i18n="support">Support</a>
+      <a data-nav="privacy" data-i18n="privacy">Privacy</a>
+    </nav>
+
+    <!-- Actions: 6 Languages -->
+    <div class="site-actions">
+      <a href="#features" class="header-appstore-btn">
+        <img src="assets/apple.logo@1x.png" alt="Apple" class="header-apple-logo">
+        <span data-i18n="comingSoon">Coming Soon</span>
+      </a>
+
+      <div class="custom-lang">
+        <button class="lang-btn" aria-label="Select language">
+          <span class="lang-label">EN</span>
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1L5 5L9 1"/></svg>
+        </button>
+        <div class="lang-menu">
+          <button data-val="en">🇬🇧 English</button>
+          <button data-val="ru">🇷🇺 Русский</button>
+          <button data-val="fr">🇫🇷 Français</button>
+          <button data-val="de">🇩🇪 Deutsch</button>
+          <button data-val="es">🇪🇸 Español</button>
+          <button data-val="it">🇮🇹 Italiano</button>
+        </div>
+      </div>
+
+      <button class="hamburger-btn" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- SPLIT SCREEN INTERACTION LAYOUT -->
+  <div class="split-container">
+    <div class="left-side">
+
+      <!-- PANEL 1: FEATURES -->
+      <div class="panel panel-active" id="panel-features">
+        <div class="panel-header">
+          <span data-i18n="featuresHeader">Template App for iOS · Swift &amp; Modern Frameworks</span>
+        </div>
+
+        <aside class="live-card">
+          <div class="live-text" style="padding-left:0;">
+            <strong id="liveTitle" data-i18n="liveTitle">Coming Soon on the App Store</strong>
+            <span data-i18n="liveDesc">A native, responsive iOS experience crafted with precision engineering and privacy at its core.</span>
+            <a class="live-badge" href="#features">
+              <img src="assets/app-store-badge.svg" alt="Coming Soon on App Store" height="38">
+            </a>
+          </div>
+        </aside>
+
+        <ul class="interactive-list" id="featuresList">
+          <li class="interactive-item active" data-slide="feat-1">
+            <div class="interactive-link">
+              <span class="item-num">01</span>
+              <span class="item-title" data-i18n="feat1Title">Architecture &amp; Core Engine</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+              <span class="item-tag">Swift 6.2</span>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="feat-2">
+            <div class="interactive-link">
+              <span class="item-num">02</span>
+              <span class="item-title" data-i18n="feat2Title">Intuitive Native Experience</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+              <span class="item-tag">SwiftUI</span>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="feat-3">
+            <div class="interactive-link">
+              <span class="item-num">03</span>
+              <span class="item-title" data-i18n="feat3Title">Local Storage &amp; Persistence</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+              <span class="item-tag">SwiftData</span>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="feat-4">
+            <div class="interactive-link">
+              <span class="item-num">04</span>
+              <span class="item-title" data-i18n="feat4Title">On-Device Privacy &amp; Security</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+              <span class="item-tag">Zero Trackers</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="panel-footer">
+          <a href="#features" class="header-appstore-btn">
+            <img src="assets/apple.logo@1x.png" alt="Apple" class="header-apple-logo">
+            <span data-i18n="getOnAppStore">Coming Soon to App Store</span>
+          </a>
+          <span style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-secondary);" data-i18n="hoverInspect">Hover module to inspect</span>
+        </div>
+      </div>
+
+      <!-- PANEL 2: SCREENS GALLERY -->
+      <div class="panel" id="panel-screens">
+        <div class="screens-sticky-header">
+          <span class="panel-eyebrow" data-i18n="screenLabel">Product screens</span>
+          <h2 class="panel-title" style="font-size:1.3rem; margin-bottom:0.2rem;" data-i18n="screenTitle">Preview the interface.</h2>
+          <div class="model-filter-nav">
+            <button type="button" class="filter-pill active" data-filter="all">All</button>
+            <button type="button" class="filter-pill" data-filter="screen">Screenshots</button>
+          </div>
+        </div>
+
+        <ul class="interactive-list">
+          <li class="interactive-item active" data-slide="scr-1" data-model="screen">
+            <div class="interactive-link">
+              <span class="item-num">S-01</span>
+              <span class="item-title">Primary Dashboard View</span>
+              <span class="item-tag">Screen 01</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="scr-2" data-model="screen">
+            <div class="interactive-link">
+              <span class="item-num">S-02</span>
+              <span class="item-title">Interactive Detail Flow</span>
+              <span class="item-tag">Screen 02</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="scr-3" data-model="screen">
+            <div class="interactive-link">
+              <span class="item-num">S-03</span>
+              <span class="item-title">Engine Configuration</span>
+              <span class="item-tag">Screen 03</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="scr-4" data-model="screen">
+            <div class="interactive-link">
+              <span class="item-num">S-04</span>
+              <span class="item-title">System Settings &amp; Personalization</span>
+              <span class="item-tag">Screen 04</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- PANEL 3: GUIDE -->
+      <div class="panel" id="panel-guide">
+        <div class="panel-hero">
+          <span class="panel-eyebrow" data-i18n="guideLabel">Overview</span>
+          <h2 class="panel-title" data-i18n="guideTitle">Product Walkthrough</h2>
+          <p class="panel-lead" data-i18n="guideDesc">A simple, step-by-step introduction to getting the most out of Template App.</p>
+        </div>
+
+        <div class="panel-body-content" style="padding-top:0;">
+          <div class="guide-cards">
+            <div class="guide-step-card active" data-slide="step-1">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 1</span>
+                <span class="guide-step-title">Initial Setup</span>
+              </div>
+              <p class="guide-step-desc">Open the application and configure your preferences directly on your device.</p>
+            </div>
+            <div class="guide-step-card" data-slide="step-2">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 2</span>
+                <span class="guide-step-title">Explore Core Tools</span>
+              </div>
+              <p class="guide-step-desc">Access high-speed native features built specifically for modern iOS.</p>
+            </div>
+            <div class="guide-step-card" data-slide="step-3">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 3</span>
+                <span class="guide-step-title">Seamless Synchronization</span>
+              </div>
+              <p class="guide-step-desc">Your preferences and state stay synced privately across all your devices.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 4: ABOUT -->
+      <div class="panel" id="panel-about">
+        <div class="panel-hero">
+          <span class="panel-eyebrow" data-i18n="about">About</span>
+          <h2 class="panel-title" data-i18n="storyTitle">Designed with intention.</h2>
+          <p class="panel-lead" data-i18n="storyLead">Crafted by an independent engineer with an obsession for speed, craftsmanship, and privacy.</p>
+        </div>
+
+        <div class="panel-body-content" style="padding-top:0;">
+          <p style="font-size:0.84rem; line-height:1.65; color:var(--text-secondary); margin-bottom:1.5rem;" data-i18n="storyText">
+            Template App is built using native Swift architectures with zero unnecessary third-party dependencies. Everything runs locally on your Apple device.
+          </p>
+
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-val">100%</span>
+              <span class="stat-lbl">Swift Native</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-val">0</span>
+              <span class="stat-lbl">Data Trackers</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-val">iOS 17+</span>
+              <span class="stat-lbl">Target Platform</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 5: SUPPORT -->
+      <div class="panel" id="panel-support">
+        <div class="panel-hero">
+          <span class="panel-eyebrow" data-i18n="support">Support</span>
+          <h2 class="panel-title" data-i18n="supportTitle">How can we help?</h2>
+          <p class="panel-lead" data-i18n="supportLead">Send a question, bug report, or feature request. We reply directly by email.</p>
+        </div>
+
+        <div class="panel-body-content" style="padding-top:0;">
+          <form class="support-form" data-contact-form
+                action="https://api.web3forms.com/submit" method="POST"
+                data-subject="[Template App] Support request"
+                data-fallback-email="hakobghlijyan@gmail.com">
+            <input type="hidden" name="access_key" value="f9d7c944-0919-486e-bdf5-05f78f6d0bea">
+            <input type="hidden" name="from_name" value="Template App Support">
+            <input type="hidden" name="subject" value="[Template App] Support request">
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off">
+
+            <div class="form-field">
+              <label data-i18n="supportName">Name</label>
+              <input type="text" name="name" required placeholder="Your name">
+            </div>
+
+            <div class="form-field">
+              <label data-i18n="supportEmail">Email</label>
+              <input type="email" name="email" required placeholder="your.email@example.com">
+            </div>
+
+            <div class="form-field">
+              <label data-i18n="supportMessage">Message</label>
+              <textarea name="message" required placeholder="Describe your question or issue..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit" data-i18n="supportSend">Send Message &rarr;</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- PANEL 6: PRIVACY (Sectionally Collapsible Accordion Cards) -->
+      <div class="panel" id="panel-privacy">
+        <div class="panel-hero">
+          <span class="panel-eyebrow" data-i18n="privacyEyebrow">YOUR PRIVACY MATTERS</span>
+          <h2 class="panel-title" data-i18n="privacyTitle">Privacy Policy</h2>
+          <p class="panel-lead">Last updated: November 2026 · Native iOS 17+ Architecture</p>
+        </div>
+
+        <div class="panel-body-content" style="padding-top:0;">
+          <div class="faq-container policy-container">
+            <details class="faq-card policy-card" open>
+              <summary>1. Zero Personal Data Collection</summary>
+              <div class="faq-body">Template App does not collect, sell, or transmit any personal data. All processing occurs locally on your device.</div>
+            </details>
+            <details class="faq-card policy-card">
+              <summary>2. Local On-Device Processing</summary>
+              <div class="faq-body">All core application operations run on your local hardware using Apple native frameworks.</div>
+            </details>
+            <details class="faq-card policy-card">
+              <summary>3. No Third-Party Trackers</summary>
+              <div class="faq-body">We integrate no third-party analytics SDKs, advertising frameworks, or profiling tools.</div>
+            </details>
+            <details class="faq-card policy-card">
+              <summary>4. Support Inquiries &amp; Contact</summary>
+              <div class="faq-body">When you contact support, your email is used solely to respond to your inquiry and is never shared.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="split-divider"></div>
+
+    <!-- RIGHT CANVAS SIDE -->
+    <div class="canvas-side" id="canvasSide">
+      <div class="canvas-placeholder hidden" id="placeholder">
+        <span class="placeholder-label">Hover over an item to inspect</span>
+      </div>
+
+      <!-- Feature Slides -->
+      <div class="canvas-image visible" data-slide="feat-1">
+        <img src="images/templatemo-split-01.jpg" alt="Architecture &amp; Core Engine">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">Architecture &amp; Core Engine</div>
+          <div class="canvas-caption-sub">Swift 6.2 &middot; Modern native design &middot; Template App</div>
+        </div>
+      </div>
+      <div class="canvas-image" data-slide="feat-2">
+        <img src="images/templatemo-split-02.jpg" alt="Intuitive Native Experience">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">Intuitive Native Experience</div>
+          <div class="canvas-caption-sub">SwiftUI &middot; Fluid gestures &middot; Template App</div>
+        </div>
+      </div>
+      <div class="canvas-image" data-slide="feat-3">
+        <img src="images/templatemo-split-03.jpg" alt="Local Storage &amp; Persistence">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">Local Storage &amp; Persistence</div>
+          <div class="canvas-caption-sub">SwiftData &middot; On-device safety &middot; Template App</div>
+        </div>
+      </div>
+      <div class="canvas-image" data-slide="feat-4">
+        <img src="images/templatemo-split-04.jpg" alt="On-Device Privacy &amp; Security">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">On-Device Privacy &amp; Security</div>
+          <div class="canvas-caption-sub">Zero telemetry &middot; 0 Analytics &middot; Template App</div>
+        </div>
+      </div>
+
+      <!-- Screen Slides -->
+      <div class="canvas-image" data-slide="scr-1">
+        <img src="images/templatemo-split-05.jpg" alt="Primary Dashboard View">
+        <div class="canvas-caption"><div class="canvas-caption-title">Primary Dashboard View</div><div class="canvas-caption-sub">Screen 01 &middot; Template App</div></div>
+      </div>
+      <div class="canvas-image" data-slide="scr-2">
+        <img src="images/templatemo-split-06.jpg" alt="Interactive Detail Flow">
+        <div class="canvas-caption"><div class="canvas-caption-title">Interactive Detail Flow</div><div class="canvas-caption-sub">Screen 02 &middot; Template App</div></div>
+      </div>
+      <div class="canvas-image" data-slide="scr-3">
+        <img src="images/templatemo-split-07.jpg" alt="Engine Configuration">
+        <div class="canvas-caption"><div class="canvas-caption-title">Engine Configuration</div><div class="canvas-caption-sub">Screen 03 &middot; Template App</div></div>
+      </div>
+      <div class="canvas-image" data-slide="scr-4">
+        <img src="images/templatemo-split-08.jpg" alt="System Settings &amp; Personalization">
+        <div class="canvas-caption"><div class="canvas-caption-title">System Settings &amp; Personalization</div><div class="canvas-caption-sub">Screen 04 &middot; Template App</div></div>
+      </div>
+
+      <!-- Guide Slides -->
+      <div class="canvas-image" data-slide="step-1">
+        <img src="images/templatemo-split-09.jpg" alt="Initial Setup">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 1: Initial Setup</div><div class="canvas-caption-sub">Configure your environment &middot; Template App</div></div>
+      </div>
+      <div class="canvas-image" data-slide="step-2">
+        <img src="images/templatemo-split-10.jpg" alt="Explore Core Tools">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 2: Explore Core Tools</div><div class="canvas-caption-sub">Native high-performance features &middot; Template App</div></div>
+      </div>
+      <div class="canvas-image" data-slide="step-3">
+        <img src="images/templatemo-split-01.jpg" alt="Seamless Synchronization">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 3: Seamless Synchronization</div><div class="canvas-caption-sub">Private sync across devices &middot; Template App</div></div>
+      </div>
+
+      <!-- Context slides -->
+      <div class="canvas-context" data-context="about">
+        <img src="images/templatemo-split-02.jpg" alt="About Showcase">
+        <div class="canvas-caption"><div class="canvas-caption-title">Template App Philosophy</div><div class="canvas-caption-sub">Crafted for iOS &middot; Hakob Ghlijyan</div></div>
+      </div>
+      <div class="canvas-context" data-context="support">
+        <img src="images/templatemo-split-03.jpg" alt="Support Showcase">
+        <div class="canvas-caption"><div class="canvas-caption-title">Direct Support</div><div class="canvas-caption-sub">hakobghlijyan@gmail.com</div></div>
+      </div>
+      <div class="canvas-context" data-context="privacy">
+        <img src="images/templatemo-split-04.jpg" alt="Privacy Showcase">
+        <div class="canvas-caption"><div class="canvas-caption-title">Privacy Architecture</div><div class="canvas-caption-sub">100% On-Device &middot; Zero Trackers</div></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Hakob Ghlijyan &middot; Template App is built with native Swift.</span>
+    <div class="footer-links">
+      <a href="../index.html" data-i18n="portfolio">Portfolio</a>
+      <span>&middot;</span>
+      <a data-nav="privacy" data-i18n="privacy">Privacy</a>
+      <span>&middot;</span>
+      <a data-nav="support" data-i18n="support">Support</a>
+    </div>
+  </footer>
+
+  <script src="assets/contact-form.js"></script>
+  <script src="assets/main.js"></script>
+</body>
+</html>
