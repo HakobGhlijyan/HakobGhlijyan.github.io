@@ -1713,12 +1713,42 @@ body.menu-open { overflow: hidden; }
 }
 
 @media (max-width: 640px) {
-	.live-qr {
-		display: none;
+	/* RU: На телефоне карточка переходит в V-стек: иконка+текст в первой строке, QR — во второй.
+	   EN: On phones the card becomes a V-stack: icon+text in the first row, QR in the second. */
+	.live-card {
+		flex-wrap: wrap;
+		gap: 0.6rem;
 	}
 
 	.live-icon {
-		width: 48px;
-		height: 48px;
+		width: 44px;
+		height: 44px;
+	}
+
+	.live-text {
+		flex: 1;
+	}
+
+	.live-qr {
+		/* RU: QR переносится в отдельную строку. EN: QR wraps to its own row. */
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 0.65rem;
+		width: 100%;
+		min-width: auto;
+		margin: 0.1rem 0 0;
+	}
+
+	.live-qr img,
+	.live-qr-placeholder {
+		width: 52px;
+		height: 52px;
+	}
+
+	.live-qr figcaption {
+		text-align: left;
+		width: auto;
+		margin-top: 0;
 	}
 }
