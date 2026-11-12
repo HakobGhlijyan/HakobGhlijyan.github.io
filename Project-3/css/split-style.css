@@ -16,23 +16,26 @@ https://templatemo.com/tm-616-split-index
 }
 
 :root {
-	/* MARK: - Ocean Palette / Океаническая цветовая палитра */
-	--paper: #061325;
-	--ocean-deep: #030C18;
-	--ocean-navy: #071930;
-	--ocean-marine: #0D2C52;
-	--ocean-surface: #103663;
-	--ink: #F0F6FC;
-	--ink-light: #8BA6C4;
-	--ink-muted: #5F7D9E;
-	--accent: #38BDF8;
-	--accent-hover: #7DD3FC;
-	--accent-subtle: rgba(56, 189, 248, 0.15);
-	--ocean-border: rgba(139, 166, 196, 0.14);
-	--ocean-border-strong: rgba(56, 189, 248, 0.35);
-	--ocean-glass: rgba(7, 25, 48, 0.72);
-	--ocean-glass-hover: rgba(13, 44, 82, 0.85);
-	--grain-opacity: 0.025;
+	/* MARK: - Filter Studio Dark Theme (Yellow + Blue Accent Palette) */
+	--bg: #070A12;
+	--paper: #070A12;
+	--ocean-deep: #070A12;
+	--ocean-navy: #0F1524;
+	--ocean-marine: #161E33;
+	--ocean-surface: #1B2640;
+	--ink: #F4F6FB;
+	--ink-light: #9AA6BF;
+	--ink-muted: #6B7794;
+	--accent: #F6D743;
+	--accent-hover: #fae168;
+	--accent-subtle: rgba(246, 215, 67, 0.16);
+	--accent-2: #4C8DFF;
+	--accent-2-hover: #6ea4ff;
+	--ocean-border: rgba(255, 255, 255, 0.08);
+	--ocean-border-strong: rgba(246, 215, 67, 0.38);
+	--ocean-glass: rgba(15, 21, 36, 0.78);
+	--ocean-glass-hover: rgba(22, 30, 51, 0.92);
+	--grain-opacity: 0.035;
 	--transition-panel: 0.55s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -43,7 +46,9 @@ html {
 }
 
 body {
-	background: radial-gradient(130% 90% at 85% 15%, #0D2C52 0%, #071930 45%, #030C18 100%);
+	background: radial-gradient(circle at 14% 12%, rgba(246, 215, 67, 0.09) 0%, transparent 45%),
+	            radial-gradient(circle at 86% 88%, rgba(76, 141, 255, 0.09) 0%, transparent 50%),
+	            #070A12;
 	background-color: var(--paper);
 	color: var(--ink);
 	font-family: 'Instrument Sans', sans-serif;
