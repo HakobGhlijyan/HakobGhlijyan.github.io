@@ -1521,16 +1521,41 @@ a {
 	}
 }
 
-/* RU: На ширине iPhone (≤ 640px) шапка не помещалась — кнопка меню выходила
-       за экран. «← Portfolio» и кнопка App Store уже есть в выезжающем меню,
-       поэтому в самой шапке их прячем.
-   EN: On iPhone-width screens (≤ 640px) the header overflowed and the menu
-       button was pushed off-screen. "← Portfolio" and the App Store button
-       already live in the slide-out menu, so they are hidden in the bar itself. */
+/* RU: На мобильных устройствах (≤ 640px) в шапке остаются бренд и ссылка «← Portfolio»,
+       а разделы сайта открываются через бургер-меню. Кнопку App Store в самой шапке скрываем.
+   EN: On mobile screens (≤ 640px), the header preserves the brand and "← Portfolio" link,
+       while section tabs open via the hamburger menu. App Store button in bar is hidden. */
 @media (max-width: 640px) {
-	.portfolio-back-link,
 	.header-appstore-btn {
 		display: none;
+	}
+
+	.site-header {
+		padding: 0.75rem 1.1rem;
+	}
+
+	.site-header-left {
+		gap: 0.6rem;
+	}
+
+	.site-brand-group {
+		gap: 0.55rem;
+	}
+
+	.site-brand span {
+		font-size: 0.98rem;
+	}
+
+	.site-brand-icon {
+		width: 22px;
+		height: 22px;
+	}
+
+	.portfolio-back-link {
+		display: inline-flex;
+		padding: 0.24rem 0.52rem;
+		font-size: 0.62rem;
+		letter-spacing: 0.04em;
 	}
 }
 

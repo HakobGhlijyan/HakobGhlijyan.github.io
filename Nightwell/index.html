@@ -85,24 +85,27 @@
        MARK: - SITE HEADER & BRAND (Шапка и переключатели)
        ========================================================================= -->
   <header class="site-header">
-    <div class="site-brand-group">
-      <a class="site-brand" data-nav="work" href="#work">
-        <img class="site-brand-icon" src="assets/icons/x512_light.svg" alt="Nightwell">
-        <span>Nightwell</span>
-      </a>
-      <a href="../index.html" class="portfolio-back-link" title="Return to Hakob Ghlijyan Portfolio">
-        &larr; <span data-en="Portfolio" data-ru="Портфолио">Portfolio</span>
-      </a>
-    </div>
+    <!-- Header Left: Brand, Portfolio Button & Navigation Tabs side-by-side -->
+    <div class="site-header-left">
+      <div class="site-brand-group">
+        <a class="site-brand" data-nav="work" href="#work">
+          <img class="site-brand-icon" src="assets/icons/x512_light.svg" alt="Nightwell">
+          <span>Nightwell</span>
+        </a>
+        <a href="../index.html" class="portfolio-back-link" title="Return to Hakob Ghlijyan Portfolio">
+          &larr; <span data-en="Portfolio" data-ru="Портфолио">Portfolio</span>
+        </a>
+      </div>
 
-    <!-- Navigation Tabs / Вкладки разделов -->
-    <nav class="site-nav-tabs">
-      <a data-nav="work" href="#work" class="nav-active" data-en="Features" data-ru="Возможности">Features</a>
-      <a data-nav="screens" href="#screens" data-en="Screenshots" data-ru="Скриншоты">Screenshots</a>
-      <a data-nav="about" href="#about" data-en="About" data-ru="О проекте">About</a>
-      <a data-nav="support" href="#support" data-en="Support" data-ru="Поддержка">Support</a>
-      <a data-nav="privacy" href="#privacy" data-en="Privacy" data-ru="Приватность">Privacy</a>
-    </nav>
+      <!-- Navigation Tabs / Вкладки разделов -->
+      <nav class="site-nav-tabs">
+        <a data-nav="work" href="#work" class="nav-active" data-en="Features" data-ru="Возможности">Features</a>
+        <a data-nav="screens" href="#screens" data-en="Screenshots" data-ru="Скриншоты">Screenshots</a>
+        <a data-nav="about" href="#about" data-en="About" data-ru="О проекте">About</a>
+        <a data-nav="support" href="#support" data-en="Support" data-ru="Поддержка">Support</a>
+        <a data-nav="privacy" href="#privacy" data-en="Privacy" data-ru="Приватность">Privacy</a>
+      </nav>
+    </div>
 
     <!-- Actions: App Store, Language & Mobile Menu -->
     <div class="site-actions">
@@ -536,10 +539,14 @@
            PANEL 4: SUPPORT / ПОДДЕРЖКА ПО СТАНДАРТАМ APP STORE
            ===================================================================== -->
       <div class="panel" id="panel-support">
-        <div class="contact-content no-scrollbar" style="padding:2rem 3rem; overflow-y:auto; max-height:calc(100vh - 160px);">
-          <span class="contact-label" data-en="Customer Support" data-ru="Служба поддержки">Customer Support</span>
-          <h2 class="contact-headline" data-en="How can we help?" data-ru="Чем мы можем помочь?">How can we help?</h2>
+        <div class="screens-header-sticky">
+          <div class="panel-header" style="padding:0 0 0.4rem 0;">
+            <span class="contact-label" data-en="Customer Support" data-ru="Служба поддержки">Customer Support</span>
+          </div>
+          <h2 class="contact-headline" style="margin:0;" data-en="How can we help?" data-ru="Чем мы можем помочь?">How can we help?</h2>
+        </div>
 
+        <div class="contact-content no-scrollbar" style="padding:1.4rem 3rem 3rem; overflow-y:auto; max-height:calc(100vh - 200px);">
           <!-- Contact Support Box -->
           <div style="background:rgba(10,31,56,0.65); border:1px solid var(--ocean-border); border-radius:10px; padding:1.2rem; margin:1rem 0; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);">
             <p style="font-size:0.85rem; font-weight:600; margin-bottom:0.4rem; color:var(--ink);" data-en="Contact Support Directly" data-ru="Связаться с поддержкой">Contact Support Directly</p>
@@ -634,12 +641,17 @@
            PANEL 5: PRIVACY POLICY / ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ
            ===================================================================== -->
       <div class="panel" id="panel-privacy">
-        <div class="about-content no-scrollbar" style="padding:2rem 3rem; overflow-y:auto; max-height:calc(100vh - 160px);">
-          <span class="about-label" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</span>
-          <h2 class="about-headline" data-en="The app does not collect <em>your personal data</em>." data-ru="Приложение не собирает <em>ваши личные данные</em>.">
+        <div class="screens-header-sticky">
+          <div class="panel-header" style="padding:0 0 0.4rem 0;">
+            <span class="about-label" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</span>
+          </div>
+          <h2 class="about-headline" style="margin:0;" data-en="The app does not collect <em>your personal data</em>." data-ru="Приложение не собирает <em>ваши личные данные</em>.">
             The app does not collect <em>your personal data</em>.
           </h2>
-          <p style="font-family:'DM Mono',monospace; font-size:0.68rem; color:var(--ink-light); margin-bottom:1.5rem;" data-en="Last updated: October 2026" data-ru="Обновлено: октябрь 2026">Last updated: October 2026</p>
+          <p style="font-family:'DM Mono',monospace; font-size:0.68rem; color:var(--ink-light); margin:0.4rem 0 0;" data-en="Last updated: October 2026" data-ru="Обновлено: октябрь 2026">Last updated: October 2026</p>
+        </div>
+
+        <div class="about-content no-scrollbar" style="padding:1.4rem 3rem 3rem; overflow-y:auto; max-height:calc(100vh - 200px);">
 
           <div style="font-size:0.88rem; line-height:1.7; color:var(--ink); font-family:'Instrument Sans', sans-serif;">
             <p data-en="<strong>1. Summary:</strong> The Nightwell app does not collect your personal data. No accounts, no advertising, no tracking, and no third-party analytics SDKs. Your data stays on your devices and in your own private iCloud." data-ru="<strong>1. Кратко:</strong> Приложение Nightwell не собирает ваши личные данные. Без аккаунтов, рекламы, слежки и сторонних аналитических SDK. Ваши данные остаются на ваших устройствах и в вашем личном iCloud."><strong>1. Summary:</strong> The Nightwell app does not collect your personal data. No accounts, no advertising, no tracking, and no third-party analytics SDKs. Your data stays on your devices and in your own private iCloud.</p>

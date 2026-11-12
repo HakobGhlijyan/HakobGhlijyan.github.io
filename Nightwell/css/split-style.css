@@ -96,6 +96,13 @@ body::before {
 	pointer-events: auto;
 }
 
+/* Header Left Group / Бренд, Portfolio и табы навигации рядом */
+.site-header-left {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+}
+
 .site-brand-group {
 	display: flex;
 	align-items: center;
@@ -290,8 +297,12 @@ body::before {
 }
 
 #panel-work {
-	justify-content: center;
-	padding: 1rem 0;
+	justify-content: flex-start;
+	padding: 1.2rem 0;
+}
+
+#panel-work .panel-header {
+	padding: 0 42px 0.8rem;
 }
 
 .panel.panel-active {
@@ -346,9 +357,9 @@ body::before {
 
 .project-link {
 	display: flex;
-	align-items: baseline;
+	align-items: flex-start;
 	gap: 1.5rem;
-	padding: 1.15rem 3rem;
+	padding: 1.15rem 42px;
 	text-decoration: none;
 	color: inherit;
 	position: relative;
@@ -369,6 +380,7 @@ body::before {
 	color: var(--accent);
 	opacity: 0.75;
 	min-width: 2rem;
+	padding-top: 0.15rem;
 	transition: opacity 0.3s ease, color 0.3s ease;
 }
 
@@ -398,6 +410,7 @@ body::before {
 	color: var(--ink-light);
 	opacity: 0.65;
 	margin-left: auto;
+	padding-top: 0.2rem;
 	transition: opacity 0.3s ease, color 0.3s ease;
 }
 
@@ -413,6 +426,7 @@ body::before {
 	transition: width 0.35s cubic-bezier(0.23, 1, 0.32, 1);
 	display: flex;
 	align-items: center;
+	padding-top: 0.15rem;
 }
 
 .project-arrow svg {
@@ -735,7 +749,7 @@ body::before {
 	z-index: 0;
 	background: radial-gradient(135% 115% at 50% 25%, #F4EFEB 0%, #E9E1D5 50%, #DDD2C4 100%);
 	border-radius: 20px;
-	border: 1px solid rgba(200, 187, 170, 0.45);
+	border: 1.5px dashed rgba(200, 187, 170, 0.55);
 	box-shadow: 0 24px 60px -15px rgba(2, 10, 20, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.4) inset;
 	overflow: hidden;
 	padding: 1.5rem 1.5rem 4.8rem;
@@ -765,7 +779,7 @@ body::before {
 	right: 0;
 	padding: 1.3rem 2rem 1.2rem;
 	background: linear-gradient(to top, rgba(220, 209, 194, 0.98) 0%, rgba(232, 223, 211, 0.88) 60%, transparent 100%);
-	border-top: 1px solid rgba(195, 181, 163, 0.35);
+	border-top: 1.5px dashed rgba(195, 181, 163, 0.55);
 	opacity: 0;
 	transform: translateY(8px);
 	transition: opacity 0.5s ease 0.15s, transform 0.5s ease 0.15s;
@@ -1149,9 +1163,9 @@ body::before {
    ========================================================================= */
 .live-card {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	gap: 1rem;
-	margin: 0 3rem 1.2rem;
+	margin: 0 42px 1.2rem;
 	padding: 0.9rem 1.1rem;
 	background: var(--ocean-glass);
 	border: 1px solid var(--ocean-border);
@@ -1205,6 +1219,10 @@ body::before {
 .live-qr {
 	flex-shrink: 0;
 	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
 	text-align: center;
 }
 
@@ -1299,7 +1317,7 @@ body::before {
 	font-weight: 700;
 }
 
-/* MARK: - Screenshots Gallery Filter / Фильтры скриншотов в стеклянном стиле */
+/* MARK: - Screenshots Gallery & Section Sticky Headers / Липкие заголовки разделов */
 .screens-header-sticky {
 	position: sticky;
 	top: 0;
@@ -1307,7 +1325,7 @@ body::before {
 	background: linear-gradient(180deg, rgba(6, 19, 37, 0.98) 0%, rgba(6, 19, 37, 0.92) 85%, rgba(6, 19, 37, 0.8) 100%);
 	backdrop-filter: blur(16px);
 	-webkit-backdrop-filter: blur(16px);
-	padding: 5.5rem 3rem 0.8rem;
+	padding: 1.8rem 3rem 0.8rem;
 	border-bottom: 1px solid var(--ocean-border);
 }
 
@@ -1444,6 +1462,7 @@ body.menu-open {
 }
 
 @media (max-width: 1100px) {
+	.site-nav-tabs,
 	.site-header-nav > a[data-nav] {
 		display: none;
 	}
@@ -1455,10 +1474,35 @@ body.menu-open {
 
 @media (max-width: 640px) {
 	.site-header {
-		padding: 0.8rem 1rem;
+		padding: 0.75rem 1.1rem;
+	}
+
+	.site-header-left {
+		gap: 0.6rem;
+	}
+
+	.site-brand-group {
+		gap: 0.55rem;
+	}
+
+	.site-brand span {
+		font-size: 0.98rem;
+	}
+
+	.site-brand-icon {
+		width: 22px;
+		height: 22px;
+	}
+
+	.portfolio-back-link {
+		display: inline-flex;
+		padding: 0.24rem 0.52rem;
+		font-size: 0.62rem;
+		letter-spacing: 0.04em;
 	}
 
 	.site-back-link,
+	.header-appstore-btn,
 	.site-header-nav .header-appstore-btn {
 		display: none;
 	}
