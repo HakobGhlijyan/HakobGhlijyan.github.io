@@ -271,6 +271,19 @@
   - Добавлены стили адаптивного вписывания: `max-width: 100%; max-height: 100%; object-fit: contain;`, деликатное скругление углов (14px) и объемная тень (`0 16px 36px rgba(0,0,0,0.45)`).
   - Нативное воспроизведение с флагами `playsinline`, `loop`, `muted`, автоматическим стартом при переключении слайда и возможностью управления кликом.
 
+### Итерация 18: Синхронизация Features и Screens со всеми 8 скриншотами, синий акцент Coming Soon и очистка Privacy от StoreKit
+- **Синий акцент для Coming Soon и центрирование QR-блока**:
+  - Кнопки Coming Soon в шапке и подвале переведены с зеленого на синий акцентный цвет (`rgba(76, 141, 255, 0.14)` с ховером `#4C8DFF`).
+  - QR-код (84×84px) и подпись «Filter Studio for iOS» отцентрированы относительно друг друга в `.live-card`.
+- **Расширение Features до 8 ключевых модулей**:
+  - Секция Features расширена с 6 до 8 пунктов в точном соответствии со всеми 8 скриншотами приложения: 1. Filters with Live Preview, 2. Crop, Rotate & Mirror, 3. Your Watermark, Your Colour, 4. Every Edit is a Version, 5. Photos & Collections, 6. Full Photo View & EXIF, 7. Dark & Light Theme, 8. Interactive Widgets.
+  - Все 8 пунктов переведены на 6 языков (`en`, `ru`, `fr`, `de`, `es`, `it`) в `main.js`.
+  - Добавлены соответствующие слайды холста `feat-7` и `feat-8`, обновлены `feat-5` и `feat-6`.
+- **Исправление названий виджетов в Screens**:
+  - В разделах Duo, iPhone и iPad пункт 08 переименован с «Preset Gallery» в «Interactive Widgets» (`Duo · Widgets`, `iPhone · Widgets`, `iPad · Widgets`). Подписи слайдов на холсте также приведены к единому виду.
+- **Очистка политики конфиденциальности от StoreKit**:
+  - Все 13 разделов Privacy в `index.html` синхронизированы с эталонным маркетинговым документом `Website-Privacy-Support.md`. Исключены упоминания StoreKit 2, не имеющие отношения к текущей версии приложения.
+
 ---
 
 ## 6. Engineer's Wisdom

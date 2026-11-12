@@ -275,8 +275,8 @@ a {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.45rem;
-	background: rgba(87, 217, 159, 0.1);
-	border: 1px solid rgba(87, 217, 159, 0.35);
+	background: rgba(76, 141, 255, 0.14);
+	border: 1px solid rgba(76, 141, 255, 0.45);
 	border-radius: 20px;
 	padding: 0.35rem 0.85rem;
 	color: #FFFFFF;
@@ -290,10 +290,10 @@ a {
 }
 
 .header-appstore-btn:hover {
-	background: var(--green);
-	color: #07110d;
-	border-color: var(--green);
-	box-shadow: 0 4px 14px var(--green-glow);
+	background: #4C8DFF;
+	color: #FFFFFF;
+	border-color: #4C8DFF;
+	box-shadow: 0 4px 16px rgba(76, 141, 255, 0.4);
 	transform: translateY(-1px);
 }
 
@@ -1604,23 +1604,31 @@ a {
 .live-qr {
 	flex-shrink: 0;
 	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	text-align: center;
 }
 
-.live-qr img {
+.live-qr img,
+.live-qr-placeholder {
 	display: block;
 	width: 84px;
 	height: 84px;
 	border-radius: 8px;
+	margin: 0 auto;
 }
 
 .live-qr figcaption {
-	margin-top: 0.3rem;
+	margin-top: 0.4rem;
 	font-family: var(--font-mono);
 	font-size: 0.58rem;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
 	color: var(--text-secondary);
+	text-align: center;
+	width: 100%;
 }
 
 @media (max-width: 640px) {
