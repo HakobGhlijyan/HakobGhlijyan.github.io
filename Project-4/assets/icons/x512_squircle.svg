@@ -1,0 +1,13 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="112" fill="#181C24"/>
+  <rect x="0.5" y="0.5" width="511" height="511" rx="111.5" stroke="white" stroke-opacity="0.12"/>
+  <!-- Elegant layered app icon symbol in slate silver -->
+  <g transform="translate(106, 106)">
+    <!-- Base Layer -->
+    <path d="M150 20 L280 85 L150 150 L20 85 Z" fill="rgba(148, 163, 184, 0.25)" stroke="#94A3B8" stroke-width="6" stroke-linejoin="round"/>
+    <!-- Middle Layer -->
+    <path d="M150 90 L280 155 L150 220 L20 155 Z" fill="rgba(203, 213, 225, 0.45)" stroke="#CBD5E1" stroke-width="6" stroke-linejoin="round"/>
+    <!-- Top Layer -->
+    <path d="M150 160 L280 225 L150 290 L20 225 Z" fill="rgba(241, 245, 249, 0.85)" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round"/>
+  </g>
+</svg>

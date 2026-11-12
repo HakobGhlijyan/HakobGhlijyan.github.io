@@ -1,65 +1,97 @@
 @charset "utf-8";
 /**
- * Universal iOS Application Showcase — Split Screen Template
- * Grey / Neutral palette matching CentSweep architecture.
+ * Universal iOS Application Showcase — Standardized Template
+ * Architecture directly replicated from CentSweep split-screen system.
+ * Universal Neutral Slate / Grey palette with bilingual Apple-style documentation.
  */
-:root {
-	color-scheme: dark;
-	--bg: #0d0f12;
-	--bg-gradient: radial-gradient(circle at 18% 0%, rgba(120, 130, 145, 0.12) 0%, transparent 45%), linear-gradient(160deg, #0d0f12 0%, #15181e 50%, #0a0b0e 100%);
-	--surface: rgba(22, 26, 32, 0.88);
-	--surface-solid: #161a20;
-	--surface2: #1c2129;
-	--surface-card: rgba(26, 31, 39, 0.75);
-	--surface-hover: rgba(35, 42, 53, 0.85);
-	--text: #f0f2f5;
-	--text-secondary: #9aa2ae;
-	--muted: #6e7785;
-	--line: rgba(255, 255, 255, 0.10);
-	--line-strong: rgba(255, 255, 255, 0.25);
-	--green: #e5e7eb;
-	--green-glow: rgba(229, 231, 235, 0.20);
-	--deep: #4b5563;
-	--soft: #f3f4f6;
-	--on-accent: #0d0f12;
-	
-	--canvas-card-bg: radial-gradient(135% 115% at 50% 20%, #202632 0%, #141820 50%, #0c0e13 100%);
-	--canvas-card-border: rgba(255, 255, 255, 0.15);
-	--canvas-card-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
-	--caption-bg: linear-gradient(to top, rgba(12, 14, 19, 0.98) 0%, rgba(20, 24, 32, 0.88) 60%, transparent 100%);
-	--caption-title: #f3f4f6;
-	--caption-sub: #9ca3af;
 
+/* =========================================================================
+   MARK: - 1. DESIGN TOKENS & THEMING (Цветовые токены и темы оформления)
+   ========================================================================= */
+:root {
+	/* MARK: - Dark Theme Palette (Основная темная тема Filter Studio — без желтых засветок) */
+	color-scheme: dark;
+	--bg: #0B0F17;
+	--bg-gradient: radial-gradient(circle at 18% 0%, rgba(148, 163, 184, 0.10) 0%, transparent 50%), linear-gradient(160deg, #0B0F17 0%, #141A24 50%, #070A10 100%);
+	--surface: rgba(22, 27, 34, 0.88);
+	--surface-solid: #161B22;
+	--surface2: #1E2430;
+	--surface-card: rgba(26, 32, 44, 0.75);
+	--surface-hover: rgba(36, 45, 60, 0.85);
+	--text: #F5F7FA;
+	--text-secondary: #94A3B8;
+	--muted: #64748B;
+	--line: rgba(255, 255, 255, 0.08);
+	--line-strong: rgba(255, 255, 255, 0.22);
+	--green: #CBD5E1;
+	--green-glow: rgba(203, 213, 225, 0.22);
+	--deep: #475569;
+	--soft: #F1F5F9;
+	--on-accent: #0B0F17;
+	
+	/* Deep Night Navy Canvas Pedestal / Темный благородный сине-ночной фон под мокапы и cover */
+	--canvas-card-bg: radial-gradient(135% 115% at 50% 18%, #1E2533 0%, #131722 50%, #0A0D14 100%);
+	--canvas-card-border: rgba(255, 255, 255, 0.15);
+	--canvas-card-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+	--caption-bg: linear-gradient(to top, rgba(6, 11, 22, 0.98) 0%, rgba(12, 21, 39, 0.88) 60%, transparent 100%);
+	--caption-title: #F8FAFC;
+	--caption-sub: #E2E8F0;
+
+	/* Layout Ratios */
 	--info-width: 44vw;
 	--canvas-width: 56vw;
 	--transition-panel: 0.45s cubic-bezier(0.23, 1, 0.32, 1);
 	
+	/* Typography */
 	--font-serif: 'Playfair Display', Georgia, serif;
 	--font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 	--font-mono: 'DM Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-*, *::before, *::after {
-	box-sizing: border-box;
+/* =========================================================================
+   MARK: - 2. BASE RESET & BODY (Сброс стилей и общая оболочка)
+   ========================================================================= */
+*,
+*::before,
+*::after {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
-html, body {
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	background: var(--bg);
-	background-image: var(--bg-gradient);
-	background-attachment: fixed;
+html {
+	font-size: 15px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	scroll-behavior: smooth;
+}
+
+body {
+	background: var(--bg-gradient);
+	background-color: var(--bg);
 	color: var(--text);
 	font-family: var(--font-sans);
-	font-size: 15px;
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
+	overflow: hidden;
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Header */
+/* Theme Crossfade Blur Effect / Эффект кинематографичного блюра при переключении темы */
+body.theme-blur {
+	filter: blur(12px);
+	transition: filter 0.25s ease;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* =========================================================================
+   MARK: - 3. SITE HEADER & NAVIGATION (Шапка, бренд, меню и переключатели)
+   ========================================================================= */
 .site-header {
 	position: fixed;
 	top: 0;
@@ -69,17 +101,33 @@ html, body {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0.65rem 2.2rem;
-	background: var(--surface);
+	padding: 0.9rem 2.2rem;
+	background: linear-gradient(to bottom, rgba(7, 10, 18, 0.96) 0%, rgba(7, 10, 18, 0.80) 65%, transparent 100%);
 	backdrop-filter: blur(14px);
 	-webkit-backdrop-filter: blur(14px);
 	border-bottom: 1px solid var(--line);
+	pointer-events: none;
 }
 
-.site-brand-group {
+.site-header > * {
+	pointer-events: auto;
+}
+
+/* Header Left & Center Groups / Бренд слева, Portfolio и табы навигации строго по центру */
+.site-header-left {
+	display: flex;
+	align-items: center;
+	gap: 0.85rem;
+}
+
+.site-header-center {
 	display: flex;
 	align-items: center;
 	gap: 1.2rem;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	pointer-events: auto;
 }
 
 .site-brand {
@@ -87,150 +135,274 @@ html, body {
 	align-items: center;
 	gap: 0.6rem;
 	font-family: var(--font-serif);
-	font-weight: 700;
-	font-size: 1.1rem;
+	font-weight: 800;
+	font-size: 1.15rem;
+	letter-spacing: 0.01em;
 	color: var(--text);
-	text-decoration: none;
 	cursor: pointer;
 }
 
-.portfolio-back-link {
-	font-family: var(--font-mono);
-	font-size: 0.72rem;
-	color: var(--muted);
-	text-decoration: none;
-	padding: 0.25rem 0.55rem;
-	border-radius: 4px;
-	border: 1px solid var(--line);
-	transition: all 0.2s ease;
-}
-.portfolio-back-link:hover {
-	color: var(--text);
-	border-color: var(--line-strong);
+.site-brand-icon {
+	width: 26px;
+	height: 26px;
+	border-radius: 6px;
+	display: block;
 }
 
+.portfolio-back-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	font-family: var(--font-mono);
+	font-size: 0.68rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--text-secondary);
+	padding: 0.32rem 0.68rem;
+	border: 1px solid var(--line);
+	border-radius: 5px;
+	background: var(--surface);
+	transition: all 0.2s ease;
+}
+
+.portfolio-back-link:hover {
+	color: var(--green);
+	border-color: var(--green);
+	background: var(--surface-hover);
+}
+
+/* Navigation Tabs / Вкладки разделов */
 .site-nav-tabs {
 	display: flex;
 	align-items: center;
-	gap: 0.2rem;
-	background: rgba(0, 0, 0, 0.25);
-	padding: 0.25rem 0.35rem;
-	border-radius: 30px;
-	border: 1px solid var(--line);
+	gap: 0.3rem;
 }
 
 .site-nav-tabs a {
-	padding: 0.32rem 0.85rem;
-	font-size: 0.78rem;
+	font-family: var(--font-sans);
 	font-weight: 500;
+	font-size: 0.76rem;
+	letter-spacing: 0.02em;
 	color: var(--text-secondary);
-	text-decoration: none;
-	border-radius: 20px;
+	padding: 0.35rem 0.75rem;
+	border-radius: 6px;
+	position: relative;
 	transition: all 0.2s ease;
 	cursor: pointer;
 }
 
 .site-nav-tabs a:hover {
 	color: var(--text);
+	background: var(--surface-hover);
 }
 
 .site-nav-tabs a.nav-active {
-	background: var(--surface2);
-	color: var(--text);
-	box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+	color: var(--on-accent);
+	background: var(--green);
+	font-weight: 600;
+	box-shadow: 0 0 14px var(--green-glow);
 }
 
+/* Header Actions / Язык, Тема, Меню */
 .site-actions {
 	display: flex;
 	align-items: center;
-	gap: 0.8rem;
+	gap: 0.6rem;
 }
 
-.header-appstore-btn {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.45rem;
-	padding: 0.38rem 0.85rem;
-	background: var(--surface2);
-	border: 1px solid var(--line-strong);
-	border-radius: 20px;
-	font-size: 0.75rem;
-	font-weight: 600;
-	color: var(--text);
-	text-decoration: none;
-	transition: all 0.2s ease;
-}
-.header-appstore-btn:hover {
-	background: var(--surface-hover);
-	box-shadow: 0 0 12px var(--green-glow);
-}
-.header-apple-logo {
-	width: 13px;
-	height: auto;
-}
-
+/* Custom Language Dropdown (7 Languages) / Выбор из 7 языков */
 .custom-lang {
 	position: relative;
 }
+
 .lang-btn {
-	background: var(--surface2);
+	background: var(--surface);
 	border: 1px solid var(--line);
-	color: var(--text);
-	padding: 0.38rem 0.75rem;
-	border-radius: 16px;
-	font-family: var(--font-mono);
-	font-size: 0.72rem;
-	cursor: pointer;
-	display: flex;
+	border-radius: 6px;
+	padding: 0.35rem 0.65rem;
+	display: inline-flex;
 	align-items: center;
 	gap: 0.4rem;
+	font-family: var(--font-mono);
+	font-size: 0.7rem;
+	font-weight: 600;
+	color: var(--text);
+	cursor: pointer;
+	transition: all 0.2s ease;
 }
+
+.lang-btn:hover {
+	border-color: var(--green);
+}
+
 .lang-menu {
 	position: absolute;
 	top: calc(100% + 6px);
 	right: 0;
+	min-width: 145px;
 	background: var(--surface-solid);
-	border: 1px solid var(--line-strong);
+	border: 1px solid var(--line);
 	border-radius: 8px;
-	padding: 0.3rem;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+	padding: 0.35rem 0;
 	display: none;
 	flex-direction: column;
-	min-width: 110px;
-	box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-	z-index: 50;
+	z-index: 100;
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
 }
+
 .lang-menu.show {
 	display: flex;
 }
+
 .lang-menu button {
-	background: none;
+	background: transparent;
 	border: none;
+	padding: 0.45rem 0.85rem;
+	font-family: var(--font-sans);
+	font-size: 0.76rem;
 	color: var(--text-secondary);
-	padding: 0.4rem 0.6rem;
 	text-align: left;
-	font-size: 0.75rem;
-	border-radius: 4px;
 	cursor: pointer;
+	transition: all 0.15s ease;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 }
+
 .lang-menu button:hover {
-	background: var(--surface2);
+	background: var(--surface-hover);
 	color: var(--text);
 }
 
+.lang-menu button.active {
+	color: var(--green);
+	font-weight: 600;
+}
+
+/* Header App Store Button / Кнопка App Store в шапке */
+.header-appstore-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	background: rgba(148, 163, 184, 0.14);
+	border: 1px solid rgba(148, 163, 184, 0.35);
+	border-radius: 20px;
+	padding: 0.35rem 0.85rem;
+	color: #FFFFFF;
+	font-family: var(--font-mono);
+	font-size: 0.68rem;
+	letter-spacing: 0.04em;
+	text-decoration: none;
+	transition: all 0.25s ease;
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+}
+
+.header-appstore-btn:hover {
+	background: #94A3B8;
+	color: #FFFFFF;
+	border-color: #94A3B8;
+	box-shadow: 0 4px 16px rgba(148, 163, 184, 0.35);
+	transform: translateY(-1px);
+}
+
+.header-appstore-btn svg {
+	width: 13px;
+	height: 13px;
+	fill: currentColor;
+	flex-shrink: 0;
+}
+
+.header-apple-logo {
+	height: 14px;
+	width: auto;
+	display: inline-block;
+	vertical-align: middle;
+	object-fit: contain;
+}
+
+/* Theme Toggle Button / Кнопка переключения темы */
+.theme-btn {
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: 6px;
+	width: 32px;
+	height: 32px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--text);
+	cursor: pointer;
+	transition: all 0.25s ease;
+}
+
+.theme-btn:hover {
+	border-color: var(--green);
+	color: var(--green);
+}
+
+.theme-btn svg {
+	width: 16px;
+	height: 16px;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 1.8;
+}
+
+/* Mobile Hamburger Button */
 .hamburger-btn {
 	display: none;
-	background: none;
+	background: var(--surface);
 	border: 1px solid var(--line);
-	color: var(--text);
-	padding: 0.35rem;
 	border-radius: 6px;
+	width: 32px;
+	height: 32px;
+	align-items: center;
+	justify-content: center;
+	color: var(--text);
 	cursor: pointer;
 }
+
+/* Mobile Nav Overlay */
 .mobile-nav-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(7, 17, 13, 0.95);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	z-index: 99;
 	display: none;
+	flex-direction: column;
+	padding: 2.5rem 1.8rem;
+	gap: 1.2rem;
 }
 
-/* Split Layout */
+.mobile-nav-overlay.open {
+	display: flex;
+}
+
+.mobile-nav-close {
+	align-self: flex-end;
+	background: transparent;
+	border: none;
+	color: var(--text);
+	font-size: 1.8rem;
+	cursor: pointer;
+}
+
+.mobile-nav-overlay a {
+	font-size: 1.1rem;
+	font-weight: 600;
+	padding: 0.5rem 0;
+	border-bottom: 1px solid var(--line);
+	color: var(--text);
+}
+
+/* =========================================================================
+   MARK: - 4. SPLIT CONTAINER & LAYOUT (Двухпанельный контейнер)
+   ========================================================================= */
 .split-container {
 	display: flex;
 	height: 100vh;
@@ -239,6 +411,7 @@ html, body {
 	padding-bottom: 2.2rem;
 }
 
+/* Divider / Разделитель */
 .split-divider {
 	width: 1px;
 	align-self: stretch;
@@ -248,6 +421,9 @@ html, body {
 	flex-shrink: 0;
 }
 
+/* =========================================================================
+   MARK: - 5. LEFT SIDE: PANEL SYSTEM (Левая сторона — система панелей)
+   ========================================================================= */
 .left-side {
 	width: var(--info-width);
 	position: relative;
@@ -258,303 +434,601 @@ html, body {
 .panel {
 	position: absolute;
 	inset: 0;
-	overflow-y: auto;
-	overflow-x: hidden;
-	padding: 2.2rem 2.4rem 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 	opacity: 0;
-	visibility: hidden;
-	transform: translateY(12px);
-	transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+	transform: translateY(16px);
+	transition: opacity var(--transition-panel), transform var(--transition-panel);
+	pointer-events: none;
+	overflow-y: auto;
+	scrollbar-width: none !important;
+	-ms-overflow-style: none !important;
+}
+
+.panel::-webkit-scrollbar {
+	display: none !important;
+	width: 0 !important;
 }
 
 .panel.panel-active {
 	opacity: 1;
-	visibility: visible;
 	transform: translateY(0);
+	pointer-events: auto;
+	z-index: 2;
 }
 
-.panel-header {
+/* Common Panel Header / Заголовок панели */
+.panel-hero {
+	padding: 2.2rem 2.8rem 1.4rem;
+}
+
+.panel-eyebrow {
 	font-family: var(--font-mono);
-	font-size: 0.68rem;
-	letter-spacing: 0.12em;
+	font-size: 0.65rem;
+	font-weight: 500;
+	letter-spacing: 0.14em;
 	text-transform: uppercase;
-	color: var(--text-secondary);
-	margin-bottom: 1.5rem;
-}
-
-.live-card {
-	background: var(--surface-card);
-	border: 1px solid var(--line);
-	border-radius: 12px;
-	padding: 1.1rem;
-	margin-bottom: 1.6rem;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 1rem;
-}
-.live-text strong {
-	display: block;
-	font-size: 0.9rem;
-	color: var(--text);
-	margin-bottom: 0.2rem;
-}
-.live-text span {
-	display: block;
-	font-size: 0.75rem;
-	color: var(--text-secondary);
-	line-height: 1.45;
+	color: var(--green);
+	display: inline-block;
 	margin-bottom: 0.6rem;
 }
 
+.panel-title {
+	font-family: var(--font-serif);
+	font-weight: 700;
+	font-size: clamp(1.4rem, 2.3vw, 2.1rem);
+	line-height: 1.15;
+	letter-spacing: -0.01em;
+	color: var(--text);
+	margin-bottom: 0.6rem;
+}
+
+.panel-lead {
+	font-family: var(--font-sans);
+	font-size: 0.82rem;
+	line-height: 1.6;
+	color: var(--text-secondary);
+	max-width: 440px;
+}
+
+/* App Store Badge / Кнопка App Store */
+.app-badge-box {
+	margin-top: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+}
+
+.app-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.45rem 1rem;
+	border-radius: 20px;
+	background: var(--surface-card);
+	border: 1px solid var(--line-strong);
+	font-family: var(--font-mono);
+	font-size: 0.68rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--green);
+	cursor: default;
+}
+
+/* Interactive Items List / Интерактивный список элементов */
 .interactive-list {
 	list-style: none;
-	display: flex;
-	flex-direction: column;
-	gap: 0.45rem;
+	border-top: 1px solid var(--line);
+	margin-bottom: 2rem;
 }
 
 .interactive-item {
-	background: var(--surface-card);
-	border: 1px solid var(--line);
-	border-radius: 8px;
-	padding: 0.7rem 1rem;
+	border-bottom: 1px solid var(--line);
 	cursor: pointer;
-	transition: all 0.2s ease;
+	position: relative;
+	overflow: hidden;
+	transition: background 0.25s ease;
 }
-.interactive-item:hover, .interactive-item.active {
-	border-color: var(--line-strong);
-	background: var(--surface-hover);
+
+.interactive-item::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(90deg, rgba(87, 217, 159, 0.18) 0%, var(--surface-hover) 100%);
+	border-left: 3px solid var(--green);
+	transform: scaleY(0);
+	transform-origin: bottom;
+	transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+	z-index: 0;
 }
+
+.interactive-item:hover::before,
+.interactive-item.active::before {
+	transform: scaleY(1);
+}
+
 .interactive-link {
 	display: flex;
-	align-items: center;
-	gap: 0.8rem;
+	align-items: flex-start; /* RU: выравнивание по верху для многострочных названий EN: top-aligned */
+	gap: 1.2rem;
+	padding: 1rem 2.8rem;
+	position: relative;
+	z-index: 1;
+	transition: color 0.25s ease;
 }
+
 .item-num {
 	font-family: var(--font-mono);
-	font-size: 0.72rem;
+	font-weight: 500;
+	font-size: 0.7rem;
+	letter-spacing: 0.08em;
+	color: var(--green);
+	opacity: 0.85;
+	min-width: 1.8rem;
+	padding-top: 0.15rem; /* RU: компенсация высоты строки заголовка EN: align with first title line */
+}
+
+.item-title {
+	font-family: var(--font-sans);
 	font-weight: 700;
+	font-size: 0.94rem;
+	letter-spacing: -0.01em;
+	color: var(--text);
+	transition: color 0.25s ease;
+}
+
+.interactive-item:hover .item-title,
+.interactive-item.active .item-title {
 	color: var(--green);
 }
-.item-title {
-	font-size: 0.82rem;
-	font-weight: 600;
-	color: var(--text);
-	flex-grow: 1;
-}
+
 .item-tag {
 	font-family: var(--font-mono);
-	font-size: 0.65rem;
-	color: var(--muted);
-	padding: 0.15rem 0.45rem;
-	background: rgba(0,0,0,0.3);
-	border-radius: 4px;
+	font-size: 0.62rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--text-secondary);
+	margin-left: auto;
+	opacity: 0.75;
+	padding-top: 0.2rem; /* RU: выравнивание по первой строке EN: align with first line */
 }
+
+.item-arrow {
+	width: 0;
+	overflow: hidden;
+	transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+	display: flex;
+	align-items: center;
+	padding-top: 0.15rem;
+}
+
 .item-arrow svg {
 	width: 14px;
 	height: 14px;
-	stroke: var(--muted);
-	stroke-width: 2;
+	stroke: var(--green);
 	fill: none;
+	stroke-width: 2;
 }
 
-.panel-footer {
-	margin-top: 1.6rem;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+.interactive-item:hover .item-arrow,
+.interactive-item.active .item-arrow {
+	width: 20px;
 }
 
-/* Screens gallery filters */
-.screens-sticky-header {
-	margin-bottom: 1.4rem;
+/* ── Panel: Features (Top-aligned flow, Nightwell-Style Typography) ── */
+#panel-features {
+	justify-content: flex-start;
+	padding: 1.2rem 0;
 }
-.panel-eyebrow {
+
+#panel-features .panel-header {
+	padding: 0 42px 0.8rem;
+}
+
+#panel-features .panel-header span {
 	font-family: var(--font-mono);
+	font-weight: 400;
 	font-size: 0.68rem;
-	letter-spacing: 0.12em;
+	letter-spacing: 0.14em;
 	text-transform: uppercase;
-	color: var(--green);
-	display: block;
-	margin-bottom: 0.3rem;
-}
-.panel-title {
-	font-family: var(--font-serif);
-	font-size: 1.5rem;
-	color: var(--text);
-	margin-bottom: 0.6rem;
-}
-.panel-lead {
-	font-size: 0.82rem;
 	color: var(--text-secondary);
-	line-height: 1.55;
-	margin-bottom: 1rem;
 }
+
+#panel-features .interactive-link {
+	padding: 1.15rem 2.8rem;
+}
+
+#panel-features .item-title,
+#panel-screens .item-title {
+	font-family: var(--font-serif);
+	font-weight: 800;
+	font-size: clamp(1.05rem, 1.45vw, 1.35rem);
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	line-height: 1.15;
+	color: var(--text);
+	transition: color 0.3s ease;
+}
+
+#panel-features .interactive-item:hover .item-title,
+#panel-features .interactive-item.active .item-title,
+#panel-screens .interactive-item:hover .item-title,
+#panel-screens .interactive-item.active .item-title {
+	color: #FFFFFF;
+}
+
+#panel-features .panel-footer {
+	padding: 1.5rem 2.8rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.app-store-badge-btn {
+	display: inline-flex;
+	align-items: center;
+	transition: transform 0.25s ease, filter 0.25s ease;
+	text-decoration: none;
+}
+
+.app-store-badge-btn:hover {
+	transform: scale(1.05);
+	filter: drop-shadow(0 4px 14px var(--green-glow));
+}
+
+.app-store-badge-img {
+	height: 38px;
+	width: auto;
+	display: block;
+	border-radius: 0;
+}
+
+
+/* =========================================================================
+   MARK: - 6. SCREENS STICKY FILTER (Липкий фильтр моделей устройств)
+   ========================================================================= */
+.screens-sticky-header {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background: var(--surface);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	padding: 1.8rem 2.8rem 0.8rem;
+	border-bottom: 1px solid var(--line);
+}
+
 .model-filter-nav {
 	display: flex;
-	gap: 0.4rem;
+	gap: 0.45rem;
+	flex-wrap: wrap;
 	margin-top: 0.6rem;
 }
-.filter-pill {
-	background: var(--surface2);
-	border: 1px solid var(--line);
-	color: var(--text-secondary);
-	padding: 0.28rem 0.65rem;
-	border-radius: 14px;
-	font-size: 0.72rem;
-	cursor: pointer;
-}
-.filter-pill.active {
-	border-color: var(--line-strong);
-	color: var(--text);
-	background: var(--surface-hover);
-}
 
-/* Guide Cards */
-.guide-cards {
-	display: flex;
-	flex-direction: column;
-	gap: 0.6rem;
-}
-.guide-step-card {
+.filter-pill {
 	background: var(--surface-card);
 	border: 1px solid var(--line);
-	border-radius: 8px;
-	padding: 0.8rem 1rem;
+	border-radius: 20px;
+	padding: 0.32rem 0.8rem;
+	font-family: var(--font-mono);
+	font-size: 0.65rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var(--text-secondary);
 	cursor: pointer;
 	transition: all 0.2s ease;
 }
-.guide-step-card:hover, .guide-step-card.active {
-	border-color: var(--line-strong);
-	background: var(--surface-hover);
-}
-.guide-step-header {
-	display: flex;
-	align-items: center;
-	gap: 0.6rem;
-	margin-bottom: 0.25rem;
-}
-.guide-step-badge {
-	font-family: var(--font-mono);
-	font-size: 0.65rem;
-	font-weight: 700;
-	color: var(--green);
-	padding: 0.1rem 0.35rem;
-	border: 1px solid var(--line-strong);
-	border-radius: 4px;
-}
-.guide-step-title {
-	font-size: 0.82rem;
-	font-weight: 600;
+
+.filter-pill:hover {
 	color: var(--text);
-}
-.guide-step-desc {
-	font-size: 0.75rem;
-	color: var(--text-secondary);
-	line-height: 1.45;
+	border-color: var(--green);
 }
 
-/* Stats */
-.stats-grid {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 0.6rem;
-	margin-top: 1.2rem;
-}
-.stat-item {
-	background: var(--surface-card);
-	border: 1px solid var(--line);
-	border-radius: 8px;
-	padding: 0.8rem;
-	text-align: center;
-}
-.stat-val {
-	font-family: var(--font-mono);
-	font-size: 1rem;
-	font-weight: 700;
-	color: var(--green);
-	display: block;
-}
-.stat-lbl {
-	font-size: 0.68rem;
-	color: var(--text-secondary);
-}
-
-/* Support Form & FAQ */
-.support-form {
-	display: flex;
-	flex-direction: column;
-	gap: 0.8rem;
-	margin-bottom: 1.6rem;
-}
-.form-field label {
-	display: block;
-	font-family: var(--font-mono);
-	font-size: 0.68rem;
-	color: var(--text-secondary);
-	margin-bottom: 0.25rem;
-}
-.form-field input, .form-field textarea {
-	width: 100%;
-	background: var(--surface2);
-	border: 1px solid var(--line);
-	border-radius: 6px;
-	padding: 0.55rem 0.75rem;
-	font-size: 0.82rem;
-	color: var(--text);
-	font-family: var(--font-sans);
-}
-.form-field textarea {
-	height: 90px;
-	resize: vertical;
-}
-.btn-submit {
-	align-self: flex-start;
-	padding: 0.5rem 1.1rem;
+.filter-pill.active {
 	background: var(--green);
 	color: var(--on-accent);
+	border-color: var(--green);
 	font-weight: 700;
-	font-size: 0.8rem;
-	border: none;
-	border-radius: 6px;
+	box-shadow: 0 0 12px var(--green-glow);
+}
+
+/* =========================================================================
+   MARK: - 7. GUIDE, ABOUT, SUPPORT, PRIVACY PANELS (Панели контента)
+   ========================================================================= */
+/* Sticky Headers for Overview, Support & Privacy (как в Screens) */
+#panel-guide .panel-hero,
+#panel-support .panel-hero,
+#panel-privacy .panel-hero {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background: var(--surface);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	padding: 1.8rem 2.8rem 1rem;
+	border-bottom: 1px solid var(--line);
+}
+
+.panel-body-content {
+	padding: 1.8rem 2.8rem 3rem;
+}
+
+/* Guide Step Cards / Карточки шагов инструкции */
+.guide-cards {
+	display: flex;
+	flex-direction: column;
+	gap: 0.9rem;
+	margin-top: 1rem;
+}
+
+.guide-step-card {
+	background: var(--surface-card);
+	border: 1px solid var(--line);
+	border-radius: 10px;
+	padding: 1.1rem 1.4rem;
+	transition: all 0.25s ease;
 	cursor: pointer;
 }
 
-/* FAQ & Policy Accordion Cards */
-.faq-container {
+.guide-step-card:hover,
+.guide-step-card.active {
+	border-color: var(--green);
+	background: var(--surface-hover);
+	transform: translateX(4px);
+}
+
+.guide-step-header {
+	display: flex;
+	align-items: center;
+	gap: 0.7rem;
+	margin-bottom: 0.4rem;
+}
+
+.guide-step-badge {
+	font-family: var(--font-mono);
+	font-size: 0.62rem;
+	font-weight: 700;
+	color: var(--green);
+	background: rgba(87, 217, 159, 0.14);
+	padding: 0.15rem 0.45rem;
+	border-radius: 4px;
+}
+
+.guide-step-title {
+	font-weight: 700;
+	font-size: 0.88rem;
+	color: var(--text);
+}
+
+.guide-step-desc {
+	font-size: 0.78rem;
+	line-height: 1.55;
+	color: var(--text-secondary);
+}
+
+/* About / Story Stats / Статистика в секции о продукте */
+.stats-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.2rem;
+	margin-top: 2rem;
+	padding-top: 1.6rem;
+	border-top: 1px solid var(--line);
+}
+
+.stat-item {
 	display: flex;
 	flex-direction: column;
-	gap: 0.5rem;
+	gap: 0.25rem;
 }
+
+.stat-val {
+	font-family: var(--font-sans);
+	font-weight: 800;
+	font-size: 1.55rem;
+	color: var(--green);
+}
+
+.stat-lbl {
+	font-family: var(--font-mono);
+	font-size: 0.6rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--text-secondary);
+}
+
+/* FAQ Details Accordions / Аккордеоны вопросов */
+.faq-container {
+	margin-top: 1.8rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.65rem;
+}
+
 .faq-card {
 	background: var(--surface-card);
 	border: 1px solid var(--line);
 	border-radius: 8px;
 	overflow: hidden;
-	transition: border-color 0.2s ease;
-}
-.faq-card[open] {
-	border-color: var(--line-strong);
-}
-.faq-card summary {
-	padding: 0.75rem 1rem;
-	font-size: 0.8rem;
-	font-weight: 600;
-	color: var(--text);
-	cursor: pointer;
-	user-select: none;
-}
-.faq-body {
-	padding: 0 1rem 0.8rem;
-	font-size: 0.76rem;
-	line-height: 1.55;
-	color: var(--text-secondary);
-	border-top: 1px solid var(--line);
-	padding-top: 0.6rem;
+	transition: all 0.2s ease;
 }
 
-/* Canvas Side */
+.faq-card:hover {
+	border-color: var(--line-strong);
+}
+
+.faq-card[open] {
+	border-color: var(--green);
+	background: var(--surface-hover);
+}
+
+.faq-card summary {
+	padding: 0.85rem 1.15rem;
+	font-weight: 600;
+	font-size: 0.82rem;
+	color: var(--text);
+	cursor: pointer;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	user-select: none;
+}
+
+.faq-card summary::-webkit-details-marker {
+	display: none;
+}
+
+.faq-card summary::after {
+	content: '+';
+	font-family: var(--font-mono);
+	font-size: 1.1rem;
+	color: var(--green);
+	transition: transform 0.25s ease;
+}
+
+.faq-card[open] summary::after {
+	content: '−';
+	transform: rotate(180deg);
+}
+
+.faq-body {
+	padding: 0 1.15rem 1rem;
+	font-size: 0.78rem;
+	line-height: 1.6;
+	color: var(--text-secondary);
+	border-top: 1px solid rgba(87, 217, 159, 0.1);
+	padding-top: 0.65rem;
+}
+
+/* Support Form / Форма поддержки */
+.support-form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.1rem;
+	margin-top: 1.4rem;
+	background: var(--surface-card);
+	border: 1px solid var(--line);
+	border-radius: 10px;
+	padding: 1.4rem;
+}
+
+.form-field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+}
+
+.form-field label {
+	font-family: var(--font-mono);
+	font-size: 0.62rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--text-secondary);
+}
+
+.form-field input,
+.form-field textarea {
+	background: var(--surface-solid);
+	border: 1px solid var(--line);
+	border-radius: 6px;
+	padding: 0.65rem 0.85rem;
+	color: var(--text);
+	font-family: var(--font-sans);
+	font-size: 0.82rem;
+	outline: none;
+	transition: border-color 0.2s ease;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+	border-color: var(--green);
+}
+
+.form-field textarea {
+	min-height: 75px;
+	resize: vertical;
+}
+
+.btn-submit {
+	align-self: flex-start;
+	background: var(--green);
+	color: var(--on-accent);
+	font-weight: 700;
+	font-size: 0.74rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	padding: 0.7rem 1.8rem;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.25s ease;
+	box-shadow: 0 4px 16px var(--green-glow);
+}
+
+.btn-submit:hover {
+	opacity: 0.9;
+	transform: translateY(-1px);
+}
+
+/* Privacy Highlights / Карточки акцентов политики приватности */
+.privacy-highlights {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.85rem;
+	margin: 1.2rem 0 1.8rem;
+}
+
+.priv-card {
+	background: var(--surface-card);
+	border: 1px solid var(--line);
+	border-radius: 8px;
+	padding: 1rem;
+	text-align: center;
+}
+
+.priv-card-icon {
+	font-size: 1.4rem;
+	margin-bottom: 0.4rem;
+	display: inline-block;
+}
+
+.priv-card-title {
+	font-size: 0.76rem;
+	font-weight: 700;
+	color: var(--text);
+	margin-bottom: 0.3rem;
+}
+
+.priv-card-desc {
+	font-size: 0.68rem;
+	line-height: 1.45;
+	color: var(--text-secondary);
+}
+
+/* Privacy Clauses / Статьи политики */
+.privacy-clauses {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
+	font-size: 0.78rem;
+	line-height: 1.65;
+	color: var(--text-secondary);
+}
+
+.privacy-clauses strong {
+	color: var(--text);
+}
+
+.privacy-clauses a {
+	color: var(--green);
+	text-decoration: underline;
+}
+
+/* =========================================================================
+   MARK: - 8. RIGHT SIDE: VISUAL CANVAS SHOWCASE (Правый холст мокапов)
+   ========================================================================= */
 .canvas-side {
 	width: var(--canvas-width);
 	position: relative;
@@ -562,7 +1036,7 @@ html, body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 65%);
+	background: radial-gradient(circle at 50% 50%, rgba(148, 163, 184, 0.08) 0%, transparent 65%);
 	flex-grow: 1;
 }
 
@@ -570,17 +1044,43 @@ html, body {
 	position: absolute;
 	inset: 2rem;
 	border-radius: 18px;
-	border: 1.5px dashed var(--line-strong);
+	border: 1.5px dashed var(--canvas-card-border);
 	background: var(--surface);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	gap: 0.9rem;
+	transition: opacity 0.45s ease;
 	z-index: 1;
 }
+
 .canvas-placeholder.hidden {
 	opacity: 0;
 	pointer-events: none;
 }
+
+.placeholder-icon {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	border: 1.5px solid var(--canvas-card-border);
+	background: rgba(76, 141, 255, 0.12);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.placeholder-icon svg {
+	width: 20px;
+	height: 20px;
+	stroke: #94A3B8;
+	fill: none;
+	stroke-width: 1.8;
+}
+
 .placeholder-label {
 	font-family: var(--font-mono);
 	font-size: 0.65rem;
@@ -589,7 +1089,9 @@ html, body {
 	color: var(--text-secondary);
 }
 
-.canvas-image, .canvas-context {
+/* Canvas Image Container (Card Stage) / Сцена-карточка предпросмотра с прерывистой рамкой как в CentSweep */
+.canvas-image,
+.canvas-context {
 	position: absolute;
 	inset: 2rem;
 	opacity: 0;
@@ -597,7 +1099,7 @@ html, body {
 	transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
 	z-index: 0;
 	background: var(--canvas-card-bg);
-	border: 1px solid var(--canvas-card-border);
+	border: 1.5px dashed var(--canvas-card-border);
 	box-shadow: var(--canvas-card-shadow);
 	border-radius: 18px;
 	overflow: hidden;
@@ -606,19 +1108,210 @@ html, body {
 	align-items: center;
 	justify-content: center;
 }
-.canvas-image.visible, .canvas-context.visible {
+
+.canvas-image.visible,
+.canvas-context.visible {
 	opacity: 1;
 	transform: scale(1);
 	z-index: 2;
 }
-.canvas-image img, .canvas-context img {
+
+.canvas-image img,
+.canvas-context img {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
+	object-position: center center;
 	display: block;
-	filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.5));
+	filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.3));
 }
 
+/* Video Mockup Frame & Screen with Mask / Видео-мокапы в холсте */
+.canvas-video,
+.canvas-image video {
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+	object-position: center center;
+	display: block;
+	border-radius: 14px;
+	box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+	outline: none;
+	background: transparent;
+	transition: transform 0.3s ease;
+}
+
+.canvas-video:hover,
+.canvas-image video:hover {
+	transform: scale(1.005);
+}
+
+.mockup-stage {
+	position: relative;
+	max-height: 85%;
+	max-width: 320px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.45));
+}
+
+.mockup-wrap {
+	position: relative;
+	width: 100%;
+	max-width: 100%;
+	isolation: isolate;
+	cursor: pointer;
+}
+
+.mockup-frame {
+	position: relative;
+	z-index: 2;
+	display: block;
+	width: 100%;
+	height: auto;
+	pointer-events: none;
+	user-select: none;
+}
+
+.mockup-screen {
+	position: absolute;
+	z-index: 1;
+	top: var(--vid-top);
+	left: var(--vid-left);
+	width: var(--vid-w);
+	height: var(--vid-h);
+	border-radius: var(--vid-radius, 40px);
+	overflow: hidden;
+	background: #000;
+}
+
+.mockup-video {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	background: #000;
+	cursor: pointer;
+}
+
+/* Big Interactive Center Play Button */
+.mockup-play-btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: rgba(7, 17, 13, 0.82);
+	border: 2px solid var(--green);
+	color: var(--green);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 10;
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px var(--green-glow);
+	transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+	pointer-events: auto;
+}
+
+.mockup-play-btn:hover {
+	transform: translate(-50%, -50%) scale(1.12);
+	background: var(--green);
+	color: #07110d;
+}
+
+.mockup-play-btn svg {
+	width: 24px;
+	height: 24px;
+	fill: currentColor;
+}
+
+.mockup-play-btn .pause-icon {
+	display: none;
+}
+
+.mockup-stage.is-playing .mockup-play-btn {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.mockup-stage.is-playing:hover .mockup-play-btn {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.mockup-stage.is-playing .mockup-play-btn .play-icon {
+	display: none;
+}
+
+.mockup-stage.is-playing .mockup-play-btn .pause-icon {
+	display: block;
+}
+
+/* Control Pills Bar below Mockup */
+.mockup-controls {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	margin-top: 0.75rem;
+	z-index: 5;
+}
+
+.mockup-ctrl-btn {
+	background: rgba(13, 30, 23, 0.85);
+	border: 1px solid var(--line-strong);
+	border-radius: 20px;
+	padding: 0.38rem 0.85rem;
+	color: var(--text);
+	font-family: var(--font-mono);
+	font-size: 0.68rem;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	cursor: pointer;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	transition: all 0.2s ease;
+}
+
+.mockup-ctrl-btn:hover {
+	border-color: var(--green);
+	color: var(--green);
+	background: rgba(87, 217, 159, 0.15);
+}
+
+/* VStack for About Showcase (Two stacked photos) */
+.canvas-vstack {
+	display: flex;
+	flex-direction: column;
+	gap: 0.9rem;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.canvas-vstack img {
+	width: 100%;
+	max-height: 48%;
+	object-fit: contain;
+	object-position: center center;
+	display: block;
+	filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.35));
+	border-radius: 8px;
+}
+
+/* Canvas Bottom Caption / Подпись к экрану с прерывистой верхней линией */
 .canvas-caption {
 	position: absolute;
 	bottom: 0;
@@ -626,15 +1319,23 @@ html, body {
 	right: 0;
 	padding: 1.1rem 1.8rem 1rem;
 	background: var(--caption-bg);
-	border-top: 1px solid var(--line);
+	border-top: 1.5px dashed var(--canvas-card-border);
 	opacity: 0;
 	transform: translateY(6px);
 	transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	text-align: left;
 }
-.canvas-image.visible .canvas-caption, .canvas-context.visible .canvas-caption {
+
+.canvas-image.visible .canvas-caption,
+.canvas-context.visible .canvas-caption {
 	opacity: 1;
 	transform: translateY(0);
 }
+
 .canvas-caption-title {
 	font-family: var(--font-sans);
 	font-weight: 700;
@@ -643,6 +1344,7 @@ html, body {
 	text-transform: uppercase;
 	color: var(--caption-title);
 }
+
 .canvas-caption-sub {
 	font-family: var(--font-mono);
 	font-size: 0.65rem;
@@ -650,7 +1352,9 @@ html, body {
 	margin-top: 0.15rem;
 }
 
-/* Footer */
+/* =========================================================================
+   MARK: - 9. SITE FOOTER (Подвал)
+   ========================================================================= */
 .site-footer {
 	position: fixed;
 	bottom: 0;
@@ -663,39 +1367,64 @@ html, body {
 	padding: 0.75rem 2.2rem;
 	background: var(--surface);
 	backdrop-filter: blur(14px);
+	-webkit-backdrop-filter: blur(14px);
 	border-top: 1px solid var(--line);
 	font-family: var(--font-mono);
 	font-size: 0.6rem;
-	color: var(--muted);
+	font-weight: 300;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--text-secondary);
+	pointer-events: none;
 }
+
+.site-footer span,
+.site-footer a {
+	font-family: var(--font-mono);
+	font-weight: 300;
+	font-size: 0.6rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--text-secondary);
+	text-decoration: none;
+}
+
+.site-footer > * {
+	pointer-events: auto;
+}
+
 .footer-links {
 	display: flex;
 	align-items: center;
-	gap: 0.6rem;
-}
-.footer-links a {
-	color: var(--text-secondary);
-	text-decoration: none;
-	cursor: pointer;
-}
-.footer-links a:hover {
-	color: var(--text);
+	gap: 0.8rem;
 }
 
-@media (max-width: 900px) {
-	html, body {
+.footer-links a:hover {
+	color: var(--green);
+}
+
+/* =========================================================================
+   MARK: - 10. MOBILE RESPONSIVE (Мобильная адаптивность)
+   ========================================================================= */
+@media (max-width: 920px) {
+	body {
 		overflow-y: auto;
+		overflow-x: hidden;
 		height: auto;
 	}
+
 	.site-header {
-		padding: 0.65rem 1.2rem;
+		padding: 0.8rem 1.2rem;
 	}
-	.site-nav-tabs, .header-appstore-btn {
+
+	.site-nav-tabs {
 		display: none;
 	}
+
 	.hamburger-btn {
-		display: block;
+		display: inline-flex;
 	}
+
 	.split-container {
 		flex-direction: column;
 		height: auto;
@@ -703,31 +1432,276 @@ html, body {
 		padding-top: 3.8rem;
 		padding-bottom: 0;
 	}
+
 	.left-side {
 		width: 100%;
+		min-height: auto;
 		position: relative;
 	}
+
 	.panel {
 		position: relative;
 		display: none;
-		padding: 1.2rem 1.2rem 2rem;
+		min-height: auto;
+		padding-bottom: 2rem;
 	}
+
 	.panel.panel-active {
-		display: block;
+		display: flex;
 	}
+
+	.panel-hero,
+	.panel-body-content,
+	.screens-sticky-header {
+		padding-left: 1.4rem;
+		padding-right: 1.4rem;
+	}
+
+	.interactive-link {
+		padding: 0.9rem 1.4rem;
+	}
+
+	.split-divider {
+		width: 100%;
+		height: 1px;
+	}
+
 	.canvas-side {
 		width: 100%;
 		min-height: 55vh;
 	}
-	.canvas-image, .canvas-context {
+
+	.canvas-image,
+	.canvas-context {
 		inset: 1rem;
-		padding: 1rem 1rem 4rem;
+		padding: 1rem 1rem 3.8rem;
 	}
+
+	.stats-grid,
+	.privacy-highlights {
+		grid-template-columns: 1fr;
+		gap: 0.8rem;
+	}
+
 	.site-footer {
-		position: static;
-		padding: 1rem 1.2rem;
+		position: relative;
+		padding: 1.2rem 1.4rem;
 		flex-direction: column;
-		gap: 0.4rem;
+		gap: 0.6rem;
 		text-align: center;
+	}
+}
+
+/* =========================================================================
+   MARK: - 11. COMING SOON (Кнопка App Store до релиза)
+   RU: Выглядит как кнопка, но ничего не делает. После релиза убрать класс
+       is-soon и вернуть ссылку на App Store (см. комментарии в index.html).
+   EN: Looks like a button but does nothing. After release, drop the
+       is-soon class and restore the App Store link (see comments in index.html).
+   ========================================================================= */
+.is-soon {
+	opacity: 0.7;
+	cursor: default;
+	pointer-events: none;
+}
+
+/* =========================================================================
+   MARK: - 12. HEADER ON TABLETS & PHONES (Шапка на планшетах и телефонах)
+   ========================================================================= */
+
+/* RU: Вкладки разделов уходят в бургер-меню уже на ширине ≤ 1100px.
+       Раньше порог был 920px, и на 921–1000px вкладки вплотную упирались
+       в логотип и кнопки справа.
+   EN: Section tabs collapse into the burger menu at ≤ 1100px. The old
+       920px breakpoint left the tabs touching the logo and the buttons
+       between 921–1000px. */
+@media (max-width: 1100px) {
+	.site-nav-tabs {
+		display: none;
+	}
+
+	.hamburger-btn {
+		display: inline-flex;
+	}
+}
+
+/* RU: На мобильных устройствах (≤ 640px) в шапке остаются бренд и ссылка «← Portfolio»,
+       а разделы сайта открываются через бургер-меню. Кнопку App Store в самой шапке скрываем.
+   EN: On mobile screens (≤ 640px), the header preserves the brand and "← Portfolio" link,
+       while section tabs open via the hamburger menu. App Store button in bar is hidden. */
+@media (max-width: 640px) {
+	.header-appstore-btn {
+		display: none;
+	}
+
+	.site-header {
+		padding: 0.75rem 1.1rem;
+		position: relative;
+	}
+
+	.site-header-left {
+		gap: 0.55rem;
+	}
+
+	.site-header-center {
+		position: static;
+		transform: none;
+		margin-left: 0.6rem;
+		margin-right: auto;
+	}
+
+	.site-brand span {
+		font-size: 0.98rem;
+	}
+
+	.site-brand-icon {
+		width: 22px;
+		height: 22px;
+	}
+
+	.portfolio-back-link {
+		display: inline-flex;
+		padding: 0.24rem 0.52rem;
+		font-size: 0.62rem;
+		letter-spacing: 0.04em;
+	}
+}
+
+/* RU: Подсветка текущего раздела в выезжающем меню.
+   EN: Highlight the current section in the slide-out menu. */
+.mobile-nav-overlay a.nav-active {
+	color: var(--green);
+}
+
+/* =========================================================================
+   MARK: - 13. FORM STATUS (Статус отправки формы — contact-form.js)
+   RU: Строка под кнопкой: «Отправка…», «Сообщение отправлено», ошибка.
+   EN: Line under the submit button: sending / sent / error.
+   ========================================================================= */
+.form-status {
+	margin: 0;
+	font-size: 0.78rem;
+	line-height: 1.5;
+}
+
+.form-status:empty {
+	display: none;
+}
+
+.form-status.is-sending {
+	color: var(--text-secondary);
+}
+
+.form-status.is-success {
+	color: var(--green);
+	font-weight: 600;
+}
+
+.form-status.is-error {
+	color: #ff8a80;
+}
+
+
+/* =========================================================================
+   MARK: - 13. LIVE ON APP STORE (Блок «Уже в App Store»)
+   RU: Иконка, бейдж и QR-код приложения под шапкой панели Features.
+       QR скрыт на телефонах — там достаточно нажать на бейдж.
+   EN: App icon, badge and QR code under the Features panel header.
+       The QR is hidden on phones, where tapping the badge is enough.
+   ========================================================================= */
+.live-card {
+	display: flex;
+	align-items: flex-start; /* RU: выравнивание по верху EN: top-aligned */
+	justify-content: space-between; /* RU: левая часть влево, QR строго вправо EN: space-between */
+	gap: 1.2rem;
+	margin: 0 42px 1.2rem; /* RU: выровнено по тексту заголовка. EN: aligned with the header text. */
+	padding: 0.9rem 1.1rem;
+	background: var(--surface-card);
+	border: 1px solid var(--line);
+	border-radius: 14px;
+}
+
+.live-icon {
+	flex-shrink: 0;
+	width: 64px;
+	height: 64px;
+	border-radius: 15px;
+}
+
+.live-text {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.35rem;
+	min-width: 0;
+	flex: 1;
+}
+
+.live-text strong {
+	font-size: 0.95rem;
+	color: var(--text);
+}
+
+.live-text span {
+	font-size: 0.78rem;
+	line-height: 1.45;
+	color: var(--text-secondary);
+}
+
+.live-badge {
+	display: inline-flex;
+	margin-top: 0.25rem;
+	transition: transform 0.25s ease;
+}
+
+.live-badge:hover {
+	transform: scale(1.04);
+}
+
+.live-badge img {
+	height: 38px;
+	width: auto;
+	display: block;
+}
+
+.live-qr {
+	flex-shrink: 0;
+	margin: 0 0 0 auto; /* RU: прижимаем к правому краю EN: pinned to right edge */
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end; /* RU: выравнивание элементов по правому краю EN: right-aligned */
+	justify-content: flex-start;
+	text-align: right;
+}
+
+.live-qr img,
+.live-qr-placeholder {
+	display: block;
+	width: 84px;
+	height: 84px;
+	border-radius: 8px;
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.live-qr figcaption {
+	margin-top: 0.4rem;
+	font-family: var(--font-mono);
+	font-size: 0.58rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--text-secondary);
+	text-align: right;
+	width: 100%;
+}
+
+@media (max-width: 640px) {
+	.live-qr {
+		display: none;
+	}
+
+	.live-icon {
+		width: 52px;
+		height: 52px;
 	}
 }

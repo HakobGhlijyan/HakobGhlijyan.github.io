@@ -463,13 +463,13 @@ body::before {
 }
 
 .panel-footer {
-	padding: 1.5rem 3rem 0;
+	padding: 1.5rem 2.8rem 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-.panel-footer span {
+.panel-footer > span:last-child {
 	font-family: 'DM Mono', monospace;
 	font-weight: 300;
 	font-size: 0.65rem;
@@ -712,8 +712,8 @@ body::before {
 
 .canvas-placeholder {
 	position: absolute;
-	inset: 2.2rem;
-	border-radius: 20px;
+	inset: 2rem;
+	border-radius: 18px;
 	border: 1.5px dashed var(--ocean-border);
 	background: rgba(7, 25, 48, 0.35);
 	backdrop-filter: blur(8px);
@@ -1396,7 +1396,7 @@ body::before {
 	background: linear-gradient(180deg, rgba(6, 19, 37, 0.98) 0%, rgba(6, 19, 37, 0.92) 85%, rgba(6, 19, 37, 0.8) 100%);
 	backdrop-filter: blur(16px);
 	-webkit-backdrop-filter: blur(16px);
-	padding: 1.8rem 3rem 0.8rem;
+	padding: 1.6rem 42px 0.8rem;
 	border-bottom: 1px solid var(--ocean-border);
 }
 

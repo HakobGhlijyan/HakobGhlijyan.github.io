@@ -1,52 +1,91 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- MARK: - Meta & SEO / Метаданные -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0d0f12">
-  <meta name="description" content="Project 06 — Native iOS Application Showcase. High-performance Swift architecture with privacy by design.">
+  <meta name="theme-color" content="#070A12">
+  <meta name="description" content="Project 6 — Native iOS Application Showcase. Core Image filters, non-destructive versions, custom watermarks, and private iCloud sync.">
   <meta name="author" content="Hakob Ghlijyan">
 
+  <!-- Canonical & Favicon -->
   <link rel="canonical" href="https://hakobghlijyan.github.io/Project-6/">
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/x512_light.svg">
 
+  <!-- Google Fonts: DM Mono, Instrument Sans, Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
 
-  <title>Project 06 — Native iOS Application</title>
+  <!-- Open Graph & Twitter Cards -->
+  <meta property="og:title" content="Project 6 — Native iOS Application Showcase">
+  <meta property="og:description" content="A calm, fast photo editor for iPhone and iPad with live previews, versions, and private iCloud sync.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hakobghlijyan.github.io/Project-6/">
+  <meta property="og:image" content="images/cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="images/cover.jpg">
+
+  <title>Project 6 — Native iOS Application Showcase</title>
+
+  <!-- MARK: - Stylesheets -->
   <link rel="stylesheet" href="assets/split-style.css">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Project 6",
+    "operatingSystem": "iOS 18.0+",
+    "applicationCategory": "PhotoApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0"
+    }
+  }
+  </script>
 </head>
 <body>
 
-  <!-- SITE HEADER -->
+  <!-- =========================================================================
+       MARK: - SITE HEADER & BRAND (Шапка и переключатели)
+       ========================================================================= -->
   <header class="site-header">
-    <div class="site-brand-group">
+    <!-- Header Left: Site Brand Logo & Name -->
+    <div class="site-header-left">
       <a class="site-brand" data-nav="features">
-        <span>Project 06</span>
-      </a>
-      <a href="../index.html" class="portfolio-back-link" title="Return to Hakob Ghlijyan Portfolio">
-        &larr; <span data-i18n="portfolio">Portfolio</span>
+        <img class="site-brand-icon" src="assets/icons/x512_light.svg" alt="Project 6">
+        <span>Project 6</span>
       </a>
     </div>
 
-    <!-- Navigation Tabs -->
-    <nav class="site-nav-tabs">
-      <a data-nav="features" class="nav-active" data-i18n="features">Features</a>
-      <a data-nav="screens" data-i18n="screens">Screens</a>
-      <a data-nav="guide" data-i18n="guideLabel">Overview</a>
-      <a data-nav="about" data-i18n="about">About</a>
-      <a data-nav="support" data-i18n="support">Support</a>
-      <a data-nav="privacy" data-i18n="privacy">Privacy</a>
-    </nav>
+    <!-- Header Center: Portfolio Button & Navigation Tabs (Centered Horizontally) -->
+    <div class="site-header-center">
+      <a href="../index.html" class="portfolio-back-link" title="Return to Hakob Ghlijyan Portfolio">
+        &larr; <span data-i18n="portfolio">Portfolio</span>
+      </a>
 
-    <!-- Actions: 6 Languages -->
+      <!-- Navigation Tabs / Вкладки разделов -->
+      <nav class="site-nav-tabs">
+        <a data-nav="features" class="nav-active" data-i18n="features">Features</a>
+        <a data-nav="screens" data-i18n="screens">Screens</a>
+        <a data-nav="guide" data-i18n="guideLabel">Overview</a>
+        <a data-nav="about" data-i18n="about">About</a>
+        <a data-nav="support" data-i18n="support">Support</a>
+        <a data-nav="privacy" data-i18n="privacy">Privacy</a>
+      </nav>
+    </div>
+
+    <!-- Actions: Language & Mobile Menu (Default Dark Theme) -->
     <div class="site-actions">
-      <a href="#features" class="header-appstore-btn">
+      <!-- Coming Soon App Store button -->
+      <a href="#features" class="header-appstore-btn" title="Project 6 Coming Soon to App Store" aria-label="Coming Soon on App Store">
         <img src="assets/apple.logo@1x.png" alt="Apple" class="header-apple-logo">
         <span data-i18n="comingSoon">Coming Soon</span>
       </a>
 
+      <!-- 6-Language Switcher Dropdown (en, ru, fr, de, es, it) -->
       <div class="custom-lang">
         <button class="lang-btn" aria-label="Select language">
           <span class="lang-label">EN</span>
@@ -62,69 +101,153 @@
         </div>
       </div>
 
+      <!-- Mobile Hamburger Button -->
       <button class="hamburger-btn" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </header>
 
-  <!-- SPLIT SCREEN INTERACTION LAYOUT -->
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</button>
+    <nav class="mobile-nav-links">
+      <a data-nav="features" data-i18n="features">Features</a>
+      <a data-nav="screens" data-i18n="screens">Screens</a>
+      <a data-nav="guide" data-i18n="guideLabel">Overview</a>
+      <a data-nav="about" data-i18n="about">About</a>
+      <a data-nav="support" data-i18n="support">Support</a>
+      <a data-nav="privacy" data-i18n="privacy">Privacy</a>
+      <a href="../index.html" style="margin-top:1.5rem; opacity:0.6; font-size:0.9rem;">&larr; <span data-i18n="portfolio">Portfolio</span></a>
+    </nav>
+  </div>
+
+  <!-- =========================================================================
+       MARK: - MAIN SPLIT CONTAINER (Двухпанельный интерфейс)
+       Left: Interactive Content Panels | Right: Live Visual Canvas Showcase
+       ========================================================================= -->
   <div class="split-container">
+
+    <!-- LEFT SIDE: Swappable Panels -->
     <div class="left-side">
 
-      <!-- PANEL 1: FEATURES -->
+      <!-- =====================================================================
+           PANEL 1: FEATURES (Интерактивные ключевые модули)
+           ===================================================================== -->
       <div class="panel panel-active" id="panel-features">
         <div class="panel-header">
-          <span data-i18n="featuresHeader">Project 06 for iOS · Swift &amp; Modern Frameworks</span>
+          <span data-i18n="featuresHeader">Project 6 for iPhone &amp; iPad · Core Image &amp; SwiftData</span>
         </div>
 
-        <aside class="live-card">
-          <div class="live-text" style="padding-left:0;">
+        <!-- Coming Soon Card: иконка, бейдж и QR-блок -->
+        <aside class="live-card" aria-labelledby="liveTitle">
+          <img class="live-icon" src="assets/icons/x512_squircle.svg" alt="Project 6 app icon" width="64" height="64" decoding="async">
+          <div class="live-text">
             <strong id="liveTitle" data-i18n="liveTitle">Coming Soon on the App Store</strong>
-            <span data-i18n="liveDesc">A native, responsive iOS experience crafted with precision engineering and privacy at its core.</span>
-            <a class="live-badge" href="#features">
-              <img src="assets/app-store-badge.svg" alt="Coming Soon on App Store" height="38">
+            <span data-i18n="liveDesc">A calm, fast photo editor for iPhone and iPad with live previews, versions, and private iCloud sync.</span>
+            <a class="live-badge" href="#features" aria-label="Coming Soon on the App Store">
+              <img src="assets/app-store-badge.svg" alt="Coming Soon on the App Store" height="38">
             </a>
           </div>
+          <figure class="live-qr">
+            <img src="assets/marketing/qr-code-white.png" alt="QR code: open Project 6" width="84" height="84" loading="lazy" decoding="async">
+            <figcaption data-i18n="liveQr">Scan to download</figcaption>
+          </figure>
         </aside>
 
         <ul class="interactive-list" id="featuresList">
-          <li class="interactive-item active" data-slide="feat-1">
+          <!-- Feature 01: Filters with Live Preview (clean on load until hovered/selected) -->
+          <li class="interactive-item" data-slide="feat-1">
             <div class="interactive-link">
               <span class="item-num">01</span>
-              <span class="item-title" data-i18n="feat1Title">Architecture &amp; Core Engine</span>
-              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-              <span class="item-tag">Swift 6.2</span>
+              <span class="item-title" data-i18n="feat1Title">Filters with Live Preview</span>
+              <div class="item-arrow">
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <span class="item-tag" data-i18n="feat1Tag">Core Image</span>
             </div>
           </li>
+          <!-- Feature 02: Crop, Rotate & Mirror -->
           <li class="interactive-item" data-slide="feat-2">
             <div class="interactive-link">
               <span class="item-num">02</span>
-              <span class="item-title" data-i18n="feat2Title">Intuitive Native Experience</span>
-              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-              <span class="item-tag">SwiftUI</span>
+              <span class="item-title" data-i18n="feat2Title">Crop, Rotate & Mirror</span>
+              <div class="item-arrow">
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <span class="item-tag" data-i18n="feat2Tag">Aspect Ratios</span>
             </div>
           </li>
+          <!-- Feature 03: Your Watermark, Your Colour -->
           <li class="interactive-item" data-slide="feat-3">
             <div class="interactive-link">
               <span class="item-num">03</span>
-              <span class="item-title" data-i18n="feat3Title">Local Storage &amp; Persistence</span>
-              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-              <span class="item-tag">SwiftData</span>
+              <span class="item-title" data-i18n="feat3Title">Your Watermark, Your Colour</span>
+              <div class="item-arrow">
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <span class="item-tag" data-i18n="feat3Tag">Watermarks</span>
             </div>
           </li>
+          <!-- Feature 04: Every Edit is a Version -->
           <li class="interactive-item" data-slide="feat-4">
             <div class="interactive-link">
               <span class="item-num">04</span>
-              <span class="item-title" data-i18n="feat4Title">On-Device Privacy &amp; Security</span>
-              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-              <span class="item-tag">Zero Trackers</span>
+              <span class="item-title" data-i18n="feat4Title">Every Edit is a Version</span>
+              <div class="item-arrow">
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <span class="item-tag" data-i18n="feat4Tag">Versions</span>
+            </div>
+          </li>
+          <!-- Feature 05: Photos & Collections -->
+          <li class="interactive-item" data-slide="feat-5">
+            <div class="interactive-link">
+              <span class="item-num">05</span>
+              <span class="item-title" data-i18n="feat5Title">Photos & Collections</span>
+              <div class="item-arrow">
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <span class="item-tag" data-i18n="feat5Tag">Gallery</span>
+            </div>
+          </li>
+          <!-- Feature 06: Full Photo View & EXIF -->
+          <li class="interactive-item" data-slide="feat-6">
+            <div class="interactive-link">
+              <span class="item-num">06</span>
+              <span class="item-title" data-i18n="feat6Title">Full Photo View & EXIF</span>
+              <div class="item-arrow">
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <span class="item-tag" data-i18n="feat6Tag">Inspector</span>
+            </div>
+          </li>
+          <!-- Feature 07: Sync with your iCloud -->
+          <li class="interactive-item" data-slide="feat-7">
+            <div class="interactive-link">
+              <span class="item-num">07</span>
+              <span class="item-title" data-i18n="feat7Title">Sync with your iCloud</span>
+              <div class="item-arrow">
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <span class="item-tag" data-i18n="feat7Tag">iCloud Sync</span>
+            </div>
+          </li>
+          <!-- Feature 08: Interactive Widgets -->
+          <li class="interactive-item" data-slide="feat-8">
+            <div class="interactive-link">
+              <span class="item-num">08</span>
+              <span class="item-title" data-i18n="feat8Title">Interactive Widgets</span>
+              <div class="item-arrow">
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <span class="item-tag" data-i18n="feat8Tag">Widgets</span>
             </div>
           </li>
         </ul>
 
         <div class="panel-footer">
-          <a href="#features" class="header-appstore-btn">
+          <a href="#features" class="header-appstore-btn" aria-label="Coming Soon on App Store">
             <img src="assets/apple.logo@1x.png" alt="Apple" class="header-apple-logo">
             <span data-i18n="getOnAppStore">Coming Soon to App Store</span>
           </a>
@@ -132,134 +255,568 @@
         </div>
       </div>
 
-      <!-- PANEL 2: SCREENS GALLERY -->
+      <!-- =====================================================================
+           PANEL 2: SCREENS GALLERY (Галерея экранов по моделям и устройствам)
+           ===================================================================== -->
       <div class="panel" id="panel-screens">
         <div class="screens-sticky-header">
-          <span class="panel-eyebrow" data-i18n="screenLabel">Product screens</span>
-          <h2 class="panel-title" style="font-size:1.3rem; margin-bottom:0.2rem;" data-i18n="screenTitle">Preview the interface.</h2>
+          <span class="panel-eyebrow" data-i18n="screenLabel">Showcase &amp; Screens</span>
+          <h2 class="panel-title" style="font-size:1.3rem; margin-bottom:0.2rem;" data-i18n="screenTitle">Explore Project 6 across iPhone &amp; iPad.</h2>
+
+          <!-- Sticky Model Filters -->
           <div class="model-filter-nav">
             <button type="button" class="filter-pill active" data-filter="all">All</button>
-            <button type="button" class="filter-pill" data-filter="screen">Screenshots</button>
+            <button type="button" class="filter-pill" data-filter="cover">Cover</button>
+            <button type="button" class="filter-pill" data-filter="duo">Duo</button>
+            <button type="button" class="filter-pill" data-filter="iphone">iPhone</button>
+            <button type="button" class="filter-pill" data-filter="ipad">iPad</button>
+            <button type="button" class="filter-pill" data-filter="video">Videos</button>
           </div>
         </div>
 
         <ul class="interactive-list">
-          <li class="interactive-item active" data-slide="scr-1" data-model="screen">
+          <!-- Item 00: Initial All-Devices Cover -->
+          <li class="interactive-item active" data-slide="screen-cover" data-model="cover">
             <div class="interactive-link">
-              <span class="item-num">S-01</span>
-              <span class="item-title">Primary Dashboard View</span>
-              <span class="item-tag">Screen 01</span>
+              <span class="item-num">00</span>
+              <span class="item-title">All Devices Ecosystem</span>
+              <span class="item-tag">Cover · All Models</span>
               <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </div>
           </li>
-          <li class="interactive-item" data-slide="scr-2" data-model="screen">
+          <!-- Duo D-01 -->
+          <li class="interactive-item" data-slide="duo-1" data-model="duo">
             <div class="interactive-link">
-              <span class="item-num">S-02</span>
-              <span class="item-title">Interactive Detail Flow</span>
-              <span class="item-tag">Screen 02</span>
+              <span class="item-num">D-01</span>
+              <span class="item-title">Filters with Live Preview</span>
+              <span class="item-tag">Duo · Filters</span>
               <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </div>
           </li>
-          <li class="interactive-item" data-slide="scr-3" data-model="screen">
+          <!-- Duo D-02 -->
+          <li class="interactive-item" data-slide="duo-2" data-model="duo">
             <div class="interactive-link">
-              <span class="item-num">S-03</span>
-              <span class="item-title">Engine Configuration</span>
-              <span class="item-tag">Screen 03</span>
+              <span class="item-num">D-02</span>
+              <span class="item-title">Crop, Rotate, Mirror</span>
+              <span class="item-tag">Duo · Crop</span>
               <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </div>
           </li>
-          <li class="interactive-item" data-slide="scr-4" data-model="screen">
+          <!-- Duo D-03 -->
+          <li class="interactive-item" data-slide="duo-3" data-model="duo">
             <div class="interactive-link">
-              <span class="item-num">S-04</span>
-              <span class="item-title">System Settings &amp; Personalization</span>
-              <span class="item-tag">Screen 04</span>
+              <span class="item-num">D-03</span>
+              <span class="item-title">Your Watermark, Your Colour</span>
+              <span class="item-tag">Duo · Watermark</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- Duo D-04 -->
+          <li class="interactive-item" data-slide="duo-4" data-model="duo">
+            <div class="interactive-link">
+              <span class="item-num">D-04</span>
+              <span class="item-title">Every Edit is a Version</span>
+              <span class="item-tag">Duo · Versions</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- Duo D-05 -->
+          <li class="interactive-item" data-slide="duo-5" data-model="duo">
+            <div class="interactive-link">
+              <span class="item-num">D-05</span>
+              <span class="item-title">Photo Gallery & Search</span>
+              <span class="item-tag">Duo · Gallery</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- Duo D-06 -->
+          <li class="interactive-item" data-slide="duo-6" data-model="duo">
+            <div class="interactive-link">
+              <span class="item-num">D-06</span>
+              <span class="item-title">Full Photo View & EXIF</span>
+              <span class="item-tag">Duo · Detail</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- Duo D-07 -->
+          <li class="interactive-item" data-slide="duo-7" data-model="duo">
+            <div class="interactive-link">
+              <span class="item-num">D-07</span>
+              <span class="item-title">Sync with your iCloud</span>
+              <span class="item-tag">Duo · iCloud</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- Duo D-08 -->
+          <li class="interactive-item" data-slide="duo-8" data-model="duo">
+            <div class="interactive-link">
+              <span class="item-num">D-08</span>
+              <span class="item-title">Interactive Widgets</span>
+              <span class="item-tag">Duo · Widgets</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- iPhone P-01 -->
+          <li class="interactive-item" data-slide="iphone-1" data-model="iphone">
+            <div class="interactive-link">
+              <span class="item-num">P-01</span>
+              <span class="item-title">Filters with Live Preview</span>
+              <span class="item-tag">iPhone · Core Image</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- iPhone P-02 -->
+          <li class="interactive-item" data-slide="iphone-2" data-model="iphone">
+            <div class="interactive-link">
+              <span class="item-num">P-02</span>
+              <span class="item-title">Crop, Rotate, Mirror</span>
+              <span class="item-tag">iPhone · Aspect Ratios</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- iPhone P-03 -->
+          <li class="interactive-item" data-slide="iphone-3" data-model="iphone">
+            <div class="interactive-link">
+              <span class="item-num">P-03</span>
+              <span class="item-title">Your Watermark, Your Colour</span>
+              <span class="item-tag">iPhone · Watermark</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- iPhone P-04 -->
+          <li class="interactive-item" data-slide="iphone-4" data-model="iphone">
+            <div class="interactive-link">
+              <span class="item-num">P-04</span>
+              <span class="item-title">Every Edit is a Version</span>
+              <span class="item-tag">iPhone · Versions</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- iPhone P-05 -->
+          <li class="interactive-item" data-slide="iphone-5" data-model="iphone">
+            <div class="interactive-link">
+              <span class="item-num">P-05</span>
+              <span class="item-title">Photo Gallery & Search</span>
+              <span class="item-tag">iPhone · Gallery</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- iPhone P-06 -->
+          <li class="interactive-item" data-slide="iphone-6" data-model="iphone">
+            <div class="interactive-link">
+              <span class="item-num">P-06</span>
+              <span class="item-title">Full Photo View & EXIF</span>
+              <span class="item-tag">iPhone · Detail</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- iPhone P-07 -->
+          <li class="interactive-item" data-slide="iphone-7" data-model="iphone">
+            <div class="interactive-link">
+              <span class="item-num">P-07</span>
+              <span class="item-title">Sync with your iCloud</span>
+              <span class="item-tag">iPhone · iCloud</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- iPhone P-08 -->
+          <li class="interactive-item" data-slide="iphone-8" data-model="iphone">
+            <div class="interactive-link">
+              <span class="item-num">P-08</span>
+              <span class="item-title">Interactive Widgets</span>
+              <span class="item-tag">iPhone · Widgets</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- iPad PAD-01 -->
+          <li class="interactive-item" data-slide="pad-1" data-model="ipad">
+            <div class="interactive-link">
+              <span class="item-num">PAD-01</span>
+              <span class="item-title">Filters with Live Preview</span>
+              <span class="item-tag">iPad · Studio Canvas</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- iPad PAD-02 -->
+          <li class="interactive-item" data-slide="pad-2" data-model="ipad">
+            <div class="interactive-link">
+              <span class="item-num">PAD-02</span>
+              <span class="item-title">Crop, Rotate, Mirror</span>
+              <span class="item-tag">iPad · Aspect Ratios</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- iPad PAD-03 -->
+          <li class="interactive-item" data-slide="pad-3" data-model="ipad">
+            <div class="interactive-link">
+              <span class="item-num">PAD-03</span>
+              <span class="item-title">Your Watermark, Your Colour</span>
+              <span class="item-tag">iPad · Watermark</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- iPad PAD-04 -->
+          <li class="interactive-item" data-slide="pad-4" data-model="ipad">
+            <div class="interactive-link">
+              <span class="item-num">PAD-04</span>
+              <span class="item-title">Every Edit is a Version</span>
+              <span class="item-tag">iPad · Versions</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- iPad PAD-05 -->
+          <li class="interactive-item" data-slide="pad-5" data-model="ipad">
+            <div class="interactive-link">
+              <span class="item-num">PAD-05</span>
+              <span class="item-title">Photo Gallery & Search</span>
+              <span class="item-tag">iPad · Library</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- iPad PAD-06 -->
+          <li class="interactive-item" data-slide="pad-6" data-model="ipad">
+            <div class="interactive-link">
+              <span class="item-num">PAD-06</span>
+              <span class="item-title">Full Photo View & EXIF</span>
+              <span class="item-tag">iPad · Inspector</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- iPad PAD-07 -->
+          <li class="interactive-item" data-slide="pad-7" data-model="ipad">
+            <div class="interactive-link">
+              <span class="item-num">PAD-07</span>
+              <span class="item-title">Sync with your iCloud</span>
+              <span class="item-tag">iPad · iCloud</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- iPad PAD-08 -->
+          <li class="interactive-item" data-slide="pad-8" data-model="ipad">
+            <div class="interactive-link">
+              <span class="item-num">PAD-08</span>
+              <span class="item-title">Interactive Widgets</span>
+              <span class="item-tag">iPad · Widgets</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <!-- Video Walkthroughs -->
+          <li class="interactive-item" data-slide="video-1" data-model="video">
+            <div class="interactive-link">
+              <span class="item-num">V-01</span>
+              <span class="item-title">iPhone 18 Pro Demo</span>
+              <span class="item-tag">iPhone Video</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="video-2" data-model="video">
+            <div class="interactive-link">
+              <span class="item-num">V-02</span>
+              <span class="item-title">iPad Pro 13 Canvas Demo</span>
+              <span class="item-tag">iPad Video</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+          <li class="interactive-item" data-slide="video-3" data-model="video">
+            <div class="interactive-link">
+              <span class="item-num">V-03</span>
+              <span class="item-title">iPhone Duo Split Demo</span>
+              <span class="item-tag">Duo Video</span>
               <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </div>
           </li>
         </ul>
       </div>
 
-      <!-- PANEL 3: GUIDE -->
+      <!-- =====================================================================
+           PANEL 3: GUIDE / ONBOARDING (20 продуманных шагов онбординга)
+           ===================================================================== -->
       <div class="panel" id="panel-guide">
         <div class="panel-hero">
           <span class="panel-eyebrow" data-i18n="guideLabel">Overview</span>
-          <h2 class="panel-title" data-i18n="guideTitle">Product Walkthrough</h2>
-          <p class="panel-lead" data-i18n="guideDesc">A simple, step-by-step introduction to getting the most out of Project 06.</p>
+          <h2 class="panel-title" data-i18n="guideTitle">Complete Onboarding Tour</h2>
+          <p class="panel-lead" data-i18n="guideDesc">20 thoughtfully designed steps guiding you through capture, filtering, watermarking, and library management.</p>
         </div>
 
-        <div class="panel-body-content" style="padding-top:0;">
+        <div class="panel-body-content" style="padding-top:1.2rem;">
           <div class="guide-cards">
-            <div class="guide-step-card active" data-slide="step-1">
+            <!-- Step 01: Start in Seconds -->
+            <div class="guide-step-card active" data-slide="guide-1">
               <div class="guide-step-header">
-                <span class="guide-step-badge">STEP 1</span>
-                <span class="guide-step-title">Initial Setup</span>
+                <span class="guide-step-badge">STEP 01</span>
+                <span class="guide-step-title">Start in Seconds</span>
               </div>
-              <p class="guide-step-desc">Open the application and configure your preferences directly on your device.</p>
+              <p class="guide-step-desc">Drop a photo onto the canvas, or try a preset first — no access to your library needed.</p>
             </div>
-            <div class="guide-step-card" data-slide="step-2">
+            <!-- Step 02: Your Photos, Your Choice -->
+            <div class="guide-step-card" data-slide="guide-2">
               <div class="guide-step-header">
-                <span class="guide-step-badge">STEP 2</span>
-                <span class="guide-step-title">Explore Core Tools</span>
+                <span class="guide-step-badge">STEP 02</span>
+                <span class="guide-step-title">Your Photos, Your Choice</span>
               </div>
-              <p class="guide-step-desc">Access high-speed native features built specifically for modern iOS.</p>
+              <p class="guide-step-desc">Pick a frame from your library. Project-6 only asks for what it needs.</p>
             </div>
-            <div class="guide-step-card" data-slide="step-3">
+            <!-- Step 03: A Guide in One Tap -->
+            <div class="guide-step-card" data-slide="guide-3">
               <div class="guide-step-header">
-                <span class="guide-step-badge">STEP 3</span>
-                <span class="guide-step-title">Seamless Synchronization</span>
+                <span class="guide-step-badge">STEP 03</span>
+                <span class="guide-step-title">A Guide in One Tap</span>
               </div>
-              <p class="guide-step-desc">Your preferences and state stay synced privately across all your devices.</p>
+              <p class="guide-step-desc">The ⓘ button shows the steps: import, filter, crop, watermark, save.</p>
+            </div>
+            <!-- Step 04: Start From Original -->
+            <div class="guide-step-card" data-slide="guide-4">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 04</span>
+                <span class="guide-step-title">Start From Original</span>
+              </div>
+              <p class="guide-step-desc">Your photo is never changed. Every edit becomes a new version.</p>
+            </div>
+            <!-- Step 05: Swipe Through Filters -->
+            <div class="guide-step-card" data-slide="guide-5">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 05</span>
+                <span class="guide-step-title">Swipe Through Filters</span>
+              </div>
+              <p class="guide-step-desc">Preview each look live, then fine-tune brightness, contrast and saturation.</p>
+            </div>
+            <!-- Step 06: Crop to Any Ratio -->
+            <div class="guide-step-card" data-slide="guide-6">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 06</span>
+                <span class="guide-step-title">Crop to Any Ratio</span>
+              </div>
+              <p class="guide-step-desc">Square, portrait, wide — pick the frame for where the photo will live.</p>
+            </div>
+            <!-- Step 07: Add a Watermark -->
+            <div class="guide-step-card" data-slide="guide-7">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 07</span>
+                <span class="guide-step-title">Add a Watermark</span>
+              </div>
+              <p class="guide-step-desc">Eight styles built from the photo EXIF data: camera, timestamp, film frame and more.</p>
+            </div>
+            <!-- Step 08: Preview the Result -->
+            <div class="guide-step-card" data-slide="guide-8">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 08</span>
+                <span class="guide-step-title">Preview the Result</span>
+              </div>
+              <p class="guide-step-desc">Check the final result with instant toggle, then save a new version.</p>
+            </div>
+            <!-- Step 09: Saved as a Version -->
+            <div class="guide-step-card" data-slide="guide-9">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 09</span>
+                <span class="guide-step-title">Saved as a Version</span>
+              </div>
+              <p class="guide-step-desc">Each save adds a new frame to your gallery. The original stays untouched.</p>
+            </div>
+            <!-- Step 10: Your Personal Gallery -->
+            <div class="guide-step-card" data-slide="guide-10">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 10</span>
+                <span class="guide-step-title">Your Personal Gallery</span>
+              </div>
+              <p class="guide-step-desc">All edited frames in one place, sorted with the date they were captured or saved.</p>
+            </div>
+            <!-- Step 11: Sort & Group -->
+            <div class="guide-step-card" data-slide="guide-11">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 11</span>
+                <span class="guide-step-title">Sort & Group</span>
+              </div>
+              <p class="guide-step-desc">Group frames by day, month or filter type to keep your creative portfolio organized.</p>
+            </div>
+            <!-- Step 12: Instant Search -->
+            <div class="guide-step-card" data-slide="guide-12">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 12</span>
+                <span class="guide-step-title">Instant Search</span>
+              </div>
+              <p class="guide-step-desc">Find any edited shot by filter name, camera model, date or custom watermark text.</p>
+            </div>
+            <!-- Step 13: Photo Detail View -->
+            <div class="guide-step-card" data-slide="guide-13">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 13</span>
+                <span class="guide-step-title">Photo Detail View</span>
+              </div>
+              <p class="guide-step-desc">Zoom in to inspect pixel-level filter rendering, sharp grain and color grading.</p>
+            </div>
+            <!-- Step 14: Edit Details & EXIF -->
+            <div class="guide-step-card" data-slide="guide-14">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 14</span>
+                <span class="guide-step-title">Edit Details & EXIF</span>
+              </div>
+              <p class="guide-step-desc">View full metadata: aperture, shutter speed, ISO, focal length and color profile.</p>
+            </div>
+            <!-- Step 15: Sync Status & Storage -->
+            <div class="guide-step-card" data-slide="guide-15">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 15</span>
+                <span class="guide-step-title">Sync Status & Storage</span>
+              </div>
+              <p class="guide-step-desc">Check iCloud sync status, on-device cache size and database health at a glance.</p>
+            </div>
+            <!-- Step 16: Seamless iCloud Sync -->
+            <div class="guide-step-card" data-slide="guide-16">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 16</span>
+                <span class="guide-step-title">Seamless iCloud Sync</span>
+              </div>
+              <p class="guide-step-desc">Edits sync automatically across iPhone and iPad using private Apple CloudKit.</p>
+            </div>
+            <!-- Step 17: Export & Share -->
+            <div class="guide-step-card" data-slide="guide-17">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 17</span>
+                <span class="guide-step-title">Export & Share</span>
+              </div>
+              <p class="guide-step-desc">Export full-resolution JPEG, HEIF or PNG with watermarks or clean originals.</p>
+            </div>
+            <!-- Step 18: Studio Settings -->
+            <div class="guide-step-card" data-slide="guide-18">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 18</span>
+                <span class="guide-step-title">Studio Settings</span>
+              </div>
+              <p class="guide-step-desc">Customize default filter strength, export quality, haptic feedback and gestures.</p>
+            </div>
+            <!-- Step 19: Dark & Light Mode -->
+            <div class="guide-step-card" data-slide="guide-19">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 19</span>
+                <span class="guide-step-title">Dark & Light Mode</span>
+              </div>
+              <p class="guide-step-desc">Designed to look stunning in deep OLED dark theme and crisp daytime light mode.</p>
+            </div>
+            <!-- Step 20: Ready to Create -->
+            <div class="guide-step-card" data-slide="guide-20">
+              <div class="guide-step-header">
+                <span class="guide-step-badge">STEP 20</span>
+                <span class="guide-step-title">Ready to Create</span>
+              </div>
+              <p class="guide-step-desc">You are all set. Pick your first shot and bring your photographic vision to life.</p>
+            </div>
+            <!-- Video Demo Walkthrough in Guide -->
+            <div class="guide-step-card guide-video-card" data-slide="guide-video">
+              <div class="guide-step-header">
+                <span class="guide-step-badge" style="background:rgba(246,215,67,0.18); color:var(--green); border-color:var(--green);">▶ VIDEO DEMO</span>
+                <span class="guide-step-title" data-i18n="stepVideoTitle">iPhone 18 Pro Video Demo</span>
+              </div>
+              <p class="guide-step-desc" data-i18n="stepVideoDesc">Watch real-time live preview filtering, cropping, and saving flow.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- PANEL 4: ABOUT -->
+      <!-- =====================================================================
+           PANEL 4: ABOUT / STORY (Философия и архитектура продукта)
+           ===================================================================== -->
       <div class="panel" id="panel-about">
         <div class="panel-hero">
-          <span class="panel-eyebrow" data-i18n="about">About</span>
-          <h2 class="panel-title" data-i18n="storyTitle">Designed with intention.</h2>
-          <p class="panel-lead" data-i18n="storyLead">Crafted by an independent engineer with an obsession for speed, craftsmanship, and privacy.</p>
+          <span class="panel-eyebrow" data-i18n="ideaLabel">The philosophy</span>
+          <h2 class="panel-title" data-i18n="storyTitle">Calm creative flow.<br>Zero compromise.</h2>
+          <p class="panel-lead" data-i18n="storyLead">A fast, private photo editor built for people who care about their images and their privacy.</p>
         </div>
 
-        <div class="panel-body-content" style="padding-top:0;">
-          <p style="font-size:0.84rem; line-height:1.65; color:var(--text-secondary); margin-bottom:1.5rem;" data-i18n="storyText">
-            Project 06 is built using native Swift architectures with zero unnecessary third-party dependencies. Everything runs locally on your Apple device.
+        <div class="panel-body-content" style="padding-top:1.2rem;">
+          <h3 style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text); margin-bottom:0.4rem;" data-i18n="storyCardTitle">Your photos, your creative vision.</h3>
+          <p style="font-size:0.84rem; line-height:1.65; color:var(--text-secondary); margin-bottom:1.2rem;" data-i18n="storyText">
+            Project 6 gives you studio-grade Core Image filters, non-destructive versioning, and custom watermarks without accounts, ads, or tracking. Your photos remain on your device and sync privately through your personal iCloud account.
           </p>
 
+          <!-- 3 Pillars of Creative Flow -->
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0.6rem; margin-bottom:1.5rem;">
+            <div style="background:var(--surface-card); border:1px solid var(--line); border-radius:8px; padding:0.8rem; text-align:center;">
+              <span style="font-family:var(--font-mono); font-size:0.85rem; font-weight:700; color:var(--green); display:block;">01</span>
+              <span style="font-size:0.75rem; font-weight:600; color:var(--text);" data-i18n="pillar1">Filter &amp; Tune</span>
+            </div>
+            <div style="background:var(--surface-card); border:1px solid var(--line); border-radius:8px; padding:0.8rem; text-align:center;">
+              <span style="font-family:var(--font-mono); font-size:0.85rem; font-weight:700; color:var(--green); display:block;">02</span>
+              <span style="font-size:0.75rem; font-weight:600; color:var(--text);" data-i18n="pillar2">Watermark</span>
+            </div>
+            <div style="background:var(--surface-card); border:1px solid var(--line); border-radius:8px; padding:0.8rem; text-align:center;">
+              <span style="font-family:var(--font-mono); font-size:0.85rem; font-weight:700; color:var(--green); display:block;">03</span>
+              <span style="font-size:0.75rem; font-weight:600; color:var(--text);" data-i18n="pillar3">Version &amp; Sync</span>
+            </div>
+          </div>
+
+          <!-- Architecture & Features Breakdown -->
+          <div style="background:var(--surface-card); border:1px solid var(--line); border-radius:12px; padding:1.2rem; margin-bottom:1.4rem;">
+            <span style="font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--green); display:block; margin-bottom:0.4rem;">Architecture Highlights</span>
+            <h4 style="font-family:var(--font-serif); font-size:1.05rem; color:var(--text); margin-bottom:0.4rem;">Engineered for iOS &amp; iPadOS</h4>
+            <p style="font-size:0.78rem; line-height:1.55; color:var(--text-secondary); margin-bottom:1rem;">
+              Every feature is built purely with Apple native frameworks: Core Image GPU shaders, SwiftData persistence, and iCloud CloudKit synchronization.
+            </p>
+
+            <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:0.6rem; margin-bottom:0.9rem;">
+              <div style="background:var(--surface2); border:1px solid var(--line); border-radius:8px; padding:0.6rem 0.8rem;">
+                <span style="font-weight:700; font-size:0.8rem; color:var(--text); display:block;">Core Image Shaders</span>
+                <p style="font-size:0.68rem; color:var(--muted); margin-top:2px;">Hardware-accelerated live filter processing at 60 fps.</p>
+              </div>
+              <div style="background:var(--surface2); border:1px solid var(--line); border-radius:8px; padding:0.6rem 0.8rem;">
+                <span style="font-weight:700; font-size:0.8rem; color:var(--text); display:block;">Non-Destructive</span>
+                <p style="font-size:0.68rem; color:var(--muted); margin-top:2px;">Original photos stay pristine; each save stores a lightweight version.</p>
+              </div>
+              <div style="background:var(--surface2); border:1px solid var(--line); border-radius:8px; padding:0.6rem 0.8rem;">
+                <span style="font-weight:700; font-size:0.8rem; color:var(--text); display:block;">Dynamic Watermarks</span>
+                <p style="font-size:0.68rem; color:var(--muted); margin-top:2px;">8 customizable styles with EXIF, camera model, date or custom text.</p>
+              </div>
+              <div style="background:var(--surface2); border:1px solid var(--line); border-radius:8px; padding:0.6rem 0.8rem;">
+                <span style="font-weight:700; font-size:0.8rem; color:var(--text); display:block;">SwiftData &amp; CloudKit</span>
+                <p style="font-size:0.68rem; color:var(--muted); margin-top:2px;">Private cloud database synchronization across all your Apple devices.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats Grid -->
           <div class="stats-grid">
             <div class="stat-item">
-              <span class="stat-val">100%</span>
-              <span class="stat-lbl">Swift Native</span>
+              <span class="stat-val" data-i18n="stat1Val">100%</span>
+              <span class="stat-lbl" data-i18n="stat1Lbl">On-Device Native</span>
             </div>
             <div class="stat-item">
-              <span class="stat-val">0</span>
-              <span class="stat-lbl">Data Trackers</span>
+              <span class="stat-val" data-i18n="stat2Val">0</span>
+              <span class="stat-lbl" data-i18n="stat2Lbl">Data Trackers</span>
             </div>
             <div class="stat-item">
-              <span class="stat-val">iOS 17+</span>
-              <span class="stat-lbl">Target Platform</span>
+              <span class="stat-val" data-i18n="stat3Val">iCloud</span>
+              <span class="stat-lbl" data-i18n="stat3Lbl">Private SwiftData Sync</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- PANEL 5: SUPPORT -->
+      <!-- =====================================================================
+           PANEL 5: SUPPORT & FAQ (Поддержка, форма Web3Forms и вопросы)
+           ===================================================================== -->
       <div class="panel" id="panel-support">
         <div class="panel-hero">
-          <span class="panel-eyebrow" data-i18n="support">Support</span>
+          <span class="panel-eyebrow" data-i18n="support">Customer Support</span>
           <h2 class="panel-title" data-i18n="supportTitle">How can we help?</h2>
-          <p class="panel-lead" data-i18n="supportLead">Send a question, bug report, or feature request. We reply directly by email.</p>
+          <p class="panel-lead" data-i18n="supportLead">Send a question, bug report, suggestion, or privacy request. We respond directly by email.</p>
         </div>
 
-        <div class="panel-body-content" style="padding-top:0;">
+        <div class="panel-body-content" style="padding-top:1.2rem;">
+          <!-- Contact Card -->
+          <div style="background:var(--surface-card); border:1px solid var(--line); border-radius:10px; padding:1.1rem; margin-bottom:1.4rem;">
+            <p style="font-size:0.85rem; font-weight:700; color:var(--text); margin-bottom:0.3rem;" data-i18n="talk">Talk to the developer.</p>
+            <p style="font-size:0.78rem; line-height:1.5; color:var(--text-secondary);" data-i18n="supportContact">
+              Use the form or email <a href="mailto:hakobghlijyan@gmail.com" style="color:var(--green); text-decoration:underline;">hakobghlijyan@gmail.com</a>.
+            </p>
+          </div>
+
+          <!-- Live Web3Forms Form (Keys strictly bound to Project 6) -->
           <form class="support-form" data-contact-form
                 action="https://api.web3forms.com/submit" method="POST"
-                data-subject="[Project 06] Support request"
+                data-subject="[Project 6] Support request"
                 data-fallback-email="hakobghlijyan@gmail.com">
-            <input type="hidden" name="access_key" value="f9d7c944-0919-486e-bdf5-05f78f6d0bea">
-            <input type="hidden" name="from_name" value="Project 06 Support">
-            <input type="hidden" name="subject" value="[Project 06] Support request">
+            <input type="hidden" name="access_key" value="fd738668-d5b4-41fa-b85c-35eb8d8c4a18">
+            <input type="hidden" name="from_name" value="Project 6 Support">
+            <input type="hidden" name="subject" value="[Project 6] Support request">
             <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off">
 
             <div class="form-field">
@@ -274,39 +831,124 @@
 
             <div class="form-field">
               <label data-i18n="supportMessage">Message</label>
-              <textarea name="message" required placeholder="Describe your question or issue..."></textarea>
+              <textarea name="message" required placeholder="Describe your question, idea or bug report..."></textarea>
             </div>
 
             <button type="submit" class="btn-submit" data-i18n="supportSend">Send Message &rarr;</button>
           </form>
+
+          <!-- FAQ Accordions (7 Questions) -->
+          <div class="faq-container">
+            <p style="font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--green); margin-bottom:0.4rem;" data-i18n="faqTitle">Frequently Asked Questions</p>
+
+            <details class="faq-card">
+              <summary data-i18n="faq1q">What is Project 6?</summary>
+              <div class="faq-body" data-i18n="faq1a">Project 6 is a calm, fast photo editing application for iPhone and iPad with studio-grade Core Image filters, non-destructive versions, crop ratios, and custom watermarks.</div>
+            </details>
+
+            <details class="faq-card">
+              <summary data-i18n="faq2q">Are my photos ever uploaded to external servers?</summary>
+              <div class="faq-body" data-i18n="faq2a">Never. All photo processing happens entirely on your device using Apple Core Image. Syncing occurs only through your private iCloud database managed by Apple.</div>
+            </details>
+
+            <details class="faq-card">
+              <summary data-i18n="faq3q">Do I need an account?</summary>
+              <div class="faq-body" data-i18n="faq3a">No account is required. Download and start editing immediately without registration.</div>
+            </details>
+
+            <details class="faq-card">
+              <summary data-i18n="faq4q">How does non-destructive versioning work?</summary>
+              <div class="faq-body" data-i18n="faq4a">Your original photograph is never modified or overwritten. Every time you save an edit, Project 6 saves a new version in your gallery while preserving the pristine original.</div>
+            </details>
+
+            <details class="faq-card">
+              <summary data-i18n="faq5q">What watermark styles are available?</summary>
+              <div class="faq-body" data-i18n="faq5a">Project 6 includes eight watermark styles derived from the photo EXIF data, timestamp, camera model, or custom text with full color selection.</div>
+            </details>
+
+            <details class="faq-card">
+              <summary data-i18n="faq6q">Which devices and iOS versions are supported?</summary>
+              <div class="faq-body" data-i18n="faq6a">Project 6 supports all iPhone and iPad models running iOS 18.0, iPadOS 18.0, or newer, optimized for Liquid Glass and modern Super Retina displays.</div>
+            </details>
+
+            <details class="faq-card">
+              <summary data-i18n="faq7q">How do I request a feature or report a bug?</summary>
+              <div class="faq-body" data-i18n="faq7a">You can submit feedback directly via our web support form or email hakobghlijyan@gmail.com. We review every user message.</div>
+            </details>
+          </div>
         </div>
       </div>
 
-      <!-- PANEL 6: PRIVACY (Sectionally Collapsible Accordion Cards) -->
+      <!-- =====================================================================
+           PANEL 6: PRIVACY POLICY (13 разделов политики приватности)
+           ===================================================================== -->
       <div class="panel" id="panel-privacy">
         <div class="panel-hero">
           <span class="panel-eyebrow" data-i18n="privacyEyebrow">YOUR PRIVACY MATTERS</span>
           <h2 class="panel-title" data-i18n="privacyTitle">Privacy Policy</h2>
-          <p class="panel-lead">Last updated: November 2026 · Native iOS 17+ Architecture</p>
+          <p class="panel-lead" data-i18n="privacyLead">Last updated: November 2026 · Native iOS 18+ Architecture</p>
         </div>
 
-        <div class="panel-body-content" style="padding-top:0;">
+        <div class="panel-body-content" style="padding-top:1.2rem;">
+          <div style="background:var(--surface-card); border:1px solid var(--line); border-radius:10px; padding:1.1rem; margin-bottom:1.4rem;">
+            <h4 style="font-size:0.88rem; color:var(--text); margin-bottom:0.4rem;" data-i18n="privacyBannerTitle">Zero Personal Data Collection</h4>
+            <p style="font-size:0.78rem; line-height:1.6; color:var(--text-secondary);" data-i18n="privacyBannerText">
+              Project 6 was designed from the ground up to respect your digital privacy. We do not require accounts, we do not track your activity, and we never transmit your photos to third-party servers.
+            </p>
+          </div>
+
           <div class="faq-container policy-container">
-            <details class="faq-card policy-card" open>
-              <summary>1. Zero Personal Data Collection</summary>
-              <div class="faq-body">Project 06 does not collect, sell, or transmit any personal data. All processing occurs locally on your device.</div>
+            <details class="faq-card policy-card">
+              <summary data-i18n="policyTitle1">1. Summary</summary>
+              <div class="faq-body" data-i18n="policyBody1">Project 6 has no accounts, no ads and no analytics. Your photos, edits and their metadata stay on your device. If you turn on iCloud, they sync only through your own private iCloud, which the developer cannot access.</div>
             </details>
             <details class="faq-card policy-card">
-              <summary>2. Local On-Device Processing</summary>
-              <div class="faq-body">All core application operations run on your local hardware using Apple native frameworks.</div>
+              <summary data-i18n="policyTitle2">2. Who We Are</summary>
+              <div class="faq-body" data-i18n="policyBody2">Project 6 is developed by Hakob Ghlijyan, an independent developer. Contact: <a href="mailto:hakobghlijyan@gmail.com" style="color:var(--green); text-decoration:underline;">hakobghlijyan@gmail.com</a>.</div>
             </details>
             <details class="faq-card policy-card">
-              <summary>3. No Third-Party Trackers</summary>
-              <div class="faq-body">We integrate no third-party analytics SDKs, advertising frameworks, or profiling tools.</div>
+              <summary data-i18n="policyTitle3">3. What the App Stores</summary>
+              <div class="faq-body" data-i18n="policyBody3">Photos you import, the edited versions you save, their metadata (date, camera, location if the photo has it), albums, favourites and your settings. All of it is stored in the app’s own storage on your device.</div>
             </details>
             <details class="faq-card policy-card">
-              <summary>4. Support Inquiries &amp; Contact</summary>
-              <div class="faq-body">When you contact support, your email is used solely to respond to your inquiry and is never shared.</div>
+              <summary data-i18n="policyTitle4">4. iCloud</summary>
+              <div class="faq-body" data-i18n="policyBody4">Sync is optional. When enabled, the app uses Apple’s private CloudKit database tied to your Apple ID. Only you can access it; the developer has no access and no copy. You can switch sync off in Settings.</div>
+            </details>
+            <details class="faq-card policy-card">
+              <summary data-i18n="policyTitle5">5. Photos</summary>
+              <div class="faq-body" data-i18n="policyBody5">You pick photos with the system photo picker. The app asks for access to Photos once, only to read the location of the photos you picked, and, if you tap Save to Photos, to add edited images. It never scans or uploads your library.</div>
+            </details>
+            <details class="faq-card policy-card">
+              <summary data-i18n="policyTitle6">6. Location</summary>
+              <div class="faq-body" data-i18n="policyBody6">Location is read only from the metadata that is already inside a photo. To show a place name, the app may send those coordinates to Apple’s geocoding service. Nothing is sent to the developer.</div>
+            </details>
+            <details class="faq-card policy-card">
+              <summary data-i18n="policyTitle7">7. What We Do NOT Do</summary>
+              <div class="faq-body" data-i18n="policyBody7">No tracking, no advertising, no third-party analytics or SDKs, no selling or sharing of data, no account, no profiling.</div>
+            </details>
+            <details class="faq-card policy-card">
+              <summary data-i18n="policyTitle8">8. Diagnostic Logs</summary>
+              <div class="faq-body" data-i18n="policyBody8">The app writes no logs that leave your device. If you share crash reports with Apple through iOS settings, Apple may provide anonymous reports to developers.</div>
+            </details>
+            <details class="faq-card policy-card">
+              <summary data-i18n="policyTitle9">9. Data Export and Deletion</summary>
+              <div class="faq-body" data-i18n="policyBody9">Sharing and exporting keep your photo’s metadata intact — the choice of where to send it is yours. Deleted photos stay 3 days in Recently Deleted. With iCloud on, deleting a photo also deletes it on your other devices. Deleting the app removes its local data.</div>
+            </details>
+            <details class="faq-card policy-card">
+              <summary data-i18n="policyTitle10">10. Children</summary>
+              <div class="faq-body" data-i18n="policyBody10">The app is not directed at children and collects no personal information from anyone.</div>
+            </details>
+            <details class="faq-card policy-card">
+              <summary data-i18n="policyTitle11">11. Security</summary>
+              <div class="faq-body" data-i18n="policyBody11">Data stays in the app’s protected storage on your device and, optionally, in your private iCloud, both protected by iOS.</div>
+            </details>
+            <details class="faq-card policy-card">
+              <summary data-i18n="policyTitle12">12. This Website</summary>
+              <div class="faq-body" data-i18n="policyBody12">This site is static. It sets no tracking cookies and uses no analytics. If you write through the contact form, we use your name, email and message only to reply.</div>
+            </details>
+            <details class="faq-card policy-card">
+              <summary data-i18n="policyTitle13">13. Contact Information</summary>
+              <div class="faq-body" data-i18n="policyBody13">For questions regarding this privacy policy, please contact Hakob Ghlijyan directly at <a href="mailto:hakobghlijyan@gmail.com" style="color:var(--green); text-decoration:underline;">hakobghlijyan@gmail.com</a>.</div>
             </details>
           </div>
         </div>
@@ -314,95 +956,394 @@
 
     </div>
 
-    <!-- Divider -->
+    <!-- Divider / Разделитель между левой панелью и правым холстом -->
     <div class="split-divider"></div>
 
-    <!-- RIGHT CANVAS SIDE -->
+    <!-- =========================================================================
+       RIGHT SIDE: Visual Canvas Showcase (Динамический интерактивный холст)
+       ========================================================================= -->
     <div class="canvas-side" id="canvasSide">
-      <div class="canvas-placeholder hidden" id="placeholder">
-        <span class="placeholder-label">Hover over an item to inspect</span>
-      </div>
 
-      <!-- Feature Slides -->
-      <div class="canvas-image visible" data-slide="feat-1">
-        <img src="images/templatemo-split-01.jpg" alt="Architecture &amp; Core Engine">
+      <!-- Default Placeholder: displayed cleanly on load until item is hovered/clicked -->
+      <div class="canvas-placeholder" id="placeholder">
+        <div class="placeholder-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4m-10-10h4m12 0h4m-3.3-6.7-2.8 2.8m-5.8 5.8-2.8 2.8m0-11.3 2.8 2.8m5.8 5.8 2.8 2.8"/></svg>
+        </div>
+        <span class="placeholder-label" data-i18n="hoverInspect">Hover module to inspect</span>
+      </div>
+      <!-- Feature Canvas Image: Filters with Live Preview -->
+      <div class="canvas-image" data-slide="feat-1">
+        <img src="images/iphone/p1ai-store-black.png" alt="Filters with Live Preview" loading="eager">
         <div class="canvas-caption">
-          <div class="canvas-caption-title">Architecture &amp; Core Engine</div>
-          <div class="canvas-caption-sub">Swift 6.2 &middot; Modern native design &middot; Project 06</div>
+          <div class="canvas-caption-title" data-i18n="feat1Title">Filters with Live Preview</div>
+          <div class="canvas-caption-sub" data-i18n="feat1CanvasSub">Core Image &middot; Live previews &middot; Project 6</div>
         </div>
       </div>
+      <!-- Feature Canvas Image: Crop, Rotate & Mirror -->
       <div class="canvas-image" data-slide="feat-2">
-        <img src="images/templatemo-split-02.jpg" alt="Intuitive Native Experience">
+        <img src="images/iphone/p2ai-store-black.png" alt="Crop, Rotate & Mirror" loading="eager">
         <div class="canvas-caption">
-          <div class="canvas-caption-title">Intuitive Native Experience</div>
-          <div class="canvas-caption-sub">SwiftUI &middot; Fluid gestures &middot; Project 06</div>
+          <div class="canvas-caption-title" data-i18n="feat2Title">Crop, Rotate &amp; Mirror</div>
+          <div class="canvas-caption-sub" data-i18n="feat2CanvasSub">Square, Portrait, Landscape ratios &middot; Project 6</div>
         </div>
       </div>
+      <!-- Feature Canvas Image: Dynamic Watermarks & EXIF -->
       <div class="canvas-image" data-slide="feat-3">
-        <img src="images/templatemo-split-03.jpg" alt="Local Storage &amp; Persistence">
+        <img src="images/iphone/p3ai-store-black.png" alt="Dynamic Watermarks & EXIF" loading="eager">
         <div class="canvas-caption">
-          <div class="canvas-caption-title">Local Storage &amp; Persistence</div>
-          <div class="canvas-caption-sub">SwiftData &middot; On-device safety &middot; Project 06</div>
+          <div class="canvas-caption-title" data-i18n="feat3Title">Your Watermark, Your Colour</div>
+          <div class="canvas-caption-sub" data-i18n="feat3CanvasSub">Eight watermark styles &middot; Custom colour &middot; Project 6</div>
         </div>
       </div>
+      <!-- Feature Canvas Image: Every Edit is a Version -->
       <div class="canvas-image" data-slide="feat-4">
-        <img src="images/templatemo-split-04.jpg" alt="On-Device Privacy &amp; Security">
+        <img src="images/iphone/p4ai-store-black.png" alt="Every Edit is a Version" loading="eager">
         <div class="canvas-caption">
-          <div class="canvas-caption-title">On-Device Privacy &amp; Security</div>
-          <div class="canvas-caption-sub">Zero telemetry &middot; 0 Analytics &middot; Project 06</div>
+          <div class="canvas-caption-title" data-i18n="feat4Title">Every Edit is a Version</div>
+          <div class="canvas-caption-sub" data-i18n="feat4CanvasSub">Non-destructive storage &middot; Original untouched &middot; Project 6</div>
+        </div>
+      </div>
+      <!-- Feature Canvas Image: Photos & Collections -->
+      <div class="canvas-image" data-slide="feat-5">
+        <img src="images/iphone/p5ai-store-black.png" alt="Photos & Collections" loading="eager">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title" data-i18n="feat5Title">Photos &amp; Collections</div>
+          <div class="canvas-caption-sub" data-i18n="feat5CanvasSub">Favourites, albums and filters &middot; Project 6</div>
+        </div>
+      </div>
+      <!-- Feature Canvas Image: Full Photo View & EXIF -->
+      <div class="canvas-image" data-slide="feat-6">
+        <img src="images/iphone/p6ai-store-black.png" alt="Full Photo View & EXIF" loading="eager">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title" data-i18n="feat6Title">Full Photo View &amp; EXIF</div>
+          <div class="canvas-caption-sub" data-i18n="feat6CanvasSub">Detailed metadata &amp; versions &middot; Project 6</div>
+        </div>
+      </div>
+      <!-- Feature Canvas Image: Sync with your iCloud -->
+      <div class="canvas-image" data-slide="feat-7">
+        <img src="images/iphone/p7ai-store-black.png" alt="Sync with your iCloud" loading="eager">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title" data-i18n="feat7Title">Sync with your iCloud</div>
+          <div class="canvas-caption-sub" data-i18n="feat7CanvasSub">Storage Breakdown &middot; Private, optional and automatic &middot; Project 6</div>
+        </div>
+      </div>
+      <!-- Feature Canvas Image: Interactive Widgets -->
+      <div class="canvas-image" data-slide="feat-8">
+        <img src="images/iphone/p8ai-store-black.png" alt="Interactive Widgets" loading="eager">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title" data-i18n="feat8Title">Interactive Widgets</div>
+          <div class="canvas-caption-sub" data-i18n="feat8CanvasSub">Desktop &amp; Lock Screen widgets &middot; Project 6</div>
+        </div>
+      </div>
+      <!-- Screen Cover Canvas Image -->
+      <div class="canvas-image" data-slide="screen-cover">
+        <img src="images/cover.png" alt="All Devices Ecosystem Cover" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title" data-i18n="canvasCoverTitle">All Devices Ecosystem</div>
+          <div class="canvas-caption-sub" data-i18n="canvasCoverSub">iPhone, iPad &amp; Duo Screens &middot; Project 6</div>
+        </div>
+      </div>
+      <!-- Duo Canvas: Filters with Live Preview -->
+      <div class="canvas-image" data-slide="duo-1">
+        <img src="images/duo/duo1ai-store-black.png" alt="Filters with Live Preview" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Filters with Live Preview</div><div class="canvas-caption-sub">Duo · Filters &middot; Project 6</div></div>
+      </div>
+      <!-- Duo Canvas: Crop, Rotate, Mirror -->
+      <div class="canvas-image" data-slide="duo-2">
+        <img src="images/duo/duo2ai-store-black.png" alt="Crop, Rotate, Mirror" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Crop, Rotate, Mirror</div><div class="canvas-caption-sub">Duo · Crop &middot; Project 6</div></div>
+      </div>
+      <!-- Duo Canvas: Your Watermark, Your Colour -->
+      <div class="canvas-image" data-slide="duo-3">
+        <img src="images/duo/duo3ai-store-black.png" alt="Your Watermark, Your Colour" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Your Watermark, Your Colour</div><div class="canvas-caption-sub">Duo · Watermark &middot; Project 6</div></div>
+      </div>
+      <!-- Duo Canvas: Every Edit is a Version -->
+      <div class="canvas-image" data-slide="duo-4">
+        <img src="images/duo/duo4ai-store-black.png" alt="Every Edit is a Version" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Every Edit is a Version</div><div class="canvas-caption-sub">Duo · Versions &middot; Project 6</div></div>
+      </div>
+      <!-- Duo Canvas: Photo Gallery & Search -->
+      <div class="canvas-image" data-slide="duo-5">
+        <img src="images/duo/duo5ai-store-black.png" alt="Photo Gallery & Search" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Photo Gallery & Search</div><div class="canvas-caption-sub">Duo · Gallery &middot; Project 6</div></div>
+      </div>
+      <!-- Duo Canvas: Full Photo View & EXIF -->
+      <div class="canvas-image" data-slide="duo-6">
+        <img src="images/duo/duo6ai-store-black.png" alt="Full Photo View & EXIF" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Full Photo View & EXIF</div><div class="canvas-caption-sub">Duo · Detail &middot; Project 6</div></div>
+      </div>
+      <!-- Duo Canvas: Sync with your iCloud -->
+      <div class="canvas-image" data-slide="duo-7">
+        <img src="images/duo/duo7ai-store-black.png" alt="Sync with your iCloud" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Sync with your iCloud</div><div class="canvas-caption-sub">Duo · Private iCloud Sync &middot; Project 6</div></div>
+      </div>
+      <!-- Duo Canvas: Interactive Widgets -->
+      <div class="canvas-image" data-slide="duo-8">
+        <img src="images/duo/duo8ai-store-black.png" alt="Interactive Widgets" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Interactive Widgets</div><div class="canvas-caption-sub">Duo · Widgets &middot; Project 6</div></div>
+      </div>
+      <!-- iPhone Canvas: Filters with Live Preview -->
+      <div class="canvas-image" data-slide="iphone-1">
+        <img src="images/iphone/p1ai-store-black.png" alt="Filters with Live Preview" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Filters with Live Preview</div><div class="canvas-caption-sub">iPhone · Core Image &middot; Project 6</div></div>
+      </div>
+      <!-- iPhone Canvas: Crop, Rotate, Mirror -->
+      <div class="canvas-image" data-slide="iphone-2">
+        <img src="images/iphone/p2ai-store-black.png" alt="Crop, Rotate, Mirror" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Crop, Rotate, Mirror</div><div class="canvas-caption-sub">iPhone · Aspect Ratios &middot; Project 6</div></div>
+      </div>
+      <!-- iPhone Canvas: Your Watermark, Your Colour -->
+      <div class="canvas-image" data-slide="iphone-3">
+        <img src="images/iphone/p3ai-store-black.png" alt="Your Watermark, Your Colour" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Your Watermark, Your Colour</div><div class="canvas-caption-sub">iPhone · Watermark &middot; Project 6</div></div>
+      </div>
+      <!-- iPhone Canvas: Every Edit is a Version -->
+      <div class="canvas-image" data-slide="iphone-4">
+        <img src="images/iphone/p4ai-store-black.png" alt="Every Edit is a Version" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Every Edit is a Version</div><div class="canvas-caption-sub">iPhone · Versions &middot; Project 6</div></div>
+      </div>
+      <!-- iPhone Canvas: Photo Gallery & Search -->
+      <div class="canvas-image" data-slide="iphone-5">
+        <img src="images/iphone/p5ai-store-black.png" alt="Photo Gallery & Search" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Photo Gallery & Search</div><div class="canvas-caption-sub">iPhone · Gallery &middot; Project 6</div></div>
+      </div>
+      <!-- iPhone Canvas: Full Photo View & EXIF -->
+      <div class="canvas-image" data-slide="iphone-6">
+        <img src="images/iphone/p6ai-store-black.png" alt="Full Photo View & EXIF" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Full Photo View & EXIF</div><div class="canvas-caption-sub">iPhone · Detail &middot; Project 6</div></div>
+      </div>
+      <!-- iPhone Canvas: Sync with your iCloud -->
+      <div class="canvas-image" data-slide="iphone-7">
+        <img src="images/iphone/p7ai-store-black.png" alt="Sync with your iCloud" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Sync with your iCloud</div><div class="canvas-caption-sub">iPhone · Private iCloud Sync &middot; Project 6</div></div>
+      </div>
+      <!-- iPhone Canvas: Interactive Widgets -->
+      <div class="canvas-image" data-slide="iphone-8">
+        <img src="images/iphone/p8ai-store-black.png" alt="Interactive Widgets" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Interactive Widgets</div><div class="canvas-caption-sub">iPhone · Widgets &middot; Project 6</div></div>
+      </div>
+      <!-- iPad Canvas: Filters with Live Preview -->
+      <div class="canvas-image" data-slide="pad-1">
+        <img src="images/pad/pad1ai-store-black.png" alt="Filters with Live Preview" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Filters with Live Preview</div><div class="canvas-caption-sub">iPad · Studio Canvas &middot; Project 6</div></div>
+      </div>
+      <!-- iPad Canvas: Crop, Rotate, Mirror -->
+      <div class="canvas-image" data-slide="pad-2">
+        <img src="images/pad/pad2ai-store-black.png" alt="Crop, Rotate, Mirror" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Crop, Rotate, Mirror</div><div class="canvas-caption-sub">iPad · Aspect Ratios &middot; Project 6</div></div>
+      </div>
+      <!-- iPad Canvas: Your Watermark, Your Colour -->
+      <div class="canvas-image" data-slide="pad-3">
+        <img src="images/pad/pad3ai-store-black.png" alt="Your Watermark, Your Colour" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Your Watermark, Your Colour</div><div class="canvas-caption-sub">iPad · Watermark &middot; Project 6</div></div>
+      </div>
+      <!-- iPad Canvas: Every Edit is a Version -->
+      <div class="canvas-image" data-slide="pad-4">
+        <img src="images/pad/pad4ai-store-black.png" alt="Every Edit is a Version" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Every Edit is a Version</div><div class="canvas-caption-sub">iPad · Versions &middot; Project 6</div></div>
+      </div>
+      <!-- iPad Canvas: Photo Gallery & Search -->
+      <div class="canvas-image" data-slide="pad-5">
+        <img src="images/pad/pad5ai-store-black.png" alt="Photo Gallery & Search" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Photo Gallery & Search</div><div class="canvas-caption-sub">iPad · Library &middot; Project 6</div></div>
+      </div>
+      <!-- iPad Canvas: Full Photo View & EXIF -->
+      <div class="canvas-image" data-slide="pad-6">
+        <img src="images/pad/pad6ai-store-black.png" alt="Full Photo View & EXIF" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Full Photo View & EXIF</div><div class="canvas-caption-sub">iPad · Inspector &middot; Project 6</div></div>
+      </div>
+      <!-- iPad Canvas: Sync with your iCloud -->
+      <div class="canvas-image" data-slide="pad-7">
+        <img src="images/pad/pad7ai-store-black.png" alt="Sync with your iCloud" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Sync with your iCloud</div><div class="canvas-caption-sub">iPad · Private iCloud Sync &middot; Project 6</div></div>
+      </div>
+      <!-- iPad Canvas: Interactive Widgets -->
+      <div class="canvas-image" data-slide="pad-8">
+        <img src="images/pad/pad8ai-store-black.png" alt="Interactive Widgets" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Interactive Widgets</div><div class="canvas-caption-sub">iPad · Widgets &middot; Project 6</div></div>
+      </div>
+      <!-- Video 1: iPhone 18 Pro Demo -->
+      <div class="canvas-image" data-slide="video-1">
+        <video class="canvas-video" playsinline loop muted autoplay controls preload="metadata">
+          <source src="demo_video/iPhone_18_Pro_Max_0.mp4" type="video/mp4">
+          <source src="demo_video/iPhone_18_Pro_Max_0.mov" type="video/quicktime">
+        </video>
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">iPhone 18 Pro Video Demo</div>
+          <div class="canvas-caption-sub">Real-time Core Image live preview &middot; Project 6</div>
         </div>
       </div>
 
-      <!-- Screen Slides -->
-      <div class="canvas-image" data-slide="scr-1">
-        <img src="images/templatemo-split-05.jpg" alt="Primary Dashboard View">
-        <div class="canvas-caption"><div class="canvas-caption-title">Primary Dashboard View</div><div class="canvas-caption-sub">Screen 01 &middot; Project 06</div></div>
-      </div>
-      <div class="canvas-image" data-slide="scr-2">
-        <img src="images/templatemo-split-06.jpg" alt="Interactive Detail Flow">
-        <div class="canvas-caption"><div class="canvas-caption-title">Interactive Detail Flow</div><div class="canvas-caption-sub">Screen 02 &middot; Project 06</div></div>
-      </div>
-      <div class="canvas-image" data-slide="scr-3">
-        <img src="images/templatemo-split-07.jpg" alt="Engine Configuration">
-        <div class="canvas-caption"><div class="canvas-caption-title">Engine Configuration</div><div class="canvas-caption-sub">Screen 03 &middot; Project 06</div></div>
-      </div>
-      <div class="canvas-image" data-slide="scr-4">
-        <img src="images/templatemo-split-08.jpg" alt="System Settings &amp; Personalization">
-        <div class="canvas-caption"><div class="canvas-caption-title">System Settings &amp; Personalization</div><div class="canvas-caption-sub">Screen 04 &middot; Project 06</div></div>
+      <!-- Video 2: iPad Pro 13 Demo -->
+      <div class="canvas-image" data-slide="video-2">
+        <video class="canvas-video" playsinline loop muted autoplay controls preload="metadata">
+          <source src="demo_video/iPad_Pro_13_0.mp4" type="video/mp4">
+          <source src="demo_video/iPad_Pro_13_0.mov" type="video/quicktime">
+        </video>
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">iPad Pro 13 Canvas Demo</div>
+          <div class="canvas-caption-sub">Large screen studio workspace &middot; Project 6</div>
+        </div>
       </div>
 
-      <!-- Guide Slides -->
-      <div class="canvas-image" data-slide="step-1">
-        <img src="images/templatemo-split-09.jpg" alt="Initial Setup">
-        <div class="canvas-caption"><div class="canvas-caption-title">Step 1: Initial Setup</div><div class="canvas-caption-sub">Configure your environment &middot; Project 06</div></div>
+      <!-- Video 3: iPhone Duo Demo -->
+      <div class="canvas-image" data-slide="video-3">
+        <video class="canvas-video" playsinline loop muted autoplay controls preload="metadata">
+          <source src="demo_video/iPhone_Duo_0.mp4" type="video/mp4">
+          <source src="demo_video/iPhone_Duo_0.mov" type="video/quicktime">
+        </video>
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">iPhone Duo Split Demo</div>
+          <div class="canvas-caption-sub">Side-by-side editing workflow &middot; Project 6</div>
+        </div>
       </div>
-      <div class="canvas-image" data-slide="step-2">
-        <img src="images/templatemo-split-10.jpg" alt="Explore Core Tools">
-        <div class="canvas-caption"><div class="canvas-caption-title">Step 2: Explore Core Tools</div><div class="canvas-caption-sub">Native high-performance features &middot; Project 06</div></div>
+      <!-- Guide Step 01 Canvas: Start in Seconds -->
+      <div class="canvas-image" data-slide="guide-1">
+        <img src="images/onboarding/onb1ai-store-black.png" alt="Start in Seconds" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 01: Start in Seconds</div><div class="canvas-caption-sub">Drop a photo onto the canvas, or try a preset first — no access to your library needed.</div></div>
       </div>
-      <div class="canvas-image" data-slide="step-3">
-        <img src="images/templatemo-split-01.jpg" alt="Seamless Synchronization">
-        <div class="canvas-caption"><div class="canvas-caption-title">Step 3: Seamless Synchronization</div><div class="canvas-caption-sub">Private sync across devices &middot; Project 06</div></div>
+      <!-- Guide Step 02 Canvas: Your Photos, Your Choice -->
+      <div class="canvas-image" data-slide="guide-2">
+        <img src="images/onboarding/onb2ai-store-black.png" alt="Your Photos, Your Choice" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 02: Your Photos, Your Choice</div><div class="canvas-caption-sub">Pick a frame from your library. Project-6 only asks for what it needs.</div></div>
+      </div>
+      <!-- Guide Step 03 Canvas: A Guide in One Tap -->
+      <div class="canvas-image" data-slide="guide-3">
+        <img src="images/onboarding/onb3ai-store-black.png" alt="A Guide in One Tap" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 03: A Guide in One Tap</div><div class="canvas-caption-sub">The ⓘ button shows the steps: import, filter, crop, watermark, save.</div></div>
+      </div>
+      <!-- Guide Step 04 Canvas: Start From Original -->
+      <div class="canvas-image" data-slide="guide-4">
+        <img src="images/onboarding/onb4ai-store-black.png" alt="Start From Original" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 04: Start From Original</div><div class="canvas-caption-sub">Your photo is never changed. Every edit becomes a new version.</div></div>
+      </div>
+      <!-- Guide Step 05 Canvas: Swipe Through Filters -->
+      <div class="canvas-image" data-slide="guide-5">
+        <img src="images/onboarding/onb5ai-store-black.png" alt="Swipe Through Filters" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 05: Swipe Through Filters</div><div class="canvas-caption-sub">Preview each look live, then fine-tune brightness, contrast and saturation.</div></div>
+      </div>
+      <!-- Guide Step 06 Canvas: Crop to Any Ratio -->
+      <div class="canvas-image" data-slide="guide-6">
+        <img src="images/onboarding/onb6ai-store-black.png" alt="Crop to Any Ratio" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 06: Crop to Any Ratio</div><div class="canvas-caption-sub">Square, portrait, wide — pick the frame for where the photo will live.</div></div>
+      </div>
+      <!-- Guide Step 07 Canvas: Add a Watermark -->
+      <div class="canvas-image" data-slide="guide-7">
+        <img src="images/onboarding/onb7ai-store-black.png" alt="Add a Watermark" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 07: Add a Watermark</div><div class="canvas-caption-sub">Eight styles built from the photo EXIF data: camera, timestamp, film frame and more.</div></div>
+      </div>
+      <!-- Guide Step 08 Canvas: Preview the Result -->
+      <div class="canvas-image" data-slide="guide-8">
+        <img src="images/onboarding/onb8ai-store-black.png" alt="Preview the Result" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 08: Preview the Result</div><div class="canvas-caption-sub">Check the final result with instant toggle, then save a new version.</div></div>
+      </div>
+      <!-- Guide Step 09 Canvas: Saved as a Version -->
+      <div class="canvas-image" data-slide="guide-9">
+        <img src="images/onboarding/onb9ai-store-black.png" alt="Saved as a Version" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 09: Saved as a Version</div><div class="canvas-caption-sub">Each save adds a new frame to your gallery. The original stays untouched.</div></div>
+      </div>
+      <!-- Guide Step 10 Canvas: Your Personal Gallery -->
+      <div class="canvas-image" data-slide="guide-10">
+        <img src="images/onboarding/onb10ai-store-black.png" alt="Your Personal Gallery" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 10: Your Personal Gallery</div><div class="canvas-caption-sub">All edited frames in one place, sorted with the date they were captured or saved.</div></div>
+      </div>
+      <!-- Guide Step 11 Canvas: Sort & Group -->
+      <div class="canvas-image" data-slide="guide-11">
+        <img src="images/onboarding/onb11ai-store-black.png" alt="Sort & Group" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 11: Sort & Group</div><div class="canvas-caption-sub">Group frames by day, month or filter type to keep your creative portfolio organized.</div></div>
+      </div>
+      <!-- Guide Step 12 Canvas: Instant Search -->
+      <div class="canvas-image" data-slide="guide-12">
+        <img src="images/onboarding/onb12ai-store-black.png" alt="Instant Search" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 12: Instant Search</div><div class="canvas-caption-sub">Find any edited shot by filter name, camera model, date or custom watermark text.</div></div>
+      </div>
+      <!-- Guide Step 13 Canvas: Photo Detail View -->
+      <div class="canvas-image" data-slide="guide-13">
+        <img src="images/onboarding/onb13ai-store-black.png" alt="Photo Detail View" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 13: Photo Detail View</div><div class="canvas-caption-sub">Zoom in to inspect pixel-level filter rendering, sharp grain and color grading.</div></div>
+      </div>
+      <!-- Guide Step 14 Canvas: Edit Details & EXIF -->
+      <div class="canvas-image" data-slide="guide-14">
+        <img src="images/onboarding/onb14ai-store-black.png" alt="Edit Details & EXIF" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 14: Edit Details & EXIF</div><div class="canvas-caption-sub">View full metadata: aperture, shutter speed, ISO, focal length and color profile.</div></div>
+      </div>
+      <!-- Guide Step 15 Canvas: Sync Status & Storage -->
+      <div class="canvas-image" data-slide="guide-15">
+        <img src="images/onboarding/onb15ai-store-black.png" alt="Sync Status & Storage" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 15: Sync Status & Storage</div><div class="canvas-caption-sub">Check iCloud sync status, on-device cache size and database health at a glance.</div></div>
+      </div>
+      <!-- Guide Step 16 Canvas: Seamless iCloud Sync -->
+      <div class="canvas-image" data-slide="guide-16">
+        <img src="images/onboarding/onb16ai-store-black.png" alt="Seamless iCloud Sync" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 16: Seamless iCloud Sync</div><div class="canvas-caption-sub">Edits sync automatically across iPhone and iPad using private Apple CloudKit.</div></div>
+      </div>
+      <!-- Guide Step 17 Canvas: Export & Share -->
+      <div class="canvas-image" data-slide="guide-17">
+        <img src="images/onboarding/onb17ai-store-black.png" alt="Export & Share" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 17: Export & Share</div><div class="canvas-caption-sub">Export full-resolution JPEG, HEIF or PNG with watermarks or clean originals.</div></div>
+      </div>
+      <!-- Guide Step 18 Canvas: Studio Settings -->
+      <div class="canvas-image" data-slide="guide-18">
+        <img src="images/onboarding/onb18ai-store-black.png" alt="Studio Settings" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 18: Studio Settings</div><div class="canvas-caption-sub">Customize default filter strength, export quality, haptic feedback and gestures.</div></div>
+      </div>
+      <!-- Guide Step 19 Canvas: Dark & Light Mode -->
+      <div class="canvas-image" data-slide="guide-19">
+        <img src="images/onboarding/onb19ai-store-black.png" alt="Dark & Light Mode" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 19: Dark & Light Mode</div><div class="canvas-caption-sub">Designed to look stunning in deep OLED dark theme and crisp daytime light mode.</div></div>
+      </div>
+      <!-- Guide Step 20 Canvas: Ready to Create -->
+      <div class="canvas-image" data-slide="guide-20">
+        <img src="images/onboarding/onb20ai-store-black.png" alt="Ready to Create" loading="lazy">
+        <div class="canvas-caption"><div class="canvas-caption-title">Step 20: Ready to Create</div><div class="canvas-caption-sub">You are all set. Pick your first shot and bring your photographic vision to life.</div></div>
+      </div>
+      <!-- Guide Video Demo Slide -->
+      <div class="canvas-image" data-slide="guide-video">
+        <video class="canvas-video" playsinline loop muted autoplay controls preload="metadata">
+          <source src="demo_video/iPhone_18_Pro_Max_0.mp4" type="video/mp4">
+          <source src="demo_video/iPhone_18_Pro_Max_0.mov" type="video/quicktime">
+        </video>
+        <div class="canvas-caption">
+          <div class="canvas-caption-title">iPhone 18 Pro Video Demo</div>
+          <div class="canvas-caption-sub">Complete tour walkthrough &middot; Project 6</div>
+        </div>
       </div>
 
-      <!-- Context slides -->
+      <!-- Context Showcases for Panels (About, Support, Privacy) -->
       <div class="canvas-context" data-context="about">
-        <img src="images/templatemo-split-02.jpg" alt="About Showcase">
-        <div class="canvas-caption"><div class="canvas-caption-title">Project 06 Philosophy</div><div class="canvas-caption-sub">Crafted for iOS &middot; Hakob Ghlijyan</div></div>
+        <img src="images/cover.png" alt="Project 6 Ecosystem" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title" data-i18n="canvasAboutTitle">Project 6 Ecosystem</div>
+          <div class="canvas-caption-sub" data-i18n="canvasAboutSub">iPhone &amp; iPad Native Architecture &middot; Studio-Grade Editing</div>
+        </div>
       </div>
+
       <div class="canvas-context" data-context="support">
-        <img src="images/templatemo-split-03.jpg" alt="Support Showcase">
-        <div class="canvas-caption"><div class="canvas-caption-title">Direct Support</div><div class="canvas-caption-sub">hakobghlijyan@gmail.com</div></div>
+        <img src="images/cover.png" alt="Direct Support" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title" data-i18n="canvasSupportTitle">Support &amp; User Inquiries</div>
+          <div class="canvas-caption-sub" data-i18n="canvasSupportSub">Direct developer assistance &middot; hakobghlijyan@gmail.com</div>
+        </div>
       </div>
+
       <div class="canvas-context" data-context="privacy">
-        <img src="images/templatemo-split-04.jpg" alt="Privacy Showcase">
-        <div class="canvas-caption"><div class="canvas-caption-title">Privacy Architecture</div><div class="canvas-caption-sub">100% On-Device &middot; Zero Trackers</div></div>
+        <img src="images/cover.png" alt="Privacy Architecture" loading="lazy">
+        <div class="canvas-caption">
+          <div class="canvas-caption-title" data-i18n="canvasPrivacyTitle">100% On-Device Native Privacy</div>
+          <div class="canvas-caption-sub" data-i18n="canvasPrivacySub">Zero data tracking &middot; Zero telemetry &middot; SwiftData &amp; CloudKit</div>
+        </div>
       </div>
+
     </div>
+
   </div>
 
+  <!-- =========================================================================
+       MARK: - SITE FOOTER (Подвал)
+       ========================================================================= -->
   <footer class="site-footer">
-    <span>&copy; 2026 Hakob Ghlijyan &middot; Project 06 is built with native Swift.</span>
+    <span>&copy; 2026 Hakob Ghlijyan &middot; Project 6 is built with Apple Core Image &amp; SwiftData.</span>
     <div class="footer-links">
       <a href="../index.html" data-i18n="portfolio">Portfolio</a>
       <span>&middot;</span>
@@ -412,6 +1353,7 @@
     </div>
   </footer>
 
+  <!-- MARK: - Main Application Scripts -->
   <script src="assets/contact-form.js"></script>
   <script src="assets/main.js"></script>
 </body>

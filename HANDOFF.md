@@ -1,26 +1,41 @@
-# Session Handoff
+# Session Handoff — Golden Standardization & Multi-Project Deployment
 
-## Current Status
-- **Synchronized Standardization Across All Three Showcase Sites (`FilterStudio/`, `CentSweep/`, `Nightwell/`):**
-  - **Centered Header Navigation (`.site-header-center`):**
-    - The navigation group — starting from the `← Portfolio` button through all section tabs (`Features`, `Screens`, `Overview`/`Screenshots`, `About`, `Support`, `Privacy`) — is strictly centered horizontally across the header on all 3 sites (`position: absolute; left: 50%; transform: translateX(-50%);`).
-    - Left side retains `.site-header-left` (App Icon + App Name).
-    - Right side retains `.site-actions` (App Store / Coming Soon button, language selector, hamburger menu).
-    - Responsive mobile (<= 640px): Brand name and `← Portfolio` button stay visible next to each other on the left; all section tabs open via the hamburger menu.
-  - **Right-Aligned Banner QR Code (`.live-qr`):**
-    - On all 3 sites, `.live-card` has `justify-content: space-between; gap: 1.2rem;` and `.live-text` has `flex: 1;`.
-    - `.live-qr` is pinned to the right (`margin: 0 0 0 auto; text-align: right; align-items: flex-end;`). The QR image and caption text are strictly right-aligned, preventing any horizontal jitter or shifting when toggling languages.
-  - **Header & Section Typography Standardized in Nightwell:**
-    - Standardized Nightwell's header fonts: `.site-brand` uses `var(--font-serif); font-size: 1.15rem; font-weight: 800;`, `.portfolio-back-link` uses `var(--font-mono); font-size: 0.68rem; font-weight: 400;`, `.site-nav-tabs a` uses `var(--font-sans); font-weight: 500; font-size: 0.76rem;`, `.site-nav-tabs a.nav-active` uses `font-weight: 600;`, `.header-appstore-btn` and `.lang-btn` use `var(--font-mono); font-size: 0.68rem; font-weight: 400;`. Eliminated oversized/heavy Playfair and bold weights in Nightwell's header.
-    - Standardized section titles and eyebrows in Nightwell's About, Support, and Privacy: `.about-headline`, `.contact-headline` now use `clamp(1.4rem, 2.3vw, 2.1rem); font-family: var(--font-serif); font-weight: 700;` (reduced from `clamp(1.8rem, 3vw, 2.8rem); font-weight: 800;`), and `.about-label`, `.contact-label` use `0.68rem; font-family: var(--font-mono); font-weight: 400; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 0.6rem;`, matching FilterStudio and CentSweep exactly.
-  - **All Collapsible Sections Default to Closed:**
-    - Across all 3 sites, all `<details class="faq-card">` and `<details class="policy-card">` in Support and Privacy start closed (all `open` attributes removed). Users open whichever section they choose via the `+` button.
+**Date:** November 12, 2026  
+**Active Branch:** `dev/FeaturesUpdateAndAddNewFilterStudio`  
+**Current Status:** All 3 core showcase sites (`FilterStudio/`, `CentSweep/`, `Nightwell/`) fully standardized, harmonized, and verified. Universal neutral template `Project-Template/` authored and successfully mirrored to `Project-4/`, `Project-5/`, and `Project-6/`.
 
-## Next Steps
-1. User verification of the 3 synchronized sites on Live Server (Desktop, iPad, Mobile).
-2. Create neutral-grey `Project-Template/` using this identical, rock-solid architecture.
-3. Commit and push to `dev/FeaturesUpdateAndAddNewFilterStudio`.
+---
 
-## Working Branch & Git State
-- Working Tree: `/Users/hakobghlijyan/Library/Mobile Documents/com~apple~CloudDocs/Developer/GitHub/HakobGhlijyan.github.io`
-- Branch: `dev/FeaturesUpdateAndAddNewFilterStudio`
+## 1. Accomplishments in This Session
+
+1. **Header & Navigation Harmonization:**
+   - On `FilterStudio/`, `CentSweep/`, and `Nightwell/`, navigation group (`← Portfolio` button through section tabs) is horizontally centered on desktop via `.site-header-center` (`left: 50%; transform: translateX(-50%);`).
+   - On mobile (≤ 640px), brand and `← Portfolio` button sit together; section tabs cleanly toggle via the hamburger overlay.
+   - Standardized Nightwell nav tab from "Screenshots" to concise "Screens" (`data-en="Screens" data-ru="Скрины"`), matching CentSweep and FilterStudio.
+
+2. **Banner Live-Card & QR Pinned Right:**
+   - Added clean white 400x400 vector QR code for Filter Studio at `assets/FilterStudio - marketingtools/qr-code-white.png`, replacing temporary dark square.
+   - Pinned `.live-qr` to the far right (`margin: 0 0 0 auto; text-align: right; align-items: flex-end;`) across all projects.
+
+3. **Zero Auto-Open Accordions & Spacing:**
+   - Removed `open` attribute from all `<details>` in Support and Privacy Policy across all sites.
+   - Standardized breathing room under sticky headers: set `padding-top: 1.2rem;` on `.panel-body-content` in CentSweep & FilterStudio, eliminating awkward glued-to-border gaps on "Talk to the developer".
+   - Aligned Nightwell sticky screens header padding to `1.6rem 42px 0.8rem;` and unified `.canvas-placeholder` to `inset: 2rem; border-radius: 18px;`.
+   - Fixed `.panel-footer` text-transform in Nightwell so App Store button retains natural Title Case.
+
+4. **Universal Neutral Slate `Project-Template/` & Projects 4–6:**
+   - Authored modern neutral grey template in `Project-Template/` using FilterStudio architecture: slate grey accents (`#94A3B8`, `#CBD5E1`), dark slate pedestal (`#0B0F17`), geometric app icon squircles, right-aligned QR code, clean empty canvas on load, and 6 full panels.
+   - Mirrored to `Project-4/`, `Project-5/`, and `Project-6/` with automated title and path adaptation. All links from root `index.html` load responsive 200 OK showcases.
+
+---
+
+## 2. Verification
+- Live dev server `http://127.0.0.1:5500/` verified:
+  - `CentSweep/`: 200 OK
+  - `Nightwell/`: 200 OK
+  - `FilterStudio/`: 200 OK
+  - `Project-Template/`: 200 OK
+  - `Project-4/`: 200 OK
+  - `Project-5/`: 200 OK
+  - `Project-6/`: 200 OK
+- All 3 showcases start with a clean placeholder canvas (`Hover over an item to inspect`) and display the right item on hover/click.
