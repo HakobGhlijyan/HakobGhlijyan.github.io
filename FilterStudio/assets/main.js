@@ -23,7 +23,7 @@ const dictionaries = {
     liveTitle: 'Coming Soon on the App Store',
     liveDesc: 'A calm, fast photo editor for iPhone and iPad with live previews, versions, and private iCloud sync.',
     liveBadgeText: 'App Store',
-    liveQr: 'Filter Studio for iOS',
+    liveQr: 'Scan to download',
     hoverInspect: 'Hover module to inspect',
 
     feat1Title: 'Filters with Live Preview',
@@ -149,7 +149,7 @@ const dictionaries = {
     liveTitle: 'Скоро в App Store',
     liveDesc: 'Спокойный и быстрый фоторедактор для iPhone и iPad с живым превью, версиями и приватной синхронизацией через iCloud.',
     liveBadgeText: 'App Store',
-    liveQr: 'Filter Studio для iOS',
+    liveQr: 'Сканируйте QR',
     hoverInspect: 'Наведите на модуль для просмотра',
 
     feat1Title: 'Фильтры с живым просмотром',
@@ -275,7 +275,7 @@ const dictionaries = {
     liveTitle: 'Bientôt sur l’App Store',
     liveDesc: 'Un éditeur photo rapide et serein pour iPhone et iPad avec aperçus en direct, versions et synchronisation iCloud privée.',
     liveBadgeText: 'App Store',
-    liveQr: 'Filter Studio pour iOS',
+    liveQr: 'Scannez le QR',
     hoverInspect: 'Survolez un module pour inspecter',
 
     feat1Title: 'Filtres en aperçu direct',
@@ -401,7 +401,7 @@ const dictionaries = {
     liveTitle: 'Demnächst im App Store',
     liveDesc: 'Ein ruhiger, schneller Foto-Editor für iPhone und iPad mit Live-Vorschau, Versionen und privater iCloud-Synchronisation.',
     liveBadgeText: 'App Store',
-    liveQr: 'Filter Studio für iOS',
+    liveQr: 'QR scannen',
     hoverInspect: 'Modul berühren zum Inspizieren',
 
     feat1Title: 'Filter mit Live-Vorschau',
@@ -527,7 +527,7 @@ const dictionaries = {
     liveTitle: 'Próximamente en el App Store',
     liveDesc: 'Un editor de fotos ágil y privado para iPhone y iPad con vista previa en vivo, versiones y sincronización en iCloud.',
     liveBadgeText: 'App Store',
-    liveQr: 'Filter Studio para iOS',
+    liveQr: 'Escanear QR',
     hoverInspect: 'Pasa el cursor para inspeccionar',
 
     feat1Title: 'Filtros con vista previa',
@@ -653,7 +653,7 @@ const dictionaries = {
     liveTitle: 'In arrivo su App Store',
     liveDesc: 'Un editor fotografico fluido e riservato per iPhone e iPad con anteprime dal vivo, versioni e sincronizzazione iCloud.',
     liveBadgeText: 'App Store',
-    liveQr: 'Filter Studio per iOS',
+    liveQr: 'Scansiona QR',
     hoverInspect: 'Passa il cursore per ispezionare',
 
     feat1Title: 'Filtri con anteprima live',

@@ -316,6 +316,17 @@
 - **Стандартизация соотношения сторон в Nightwell**:
   - В `Nightwell/css/split-style.css` внедрены глобальные токены `--info-width: 44vw;` и `--canvas-width: 56vw;`, приводящие все три сайта к абсолютно идентичным пропорциям двух колонок.
 
+### Итерация 22: Закреплённые (sticky) заголовки секций Overview, Support и Privacy, синий dash канваса и стандартизация QR («Scan to download»)
+- **Привязка баннера Features к верху и единый поток сверху вниз**:
+  - В `#panel-features` вертикальное выравнивание изменено с `justify-content: center;` на `justify-content: flex-start; padding: 1.2rem 0;`. Баннер Coming Soon теперь прикреплён к верху прямо под шапкой сайта.
+- **Липкие заголовки (Sticky Headers)**:
+  - Секции Overview (`#panel-guide`), Support (`#panel-support`) и Privacy (`#panel-privacy`) получили стилизацию `position: sticky; top: 0; backdrop-filter: blur(16px);`. Заголовок секции остаётся прикреплённым вверху, в то время как карточки шагов, форма обратной связи и статьи политики конфиденциальности скроллятся под ним точно так же, как в разделе Screens.
+- **Синий цвет прерывистой линии канваса (Blue dash)**:
+  - Цвет `--canvas-card-border` переведён на чистый синий оттенок `rgba(76, 141, 255, 0.55)`.
+  - Рамка `.canvas-placeholder` и иконка плейсхолдера `.placeholder-icon` избавлены от желтоватого оттенка и переведены на цвет синей темы `#4C8DFF`.
+- **Стандартизация подписи QR-кода**:
+  - Подпись QR переведена на общее значение «Scan to download» в HTML и словарях всех 6 языков (`Сканируйте QR`, `Scannez le QR`, `QR scannen`, `Escanear QR`, `Scansiona QR`).
+
 ---
 
 ## 6. Engineer's Wisdom

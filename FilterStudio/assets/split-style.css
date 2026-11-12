@@ -31,7 +31,7 @@
 	
 	/* Deep Night Navy Canvas Pedestal / Темный благородный сине-ночной фон под мокапы и cover */
 	--canvas-card-bg: radial-gradient(135% 115% at 50% 18%, #16243d 0%, #0c1527 50%, #060b16 100%);
-	--canvas-card-border: rgba(76, 141, 255, 0.28);
+	--canvas-card-border: rgba(76, 141, 255, 0.55);
 	--canvas-card-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
 	--caption-bg: linear-gradient(to top, rgba(6, 11, 22, 0.98) 0%, rgba(12, 21, 39, 0.88) 60%, transparent 100%);
 	--caption-title: #F6D743;
@@ -612,14 +612,14 @@ a {
 	width: 20px;
 }
 
-/* ── Panel: Features (Nightwell-Style Layout & Typography) ── */
+/* ── Panel: Features (Top-aligned flow, Nightwell-Style Typography) ── */
 #panel-features {
-	justify-content: center;
-	padding: 1.4rem 0;
+	justify-content: flex-start;
+	padding: 1.2rem 0;
 }
 
 #panel-features .panel-header {
-	padding: 0 2.8rem 1.3rem;
+	padding: 0 42px 0.8rem;
 }
 
 #panel-features .panel-header span {
@@ -732,6 +732,20 @@ a {
 /* =========================================================================
    MARK: - 7. GUIDE, ABOUT, SUPPORT, PRIVACY PANELS (Панели контента)
    ========================================================================= */
+/* Sticky Headers for Overview, Support & Privacy (как в Screens) */
+#panel-guide .panel-hero,
+#panel-support .panel-hero,
+#panel-privacy .panel-hero {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background: var(--surface);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	padding: 1.8rem 2.8rem 1rem;
+	border-bottom: 1px solid var(--line);
+}
+
 .panel-body-content {
 	padding: 1.8rem 2.8rem 3rem;
 }
@@ -1026,7 +1040,7 @@ a {
 	position: absolute;
 	inset: 2rem;
 	border-radius: 18px;
-	border: 1.5px dashed var(--line-strong);
+	border: 1.5px dashed var(--canvas-card-border);
 	background: var(--surface);
 	backdrop-filter: blur(8px);
 	-webkit-backdrop-filter: blur(8px);
@@ -1048,8 +1062,8 @@ a {
 	width: 48px;
 	height: 48px;
 	border-radius: 50%;
-	border: 1.5px solid var(--line-strong);
-	background: rgba(87, 217, 159, 0.1);
+	border: 1.5px solid var(--canvas-card-border);
+	background: rgba(76, 141, 255, 0.12);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -1058,7 +1072,7 @@ a {
 .placeholder-icon svg {
 	width: 20px;
 	height: 20px;
-	stroke: var(--green);
+	stroke: #4C8DFF;
 	fill: none;
 	stroke-width: 1.8;
 }
