@@ -96,17 +96,21 @@ body::before {
 	pointer-events: auto;
 }
 
-/* Header Left Group / Бренд, Portfolio и табы навигации рядом */
+/* Header Left & Center Groups / Бренд слева, Portfolio и табы навигации строго по центру */
 .site-header-left {
 	display: flex;
 	align-items: center;
-	gap: 1.5rem;
+	gap: 0.85rem;
 }
 
-.site-brand-group {
+.site-header-center {
 	display: flex;
 	align-items: center;
-	gap: 0.85rem;
+	gap: 1.2rem;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	pointer-events: auto;
 }
 
 .site-brand {
@@ -303,6 +307,16 @@ body::before {
 
 #panel-work .panel-header {
 	padding: 0 42px 0.8rem;
+}
+
+#panel-work .panel-header span {
+	font-family: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+	font-weight: 400;
+	font-size: 0.68rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--accent);
+	display: block;
 }
 
 .panel.panel-active {
@@ -851,42 +865,6 @@ body::before {
 	}
 }
 
-.panel-active .project-item {
-	animation: fadeSlideUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) backwards;
-}
-
-.panel-active .project-item:nth-child(1) {
-	animation-delay: 0.08s;
-}
-
-.panel-active .project-item:nth-child(2) {
-	animation-delay: 0.12s;
-}
-
-.panel-active .project-item:nth-child(3) {
-	animation-delay: 0.16s;
-}
-
-.panel-active .project-item:nth-child(4) {
-	animation-delay: 0.20s;
-}
-
-.panel-active .project-item:nth-child(5) {
-	animation-delay: 0.24s;
-}
-
-.panel-active .project-item:nth-child(6) {
-	animation-delay: 0.28s;
-}
-
-.panel-active .project-item:nth-child(7) {
-	animation-delay: 0.32s;
-}
-
-.panel-active .project-item:nth-child(8) {
-	animation-delay: 0.36s;
-}
-
 /* ── Mobile Responsive ── */
 @media (max-width: 900px) {
 	body {
@@ -1074,6 +1052,84 @@ body::before {
 	padding-top: 0.75rem;
 }
 
+/* Policy Container & Cards (Sectional Privacy Policy matching FilterStudio and CentSweep) */
+.policy-container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	margin: 0.5rem 0 2rem;
+	width: 100%;
+}
+
+.policy-card {
+	border: 1px solid var(--ocean-border);
+	border-radius: 8px;
+	background: rgba(10, 31, 56, 0.55);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	overflow: hidden;
+	transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.policy-card:hover {
+	border-color: var(--ocean-border-strong);
+	background: rgba(13, 44, 82, 0.7);
+}
+
+.policy-card[open] {
+	background: rgba(14, 42, 75, 0.85);
+	border-color: var(--accent);
+	box-shadow: 0 4px 20px rgba(3, 12, 24, 0.4);
+}
+
+.policy-card summary {
+	padding: 0.95rem 1.25rem;
+	font-family: 'Instrument Sans', sans-serif;
+	font-weight: 600;
+	font-size: 0.88rem;
+	color: var(--ink);
+	cursor: pointer;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	user-select: none;
+	transition: color 0.2s ease;
+}
+
+.policy-card summary:hover {
+	color: var(--accent-hover);
+}
+
+.policy-card summary::-webkit-details-marker {
+	display: none;
+}
+
+.policy-card summary::after {
+	content: '+';
+	font-family: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+	font-size: 1.15rem;
+	font-weight: 400;
+	color: var(--accent);
+	transition: transform 0.25s ease;
+}
+
+.policy-card[open] summary::after {
+	content: '−';
+}
+
+.policy-card[open] summary {
+	border-bottom: 1px solid var(--ocean-border);
+}
+
+.policy-card .faq-body {
+	padding: 1rem 1.25rem 1.1rem;
+	font-family: 'Instrument Sans', sans-serif;
+	font-size: 0.84rem;
+	line-height: 1.65;
+	color: var(--ink-light);
+}
+
 /* MARK: - Badges & Coming Soon Button / Кнопка App Store */
 .app-store-badge {
 	display: inline-flex;
@@ -1164,7 +1220,8 @@ body::before {
 .live-card {
 	display: flex;
 	align-items: flex-start;
-	gap: 1rem;
+	justify-content: space-between;
+	gap: 1.2rem;
 	margin: 0 42px 1.2rem;
 	padding: 0.9rem 1.1rem;
 	background: var(--ocean-glass);
@@ -1176,7 +1233,7 @@ body::before {
 	flex-shrink: 0;
 	width: 64px;
 	height: 64px;
-	border-radius: 14px;
+	border-radius: 15px;
 	display: block;
 }
 
@@ -1218,12 +1275,12 @@ body::before {
 
 .live-qr {
 	flex-shrink: 0;
-	margin: 0;
+	margin: 0 0 0 auto;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: flex-end;
 	justify-content: flex-start;
-	text-align: center;
+	text-align: right;
 }
 
 .live-qr img,
@@ -1234,15 +1291,19 @@ body::before {
 	border-radius: 8px;
 	background: #000000;
 	border: 1px solid var(--ocean-border);
+	margin-left: auto;
+	margin-right: 0;
 }
 
 .live-qr figcaption {
-	margin-top: 0.3rem;
-	font-family: 'DM Mono', monospace;
+	margin-top: 0.4rem;
+	font-family: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
 	font-size: 0.58rem;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
 	color: var(--ink-light);
+	text-align: right;
+	width: 100%;
 }
 
 /* MARK: - Custom Language Dropdown (EN / RU) */
@@ -1475,14 +1536,18 @@ body.menu-open {
 @media (max-width: 640px) {
 	.site-header {
 		padding: 0.75rem 1.1rem;
+		position: relative;
 	}
 
 	.site-header-left {
-		gap: 0.6rem;
+		gap: 0.55rem;
 	}
 
-	.site-brand-group {
-		gap: 0.55rem;
+	.site-header-center {
+		position: static;
+		transform: none;
+		margin-left: 0.6rem;
+		margin-right: auto;
 	}
 
 	.site-brand span {

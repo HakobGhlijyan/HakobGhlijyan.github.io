@@ -85,17 +85,19 @@
        MARK: - SITE HEADER & BRAND (Шапка и переключатели)
        ========================================================================= -->
   <header class="site-header">
-    <!-- Header Left: Brand, Portfolio Button & Navigation Tabs side-by-side -->
+    <!-- Header Left: Site Brand Logo & Name -->
     <div class="site-header-left">
-      <div class="site-brand-group">
-        <a class="site-brand" data-nav="work" href="#work">
-          <img class="site-brand-icon" src="assets/icons/x512_light.svg" alt="Nightwell">
-          <span>Nightwell</span>
-        </a>
-        <a href="../index.html" class="portfolio-back-link" title="Return to Hakob Ghlijyan Portfolio">
-          &larr; <span data-en="Portfolio" data-ru="Портфолио">Portfolio</span>
-        </a>
-      </div>
+      <a class="site-brand" data-nav="work" href="#work">
+        <img class="site-brand-icon" src="assets/icons/x512_light.svg" alt="Nightwell">
+        <span>Nightwell</span>
+      </a>
+    </div>
+
+    <!-- Header Center: Portfolio Button & Navigation Tabs (Centered Horizontally) -->
+    <div class="site-header-center">
+      <a href="../index.html" class="portfolio-back-link" title="Return to Hakob Ghlijyan Portfolio">
+        &larr; <span data-en="Portfolio" data-ru="Портфолио">Portfolio</span>
+      </a>
 
       <!-- Navigation Tabs / Вкладки разделов -->
       <nav class="site-nav-tabs">
@@ -653,20 +655,71 @@
 
         <div class="about-content no-scrollbar" style="padding:1.4rem 3rem 3rem; overflow-y:auto; max-height:calc(100vh - 200px);">
 
-          <div style="font-size:0.88rem; line-height:1.7; color:var(--ink); font-family:'Instrument Sans', sans-serif;">
-            <p data-en="<strong>1. Summary:</strong> The Nightwell app does not collect your personal data. No accounts, no advertising, no tracking, and no third-party analytics SDKs. Your data stays on your devices and in your own private iCloud." data-ru="<strong>1. Кратко:</strong> Приложение Nightwell не собирает ваши личные данные. Без аккаунтов, рекламы, слежки и сторонних аналитических SDK. Ваши данные остаются на ваших устройствах и в вашем личном iCloud."><strong>1. Summary:</strong> The Nightwell app does not collect your personal data. No accounts, no advertising, no tracking, and no third-party analytics SDKs. Your data stays on your devices and in your own private iCloud.</p>
-            <p style="margin-top:0.8rem;" data-en="<strong>2. Who we are:</strong> Hakob Ghlijyan, independent developer based in Yerevan, Armenia. Contact: <a href='mailto:hakobghlijyan@gmail.com' style='text-decoration:underline; color:var(--accent);'>hakobghlijyan@gmail.com</a>." data-ru="<strong>2. Кто мы:</strong> Акоб Клиджян, независимый разработчик из Еревана (Армения). Контакт: <a href='mailto:hakobghlijyan@gmail.com' style='text-decoration:underline; color:var(--accent);'>hakobghlijyan@gmail.com</a>."><strong>2. Who we are:</strong> Hakob Ghlijyan, independent developer based in Yerevan, Armenia. Contact: <a href='mailto:hakobghlijyan@gmail.com' style='text-decoration:underline; color:var(--accent);'>hakobghlijyan@gmail.com</a>.</p>
-            <p style="margin-top:0.8rem;" data-en="<strong>3. What the app stores:</strong> Sleep sessions (start and end times), your star ratings, notes you may write, optional factors (e.g. coffee, exercise, stress), settings (bedtime, wake time, alarms), and a local cache for widgets and Apple Watch. Notes are free text that you control: write only what you are comfortable keeping. Ratings, notes and factors sync through your own iCloud (see section 4)." data-ru="<strong>3. Что хранит приложение:</strong> сессии сна (время начала и конца), ваши оценки, заметки, которые вы можете написать, необязательные факторы (например, кофе, тренировки, стресс), настройки (время сна, подъема, будильники) и локальный кэш для виджетов и Apple Watch. Заметки — это свободный текст, который вы контролируете: пишите только то, что готовы хранить. Оценки, заметки и факторы синхронизируются через ваш собственный iCloud (см. раздел 4)."><strong>3. What the app stores:</strong> Sleep sessions (start and end times), your star ratings, notes you may write, optional factors (e.g. coffee, exercise, stress), settings (bedtime, wake time, alarms), and a local cache for widgets and Apple Watch. Notes are free text that you control: write only what you are comfortable keeping. Ratings, notes and factors sync through your own iCloud (see section 4).</p>
-            <p style="margin-top:0.8rem;" data-en="<strong>4. iCloud:</strong> Sessions, ratings, notes, factors and settings sync solely through your personal iCloud account (CloudKit private database). The developer cannot access or view your records." data-ru="<strong>4. iCloud:</strong> Сессии, оценки, заметки, факторы и настройки синхронизируются только через ваш личный аккаунт iCloud (приватная база CloudKit). Разработчик не имеет доступа к вашим записям и не может их видеть."><strong>4. iCloud:</strong> Sessions, ratings, notes, factors and settings sync solely through your personal iCloud account (CloudKit private database). The developer cannot access or view your records.</p>
-            <p style="margin-top:0.8rem;" data-en="<strong>5. Apple Health:</strong> Writing finished nights to Health is optional. Reading sleep stages from Apple Watch is read-only, on-demand, shown on screen, and never stored, synced, or monetized." data-ru="<strong>5. Apple Health:</strong> Запись завершенных ночей в «Здоровье» опциональна. Чтение фаз сна с Apple Watch выполняется только на чтение и по запросу, показывается на экране и никогда не сохраняется, не синхронизируется и не монетизируется."><strong>5. Apple Health:</strong> Writing finished nights to Health is optional. Reading sleep stages from Apple Watch is read-only, on-demand, shown on screen, and never stored, synced, or monetized.</p>
-            <p style="margin-top:0.8rem;" data-en="<strong>6. Permissions:</strong> Alarms (AlarmKit to ring even on silent), Notifications (bedtime reminders), Health (optional). No location, contacts, camera, or advertising identifier are ever accessed." data-ru="<strong>6. Разрешения:</strong> будильники (AlarmKit, чтобы звонить даже в беззвучном режиме), уведомления (напоминания о сне), Здоровье (опционально). Геолокация, контакты, камера и рекламный идентификатор не используются."><strong>6. Permissions:</strong> Alarms (AlarmKit to ring even on silent), Notifications (bedtime reminders), Health (optional). No location, contacts, camera, or advertising identifier are ever accessed.</p>
-            <p style="margin-top:0.8rem;" data-en="<strong>7. What we do not do:</strong> No sale of data, no tracking, no behavioral profiling, no marketing SDKs, and no third-party trackers in the app." data-ru="<strong>7. Чего мы не делаем:</strong> не продаем данные, не отслеживаем, не профилируем поведение, не используем маркетинговые SDK и сторонние трекеры в приложении."><strong>7. What we do not do:</strong> No sale of data, no tracking, no behavioral profiling, no marketing SDKs, and no third-party trackers in the app.</p>
-            <p style="margin-top:0.8rem;" data-en="<strong>8. Diagnostic logs:</strong> Only local system logs on your device in case of crashes. No health data or personal notes are included." data-ru="<strong>8. Диагностические логи:</strong> только локальные системные журналы на вашем устройстве на случай сбоев. Данные о здоровье и личные заметки в них не попадают."><strong>8. Diagnostic logs:</strong> Only local system logs on your device in case of crashes. No health data or personal notes are included.</p>
-            <p style="margin-top:0.8rem;" data-en="<strong>9. Data export and deletion:</strong> Export anytime as CSV or JSON in app Settings → Export Data. To delete all data: delete the app, then on iPhone open Settings → [Your Name] → iCloud → Manage Storage → Night Well → Delete Data. If you enabled saving to Apple Health, those records are managed in the Health app and can be deleted there." data-ru="<strong>9. Экспорт и удаление данных:</strong> экспорт в любой момент в формате CSV или JSON: Настройки приложения → Экспорт данных. Чтобы удалить все данные: удалите приложение, затем на iPhone откройте Настройки → [Ваше имя] → iCloud → Управление хранилищем → Night Well → Удалить данные. Если вы включили сохранение в Apple Health, эти записи находятся в приложении «Здоровье» и удаляются там."><strong>9. Data export and deletion:</strong> Export anytime as CSV or JSON in app Settings → Export Data. To delete all data: delete the app, then on iPhone open Settings → [Your Name] → iCloud → Manage Storage → Night Well → Delete Data. If you enabled saving to Apple Health, those records are managed in the Health app and can be deleted there.</p>
-            <p style="margin-top:0.8rem;" data-en="<strong>10. Children:</strong> The app does not collect personal data from anyone, including children." data-ru="<strong>10. Дети:</strong> приложение не собирает личные данные ни от кого, включая детей."><strong>10. Children:</strong> The app does not collect personal data from anyone, including children.</p>
-            <p style="margin-top:0.8rem;" data-en="<strong>11. Security:</strong> Guarded by Apple device encryption and iCloud security architectures. The app runs without external servers." data-ru="<strong>11. Безопасность:</strong> данные защищены шифрованием устройств Apple и архитектурой безопасности iCloud. Приложение работает без внешних серверов."><strong>11. Security:</strong> Guarded by Apple device encryption and iCloud security architectures. The app runs without external servers.</p>
-            <p style="margin-top:0.8rem;" data-en="<strong>12. This website:</strong> The website is hosted on GitHub Pages and loads fonts from Google Fonts, so GitHub and Google may receive your IP address and browser details when you visit. If you use the contact form, your name, email address and message are passed through the Web3Forms service to the developer's mailbox and used only to reply to you. The app itself contains none of these services." data-ru="<strong>12. Этот сайт:</strong> сайт размещен на GitHub Pages и загружает шрифты с Google Fonts, поэтому GitHub и Google могут получить ваш IP-адрес и данные браузера при посещении. Если вы пользуетесь формой связи, ваше имя, адрес электронной почты и сообщение передаются через сервис Web3Forms на почту разработчика и используются только для ответа вам. В самом приложении этих сервисов нет."><strong>12. This website:</strong> The website is hosted on GitHub Pages and loads fonts from Google Fonts, so GitHub and Google may receive your IP address and browser details when you visit. If you use the contact form, your name, email address and message are passed through the Web3Forms service to the developer's mailbox and used only to reply to you. The app itself contains none of these services.</p>
-            <p style="margin-top:0.8rem;" data-en="<strong>13. Contact:</strong> If you have privacy questions, write to <a href='mailto:hakobghlijyan@gmail.com' style='text-decoration:underline; color:var(--accent);'>hakobghlijyan@gmail.com</a>." data-ru="<strong>13. Контакты:</strong> по вопросам приватности пишите на <a href='mailto:hakobghlijyan@gmail.com' style='text-decoration:underline; color:var(--accent);'>hakobghlijyan@gmail.com</a>."><strong>13. Contact:</strong> If you have privacy questions, write to <a href='mailto:hakobghlijyan@gmail.com' style='text-decoration:underline; color:var(--accent);'>hakobghlijyan@gmail.com</a>.</p>
+          <div class="faq-container policy-container">
+            <details class="faq-card policy-card" open>
+              <summary data-en="1. Summary" data-ru="1. Кратко">1. Summary</summary>
+              <div class="faq-body" data-en="The Nightwell app does not collect your personal data. No accounts, no advertising, no tracking, and no third-party analytics SDKs. Your data stays on your devices and in your own private iCloud." data-ru="Приложение Nightwell не собирает ваши личные данные. Без аккаунтов, рекламы, слежки и сторонних аналитических SDK. Ваши данные остаются на ваших устройствах и в вашем личном iCloud.">The Nightwell app does not collect your personal data. No accounts, no advertising, no tracking, and no third-party analytics SDKs. Your data stays on your devices and in your own private iCloud.</div>
+            </details>
+
+            <details class="faq-card policy-card">
+              <summary data-en="2. Who We Are" data-ru="2. Кто мы">2. Who We Are</summary>
+              <div class="faq-body" data-en="Hakob Ghlijyan, independent developer based in Yerevan, Armenia. Contact: <a href='mailto:hakobghlijyan@gmail.com' style='text-decoration:underline; color:var(--accent);'>hakobghlijyan@gmail.com</a>." data-ru="Акоб Клиджян, независимый разработчик из Еревана (Армения). Контакт: <a href='mailto:hakobghlijyan@gmail.com' style='text-decoration:underline; color:var(--accent);'>hakobghlijyan@gmail.com</a>.">Hakob Ghlijyan, independent developer based in Yerevan, Armenia. Contact: <a href="mailto:hakobghlijyan@gmail.com" style="text-decoration:underline; color:var(--accent);">hakobghlijyan@gmail.com</a>.</div>
+            </details>
+
+            <details class="faq-card policy-card">
+              <summary data-en="3. What the App Stores" data-ru="3. Что хранит приложение">3. What the App Stores</summary>
+              <div class="faq-body" data-en="Sleep sessions (start and end times), your star ratings, notes you may write, optional factors (e.g. coffee, exercise, stress), settings (bedtime, wake time, alarms), and a local cache for widgets and Apple Watch. Notes are free text that you control: write only what you are comfortable keeping. Ratings, notes and factors sync through your own iCloud (see section 4)." data-ru="Сессии сна (время начала и конца), ваши оценки, заметки, которые вы можете написать, необязательные факторы (например, кофе, тренировки, стресс), настройки (время сна, подъема, будильники) и локальный кэш для виджетов и Apple Watch. Заметки — это свободный текст, который вы контролируете: пишите только то, что готовы хранить. Оценки, заметки и факторы синхронизируются через ваш собственный iCloud (см. раздел 4).">Sleep sessions (start and end times), your star ratings, notes you may write, optional factors (e.g. coffee, exercise, stress), settings (bedtime, wake time, alarms), and a local cache for widgets and Apple Watch. Notes are free text that you control: write only what you are comfortable keeping. Ratings, notes and factors sync through your own iCloud (see section 4).</div>
+            </details>
+
+            <details class="faq-card policy-card">
+              <summary data-en="4. iCloud" data-ru="4. iCloud">4. iCloud</summary>
+              <div class="faq-body" data-en="Sessions, ratings, notes, factors and settings sync solely through your personal iCloud account (CloudKit private database). The developer cannot access or view your records." data-ru="Сессии, оценки, заметки, факторы и настройки синхронизируются только через ваш личный аккаунт iCloud (приватная база CloudKit). Разработчик не имеет доступа к вашим записям и не может их видеть.">Sessions, ratings, notes, factors and settings sync solely through your personal iCloud account (CloudKit private database). The developer cannot access or view your records.</div>
+            </details>
+
+            <details class="faq-card policy-card">
+              <summary data-en="5. Apple Health" data-ru="5. Apple Health">5. Apple Health</summary>
+              <div class="faq-body" data-en="Writing finished nights to Health is optional. Reading sleep stages from Apple Watch is read-only, on-demand, shown on screen, and never stored, synced, or monetized." data-ru="Запись завершенных ночей в «Здоровье» опциональна. Чтение фаз сна с Apple Watch выполняется только на чтение и по запросу, показывается на экране и никогда не сохраняется, не синхронизируется и не монетизируется.">Writing finished nights to Health is optional. Reading sleep stages from Apple Watch is read-only, on-demand, shown on screen, and never stored, synced, or monetized.</div>
+            </details>
+
+            <details class="faq-card policy-card">
+              <summary data-en="6. Permissions" data-ru="6. Разрешения">6. Permissions</summary>
+              <div class="faq-body" data-en="Alarms (AlarmKit to ring even on silent), Notifications (bedtime reminders), Health (optional). No location, contacts, camera, or advertising identifier are ever accessed." data-ru="Будильники (AlarmKit, чтобы звонить даже в беззвучном режиме), уведомления (напоминания о сне), Здоровье (опционально). Геолокация, контакты, камера и рекламный идентификатор не используются.">Alarms (AlarmKit to ring even on silent), Notifications (bedtime reminders), Health (optional). No location, contacts, camera, or advertising identifier are ever accessed.</div>
+            </details>
+
+            <details class="faq-card policy-card">
+              <summary data-en="7. What We Do NOT Do" data-ru="7. Чего мы не делаем">7. What We Do NOT Do</summary>
+              <div class="faq-body" data-en="No sale of data, no tracking, no behavioral profiling, no marketing SDKs, and no third-party trackers in the app." data-ru="Не продаем данные, не отслеживаем, не профилируем поведение, не используем маркетинговые SDK и сторонние трекеры в приложении.">No sale of data, no tracking, no behavioral profiling, no marketing SDKs, and no third-party trackers in the app.</div>
+            </details>
+
+            <details class="faq-card policy-card">
+              <summary data-en="8. Diagnostic Logs" data-ru="8. Диагностические логи">8. Diagnostic Logs</summary>
+              <div class="faq-body" data-en="Only local system logs on your device in case of crashes. No health data or personal notes are included." data-ru="Только локальные системные журналы на вашем устройстве на случай сбоев. Данные о здоровье и личные заметки в них не попадают.">Only local system logs on your device in case of crashes. No health data or personal notes are included.</div>
+            </details>
+
+            <details class="faq-card policy-card">
+              <summary data-en="9. Data Export and Deletion" data-ru="9. Экспорт и удаление данных">9. Data Export and Deletion</summary>
+              <div class="faq-body" data-en="Export anytime as CSV or JSON in app Settings → Export Data. To delete all data: delete the app, then on iPhone open Settings → [Your Name] → iCloud → Manage Storage → Night Well → Delete Data. If you enabled saving to Apple Health, those records are managed in the Health app and can be deleted there." data-ru="Экспорт в любой момент в формате CSV или JSON: Настройки приложения → Экспорт данных. Чтобы удалить все данные: удалите приложение, затем на iPhone откройте Настройки → [Ваше имя] → iCloud → Управление хранилищем → Night Well → Удалить данные. Если вы включили сохранение в Apple Health, эти записи находятся в приложении «Здоровье» и удаляются там.">Export anytime as CSV or JSON in app Settings → Export Data. To delete all data: delete the app, then on iPhone open Settings → [Your Name] → iCloud → Manage Storage → Night Well → Delete Data. If you enabled saving to Apple Health, those records are managed in the Health app and can be deleted there.</div>
+            </details>
+
+            <details class="faq-card policy-card">
+              <summary data-en="10. Children" data-ru="10. Дети">10. Children</summary>
+              <div class="faq-body" data-en="The app does not collect personal data from anyone, including children." data-ru="Приложение не собирает личные данные ни от кого, включая детей.">The app does not collect personal data from anyone, including children.</div>
+            </details>
+
+            <details class="faq-card policy-card">
+              <summary data-en="11. Security" data-ru="11. Безопасность">11. Security</summary>
+              <div class="faq-body" data-en="Guarded by Apple device encryption and iCloud security architectures. The app runs without external servers." data-ru="Данные защищены шифрованием устройств Apple и архитектурой безопасности iCloud. Приложение работает без внешних серверов.">Guarded by Apple device encryption and iCloud security architectures. The app runs without external servers.</div>
+            </details>
+
+            <details class="faq-card policy-card">
+              <summary data-en="12. This Website" data-ru="12. Этот сайт">12. This Website</summary>
+              <div class="faq-body" data-en="The website is hosted on GitHub Pages and loads fonts from Google Fonts, so GitHub and Google may receive your IP address and browser details when you visit. If you use the contact form, your name, email address and message are passed through the Web3Forms service to the developer's mailbox and used only to reply to you. The app itself contains none of these services." data-ru="Сайт размещен на GitHub Pages и загружает шрифты с Google Fonts, поэтому GitHub и Google могут получить ваш IP-адрес и данные браузера при посещении. Если вы пользуетесь формой связи, ваше имя, адрес электронной почты и сообщение передаются через сервис Web3Forms на почту разработчика и используются только для ответа вам. В самом приложении этих сервисов нет.">The website is hosted on GitHub Pages and loads fonts from Google Fonts, so GitHub and Google may receive your IP address and browser details when you visit. If you use the contact form, your name, email address and message are passed through the Web3Forms service to the developer's mailbox and used only to reply to you. The app itself contains none of these services.</div>
+            </details>
+
+            <details class="faq-card policy-card">
+              <summary data-en="13. Contact" data-ru="13. Контакты">13. Contact</summary>
+              <div class="faq-body" data-en="If you have privacy questions, write to <a href='mailto:hakobghlijyan@gmail.com' style='text-decoration:underline; color:var(--accent);'>hakobghlijyan@gmail.com</a>." data-ru="По вопросам приватности пишите на <a href='mailto:hakobghlijyan@gmail.com' style='text-decoration:underline; color:var(--accent);'>hakobghlijyan@gmail.com</a>.">If you have privacy questions, write to <a href="mailto:hakobghlijyan@gmail.com" style="text-decoration:underline; color:var(--accent);">hakobghlijyan@gmail.com</a>.</div>
+            </details>
           </div>
         </div>
       </div>
