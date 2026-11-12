@@ -1231,9 +1231,9 @@ body::before {
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
-	gap: 1.2rem;
+	gap: 1rem;
 	margin: 0 42px 1.2rem;
-	padding: 0.9rem 1.1rem;
+	padding: 0.9rem 1rem;
 	background: var(--ocean-glass);
 	border: 1px solid var(--ocean-border);
 	border-radius: 14px;
@@ -1241,9 +1241,9 @@ body::before {
 
 .live-icon {
 	flex-shrink: 0;
-	width: 64px;
-	height: 64px;
-	border-radius: 15px;
+	width: 56px;
+	height: 56px;
+	border-radius: 14px;
 	display: block;
 }
 
@@ -1251,25 +1251,25 @@ body::before {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 0.35rem;
+	gap: 0.3rem;
 	min-width: 0;
 	flex: 1;
 }
 
 .live-text strong {
-	font-size: 0.95rem;
+	font-size: 0.88rem;
 	color: var(--ink);
 }
 
 .live-text span {
-	font-size: 0.78rem;
+	font-size: 0.74rem;
 	line-height: 1.45;
 	color: var(--ink-light);
 }
 
 .live-badge {
 	display: inline-flex;
-	margin-top: 0.25rem;
+	margin-top: 0.2rem;
 	transition: transform 0.25s ease;
 }
 
@@ -1278,13 +1278,14 @@ body::before {
 }
 
 .live-badge img {
-	height: 38px;
+	height: 34px;
 	width: auto;
 	display: block;
 }
 
 .live-qr {
 	flex-shrink: 0;
+	min-width: 72px; /* RU: не сжимается flex EN: won't be squeezed by flex */
 	margin: 0 0 0 auto;
 	display: flex;
 	flex-direction: column;
@@ -1296,8 +1297,8 @@ body::before {
 .live-qr img,
 .live-qr-placeholder {
 	display: block;
-	width: 84px;
-	height: 84px;
+	width: 72px;
+	height: 72px;
 	border-radius: 8px;
 	background: #000000;
 	border: 1px solid var(--ocean-border);
@@ -1306,9 +1307,9 @@ body::before {
 }
 
 .live-qr figcaption {
-	margin-top: 0.4rem;
+	margin-top: 0.35rem;
 	font-family: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
-	font-size: 0.58rem;
+	font-size: 0.55rem;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
 	color: var(--ink-light);
@@ -1588,7 +1589,7 @@ body.menu-open {
 	}
 
 	.live-card {
-		margin: 0 1.5rem 1rem;
+		margin: 0 1.4rem 1rem;
 	}
 
 	.live-qr {
@@ -1596,7 +1597,7 @@ body.menu-open {
 	}
 
 	.live-icon {
-		width: 52px;
-		height: 52px;
+		width: 48px;
+		height: 48px;
 	}
 }
