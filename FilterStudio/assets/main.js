@@ -578,11 +578,10 @@ function setupInteractivePreview() {
 
       if (placeholder) placeholder.classList.add('hidden');
 
-      // Pause non-active videos and reset stage state
+      // Pause non-active videos and reset state
       document.querySelectorAll('.canvas-image video').forEach(v => {
         try {
           v.pause();
-          v.closest('.mockup-stage')?.classList.remove('is-playing');
         } catch (e) {}
       });
 
@@ -591,6 +590,13 @@ function setupInteractivePreview() {
       slides.forEach(s => {
         const matches = s.dataset.slide === slideKey;
         s.classList.toggle('visible', matches);
+        if (matches) {
+          const vid = s.querySelector('video');
+          if (vid) {
+            vid.currentTime = 0;
+            vid.play().catch(() => {});
+          }
+        }
       });
 
       // Highlight active row in list
@@ -636,64 +642,21 @@ function setupModelFilter() {
   });
 }
 
-// Interactive Video Players with Play Button & Controls
+// Interactive Video Players: click to toggle playback, pause others
 function setupVideoPlayers() {
-  document.querySelectorAll('.mockup-stage').forEach(stage => {
-    const video = stage.querySelector('video');
-    const playBtn = stage.querySelector('.mockup-play-btn');
-    const toggleBtn = stage.querySelector('.btn-play-toggle');
-    const soundBtn = stage.querySelector('.btn-sound-toggle');
-
-    if (!video) return;
-
-    const updateUI = () => {
-      const isPlaying = !video.paused && !video.ended;
-      stage.classList.toggle('is-playing', isPlaying);
-      if (toggleBtn) {
-        const icon = toggleBtn.querySelector('.ctrl-icon');
-        const text = toggleBtn.querySelector('.ctrl-text');
-        if (icon) icon.textContent = isPlaying ? '❚❚' : '▶';
-        if (text) text.textContent = isPlaying ? 'Pause' : 'Play Demo';
-      }
-    };
-
-    const togglePlay = (e) => {
-      if (e) e.stopPropagation();
+  document.querySelectorAll('.canvas-image video').forEach(video => {
+    video.addEventListener('click', () => {
       if (video.paused) {
         document.querySelectorAll('.canvas-image video').forEach(v => {
           if (v !== video) {
-            v.pause();
-            v.closest('.mockup-stage')?.classList.remove('is-playing');
+            try { v.pause(); } catch (e) {}
           }
         });
-        video.play().then(updateUI).catch(err => {
-          console.warn('Playback error or policy:', err);
-        });
+        video.play().catch(() => {});
       } else {
         video.pause();
-        updateUI();
       }
-    };
-
-    if (playBtn) playBtn.addEventListener('click', togglePlay);
-    if (toggleBtn) toggleBtn.addEventListener('click', togglePlay);
-    const wrap = stage.querySelector('.mockup-wrap');
-    if (wrap) wrap.addEventListener('click', togglePlay);
-
-    if (soundBtn) {
-      soundBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        video.muted = !video.muted;
-        const icon = soundBtn.querySelector('.ctrl-icon');
-        const text = soundBtn.querySelector('.ctrl-text');
-        if (icon) icon.textContent = video.muted ? '🔇' : '🔊';
-        if (text) text.textContent = video.muted ? 'Muted' : 'Sound On';
-      });
-    }
-
-    video.addEventListener('play', updateUI);
-    video.addEventListener('pause', updateUI);
-    video.addEventListener('ended', updateUI);
+    });
   });
 }
 
