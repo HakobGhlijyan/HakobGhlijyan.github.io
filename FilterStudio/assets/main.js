@@ -875,6 +875,23 @@ function switchPanel(target) {
   }
 }
 
+// MARK: - Mobile Menu / Мобильное бургер-меню
+const mobileNav = document.getElementById('mobileNav');
+const burger    = document.getElementById('navBurger');
+const navClose  = document.getElementById('navClose');
+
+function setMenu(open) {
+  if (!mobileNav) return;
+  mobileNav.classList.toggle('open', open);
+  document.body.classList.toggle('menu-open', open);
+  if (burger) burger.setAttribute('aria-expanded', String(open));
+}
+
+if (burger)   burger.addEventListener('click', () => setMenu(true));
+if (navClose) navClose.addEventListener('click', () => setMenu(false));
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+window.addEventListener('resize', () => { if (window.innerWidth > 1100) setMenu(false); }, { passive: true });
+
 // Global Nav click listener
 document.addEventListener('click', (e) => {
   const navLink = e.target.closest('[data-nav]');
@@ -882,8 +899,7 @@ document.addEventListener('click', (e) => {
     e.preventDefault();
     const target = navLink.dataset.nav;
     switchPanel(target);
-    const mobileNav = document.getElementById('mobileNav');
-    if (mobileNav) mobileNav.classList.remove('open');
+    setMenu(false);
   }
 });
 

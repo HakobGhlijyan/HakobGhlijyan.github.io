@@ -1062,6 +1062,45 @@ a {
 	pointer-events: none;
 }
 
+/* =========================================================================
+   MARK: - Demo Placeholder Rect (шаблонный блок вместо реального скриншота)
+   RU: Нейтральный блок-заглушка для слайдов canvas в шаблонных проектах.
+   EN: Neutral placeholder block for canvas slides in template projects.
+   ========================================================================= */
+.canvas-demo-rect {
+	width: 100%;
+	height: 100%;
+	min-height: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.8rem;
+	border: 2px dashed rgba(203, 213, 225, 0.2);
+	border-radius: 18px;
+	background: rgba(22, 27, 34, 0.5);
+}
+
+.canvas-demo-num {
+	font-family: var(--font-mono, monospace);
+	font-size: 2.5rem;
+	font-weight: 300;
+	color: rgba(203, 213, 225, 0.25);
+	letter-spacing: 0.1em;
+	line-height: 1;
+}
+
+.canvas-demo-label {
+	font-family: var(--font-sans, sans-serif);
+	font-size: 0.8rem;
+	font-weight: 400;
+	color: rgba(203, 213, 225, 0.4);
+	text-align: center;
+	padding: 0 1.5rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
 .placeholder-icon {
 	width: 48px;
 	height: 48px;
