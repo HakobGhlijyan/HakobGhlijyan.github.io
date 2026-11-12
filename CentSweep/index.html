@@ -103,21 +103,21 @@
         </div>
       </div>
 
-      <!-- Mobile Hamburger Button -->
-      <button class="hamburger-btn" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
+      <!-- Mobile Hamburger Button / Кнопка бургер-меню -->
+      <button type="button" class="hamburger-btn" id="navBurger" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </header>
 
-  <!-- Mobile Navigation Overlay -->
-  <div class="mobile-nav-overlay" id="mobileNav">
-    <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</button>
-    <a href="../index.html">&larr; Main Portfolio</a>
-    <a href="https://apps.apple.com/us/app/id6817294857" target="_blank" rel="noopener noreferrer" style="color:var(--green); font-weight:700;" data-i18n="getOnAppStore">Download on the App Store</a>
+  <!-- Mobile Navigation Overlay / Мобильное меню -->
+  <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menu">
+    <button type="button" class="mobile-nav-close" id="navClose" aria-label="Close menu">&times;</button>
+    <a href="../index.html">&larr; <span data-i18n="portfolio">Portfolio</span></a>
+    <a href="https://apps.apple.com/us/app/id6817294857" target="_blank" rel="noopener noreferrer" class="mobile-nav-soon" data-i18n="getOnAppStore">Download on the App Store</a>
     <a data-nav="features" data-i18n="features">Features</a>
     <a data-nav="screens" data-i18n="screens">Screens</a>
-    <a data-nav="guide" data-i18n="guideLabel">Guide</a>
+    <a data-nav="guide" data-i18n="guideLabel">Overview</a>
     <a data-nav="about" data-i18n="about">About</a>
     <a data-nav="support" data-i18n="support">Support</a>
     <a data-nav="privacy" data-i18n="privacy">Privacy</a>

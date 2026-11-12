@@ -369,14 +369,15 @@ a {
 .mobile-nav-overlay {
 	position: fixed;
 	inset: 0;
-	background: rgba(7, 17, 13, 0.95);
+	background: rgba(7, 17, 13, 0.96);
 	backdrop-filter: blur(16px);
 	-webkit-backdrop-filter: blur(16px);
 	z-index: 99;
 	display: none;
 	flex-direction: column;
-	padding: 2.5rem 1.8rem;
-	gap: 1.2rem;
+	gap: 1.1rem;
+	padding: 1.5rem 1.8rem 2rem;
+	overflow-y: auto;
 }
 
 .mobile-nav-overlay.open {
@@ -388,17 +389,26 @@ a {
 	background: transparent;
 	border: none;
 	color: var(--text);
-	font-size: 1.8rem;
+	font-size: 2rem;
+	line-height: 1;
 	cursor: pointer;
 }
 
-.mobile-nav-overlay a {
+.mobile-nav-overlay > a {
 	font-size: 1.1rem;
 	font-weight: 600;
-	padding: 0.5rem 0;
+	padding: 0.55rem 0;
 	border-bottom: 1px solid var(--line);
 	color: var(--text);
+	text-decoration: none;
+	cursor: pointer;
 }
+
+.mobile-nav-overlay > a.nav-active { color: var(--green); }
+.mobile-nav-overlay > a.mobile-nav-soon { color: var(--green); border-bottom: none; margin-top: 0.6rem; }
+
+/* Prevent scroll behind overlay */
+body.menu-open { overflow: hidden; }
 
 /* =========================================================================
    MARK: - 4. SPLIT CONTAINER & LAYOUT (Двухпанельный контейнер)
@@ -1548,7 +1558,7 @@ a {
 
 /* RU: Подсветка текущего раздела в выезжающем меню.
    EN: Highlight the current section in the slide-out menu. */
-.mobile-nav-overlay a.nav-active {
+.mobile-nav-overlay > a.nav-active {
 	color: var(--green);
 }
 
