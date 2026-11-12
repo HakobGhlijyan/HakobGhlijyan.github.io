@@ -1531,6 +1531,12 @@ a {
 	}
 }
 
+@media (max-width: 920px) {
+	.live-card {
+		margin: 0 1.4rem 1rem;
+	}
+}
+
 /* =========================================================================
    MARK: - 11. COMING SOON (Кнопка App Store до релиза)
    RU: Выглядит как кнопка, но ничего не делает. После релиза убрать класс
@@ -1735,12 +1741,45 @@ a {
 }
 
 @media (max-width: 640px) {
-	.live-qr {
-		display: none;
+	/* RU: На телефоне карточка переходит в V-стек: иконка+текст в первой строке, QR — во второй.
+	   EN: On phones the card becomes a V-stack: icon+text in the first row, QR in the second. */
+	.live-card {
+		flex-wrap: wrap;
+		gap: 0.6rem;
 	}
 
 	.live-icon {
-		width: 52px;
-		height: 52px;
+		width: 44px;
+		height: 44px;
+	}
+
+	.live-text {
+		flex: 1;
+	}
+
+	.live-qr {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 0.65rem;
+		width: 100%;
+		min-width: auto;
+		margin: 0.1rem 0 0 0;
+		text-align: left;
+	}
+
+	.live-qr img,
+	.live-qr-placeholder {
+		width: 48px;
+		height: 48px;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.live-qr figcaption {
+		text-align: left;
+		width: auto;
+		margin-top: 0;
 	}
 }

@@ -1590,28 +1590,28 @@ body.menu-open {
 
 	.live-card {
 		margin: 0 1.4rem 1rem;
-		/* RU: На планшете/телефоне разрешаем перенос для V-стека QR.
-		   EN: Allow wrap for V-stack QR on tablet/phone. */
 		flex-wrap: wrap;
 		gap: 0.6rem;
 	}
 
 	.live-qr {
-		/* RU: На ≤900px QR переносится на отдельную строку (V-стек).
-		   EN: At ≤900px QR wraps to its own row (V-stack). */
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		justify-content: flex-start;
 		gap: 0.65rem;
 		width: 100%;
 		min-width: auto;
-		margin: 0.1rem 0 0;
+		margin: 0.1rem 0 0 0;
+		text-align: left;
 	}
 
 	.live-qr img,
 	.live-qr-placeholder {
-		width: 52px;
-		height: 52px;
+		width: 48px;
+		height: 48px;
+		margin-left: 0;
+		margin-right: 0;
 	}
 
 	.live-qr figcaption {

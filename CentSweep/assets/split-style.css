@@ -1708,19 +1708,22 @@ body.menu-open { overflow: hidden; }
 	}
 
 	.live-qr {
-		/* RU: QR переносится в отдельную строку. EN: QR wraps to its own row. */
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		justify-content: flex-start;
 		gap: 0.65rem;
 		width: 100%;
 		min-width: auto;
-		margin: 0.1rem 0 0;
+		margin: 0.1rem 0 0 0;
+		text-align: left;
 	}
 
 	.live-qr img {
-		width: 52px;
-		height: 52px;
+		width: 48px;
+		height: 48px;
+		margin-left: 0;
+		margin-right: 0;
 	}
 
 	.live-qr figcaption {

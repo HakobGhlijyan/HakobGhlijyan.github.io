@@ -1730,20 +1730,25 @@ body.menu-open { overflow: hidden; }
 	}
 
 	.live-qr {
-		/* RU: QR переносится в отдельную строку. EN: QR wraps to its own row. */
+		/* RU: QR переносится в новую строку, выравнивается по левому краю.
+		   EN: QR wraps to its own row, left-aligned. */
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		justify-content: flex-start;
 		gap: 0.65rem;
 		width: 100%;
 		min-width: auto;
-		margin: 0.1rem 0 0;
+		margin: 0.1rem 0 0 0; /* RU: сброс auto-margin вправо EN: reset right auto-margin */
+		text-align: left;
 	}
 
 	.live-qr img,
 	.live-qr-placeholder {
-		width: 52px;
-		height: 52px;
+		width: 48px;
+		height: 48px;
+		margin-left: 0; /* RU: сброс auto EN: reset auto */
+		margin-right: 0;
 	}
 
 	.live-qr figcaption {
