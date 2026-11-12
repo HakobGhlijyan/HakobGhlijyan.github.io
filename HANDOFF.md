@@ -2,32 +2,19 @@
 
 ## Current Status
 - **Filter Studio Production Showcase (`FilterStudio/`):**
-  - **Coming Soon Theme Accent:**
-    - Top header and bottom footer buttons converted from green to brand blue (`rgba(76, 141, 255, 0.14)` border `rgba(76, 141, 255, 0.45)`, hover `#4C8DFF`).
-  - **Centered QR-Code & "Filter Studio for iOS":**
-    - Centered `.live-qr`, QR placeholder (84×84px), and its caption "Filter Studio for iOS" relative to each other and their card column.
-  - **Features Section Expanded (8 Items):**
-    - Updated from 6 to 8 items matching all 8 App Store screenshots:
-      1. Filters with Live Preview (`feat-1` / `p1`)
-      2. Crop, Rotate & Mirror (`feat-2` / `p2`)
-      3. Your Watermark, Your Colour (`feat-3` / `p3`)
-      4. Every Edit is a Version (`feat-4` / `p4`)
-      5. Photos & Collections (`feat-5` / `p5`)
-      6. Full Photo View & EXIF (`feat-6` / `p6`)
-      7. Dark & Light Theme (`feat-7` / `p7`)
-      8. Interactive Widgets (`feat-8` / `p8`)
-    - All 8 items fully localized across all 6 languages (`en`, `ru`, `fr`, `de`, `es`, `it`).
-    - Added dedicated canvas slides for `feat-7` and `feat-8`, updated `feat-5` and `feat-6`.
-  - **Screens Section Fixes:**
-    - Corrected item 08 across Duo, iPhone, iPad (`duo-8`, `iphone-8`, `pad-8`) to "Interactive Widgets" (`Duo · Widgets`, `iPhone · Widgets`, `iPad · Widgets`).
-    - Updated canvas slide captions for all 3 device tiers to "Interactive Widgets / Desktop & Lock Screen widgets".
-  - **Privacy Policy Verbatim Alignment:**
-    - Cleaned up 13 accordion sections in `#panel-privacy` of `index.html` to strictly match `Marketing/Website-Privacy-Support.md`.
-    - Removed non-applicable StoreKit 2 references (no in-app purchases).
-  - **Support Form:**
-    - Form is fully active with Web3Forms key `fd738668-d5b4-41fa-b85c-35eb8d8c4a18`, spam honeypot (`botcheck`), background AJAX submission, and bilingual inline status feedback.
-  - **Overview Guide & Videos:**
-    - 20 steps match `Marketing/Onboarding.md`. Direct `<video>` playback with natural aspect ratios and zero distortion.
+  - **100% Full 6-Language Localization (Including Privacy Policy):**
+    - All 13 numbered sections of Privacy Policy wired to `data-i18n` with full translations across `en`, `ru`, `fr`, `de`, `es`, `it` from `Marketing/Website-Privacy-Support.md`.
+    - Total of 104 data-i18n dictionary keys verified complete with zero missing strings.
+  - **Item 07 Synchronized with Storage & iCloud Sync:**
+    - Features: Item 07 set to "Sync with your iCloud" (`feat7Title` / `feat7Tag: iCloud Sync`), slide `feat-7` updated.
+    - Screens: `duo-7`, `iphone-7`, `pad-7` updated to "Sync with your iCloud" (`Duo · iCloud`, `iPhone · iCloud`, `iPad · iCloud`).
+    - Canvas captions across all 4 contexts updated to "Sync with your iCloud · Private, optional and automatic".
+  - **iOS 18 Deployment Target Alignment:**
+    - Updated minimum iOS version to **iOS 18.0+** / iPadOS 18.0+ across schema.org metadata, FAQ accordions, and policy header.
+  - **Native Clean Video Playback on Canvas:**
+    - Direct `<video class="canvas-video">` playback with zero distortion or forced aspect ratios.
+  - **Active Web3Forms Support Form:**
+    - Live key `fd738668-d5b4-41fa-b85c-35eb8d8c4a18` with spam trap and AJAX submission.
 
 ## Working Branch & Git State
 - Working Tree: `/Users/hakobghlijyan/Library/Mobile Documents/com~apple~CloudDocs/Developer/GitHub/HakobGhlijyan.github.io`

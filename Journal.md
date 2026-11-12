@@ -284,6 +284,16 @@
 - **Очистка политики конфиденциальности от StoreKit**:
   - Все 13 разделов Privacy в `index.html` синхронизированы с эталонным маркетинговым документом `Website-Privacy-Support.md`. Исключены упоминания StoreKit 2, не имеющие отношения к текущей версии приложения.
 
+### Итерация 19: Полная 6-язычная локализация Privacy Policy, синхронизация скриншота 07 с iCloud Sync и переход на iOS 18+
+- **100% перевод всех 13 разделов политики конфиденциальности**:
+  - В разметку аккордеонов внедрены атрибуты `data-i18n` (`policyTitle1`..`policyTitle13`, `policyBody1`..`policyBody13`, `privacyBannerTitle`, `privacyBannerText`, `privacyLead`).
+  - В `main.js` добавлены полные тексты каждого раздела на 6 языках (`en`, `ru`, `fr`, `de`, `es`, `it`), взятые напрямую из эталонного файла `Marketing/Website-Privacy-Support.md`. Автоматический валидатор подтвердил 104 из 104 переведённых ключей.
+- **Синхронизация пункта 07 с экраном iCloud Sync**:
+  - В Features и Screens (Duo, iPhone, iPad) пункт 07 переименован в «Sync with your iCloud» / «Синхронизация через iCloud» (тег `iCloud Sync` / `iCloud`).
+  - Подписи слайдов на холсте для `feat-7`, `duo-7`, `iphone-7`, `pad-7` приведены в соответствие: «Sync with your iCloud · Private, optional and automatic».
+- **Обновление требований до iOS 18**:
+  - Все упоминания минимальной версии системы в коде, Schema.org и FAQ переведены строго на iOS 18.0+ и iPadOS 18.0+.
+
 ---
 
 ## 6. Engineer's Wisdom
