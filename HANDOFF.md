@@ -10,12 +10,11 @@
   - **Right-Aligned Banner QR Code (`.live-qr`):**
     - On all 3 sites, `.live-card` has `justify-content: space-between; gap: 1.2rem;` and `.live-text` has `flex: 1;`.
     - `.live-qr` is pinned to the right (`margin: 0 0 0 auto; text-align: right; align-items: flex-end;`). The QR image and caption text are strictly right-aligned, preventing any horizontal jitter or shifting when toggling languages.
-  - **Nightwell Typography, Banner Sizing & Static Row Rendering:**
-    - Eyebrow header text standardized to `0.68rem; font-family: var(--font-mono); font-weight: 400; letter-spacing: 0.14em; color: var(--accent);`, matching FilterStudio and CentSweep exactly.
-    - Banner icon standardized to `64x64px; border-radius: 15px;`.
-    - Removed staggered ladder animation (`fadeSlideUp` with nth-child delays); screen items and features now appear statically and immediately, matching CentSweep and FilterStudio.
-  - **Nightwell Sectional Privacy Policy Accordion:**
-    - Converted all 13 privacy clauses in Nightwell into `<details class="faq-card policy-card">` with `<summary>` and `<div class="faq-body">` (`+` and `−` toggles, blurred ocean-glass styling), matching the sectional UX of CentSweep and FilterStudio. Full bilingual `data-en` and `data-ru` support.
+  - **Header & Section Typography Standardized in Nightwell:**
+    - Standardized Nightwell's header fonts: `.site-brand` uses `var(--font-serif); font-size: 1.15rem; font-weight: 800;`, `.portfolio-back-link` uses `var(--font-mono); font-size: 0.68rem; font-weight: 400;`, `.site-nav-tabs a` uses `var(--font-sans); font-weight: 500; font-size: 0.76rem;`, `.site-nav-tabs a.nav-active` uses `font-weight: 600;`, `.header-appstore-btn` and `.lang-btn` use `var(--font-mono); font-size: 0.68rem; font-weight: 400;`. Eliminated oversized/heavy Playfair and bold weights in Nightwell's header.
+    - Standardized section titles and eyebrows in Nightwell's About, Support, and Privacy: `.about-headline`, `.contact-headline` now use `clamp(1.4rem, 2.3vw, 2.1rem); font-family: var(--font-serif); font-weight: 700;` (reduced from `clamp(1.8rem, 3vw, 2.8rem); font-weight: 800;`), and `.about-label`, `.contact-label` use `0.68rem; font-family: var(--font-mono); font-weight: 400; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 0.6rem;`, matching FilterStudio and CentSweep exactly.
+  - **All Collapsible Sections Default to Closed:**
+    - Across all 3 sites, all `<details class="faq-card">` and `<details class="policy-card">` in Support and Privacy start closed (all `open` attributes removed). Users open whichever section they choose via the `+` button.
 
 ## Next Steps
 1. User verification of the 3 synchronized sites on Live Server (Desktop, iPad, Mobile).

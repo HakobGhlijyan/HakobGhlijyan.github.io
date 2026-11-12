@@ -356,6 +356,14 @@
 - **Секционная Privacy Policy в Nightwell**:
   - Все 13 пунктов политики приватности Nightwell переведены в формат интерактивного аккордеона `<details class="faq-card policy-card">` с переключателями `+` / `−`, синхронизировав структуру с CentSweep и Filter Studio.
 
+### Итерация 25: Унификация весов шрифтов хедера Nightwell, стандартизация заголовков и закрытые секции аккордеонов по умолчанию
+- **Облегчение шрифтов хедера в Nightwell**:
+  - В `Nightwell/css/split-style.css` внедрены глобальные переменные `--font-serif`, `--font-sans` и `--font-mono`. Название бренда переведено на `var(--font-serif)`, кнопка возврата в портфолио — на `var(--font-mono); font-weight: 400; font-size: 0.68rem;`, табы навигации — на `font-weight: 500` (активный — `600` вместо прежнего тяжелого `700`), а кнопки App Store и языка — на `font-weight: 400`. Шапка Nightwell теперь визуально столь же легкая, строгая и точная, как в Filter Studio и CentSweep.
+- **Стандартизация размеров заголовков в разделах About, Support и Privacy**:
+  - В Nightwell размеры главных заголовков `.about-headline` и `.contact-headline` уменьшены с гигантских `clamp(1.8rem, 3vw, 2.8rem); font-weight: 800;` до единого эталонного стандарта `clamp(1.4rem, 2.3vw, 2.1rem); font-weight: 700;`, а надписи над ними (`.about-label`, `.contact-label`) приведены к единым `0.68rem; font-weight: 400; letter-spacing: 0.14em; margin-bottom: 0.6rem;`.
+- **Закрытые по умолчанию секции аккордеонов (Zero Auto-Open)**:
+  - Во всех трех проектах (Filter Studio, CentSweep, Nightwell) со всех элементов `<details>` в разделах Support (FAQ) и Privacy снят атрибут `open`. Все карточки теперь стартуют аккуратно закрытыми, позволяя пользователю самому разворачивать нужный пункт кликом на кнопку `+`.
+
 ---
 
 ## 6. Engineer's Wisdom

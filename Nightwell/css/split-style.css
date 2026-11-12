@@ -38,6 +38,11 @@ https://templatemo.com/tm-616-split-index
 	/* Split Container Ratios (Standardized across CentSweep, FilterStudio, Nightwell) */
 	--info-width: 44vw;
 	--canvas-width: 56vw;
+
+	/* Standard Typography (Matching FilterStudio and CentSweep) */
+	--font-serif: 'Instrument Serif', 'Times New Roman', serif;
+	--font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+	--font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
 }
 
 html {
@@ -117,7 +122,7 @@ body::before {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.6rem;
-	font-family: 'Playfair Display', serif;
+	font-family: var(--font-serif);
 	font-weight: 800;
 	font-size: 1.15rem;
 	letter-spacing: 0.01em;
@@ -136,7 +141,8 @@ body::before {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.35rem;
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
+	font-weight: 400;
 	font-size: 0.68rem;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
@@ -165,7 +171,7 @@ body::before {
 
 .site-nav-tabs a,
 .site-header-nav a {
-	font-family: 'Instrument Sans', sans-serif;
+	font-family: var(--font-sans);
 	font-weight: 500;
 	font-size: 0.76rem;
 	letter-spacing: 0.02em;
@@ -188,7 +194,7 @@ body::before {
 .site-header-nav a.nav-active {
 	color: var(--ocean-deep) !important;
 	background: var(--accent);
-	font-weight: 700;
+	font-weight: 600;
 	box-shadow: 0 0 14px rgba(56, 189, 248, 0.4);
 }
 
@@ -478,23 +484,24 @@ body::before {
 }
 
 .about-label {
-	font-family: 'DM Mono', monospace;
-	font-weight: 300;
+	font-family: var(--font-mono);
+	font-weight: 400;
 	font-size: 0.68rem;
-	letter-spacing: 0.15em;
+	letter-spacing: 0.14em;
 	text-transform: uppercase;
-	color: var(--ink-light);
-	margin-bottom: 2rem;
+	color: var(--accent);
+	margin-bottom: 0.6rem;
 	display: block;
 }
 
 .about-headline {
-	font-family: 'Playfair Display', serif;
-	font-weight: 800;
-	font-size: clamp(1.8rem, 3vw, 2.8rem);
+	font-family: var(--font-serif);
+	font-weight: 700;
+	font-size: clamp(1.4rem, 2.3vw, 2.1rem);
 	line-height: 1.15;
-	margin-bottom: 2rem;
-	max-width: 420px;
+	letter-spacing: -0.01em;
+	margin-bottom: 0.8rem;
+	max-width: 480px;
 }
 
 .about-headline em {
@@ -550,23 +557,25 @@ body::before {
 }
 
 .contact-label {
-	font-family: 'DM Mono', monospace;
-	font-weight: 300;
+	font-family: var(--font-mono);
+	font-weight: 400;
 	font-size: 0.68rem;
-	letter-spacing: 0.15em;
+	letter-spacing: 0.14em;
 	text-transform: uppercase;
-	color: var(--ink-light);
-	margin-bottom: 2rem;
+	color: var(--accent);
+	margin-bottom: 0.6rem;
 	display: block;
 }
 
 .contact-headline {
-	font-family: 'Playfair Display', serif;
-	font-weight: 800;
-	font-size: clamp(1.8rem, 3vw, 2.8rem);
+	font-family: var(--font-serif);
+	font-weight: 700;
+	font-size: clamp(1.4rem, 2.3vw, 2.1rem);
 	line-height: 1.15;
-	margin-bottom: 2.5rem;
+	letter-spacing: -0.01em;
+	margin-bottom: 0.8rem;
 	color: var(--ink);
+	max-width: 480px;
 }
 
 .contact-headline em {
@@ -1158,8 +1167,9 @@ body::before {
 	border-radius: 20px;
 	padding: 0.35rem 0.85rem;
 	color: #FFFFFF;
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-size: 0.68rem;
+	font-weight: 400;
 	letter-spacing: 0.04em;
 	text-decoration: none;
 	transition: all 0.25s ease;
@@ -1319,9 +1329,9 @@ body::before {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.4rem;
-	font-family: 'DM Mono', monospace;
-	font-size: 0.7rem;
-	font-weight: 600;
+	font-family: var(--font-mono);
+	font-size: 0.68rem;
+	font-weight: 400;
 	color: var(--ink);
 	cursor: pointer;
 	transition: all 0.2s ease;
