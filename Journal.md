@@ -434,3 +434,28 @@ Project-Template — это «болванка», которую можно на
 Три копии — Project-4, Project-5, Project-6 — готовы. Вместо битых ссылок на несуществующие скриншоты — `canvas-demo-rect`: простые CSS-прямоугольники, которые честно показывают: «здесь будет картинка». Никаких 404, никаких сломанных иконок.
 
 **Урок итерации**: Стандарт — это не ограничение. Это то, что позволяет двигаться быстро, не ломая уже построенное. `setMenu()` написана один раз. QR = 72px написан один раз. Font-size = 15px прописан в design token один раз. Дальше — только наполнение, а не переизобретение.
+
+---
+
+## Session — November 12, 2026 · Full Portfolio Audit & Standardization
+
+**The goal:** One sweeping audit to make every site speak the same language — structurally, stylistically, semantically.
+
+### What we fixed
+- **FilterStudio** hamburger unified to `setMenu()` standard (the golden master)
+- **CentSweep** hamburger rebuilt from scratch to match
+- **Nightwell** header normalized: `font-size: 15px`, font weights, hamburger parity
+- **Nightwell CSS** had a silent bug for weeks: `--font-serif` pointed to `'Instrument Serif'` but Google Fonts loaded `'Playfair Display'`. Rendering "worked" only because the browser found the preloaded font anyway — but the variable system was semantic garbage. Fixed all 15+ hardcoded occurrences to use `var()`.
+- **Project-Template / 4 / 5 / 6** — `setMenu()` was entirely missing. The burger opened via inline `onclick=` and closed via raw `classList.remove`. Added the full standard block: `body.menu-open`, `aria-expanded`, Escape key, resize guard.
+- **og:description** across all 4 template files was copy-pasted FilterStudio text. Replaced with generic.
+
+### The lesson
+When you copy-paste a site to create a new one, the metadata travels with it. `og:description`, footer legal lines, font variable names — these are invisible until someone audits. Run grep periodically: `grep -r "Filter Studio" Project-*/` catches these instantly.
+
+### What's intentional (not bugs)
+- FilterStudio QR = 638-byte placeholder PNG. It's a 1-bit palette PNG — perfectly valid, just tiny. Will be replaced with a real App Store QR when the app ships.
+- `Project-Template/` has no link from root `index.html`. It's an internal scaffold, not a portfolio entry.
+- `og:image` in templates uses relative paths. Fine for now — no OG sharing needed until real projects fill the slots.
+
+### Next milestone
+FilterStudio → App Store. When that happens: swap `#features` href → real App Store URL, download QR, remove "Coming Soon" badge, update all i18n strings. One focused session, all mechanical.
