@@ -126,7 +126,7 @@ body::before {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.35rem;
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-size: 0.68rem;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
@@ -214,7 +214,7 @@ body::before {
 
 .site-footer span,
 .site-footer a {
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-weight: 300;
 	font-size: 0.6rem;
 	letter-spacing: 0.1em;
@@ -308,7 +308,7 @@ body::before {
 }
 
 .panel-header span {
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-weight: 300;
 	font-size: 0.7rem;
 	letter-spacing: 0.15em;
@@ -363,7 +363,7 @@ body::before {
 }
 
 .project-number {
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-weight: 400;
 	font-size: 0.72rem;
 	letter-spacing: 0.08em;
@@ -391,7 +391,7 @@ body::before {
 }
 
 .project-category {
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-weight: 300;
 	font-size: 0.65rem;
 	letter-spacing: 0.12em;
@@ -437,7 +437,7 @@ body::before {
 }
 
 .panel-footer span {
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-weight: 300;
 	font-size: 0.65rem;
 	letter-spacing: 0.1em;
@@ -451,7 +451,7 @@ body::before {
 }
 
 .about-label {
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-weight: 300;
 	font-size: 0.68rem;
 	letter-spacing: 0.15em;
@@ -509,7 +509,7 @@ body::before {
 }
 
 .stat-label {
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-weight: 300;
 	font-size: 0.6rem;
 	letter-spacing: 0.12em;
@@ -523,7 +523,7 @@ body::before {
 }
 
 .contact-label {
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-weight: 300;
 	font-size: 0.68rem;
 	letter-spacing: 0.15em;
@@ -562,7 +562,7 @@ body::before {
 }
 
 .form-group label {
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-weight: 400;
 	font-size: 0.62rem;
 	letter-spacing: 0.12em;
@@ -649,7 +649,7 @@ body::before {
 }
 
 .contact-details span {
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-weight: 300;
 	font-size: 0.58rem;
 	letter-spacing: 0.1em;
@@ -717,7 +717,7 @@ body::before {
 }
 
 .placeholder-text {
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-size: 0.68rem;
 	letter-spacing: 0.15em;
 	text-transform: uppercase;
@@ -788,7 +788,7 @@ body::before {
 }
 
 .canvas-caption-year {
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-weight: 400;
 	font-size: 0.68rem;
 	color: #475569;
@@ -806,7 +806,7 @@ body::before {
 }
 
 .canvas-context-attr {
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-weight: 300;
 	font-size: 0.6rem;
 	letter-spacing: 0.1em;
@@ -1039,7 +1039,7 @@ body::before {
 
 .faq-item summary::after {
 	content: '+';
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-size: 1.15rem;
 	font-weight: 400;
 	color: var(--accent);
@@ -1071,7 +1071,7 @@ body::before {
 	color: var(--ink-light);
 	border: 1px solid rgba(56, 189, 248, 0.25);
 	border-radius: 24px;
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-size: 0.72rem;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
@@ -1089,7 +1089,7 @@ body::before {
 	border-radius: 20px;
 	padding: 0.35rem 0.85rem;
 	color: #FFFFFF;
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-size: 0.68rem;
 	letter-spacing: 0.04em;
 	text-decoration: none;
@@ -1215,13 +1215,13 @@ body::before {
 	width: 84px;
 	height: 84px;
 	border-radius: 8px;
-	background: #000000;
-	border: 1px solid var(--ocean-border);
+	background: #FFFFFF;
+	border: 1px solid rgba(255,255,255,0.12);
 }
 
 .live-qr figcaption {
 	margin-top: 0.3rem;
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-size: 0.58rem;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
@@ -1241,7 +1241,7 @@ body::before {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.4rem;
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-size: 0.7rem;
 	font-weight: 600;
 	color: var(--ink);
@@ -1324,7 +1324,7 @@ body::before {
 	border: 1px solid var(--ocean-border-strong);
 	border-radius: 20px;
 	padding: 0.4rem 0.95rem;
-	font-family: 'DM Mono', monospace;
+	font-family: var(--font-mono);
 	font-size: 0.68rem;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
