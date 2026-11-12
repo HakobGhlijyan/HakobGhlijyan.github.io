@@ -2,6 +2,9 @@
 
 ## Current Status
 - **Filter Studio Production Showcase (`FilterStudio/`):**
+  - **Clean Typography (Removed Stray Apostrophes/Commas):**
+    - Cleaned all dictionary entries across all 6 languages (`en`, `ru`, `fr`, `de`, `es`, `it`), removing accidental trailing escaped apostrophes (`\'`) in `features`, `privacy`, `featuresHeader`, `privacyEyebrow`, `privacyTitle`, `privacyLead`, `privacyBannerTitle`, `privacyBannerText`, and all 13 `policyTitle` / `policyBody` sections.
+    - Verified via automated AST and string sweep: 0 trailing quote artifacts remaining.
   - **100% Full 6-Language Localization (Including Privacy Policy):**
     - All 13 numbered sections of Privacy Policy wired to `data-i18n` with full translations across `en`, `ru`, `fr`, `de`, `es`, `it` from `Marketing/Website-Privacy-Support.md`.
     - Total of 104 data-i18n dictionary keys verified complete with zero missing strings.
