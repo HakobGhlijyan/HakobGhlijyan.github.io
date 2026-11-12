@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Support — Filter Studio</title>
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/split-style.css">
+  <style>
+    body { background: var(--bg); color: var(--text); padding: 2rem 1.5rem; font-family: var(--font-sans); }
+    .page-wrapper { max-width: 780px; margin: 0 auto; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 2.5rem; }
+    h1 { font-family: var(--font-serif); font-size: 2.2rem; color: var(--text); margin-bottom: 0.5rem; }
+    .subtitle { color: var(--green); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2rem; }
+    p { font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 1.2rem; }
+    strong { color: var(--text); }
+    .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--green); text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+    .back-link:hover { text-decoration: underline; }
+    .support-form { margin-top: 1.5rem; margin-bottom: 2.5rem; }
+    .form-send { padding: 0.8rem 1.8rem; border-radius: 8px; background: var(--green); color: var(--on-accent); font-weight: 700; border: none; cursor: pointer; }
+  </style>
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <a href="../" class="back-link">&larr; Back to Filter Studio</a>
+    <h1>Customer Support</h1>
+    <div class="subtitle">Direct Developer Assistance · App Store Connect URL</div>
+
+    <p><strong>How can we help?</strong></p>
+    <p>Write directly to the developer: <a href="mailto:hakobghlijyan@gmail.com" style="color:var(--accent); text-decoration:underline;">hakobghlijyan@gmail.com</a> or use the support form below. We reply to all inquiries as soon as possible.</p>
+
+    <!-- Web3Forms Support Form -->
+    <form class="support-form" data-contact-form
+          action="https://api.web3forms.com/submit" method="POST" accept-charset="UTF-8"
+          data-subject="[Filter Studio] Support request"
+          data-fallback-email="hakobghlijyan@gmail.com">
+      <input type="hidden" name="access_key" value="fd738668-d5b4-41fa-b85c-35eb8d8c4a18">
+      <input type="hidden" name="from_name" value="Filter Studio Support">
+      <input type="hidden" name="subject" value="[Filter Studio] Support request">
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off">
+
+      <div>
+        <label for="sf-name" style="display:block; margin-bottom:0.3rem; font-size:0.85rem; font-weight:600;">Name</label>
+        <input id="sf-name" type="text" name="name" required maxlength="100" autocomplete="name" placeholder="Your name" style="width:100%; padding:0.8rem; border-radius:8px; background:var(--surface-2); border:1px solid var(--line); color:var(--text); margin-bottom:1rem;">
+      </div>
+      <div>
+        <label for="sf-email" style="display:block; margin-bottom:0.3rem; font-size:0.85rem; font-weight:600;">Email (for the reply)</label>
+        <input id="sf-email" type="email" name="email" required maxlength="150" autocomplete="email" placeholder="you@example.com" style="width:100%; padding:0.8rem; border-radius:8px; background:var(--surface-2); border:1px solid var(--line); color:var(--text); margin-bottom:1rem;">
+      </div>
+      <div>
+        <label for="sf-message" style="display:block; margin-bottom:0.3rem; font-size:0.85rem; font-weight:600;">Message</label>
+        <textarea id="sf-message" name="message" required maxlength="4000" placeholder="Describe your question or issue..." style="width:100%; height:130px; padding:0.8rem; border-radius:8px; background:var(--surface-2); border:1px solid var(--line); color:var(--text); margin-bottom:1.2rem;"></textarea>
+      </div>
+      <button type="submit" class="form-send" style="padding:0.8rem 1.8rem; border-radius:8px; background:var(--accent); color:#000; font-weight:700; border:none; cursor:pointer;">Send message &rarr;</button>
+    </form>
+
+    <h2 style="font-family:var(--font-serif); font-size:1.4rem; color:var(--text); margin-bottom:0.8rem;">Getting started (4 steps)</h2>
+    <ol style="margin-bottom:2rem; padding-left:1.2rem; font-size:0.9rem; line-height:1.7; color:var(--text-secondary);">
+      <li>Tap + in the Editor and pick a photo.</li>
+      <li>Choose a filter, crop, mirror or add a watermark.</li>
+      <li>Save — every save becomes a new version in Photos.</li>
+      <li>Find it in Photos or Collections, then share or save to Photos.</li>
+    </ol>
+
+    <h2 style="font-family:var(--font-serif); font-size:1.4rem; color:var(--text); margin-bottom:0.8rem;">Frequently Asked Questions</h2>
+    <div class="faq-container">
+      <details class="faq-card"><summary>What devices and software do I need?</summary><div class="faq-body">An iPhone or iPad with iOS 18 or later.</div></details>
+      <details class="faq-card"><summary>Is my original photo changed?</summary><div class="faq-body">No. Every edit is saved as a separate version; the original stays untouched.</div></details>
+      <details class="faq-card"><summary>How does iCloud sync work?</summary><div class="faq-body">Turn it on in Settings → iCloud. Sign in to iCloud on every device with the same Apple ID.</div></details>
+      <details class="faq-card"><summary>Some photos do not sync. What should I do?</summary><div class="faq-body">They are safe on your device. Update the app, keep it open on Wi‑Fi, and verify your iCloud storage.</div></details>
+      <details class="faq-card"><summary>I deleted a photo by mistake.</summary><div class="faq-body">Open Collections → Recently Deleted. Photos stay there for 3 days and can be restored.</div></details>
+      <details class="faq-card"><summary>Is location kept when I share or export?</summary><div class="faq-body">Yes. Sharing and exporting keep the photo’s metadata, including location, unchanged.</div></details>
+      <details class="faq-card"><summary>Does Filter Studio send my photos anywhere?</summary><div class="faq-body">No. Photos stay on your device and in your private iCloud. Zero external servers.</div></details>
+    </div>
+  </div>
+  <script src="../assets/contact-form.js"></script>
+</body>
+</html>

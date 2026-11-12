@@ -53,25 +53,30 @@
        MARK: - SITE HEADER & BRAND (Шапка и переключатели)
        ========================================================================= -->
   <header class="site-header">
-    <div class="site-brand-group">
+    <!-- Header Left: Site Brand Logo & Name -->
+    <div class="site-header-left">
       <a class="site-brand" data-nav="features">
         <img class="site-brand-icon" src="assets/icons/x1024_light.svg" alt="CentSweep">
         <span>CentSweep</span>
       </a>
-      <a href="../index.html" class="portfolio-back-link" title="Return to Hakob Ghlijyan Portfolio">
-        &larr; Portfolio
-      </a>
     </div>
 
-    <!-- Navigation Tabs / Вкладки разделов -->
-    <nav class="site-nav-tabs">
-      <a data-nav="features" class="nav-active" data-i18n="features">Features</a>
-      <a data-nav="screens" data-i18n="screens">Screens</a>
-      <a data-nav="guide" data-i18n="guideLabel">Guide</a>
-      <a data-nav="about" data-i18n="about">About</a>
-      <a data-nav="support" data-i18n="support">Support</a>
-      <a data-nav="privacy" data-i18n="privacy">Privacy</a>
-    </nav>
+    <!-- Header Center: Portfolio Button & Navigation Tabs (Centered Horizontally) -->
+    <div class="site-header-center">
+      <a href="../index.html" class="portfolio-back-link" title="Return to Hakob Ghlijyan Portfolio">
+        &larr; <span data-i18n="portfolio">Portfolio</span>
+      </a>
+
+      <!-- Navigation Tabs / Вкладки разделов -->
+      <nav class="site-nav-tabs">
+        <a data-nav="features" class="nav-active" data-i18n="features">Features</a>
+        <a data-nav="screens" data-i18n="screens">Screens</a>
+        <a data-nav="guide" data-i18n="guideLabel">Guide</a>
+        <a data-nav="about" data-i18n="about">About</a>
+        <a data-nav="support" data-i18n="support">Support</a>
+        <a data-nav="privacy" data-i18n="privacy">Privacy</a>
+      </nav>
+    </div>
 
     <!-- Actions: Language & Mobile Menu (Default Dark Theme) -->
     <div class="site-actions">
@@ -98,21 +103,21 @@
         </div>
       </div>
 
-      <!-- Mobile Hamburger Button -->
-      <button class="hamburger-btn" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
+      <!-- Mobile Hamburger Button / Кнопка бургер-меню -->
+      <button type="button" class="hamburger-btn" id="navBurger" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </header>
 
-  <!-- Mobile Navigation Overlay -->
-  <div class="mobile-nav-overlay" id="mobileNav">
-    <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</button>
-    <a href="../index.html">&larr; Main Portfolio</a>
-    <a href="https://apps.apple.com/us/app/id6817294857" target="_blank" rel="noopener noreferrer" style="color:var(--green); font-weight:700;" data-i18n="getOnAppStore">Download on the App Store</a>
+  <!-- Mobile Navigation Overlay / Мобильное меню -->
+  <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menu">
+    <button type="button" class="mobile-nav-close" id="navClose" aria-label="Close menu">&times;</button>
+    <a href="../index.html">&larr; <span data-i18n="portfolio">Portfolio</span></a>
+    <a href="https://apps.apple.com/us/app/id6817294857" target="_blank" rel="noopener noreferrer" class="mobile-nav-soon" data-i18n="getOnAppStore">Download on the App Store</a>
     <a data-nav="features" data-i18n="features">Features</a>
     <a data-nav="screens" data-i18n="screens">Screens</a>
-    <a data-nav="guide" data-i18n="guideLabel">Guide</a>
+    <a data-nav="guide" data-i18n="guideLabel">Overview</a>
     <a data-nav="about" data-i18n="about">About</a>
     <a data-nav="support" data-i18n="support">Support</a>
     <a data-nav="privacy" data-i18n="privacy">Privacy</a>
@@ -152,8 +157,8 @@
         </aside>
 
         <ul class="interactive-list" id="featuresList">
-          <!-- Feature 1: Choose Custom Clear -->
-          <li class="interactive-item active" data-slide="feat-1">
+          <!-- Feature 1: Choose Custom Clear (clean on load until hovered/selected) -->
+          <li class="interactive-item" data-slide="feat-1">
             <div class="interactive-link">
               <span class="item-num">01</span>
               <span class="item-title" data-i18n="feat1Title">Choose Custom Clear</span>
@@ -578,7 +583,7 @@
           <p class="panel-lead" data-i18n="guideDesc">To change your Apple ID region, your account balance must be exactly zero.</p>
         </div>
 
-        <div class="panel-body-content" style="padding-top:0;">
+        <div class="panel-body-content" style="padding-top:1.2rem;">
           <div class="guide-cards">
             <!-- Step 1: Check your balance (p1ai-store-black.png) -->
             <div class="guide-step-card active" data-slide="guide-step1">
@@ -638,7 +643,7 @@
           <p class="panel-lead" data-i18n="storyLead">A calm product story built around clarity, control and a respectful digital experience.</p>
         </div>
 
-        <div class="panel-body-content" style="padding-top:0;">
+        <div class="panel-body-content" style="padding-top:1.2rem;">
           <h3 style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text); margin-bottom:0.4rem;" data-i18n="storyCardTitle">Your digital space, understood.</h3>
           <p style="font-size:0.84rem; line-height:1.65; color:var(--text-secondary); margin-bottom:1.2rem;" data-i18n="storyText">
             CentSweep helps people see what is taking up space, make confident decisions and keep their everyday devices feeling lighter. Built thoughtfully by an independent iOS engineer with focus on transparent choices and privacy at the centre of every interaction.
@@ -767,7 +772,7 @@
           <p class="panel-lead" data-i18n="supportLead">Send a question, bug report, suggestion, or privacy request. We respond by email.</p>
         </div>
 
-        <div class="panel-body-content" style="padding-top:0;">
+        <div class="panel-body-content" style="padding-top:1.2rem;">
           <!-- Contact Card -->
           <div style="background:var(--surface-card); border:1px solid var(--line); border-radius:10px; padding:1.1rem; margin-bottom:1.4rem;">
             <p style="font-size:0.85rem; font-weight:700; color:var(--text); margin-bottom:0.3rem;" data-i18n="talk">Talk to the developer.</p>
@@ -856,7 +861,7 @@
           <p class="panel-lead">Last updated: November 2026 &middot; Zero tracking policy</p>
         </div>
 
-        <div class="panel-body-content" style="padding-top:0;">
+        <div class="panel-body-content" style="padding-top:1.2rem;">
           <!-- Highlight Cards -->
           <div class="privacy-highlights" style="margin-bottom:1.5rem;">
             <div class="priv-card">
@@ -876,51 +881,51 @@
             </div>
           </div>
 
-          <!-- Structured Privacy Cards (Support FAQ Style, Opened by Default) -->
+          <!-- Structured Privacy Cards (Support FAQ Style, Closed by Default) -->
           <div class="faq-container" style="margin-top:1.2rem; margin-bottom:1.5rem;">
-            <details class="faq-card" open>
+            <details class="faq-card">
               <summary>1. Scope &amp; Core Purpose</summary>
               <div class="faq-body">
                 This Privacy Policy applies to the <strong>CentSweep</strong> iOS application and this website. The app is designed exclusively to help users zero out leftover Apple ID balances (such as before changing App Store region) through verified in-app purchases.
               </div>
             </details>
 
-            <details class="faq-card" open>
+            <details class="faq-card">
               <summary>2. Apple ID &amp; StoreKit 2 Processing</summary>
               <div class="faq-body">
                 CentSweep operates strictly within Apple’s native StoreKit 2 framework. All financial transactions are processed directly and securely by Apple Inc. The developer <strong>never receives</strong> access to your Apple ID password, payment credentials, credit card details, or full billing history.
               </div>
             </details>
 
-            <details class="faq-card" open>
+            <details class="faq-card">
               <summary>3. Information We Collect (Zero Personal Data)</summary>
               <div class="faq-body">
                 The CentSweep app does not collect personal information. It contains no advertising, no third-party tracking libraries, and no analytics SDKs. We do not receive your Apple ID, payment methods, or cleanup history.
               </div>
             </details>
 
-            <details class="faq-card" open>
+            <details class="faq-card">
               <summary>4. On-Device Storage &amp; iCloud Sync</summary>
               <div class="faq-body">
                 All transaction logs and app settings are stored locally in on-device sandbox storage. If you choose to enable iCloud sync, data synchronizes exclusively through Apple CloudKit within your private Apple ID container. The developer has zero access to this private database.
               </div>
             </details>
 
-            <details class="faq-card" open>
+            <details class="faq-card">
               <summary>5. Website &amp; Support Communications</summary>
               <div class="faq-body">
                 This website uses browser <code>localStorage</code> solely to remember your language choice. When you send a message through the support form, your name, email, and message are forwarded directly to our email via Web3Forms solely to respond to your request.
               </div>
             </details>
 
-            <details class="faq-card" open>
+            <details class="faq-card">
               <summary>6. GDPR, CCPA &amp; Permanent Deletion Rights</summary>
               <div class="faq-body">
                 Under GDPR and CCPA regulations, you have the full right to inspect, export, or permanently delete any support communications sent to us. Simply contact us at <a href="mailto:hakobghlijyan@gmail.com" style="color:var(--green); text-decoration:underline;">hakobghlijyan@gmail.com</a> to request immediate deletion.
               </div>
             </details>
 
-            <details class="faq-card" open>
+            <details class="faq-card">
               <summary>7. Contact &amp; Developer Information</summary>
               <div class="faq-body">
                 CentSweep is developed independently by Hakob Ghlijyan, an iOS engineer based in Yerevan, Armenia. For any privacy or technical questions, please email <a href="mailto:hakobghlijyan@gmail.com" style="color:var(--green); text-decoration:underline;">hakobghlijyan@gmail.com</a>.
@@ -938,8 +943,8 @@
     <!-- RIGHT SIDE: Visual Canvas Showcase -->
     <div class="canvas-side" id="canvasSide">
 
-      <!-- Default Placeholder (hidden on landing because feat-1 is visible) -->
-      <div class="canvas-placeholder hidden" id="placeholder">
+      <!-- Default Placeholder: clean on load until item is hovered/clicked -->
+      <div class="canvas-placeholder" id="placeholder">
         <div class="placeholder-icon">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4m-10-10h4m12 0h4m-3.3-6.7-2.8 2.8m-5.8 5.8-2.8 2.8m0-11.3 2.8 2.8m5.8 5.8 2.8 2.8"/></svg>
         </div>
@@ -947,7 +952,7 @@
       </div>
 
       <!-- Feature Canvas Images (Features 1-6 from assets/images/) -->
-      <div class="canvas-image visible" data-slide="feat-1">
+      <div class="canvas-image" data-slide="feat-1">
         <img src="assets/images/features1ai-store-black.png" alt="Choose Custom Clear" loading="eager">
         <div class="canvas-caption">
           <div class="canvas-caption-title">Choose Custom Clear</div>

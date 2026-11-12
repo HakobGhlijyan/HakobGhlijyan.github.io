@@ -638,6 +638,23 @@ function switchPanel(target) {
   }
 }
 
+// MARK: - Mobile Menu / Мобильное бургер-меню
+const mobileNav = document.getElementById('mobileNav');
+const burger    = document.getElementById('navBurger');
+const navClose  = document.getElementById('navClose');
+
+function setMenu(open) {
+  if (!mobileNav) return;
+  mobileNav.classList.toggle('open', open);
+  document.body.classList.toggle('menu-open', open);
+  if (burger) burger.setAttribute('aria-expanded', String(open));
+}
+
+if (burger)   burger.addEventListener('click', () => setMenu(true));
+if (navClose) navClose.addEventListener('click', () => setMenu(false));
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+window.addEventListener('resize', () => { if (window.innerWidth > 1100) setMenu(false); }, { passive: true });
+
 // Global Nav click listener
 document.addEventListener('click', (e) => {
   const navLink = e.target.closest('[data-nav]');
@@ -645,8 +662,7 @@ document.addEventListener('click', (e) => {
     e.preventDefault();
     const target = navLink.dataset.nav;
     switchPanel(target);
-    const mobileNav = document.getElementById('mobileNav');
-    if (mobileNav) mobileNav.classList.remove('open');
+    setMenu(false);
   }
 });
 
@@ -686,6 +702,32 @@ function setupInteractivePreview() {
     item.addEventListener('mouseenter', showSlide);
     item.addEventListener('click', showSlide);
   });
+
+  // RU: Возврат к чистому плейсхолдеру при уводе мыши с Features
+  // EN: Reset to clean placeholder when mouse leaves Features panel
+  const panelFeatures = document.querySelector('#panel-features');
+  if (panelFeatures) {
+    panelFeatures.addEventListener('mouseleave', () => {
+      if (currentPanel !== 'features') return;
+      currentSlide = null;
+      document.querySelectorAll('#panel-features .interactive-item').forEach(i => i.classList.remove('active'));
+      document.querySelectorAll('.canvas-image').forEach(s => s.classList.remove('visible'));
+      if (placeholder) placeholder.classList.remove('hidden');
+    });
+  }
+
+  // RU: Возврат к чистому плейсхолдеру при уводе мыши со Screens
+  // EN: Reset to clean placeholder when mouse leaves Screens panel
+  const panelScreens = document.querySelector('#panel-screens');
+  if (panelScreens) {
+    panelScreens.addEventListener('mouseleave', () => {
+      if (currentPanel !== 'screens') return;
+      currentSlide = null;
+      document.querySelectorAll('#panel-screens .interactive-item').forEach(i => i.classList.remove('active'));
+      document.querySelectorAll('.canvas-image').forEach(s => s.classList.remove('visible'));
+      if (placeholder) placeholder.classList.remove('hidden');
+    });
+  }
 }
 
 // Sticky Screens Model Filter
