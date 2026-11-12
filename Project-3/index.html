@@ -3,163 +3,583 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iOS Project Showcase — Hakob Ghlijyan</title>
+  <title>Filter Studio — Photo filters &amp; editor for iPhone &amp; iPad</title>
+  <meta name="description" content="Edit photos with elegant filters, crop, mirror and watermark. Every edit is a saved version, and your library syncs privately through iCloud.">
   <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+
+  <!-- Open Graph / Twitter Card -->
+  <meta property="og:title" content="Filter Studio — Photo filters &amp; editor for iPhone &amp; iPad">
+  <meta property="og:description" content="A calm, fast photo editor for iPhone and iPad with live previews, versions, and private iCloud sync.">
+  <meta property="og:image" content="images/cover.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Playfair Display + Instrument Sans + DM Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,700..900;1,700..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/split-style.css">
 </head>
-<body>
+<body class="theme-night">
 
+  <!-- =========================================================================
+       MARK: - HEADER / НАВИГАЦИЯ САЙТА
+       ========================================================================= -->
   <header class="site-header">
-    <div class="site-brand">
-      <a class="site-title" data-nav="work">Project 03</a>
-      <div class="site-divider-v"></div>
-      <span class="site-tagline">Native iOS Application</span>
-      <a href="../index.html" class="site-back-link" title="Return to Hakob Ghlijyan Portfolio">
-        &larr; Back to Portfolio
+    <div class="site-brand-group">
+      <img src="assets/icons/x512_light.svg" alt="Filter Studio Icon" class="site-brand-icon" width="26" height="26">
+      <a class="site-brand" data-nav="work" href="#work">Filter Studio</a>
+      <a href="../index.html" class="portfolio-back-link" title="Return to Hakob Ghlijyan Portfolio">
+        &larr; <span data-i18n="navPortfolio">Portfolio</span>
       </a>
     </div>
-    <nav class="site-header-nav">
-      <a data-nav="work" class="nav-active">Work</a>
-      <a data-nav="about">About</a>
-      <a data-nav="contact">Support</a>
-      <a data-nav="privacy">Privacy</a>
+
+    <!-- Center Navigation Tabs (6 core sections) -->
+    <nav class="site-nav-tabs">
+      <a data-nav="work" href="#work" class="nav-active" data-i18n="navFeatures">Features</a>
+      <a data-nav="screens" href="#screens" data-i18n="navScreens">Screenshots</a>
+      <a data-nav="guide" href="#guide" data-i18n="navGuide">Overview</a>
+      <a data-nav="about" href="#about" data-i18n="navAbout">About</a>
+      <a data-nav="support" href="#support" data-i18n="navSupport">Support</a>
+      <a data-nav="privacy" href="#privacy" data-i18n="navPrivacy">Privacy</a>
     </nav>
+
+    <!-- Actions: App Store Button & 6-Language Switcher -->
+    <div class="site-actions">
+      <!-- Coming soon badge / App Store button -->
+      <a href="#work" class="header-appstore-btn" title="Filter Studio Coming Soon to App Store" aria-label="Coming Soon on App Store">
+        <img src="images/apple.logo@1x.png" alt="Apple" class="header-apple-logo">
+        <span data-i18n="comingSoon">Coming Soon</span>
+      </a>
+
+      <!-- 6-Language Dropdown -->
+      <div class="custom-lang">
+        <button type="button" class="lang-btn" aria-label="Select language">
+          <span class="lang-label">EN</span>
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1L5 5L9 1"/></svg>
+        </button>
+        <div class="lang-menu">
+          <button type="button" data-val="en">🇬🇧 English</button>
+          <button type="button" data-val="ru">🇷🇺 Русский</button>
+          <button type="button" data-val="fr">🇫🇷 Français</button>
+          <button type="button" data-val="es">🇪🇸 Español</button>
+          <button type="button" data-val="it">🇮🇹 Italiano</button>
+          <button type="button" data-val="de">🇩🇪 Deutsch</button>
+        </div>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button type="button" class="hamburger-btn" id="navBurger" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
   </header>
 
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menu">
+    <button type="button" class="mobile-nav-close" id="navClose" aria-label="Close menu">&times;</button>
+    <a href="../index.html">&larr; <span data-i18n="navPortfolio">Portfolio</span></a>
+    <a data-nav="work" href="#work" class="nav-active" data-i18n="navFeatures">Features</a>
+    <a data-nav="screens" href="#screens" data-i18n="navScreens">Screenshots</a>
+    <a data-nav="guide" href="#guide" data-i18n="navGuide">Overview</a>
+    <a data-nav="about" href="#about" data-i18n="navAbout">About</a>
+    <a data-nav="support" href="#support" data-i18n="navSupport">Support</a>
+    <a data-nav="privacy" href="#privacy" data-i18n="navPrivacy">Privacy</a>
+  </div>
+
+  <!-- =========================================================================
+       MARK: - MAIN SPLIT CONTAINER / ДВУХПАНЕЛЬНЫЙ ИНТЕРФЕЙС
+       ========================================================================= -->
   <div class="split-container">
+
+    <!-- LEFT: Content Panels -->
     <div class="left-side">
+
+      <!-- =====================================================================
+           PANEL 1: FEATURES (6 Модулей)
+           ===================================================================== -->
       <div class="panel panel-active" id="panel-work">
         <div class="panel-header">
-          <span>Selected Works — iOS Engineering</span>
+          <span data-i18n="heroCompat">for iPhone &amp; iPad · iOS 18+ · Native Swift &amp; SwiftUI</span>
         </div>
-        <ul class="project-list" id="projectList">
-          <li class="project-item" data-index="0">
-            <a href="#" class="project-link">
-              <span class="project-number">01</span>
-              <span class="project-title">Core Architecture</span>
-              <span class="project-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-              <span class="project-category">SwiftUI</span>
-            </a>
+
+        <!-- Live banner / App Store preview -->
+        <aside class="live-card" aria-labelledby="liveTitle">
+          <img class="live-icon" src="assets/icons/x512_squircle.svg" alt="Filter Studio app icon" width="64" height="64" decoding="async">
+          <div class="live-text">
+            <strong id="liveTitle" data-i18n="liveTitle">Coming Soon to the App Store</strong>
+            <span data-i18n="liveDesc">A calm, fast photo editor for iPhone and iPad with elegant filters, versioning, and private iCloud sync.</span>
+            <div class="live-badge" style="opacity: 0.85;">
+              <img src="images/app-store-badge.svg" alt="Download on the App Store" height="38">
+            </div>
+          </div>
+          <figure class="live-qr">
+            <div class="live-qr-placeholder" style="width:84px; height:84px; background:#000; border-radius:10px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,0.12);">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </div>
+            <figcaption data-i18n="liveQr">Scan to preview</figcaption>
+          </figure>
+        </aside>
+
+        <ul class="interactive-list" id="featuresList">
+          <!-- 01: Editor -->
+          <li class="interactive-item active" data-slide="duo-1">
+            <div class="interactive-link">
+              <span class="item-num">01</span>
+              <span class="item-title"
+                    data-en="Filters with live preview"
+                    data-ru="Фильтры с живым просмотром"
+                    data-fr="Filtres en aperçu direct"
+                    data-es="Filtros con vista previa"
+                    data-it="Filtri con anteprima live"
+                    data-de="Filter mit Live-Vorschau">Filters with live preview</span>
+              <span class="item-tag">Editor</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
           </li>
-          <li class="project-item" data-index="1">
-            <a href="#" class="project-link">
-              <span class="project-number">02</span>
-              <span class="project-title">Data Synchronization</span>
-              <span class="project-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-              <span class="project-category">SwiftData</span>
-            </a>
+
+          <!-- 02: Crop & Mirror -->
+          <li class="interactive-item" data-slide="duo-2">
+            <div class="interactive-link">
+              <span class="item-num">02</span>
+              <span class="item-title"
+                    data-en="Crop, rotate, mirror"
+                    data-ru="Обрезка, поворот, зеркало"
+                    data-fr="Recadrer, pivoter, inverser"
+                    data-es="Recorta, gira, voltea"
+                    data-it="Ritaglia, ruota, specchia"
+                    data-de="Zuschneiden, drehen, spiegeln">Crop, rotate, mirror</span>
+              <span class="item-tag">Crop</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
           </li>
-          <li class="project-item" data-index="2">
-            <a href="#" class="project-link">
-              <span class="project-number">03</span>
-              <span class="project-title">Interactive Motion</span>
-              <span class="project-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-              <span class="project-category">Animations</span>
-            </a>
+
+          <!-- 03: Watermark -->
+          <li class="interactive-item" data-slide="duo-3">
+            <div class="interactive-link">
+              <span class="item-num">03</span>
+              <span class="item-title"
+                    data-en="Your watermark, your colour"
+                    data-ru="Ваш водяной знак"
+                    data-fr="Votre filigrane, votre couleur"
+                    data-es="Tu marca de agua, tu color"
+                    data-it="Filigrana del tuo colore"
+                    data-de="Wasserzeichen in deiner Farbe">Your watermark, your colour</span>
+              <span class="item-tag">Watermark</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+
+          <!-- 04: Versions -->
+          <li class="interactive-item" data-slide="duo-4">
+            <div class="interactive-link">
+              <span class="item-num">04</span>
+              <span class="item-title"
+                    data-en="Every edit is a version"
+                    data-ru="Каждая правка — версия"
+                    data-fr="Chaque retouche, une version"
+                    data-es="Cada edición, una versión"
+                    data-it="Ogni modifica è una versione"
+                    data-de="Jede Änderung ist eine Version">Every edit is a version</span>
+              <span class="item-tag">Versions</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+
+          <!-- 05: Library & Collections -->
+          <li class="interactive-item" data-slide="duo-5">
+            <div class="interactive-link">
+              <span class="item-num">05</span>
+              <span class="item-title"
+                    data-en="Photos &amp; Collections"
+                    data-ru="Фото и коллекции"
+                    data-fr="Photos et collections"
+                    data-es="Fotos y colecciones"
+                    data-it="Foto e raccolte"
+                    data-de="Fotos &amp; Sammlungen">Photos &amp; Collections</span>
+              <span class="item-tag">Library</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </li>
+
+          <!-- 06: Ecosystem & Sync -->
+          <li class="interactive-item" data-slide="duo-6">
+            <div class="interactive-link">
+              <span class="item-num">06</span>
+              <span class="item-title"
+                    data-en="Sync with your iCloud"
+                    data-ru="Синхронизация через iCloud"
+                    data-fr="Synchronisé via iCloud"
+                    data-es="Sincroniza con iCloud"
+                    data-it="Sincronizza con iCloud"
+                    data-de="Sync über deine iCloud">Sync with your iCloud</span>
+              <span class="item-tag">Ecosystem</span>
+              <div class="item-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
           </li>
         </ul>
-        <div class="panel-footer">
-          <span>Project Modules</span>
-          <span>Hover to Preview</span>
-        </div>
       </div>
 
-      <div class="panel" id="panel-about">
-        <div class="about-content">
-          <span class="about-label">About this App</span>
-          <h2 class="about-headline">Engineered for clean performance and native Apple fidelity.</h2>
-          <p class="about-body">
-            This application is part of Hakob Ghlijyan's native iOS software portfolio. Built following Clean Architecture principles, strict concurrency checks, and modular separation of concerns.
-          </p>
+      <!-- =====================================================================
+           PANEL 2: SCREENSHOTS & DEVICE GALLERY
+           ===================================================================== -->
+      <div class="panel" id="panel-screens">
+        <div class="panel-hero">
+          <span class="panel-eyebrow" data-i18n="navScreens">Screenshots</span>
+          <h2 class="panel-title">Full Device Gallery</h2>
+          <div class="device-filter-bar">
+            <button class="filter-btn active" data-filter="all" data-i18n="allDevices">All</button>
+            <button class="filter-btn" data-filter="duo" data-i18n="duoDevices">Duo</button>
+            <button class="filter-btn" data-filter="iphone" data-i18n="iphoneDevices">iPhone</button>
+            <button class="filter-btn" data-filter="ipad" data-i18n="ipadDevices">iPad</button>
+          </div>
         </div>
+
+        <ul class="interactive-list" id="screensList">
+          <!-- Duo Screens -->
+          <li class="interactive-item active" data-slide="duo-1" data-model="duo">
+            <div class="interactive-link"><span class="item-num">D-01</span><span class="item-title">Filters with live preview</span><span class="item-tag">Duo</span></div>
+          </li>
+          <li class="interactive-item" data-slide="duo-2" data-model="duo">
+            <div class="interactive-link"><span class="item-num">D-02</span><span class="item-title">Crop, rotate, mirror</span><span class="item-tag">Duo</span></div>
+          </li>
+          <li class="interactive-item" data-slide="duo-3" data-model="duo">
+            <div class="interactive-link"><span class="item-num">D-03</span><span class="item-title">Watermark and accents</span><span class="item-tag">Duo</span></div>
+          </li>
+          <li class="interactive-item" data-slide="duo-4" data-model="duo">
+            <div class="interactive-link"><span class="item-num">D-04</span><span class="item-title">Every edit is a version</span><span class="item-tag">Duo</span></div>
+          </li>
+          <li class="interactive-item" data-slide="duo-5" data-model="duo">
+            <div class="interactive-link"><span class="item-num">D-05</span><span class="item-title">Photos &amp; Collections</span><span class="item-tag">Duo</span></div>
+          </li>
+          <li class="interactive-item" data-slide="duo-6" data-model="duo">
+            <div class="interactive-link"><span class="item-num">D-06</span><span class="item-title">Sync with your iCloud</span><span class="item-tag">Duo</span></div>
+          </li>
+          <li class="interactive-item" data-slide="duo-7" data-model="duo">
+            <div class="interactive-link"><span class="item-num">D-07</span><span class="item-title">Insights &amp; Widget</span><span class="item-tag">Duo</span></div>
+          </li>
+
+          <!-- iPhone Screens -->
+          <li class="interactive-item" data-slide="p-1" data-model="iphone">
+            <div class="interactive-link"><span class="item-num">P-01</span><span class="item-title">iPhone Editor Canvas</span><span class="item-tag">iPhone</span></div>
+          </li>
+          <li class="interactive-item" data-slide="p-2" data-model="iphone">
+            <div class="interactive-link"><span class="item-num">P-02</span><span class="item-title">iPhone Crop Adjustments</span><span class="item-tag">iPhone</span></div>
+          </li>
+          <li class="interactive-item" data-slide="p-3" data-model="iphone">
+            <div class="interactive-link"><span class="item-num">P-03</span><span class="item-title">iPhone Watermark Customizer</span><span class="item-tag">iPhone</span></div>
+          </li>
+          <li class="interactive-item" data-slide="p-4" data-model="iphone">
+            <div class="interactive-link"><span class="item-num">P-04</span><span class="item-title">iPhone Version Inspector</span><span class="item-tag">iPhone</span></div>
+          </li>
+          <li class="interactive-item" data-slide="p-5" data-model="iphone">
+            <div class="interactive-link"><span class="item-num">P-05</span><span class="item-title">iPhone Collections &amp; Grid</span><span class="item-tag">iPhone</span></div>
+          </li>
+          <li class="interactive-item" data-slide="p-6" data-model="iphone">
+            <div class="interactive-link"><span class="item-num">P-06</span><span class="item-title">iPhone iCloud Sync</span><span class="item-tag">iPhone</span></div>
+          </li>
+          <li class="interactive-item" data-slide="p-7" data-model="iphone">
+            <div class="interactive-link"><span class="item-num">P-07</span><span class="item-title">iPhone Insights &amp; Analytics</span><span class="item-tag">iPhone</span></div>
+          </li>
+
+          <!-- iPad Screens -->
+          <li class="interactive-item" data-slide="pad-1" data-model="ipad">
+            <div class="interactive-link"><span class="item-num">PAD-01</span><span class="item-title">iPad Studio Canvas</span><span class="item-tag">iPad</span></div>
+          </li>
+          <li class="interactive-item" data-slide="pad-2" data-model="ipad">
+            <div class="interactive-link"><span class="item-num">PAD-02</span><span class="item-title">iPad Split View Crop</span><span class="item-tag">iPad</span></div>
+          </li>
+          <li class="interactive-item" data-slide="pad-3" data-model="ipad">
+            <div class="interactive-link"><span class="item-num">PAD-03</span><span class="item-title">iPad Watermark Studio</span><span class="item-tag">iPad</span></div>
+          </li>
+          <li class="interactive-item" data-slide="pad-4" data-model="ipad">
+            <div class="interactive-link"><span class="item-num">PAD-04</span><span class="item-title">iPad Version History</span><span class="item-tag">iPad</span></div>
+          </li>
+          <li class="interactive-item" data-slide="pad-5" data-model="ipad">
+            <div class="interactive-link"><span class="item-num">PAD-05</span><span class="item-title">iPad Multi-Column Library</span><span class="item-tag">iPad</span></div>
+          </li>
+          <li class="interactive-item" data-slide="pad-6" data-model="ipad">
+            <div class="interactive-link"><span class="item-num">PAD-06</span><span class="item-title">iPad iCloud Dashboard</span><span class="item-tag">iPad</span></div>
+          </li>
+          <li class="interactive-item" data-slide="pad-7" data-model="ipad">
+            <div class="interactive-link"><span class="item-num">PAD-07</span><span class="item-title">iPad Insights &amp; Stats</span><span class="item-tag">iPad</span></div>
+          </li>
+        </ul>
       </div>
 
-      <div class="panel" id="panel-contact">
-        <div class="contact-content">
-          <span class="contact-label">App Support &amp; Contact</span>
-          <h2 class="contact-headline">Need assistance?</h2>
-          <p class="about-body">For support, questions, or inquiries, reach out directly to the developer.</p>
-          <div class="contact-details">
-            <span>Engineer</span>
-            <a href="../index.html">Hakob Ghlijyan</a>
-            <span>Support Email</span>
-            <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>
-            <span>Chat</span>
-            <a href="https://t.me/hakobghlijyan" target="_blank" rel="noopener noreferrer">Telegram (@hakobghlijyan)</a>
+      <!-- =====================================================================
+           PANEL 3: GUIDE / OVERVIEW (20 шагов онбординга + Демо-видео)
+           ===================================================================== -->
+      <div class="panel" id="panel-guide">
+        <div class="panel-hero">
+          <span class="panel-eyebrow" data-i18n="guideLabel">Interactive Overview</span>
+          <h2 class="panel-title" data-i18n="guideTitle">How Filter Studio Works</h2>
+          <p class="panel-lead" data-i18n="guideDesc">Explore 20 walkthrough steps from the initial launch to versioned photo workflows.</p>
+        </div>
+
+        <div class="panel-body-content" style="padding-top:0;">
+          <div class="guide-cards">
+            <!-- Video Walkthrough Card -->
+            <div class="guide-step-card guide-video-card active" data-slide="guide-video">
+              <div class="guide-step-header">
+                <span class="guide-step-badge" style="background:var(--accent-dim); color:var(--accent); border:1px solid var(--accent);">▶ DEMO VIDEO</span>
+                <span class="guide-step-title">iPhone 18 Pro Max Video Walkthrough</span>
+              </div>
+              <p class="guide-step-desc">Watch live interactive photo editing, filter adjustment, watermark styling, and version saves.</p>
+            </div>
+
+            <!-- 20 Onboarding Walkthrough Steps -->
+            <div class="guide-step-card" data-slide="guide-1"><div class="guide-step-header"><span class="guide-step-badge">01</span><span class="guide-step-title">Welcome &amp; Privacy First</span></div><p class="guide-step-desc">Your photos stay entirely on your device. Zero account setup required.</p></div>
+            <div class="guide-step-card" data-slide="guide-2"><div class="guide-step-header"><span class="guide-step-badge">02</span><span class="guide-step-title">Core Image Filters</span></div><p class="guide-step-desc">Curated filters with live instant previews and fine-tuning controls.</p></div>
+            <div class="guide-step-card" data-slide="guide-3"><div class="guide-step-header"><span class="guide-step-badge">03</span><span class="guide-step-title">Crop &amp; Aspect Ratios</span></div><p class="guide-step-desc">Freeform or preset aspect ratios with horizontal and vertical mirror flipping.</p></div>
+            <div class="guide-step-card" data-slide="guide-4"><div class="guide-step-header"><span class="guide-step-badge">04</span><span class="guide-step-title">Eight Watermark Styles</span></div><p class="guide-step-desc">Add signatures or tags with custom color swatches and opacity control.</p></div>
+            <div class="guide-step-card" data-slide="guide-5"><div class="guide-step-header"><span class="guide-step-badge">05</span><span class="guide-step-title">Non-Destructive Versions</span></div><p class="guide-step-desc">Every save creates a separate version. Your original file remains untouched.</p></div>
+            <div class="guide-step-card" data-slide="guide-6"><div class="guide-step-header"><span class="guide-step-badge">06</span><span class="guide-step-title">Collections &amp; Favourites</span></div><p class="guide-step-desc">Organize edits into albums, favorite presets, and filtered views.</p></div>
+            <div class="guide-step-card" data-slide="guide-7"><div class="guide-step-header"><span class="guide-step-badge">07</span><span class="guide-step-title">Private iCloud Sync</span></div><p class="guide-step-desc">Optional sync exclusively via your personal CloudKit database.</p></div>
+            <div class="guide-step-card" data-slide="guide-8"><div class="guide-step-header"><span class="guide-step-badge">08</span><span class="guide-step-title">Home Screen Widgets</span></div><p class="guide-step-desc">Glance at curated memories and favourite collections right on your Home Screen.</p></div>
+            <div class="guide-step-card" data-slide="guide-9"><div class="guide-step-header"><span class="guide-step-badge">09</span><span class="guide-step-title">Edit Insights</span></div><p class="guide-step-desc">Visual metrics on your editing patterns by day, month, and filter choice.</p></div>
+            <div class="guide-step-card" data-slide="guide-10"><div class="guide-step-header"><span class="guide-step-badge">10</span><span class="guide-step-title">EXIF Metadata Preservation</span></div><p class="guide-step-desc">Camera parameters, dates, and locations stay completely intact upon export.</p></div>
+            <div class="guide-step-card" data-slide="guide-11"><div class="guide-step-header"><span class="guide-step-badge">11</span><span class="guide-step-title">Recently Deleted Safety</span></div><p class="guide-step-desc">Deleted items stay safely recoverable for 3 days before permanent removal.</p></div>
+            <div class="guide-step-card" data-slide="guide-12"><div class="guide-step-header"><span class="guide-step-badge">12</span><span class="guide-step-title">Custom Accent Themes</span></div><p class="guide-step-desc">Personalize the studio interface with vibrant iOS accent tones.</p></div>
+            <div class="guide-step-card" data-slide="guide-13"><div class="guide-step-header"><span class="guide-step-badge">13</span><span class="guide-step-title">iPad Multi-Column Split View</span></div><p class="guide-step-desc">Optimized for iPadOS with expansive side-by-side editing canvases.</p></div>
+            <div class="guide-step-card" data-slide="guide-14"><div class="guide-step-header"><span class="guide-step-badge">14</span><span class="guide-step-title">High-Fidelity Rendering</span></div><p class="guide-step-desc">Deep color fidelity powered by Metal and Apple Silicon graphics shaders.</p></div>
+            <div class="guide-step-card" data-slide="guide-15"><div class="guide-step-header"><span class="guide-step-badge">15</span><span class="guide-step-title">Batch Sharing</span></div><p class="guide-step-desc">Share multiple versions seamlessly through the native iOS Share Sheet.</p></div>
+            <div class="guide-step-card" data-slide="guide-16"><div class="guide-step-header"><span class="guide-step-badge">16</span><span class="guide-step-title">Clean Native Interface</span></div><p class="guide-step-desc">Zero cluttered overlays, zero banner distractions — pure focus on photography.</p></div>
+            <div class="guide-step-card" data-slide="guide-17"><div class="guide-step-header"><span class="guide-step-badge">17</span><span class="guide-step-title">System Photo Picker</span></div><p class="guide-step-desc">Privacy-first picker grants access only to the selected images.</p></div>
+            <div class="guide-step-card" data-slide="guide-18"><div class="guide-step-header"><span class="guide-step-badge">18</span><span class="guide-step-title">Universal Experience</span></div><p class="guide-step-desc">One cohesive purchase runs identically across all your iPhones and iPads.</p></div>
+            <div class="guide-step-card" data-slide="guide-19"><div class="guide-step-header"><span class="guide-step-badge">19</span><span class="guide-step-title">Offline Ready</span></div><p class="guide-step-desc">All editing shaders run locally without needing any internet connection.</p></div>
+            <div class="guide-step-card" data-slide="guide-20"><div class="guide-step-header"><span class="guide-step-badge">20</span><span class="guide-step-title">Ready for Your Creativity</span></div><p class="guide-step-desc">Start editing your photography library with speed, elegance, and calm.</p></div>
           </div>
         </div>
       </div>
 
+      <!-- =====================================================================
+           PANEL 4: ABOUT (Философия и 3 цифры статистики)
+           ===================================================================== -->
+      <div class="panel" id="panel-about">
+        <div class="panel-hero">
+          <span class="panel-eyebrow" data-i18n="navAbout">About</span>
+          <h2 class="panel-title" data-i18n="aboutTitle">A calm photo editor built around your originals.</h2>
+          <p class="panel-lead" data-i18n="aboutDesc">Built exclusively for iOS and iPadOS. Every edit is saved as a version, keeping your original untouched. Zero ads, zero tracking, and complete privacy.</p>
+        </div>
+
+        <div class="panel-body-content" style="padding-top:0;">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-num">0</span>
+              <span class="stat-label" data-i18n="statAccounts">Accounts required</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">0</span>
+              <span class="stat-label" data-i18n="statTrackers">Trackers in the app</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">6</span>
+              <span class="stat-label" data-i18n="statLanguages">App languages</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           PANEL 5: SUPPORT (Форма Web3Forms, 4 шага, 7 FAQ)
+           ===================================================================== -->
+      <div class="panel" id="panel-support">
+        <div class="panel-hero">
+          <span class="panel-eyebrow" data-i18n="navSupport">Support</span>
+          <h2 class="panel-title" data-i18n="supportTitle">Customer Support Hub</h2>
+          <p class="panel-lead" data-i18n="supportDesc">Write to us: hakobghlijyan@gmail.com — we reply as soon as we can.</p>
+        </div>
+
+        <div class="panel-body-content" style="padding-top:0;">
+          <!-- Web3Forms Contact Form -->
+          <form class="support-form" data-contact-form
+                action="https://api.web3forms.com/submit" method="POST" accept-charset="UTF-8"
+                data-subject="[Filter Studio] Support request"
+                data-fallback-email="hakobghlijyan@gmail.com">
+            <input type="hidden" name="access_key" value="fd738668-d5b4-41fa-b85c-35eb8d8c4a18">
+            <input type="hidden" name="from_name" value="Filter Studio Support">
+            <input type="hidden" name="subject" value="[Filter Studio] Support request">
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off">
+
+            <div>
+              <label for="sf-name" data-i18n="supportName">Name</label>
+              <input id="sf-name" type="text" name="name" required maxlength="100" autocomplete="name" placeholder="Your name">
+            </div>
+            <div>
+              <label for="sf-email" data-i18n="supportEmail">Email (for the reply)</label>
+              <input id="sf-email" type="email" name="email" required maxlength="150" autocomplete="email" placeholder="you@example.com">
+            </div>
+            <div>
+              <label for="sf-message" data-i18n="supportMessage">Message</label>
+              <textarea id="sf-message" name="message" required maxlength="4000" placeholder="Describe your question or feedback..."></textarea>
+            </div>
+            <button type="submit" class="form-send" data-i18n="supportSend">Send message &rarr;</button>
+          </form>
+
+          <!-- 4 Steps Getting Started -->
+          <div style="margin:2rem 0;">
+            <p style="font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--accent);" data-i18n="supportStepsTitle">Getting started (4 steps)</p>
+            <ol style="margin-top:0.6rem; padding-left:1.2rem; font-size:0.84rem; line-height:1.7; color:var(--text-secondary);">
+              <li>Tap + in the Editor and pick a photo.</li>
+              <li>Choose a filter, crop, mirror or add a watermark.</li>
+              <li>Save — every save becomes a new version in Photos.</li>
+              <li>Find it in Photos or Collections, then share or save to Photos.</li>
+            </ol>
+          </div>
+
+          <!-- 7 FAQ Accordions -->
+          <div class="faq-container">
+            <p style="font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--accent); margin-bottom:0.8rem;" data-i18n="faqTitle">Frequently Asked Questions</p>
+
+            <details class="faq-card" open>
+              <summary>What devices and software do I need?</summary>
+              <div class="faq-body">An iPhone or iPad with iOS 18 or later.</div>
+            </details>
+            <details class="faq-card">
+              <summary>Is my original photo changed?</summary>
+              <div class="faq-body">No. Every edit is saved as a separate version; the original stays untouched.</div>
+            </details>
+            <details class="faq-card">
+              <summary>How does iCloud sync work?</summary>
+              <div class="faq-body">Turn it on in Settings → iCloud. Sign in with the same Apple ID on all devices. Sync uses your private CloudKit database.</div>
+            </details>
+            <details class="faq-card">
+              <summary>Some photos do not sync. What should I do?</summary>
+              <div class="faq-body">They are safe on your device. Ensure you have free iCloud storage and keep the app open on Wi‑Fi.</div>
+            </details>
+            <details class="faq-card">
+              <summary>I deleted a photo by mistake.</summary>
+              <div class="faq-body">Open Collections → Recently Deleted. Photos stay there for 3 days and can be restored.</div>
+            </details>
+            <details class="faq-card">
+              <summary>Is location kept when I share or export?</summary>
+              <div class="faq-body">Yes. Sharing and exporting keep all EXIF metadata, including location, unchanged.</div>
+            </details>
+            <details class="faq-card">
+              <summary>Does Filter Studio send my photos anywhere?</summary>
+              <div class="faq-body">No. Photos stay on your device and, if you enable it, in your private iCloud. Zero external servers.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           PANEL 6: PRIVACY POLICY (13 нумерованных разделов)
+           ===================================================================== -->
       <div class="panel" id="panel-privacy">
-        <div class="about-content">
-          <span class="about-label">Privacy Policy</span>
-          <h2 class="about-headline">Respecting your privacy by default.</h2>
-          <p class="about-body">
-            We adhere to Apple's strict privacy standards. This application does not collect, sell, or share user analytics or tracking identifiers with third parties.
-          </p>
+        <div class="panel-hero">
+          <span class="panel-eyebrow" data-i18n="navPrivacy">Privacy</span>
+          <h2 class="panel-title" data-i18n="privacyTitle">Privacy Policy</h2>
+          <p class="panel-lead" data-i18n="privacyIntro">The app does not collect your personal data. Zero accounts, zero ads, and zero analytics.</p>
+        </div>
+
+        <div class="panel-body-content" style="padding-top:0;">
+          <div class="privacy-sections" style="font-size:0.83rem; line-height:1.65; color:var(--text-secondary);">
+            <p><strong>1. Summary:</strong> Filter Studio has no accounts, no ads and no analytics. Your photos, edits and their metadata stay on your device.</p>
+            <p style="margin-top:0.8rem;"><strong>2. Who we are:</strong> Filter Studio is developed by Hakob Ghlijyan, an independent developer. Contact: hakobghlijyan@gmail.com.</p>
+            <p style="margin-top:0.8rem;"><strong>3. What the app stores:</strong> Photos you import, edited versions, metadata (date, camera, location), albums, and your settings inside local on-device sandbox storage.</p>
+            <p style="margin-top:0.8rem;"><strong>4. iCloud:</strong> Sync is optional. The app uses Apple's private CloudKit database tied to your Apple ID. The developer has zero access.</p>
+            <p style="margin-top:0.8rem;"><strong>5. Photos:</strong> You select images through the system photo picker. The app never scans or uploads your photo library.</p>
+            <p style="margin-top:0.8rem;"><strong>6. Location:</strong> Location is read strictly from existing EXIF metadata. To display place names, coordinates may query Apple's native geocoder.</p>
+            <p style="margin-top:0.8rem;"><strong>7. What we do not do:</strong> No tracking, no advertising, no third-party analytics SDKs, and no selling or profiling of user data.</p>
+            <p style="margin-top:0.8rem;"><strong>8. Diagnostic logs:</strong> The app writes zero logs that leave your device.</p>
+            <p style="margin-top:0.8rem;"><strong>9. Data export and deletion:</strong> Deleted photos remain 3 days in Recently Deleted before permanent removal. Deleting the app deletes all local data.</p>
+            <p style="margin-top:0.8rem;"><strong>10. Children:</strong> The app collects no personal information from anyone, including children.</p>
+            <p style="margin-top:0.8rem;"><strong>11. Security:</strong> Data is protected by Apple hardware encryption and private iCloud architecture.</p>
+            <p style="margin-top:0.8rem;"><strong>12. This website:</strong> Hosted on GitHub Pages with Google Fonts. Form submissions are processed securely via Web3Forms solely to reply to your inquiry.</p>
+            <p style="margin-top:0.8rem;"><strong>13. Contact:</strong> For any privacy questions, reach out directly to hakobghlijyan@gmail.com.</p>
+          </div>
         </div>
       </div>
+
     </div>
 
-    <div class="split-divider"></div>
+    <!-- RIGHT: Visual Media Canvas Showcase -->
+    <div class="right-side" id="rightCanvas">
 
-    <div class="canvas-side" id="canvasSide">
-      <div class="canvas-placeholder" id="placeholder">
-        <div class="placeholder-icon">
-          <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="3"/>
-            <path d="M12 2v4m0 12v4m-10-10h4m12 0h4m-3.3-6.7-2.8 2.8m-5.8 5.8-2.8 2.8m0-11.3 2.8 2.8m5.8 5.8 2.8 2.8"/>
-          </svg>
-        </div>
-        <span class="placeholder-text">Hover over a module to inspect</span>
-      </div>
-
-      <div class="canvas-image" data-slide="0">
-        <img src="images/templatemo-split-03.jpg" alt="Core Architecture" loading="lazy">
-        <div class="canvas-caption">
-          <div class="canvas-caption-title">Core Architecture</div>
-          <div class="canvas-caption-year">SwiftUI · Modular Design</div>
+      <!-- Hero Video Slide -->
+      <div class="visual-slide slide-active" id="slide-guide-video">
+        <div class="video-container" style="position:relative; width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
+          <video autoplay loop muted playsinline style="max-height:86vh; max-width:92%; border-radius:24px; box-shadow:var(--shadow-lg); border:1px solid rgba(255,255,255,0.1);">
+            <source src="demo_video/iPhone_18_Pro_Max_0.mp4" type="video/mp4">
+            <source src="demo_video/iPhone_18_Pro_Max_0.mov" type="video/quicktime">
+          </video>
         </div>
       </div>
 
-      <div class="canvas-image" data-slide="1">
-        <img src="images/templatemo-split-04.jpg" alt="Data Synchronization" loading="lazy">
-        <div class="canvas-caption">
-          <div class="canvas-caption-title">Data Synchronization</div>
-          <div class="canvas-caption-year">SwiftData · CloudKit</div>
-        </div>
-      </div>
+      <!-- Duo Screens Slides (D-01 to D-07) -->
+      <div class="visual-slide" id="slide-duo-1"><img src="images/duo/duo1ai-store-black.png" alt="Filter Studio - Filters with live preview" loading="lazy"></div>
+      <div class="visual-slide" id="slide-duo-2"><img src="images/duo/duo2ai-store-black.png" alt="Filter Studio - Crop, rotate, mirror" loading="lazy"></div>
+      <div class="visual-slide" id="slide-duo-3"><img src="images/duo/duo3ai-store-black.png" alt="Filter Studio - Watermarks &amp; Accents" loading="lazy"></div>
+      <div class="visual-slide" id="slide-duo-4"><img src="images/duo/duo4ai-store-black.png" alt="Filter Studio - Every edit is a version" loading="lazy"></div>
+      <div class="visual-slide" id="slide-duo-5"><img src="images/duo/duo5ai-store-black.png" alt="Filter Studio - Photos &amp; Collections" loading="lazy"></div>
+      <div class="visual-slide" id="slide-duo-6"><img src="images/duo/duo6ai-store-black.png" alt="Filter Studio - Sync with your iCloud" loading="lazy"></div>
+      <div class="visual-slide" id="slide-duo-7"><img src="images/duo/duo7ai-store-black.png" alt="Filter Studio - Insights &amp; Widget" loading="lazy"></div>
 
-      <div class="canvas-image" data-slide="2">
-        <img src="images/templatemo-split-05.jpg" alt="Interactive Motion" loading="lazy">
-        <div class="canvas-caption">
-          <div class="canvas-caption-title">Interactive Motion</div>
-          <div class="canvas-caption-year">Fluid UI Transitions</div>
-        </div>
-      </div>
+      <!-- iPhone Screens Slides (P-01 to P-07) -->
+      <div class="visual-slide" id="slide-p-1"><img src="images/iphone/p1ai-store-black.png" alt="iPhone Editor Canvas" loading="lazy"></div>
+      <div class="visual-slide" id="slide-p-2"><img src="images/iphone/p2ai-store-black.png" alt="iPhone Crop Adjustments" loading="lazy"></div>
+      <div class="visual-slide" id="slide-p-3"><img src="images/iphone/p3ai-store-black.png" alt="iPhone Watermark Customizer" loading="lazy"></div>
+      <div class="visual-slide" id="slide-p-4"><img src="images/iphone/p4ai-store-black.png" alt="iPhone Version Inspector" loading="lazy"></div>
+      <div class="visual-slide" id="slide-p-5"><img src="images/iphone/p5ai-store-black.png" alt="iPhone Collections &amp; Grid" loading="lazy"></div>
+      <div class="visual-slide" id="slide-p-6"><img src="images/iphone/p6ai-store-black.png" alt="iPhone iCloud Sync" loading="lazy"></div>
+      <div class="visual-slide" id="slide-p-7"><img src="images/iphone/p7ai-store-black.png" alt="iPhone Insights &amp; Analytics" loading="lazy"></div>
 
-      <div class="canvas-context" data-context="about">
-        <img src="images/templatemo-split-07.jpg" alt="About App" loading="lazy">
-      </div>
-      <div class="canvas-context" data-context="contact">
-        <img src="images/templatemo-split-08.jpg" alt="Contact" loading="lazy">
-      </div>
-      <div class="canvas-context" data-context="privacy">
-        <img src="images/templatemo-split-09.jpg" alt="Privacy Policy" loading="lazy">
-      </div>
+      <!-- iPad Screens Slides (PAD-01 to PAD-07) -->
+      <div class="visual-slide" id="slide-pad-1"><img src="images/pad/pad1ai-store-black.png" alt="iPad Studio Canvas" loading="lazy"></div>
+      <div class="visual-slide" id="slide-pad-2"><img src="images/pad/pad2ai-store-black.png" alt="iPad Split View Crop" loading="lazy"></div>
+      <div class="visual-slide" id="slide-pad-3"><img src="images/pad/pad3ai-store-black.png" alt="iPad Watermark Studio" loading="lazy"></div>
+      <div class="visual-slide" id="slide-pad-4"><img src="images/pad/pad4ai-store-black.png" alt="iPad Version History" loading="lazy"></div>
+      <div class="visual-slide" id="slide-pad-5"><img src="images/pad/pad5ai-store-black.png" alt="iPad Multi-Column Library" loading="lazy"></div>
+      <div class="visual-slide" id="slide-pad-6"><img src="images/pad/pad6ai-store-black.png" alt="iPad iCloud Dashboard" loading="lazy"></div>
+      <div class="visual-slide" id="slide-pad-7"><img src="images/pad/pad7ai-store-black.png" alt="iPad Insights &amp; Stats" loading="lazy"></div>
+
+      <!-- Onboarding Steps Slides (Guide 1 to 20) -->
+      <div class="visual-slide" id="slide-guide-1"><img src="images/onboarding/onb1ai-store-black.png" alt="Welcome &amp; Privacy" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-2"><img src="images/onboarding/onb2ai-store-black.png" alt="Core Image Filters" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-3"><img src="images/onboarding/onb3ai-store-black.png" alt="Crop &amp; Aspect" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-4"><img src="images/onboarding/onb4ai-store-black.png" alt="Watermarks" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-5"><img src="images/onboarding/onb5ai-store-black.png" alt="Non-Destructive Versions" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-6"><img src="images/onboarding/onb6ai-store-black.png" alt="Collections" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-7"><img src="images/onboarding/onb7ai-store-black.png" alt="iCloud Sync" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-8"><img src="images/onboarding/onb8ai-store-black.png" alt="Home Widgets" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-9"><img src="images/onboarding/onb9ai-store-black.png" alt="Edit Insights" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-10"><img src="images/onboarding/onb10ai-store-black.png" alt="EXIF Metadata" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-11"><img src="images/onboarding/onb11ai-store-black.png" alt="Recently Deleted" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-12"><img src="images/onboarding/onb12ai-store-black.png" alt="Accent Themes" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-13"><img src="images/onboarding/onb13ai-store-black.png" alt="iPad Split View" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-14"><img src="images/onboarding/onb14ai-store-black.png" alt="High Fidelity" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-15"><img src="images/onboarding/onb15ai-store-black.png" alt="Batch Sharing" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-16"><img src="images/onboarding/onb16ai-store-black.png" alt="Clean Interface" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-17"><img src="images/onboarding/onb17ai-store-black.png" alt="System Photo Picker" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-18"><img src="images/onboarding/onb18ai-store-black.png" alt="Universal Experience" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-19"><img src="images/onboarding/onb19ai-store-black.png" alt="Offline Ready" loading="lazy"></div>
+      <div class="visual-slide" id="slide-guide-20"><img src="images/onboarding/onb20ai-store-black.png" alt="Ready for Creativity" loading="lazy"></div>
+
     </div>
+
   </div>
 
+  <!-- =========================================================================
+       MARK: - FOOTER / ФУТЕР
+       ========================================================================= -->
   <footer class="site-footer">
-    <span>&copy; 2026 Hakob Ghlijyan · iOS Application Showcase</span>
-    <div class="footer-links">
-      <a href="../index.html">Main Portfolio</a>
-    </div>
+    <span data-i18n="footerCopyright">&copy; 2026 Hakob Ghlijyan. All rights reserved.</span>
+    <span class="footer-trademark" data-i18n="footerTrademark">Apple, iPhone, iPad, and App Store are trademarks of Apple Inc.</span>
   </footer>
 
+  <!-- Lightbox Modal for Full Image Zoom -->
+  <div id="imageModal" class="image-modal" role="dialog" aria-modal="true" style="display:none;">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage" alt="Zoomed view">
+    <div id="modalCaption" class="modal-caption"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/contact-form.js"></script>
   <script src="js/split-script.js"></script>
 </body>
 </html>

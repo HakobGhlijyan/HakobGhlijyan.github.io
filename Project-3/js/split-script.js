@@ -1,173 +1,283 @@
-/**
- * Nightwell & Split Index Interactive Script
- * Language switching, panel navigation, screenshot gallery, and live canvas preview.
- */
-
-// MARK: - Application Lifecycle / Жизненный цикл приложения
-(function() {
+// MARK: - Filter Studio Multi-Language Dynamic Client Script
+(() => {
   'use strict';
 
-  // MARK: - Configuration / Конфигурация приложения
-  const APP_NAME = "Nightwell";
-  const SIRI_APP_NAME = "Night Well";
+  // State
+  let currentLang = 'en';
+  let i18nData = {};
+  const SUPPORTED_LANGS = ['en', 'ru', 'fr', 'es', 'it', 'de'];
 
-  // MARK: - Navigation: Panel Swapping / Переключение вкладок
-  const navLinks = document.querySelectorAll('[data-nav]');
-  const panels = document.querySelectorAll('.panel');
-  const canvasImages = document.querySelectorAll('.canvas-image');
-  const canvasContexts = document.querySelectorAll('.canvas-context');
-  const placeholder = document.getElementById('placeholder');
-  let currentPanel = 'work';
-  let currentSlide = -1;
+  // Detect language
+  const savedLang = localStorage.getItem('filterstudio_lang');
+  const urlLang = new URLSearchParams(window.location.search).get('lang');
+  const navLang = (navigator.language || 'en').slice(0, 2).toLowerCase();
 
-  function switchPanel(target) {
-    if (target === currentPanel) return;
-    currentPanel = target;
-    currentSlide = -1;
+  if (urlLang && SUPPORTED_LANGS.includes(urlLang)) {
+    currentLang = urlLang;
+  } else if (savedLang && SUPPORTED_LANGS.includes(savedLang)) {
+    currentLang = savedLang;
+  } else if (SUPPORTED_LANGS.includes(navLang)) {
+    currentLang = navLang;
+  }
 
-    // Update nav active state
-    navLinks.forEach(link => {
-      link.classList.toggle('nav-active', link.dataset.nav === target);
-    });
-
-    // Switch left panel
-    panels.forEach(panel => {
-      panel.classList.toggle('panel-active', panel.id === 'panel-' + target);
-    });
-
-    // Reset canvas visuals
-    canvasImages.forEach(img => img.classList.remove('visible'));
-    canvasContexts.forEach(ctx => ctx.classList.remove('visible'));
-
-    if (target === 'work' || target === 'screens') {
-      placeholder.classList.remove('hidden');
-    } else {
-      placeholder.classList.add('hidden');
-      const contextImg = document.querySelector('[data-context="' + target + '"]');
-      if (contextImg) {
-        setTimeout(() => contextImg.classList.add('visible'), 80);
+  // Load language dictionary
+  async function loadTranslations(lang) {
+    try {
+      const res = await fetch(`i18n/${lang}.json`);
+      if (res.ok) {
+        i18nData = await res.json();
       }
+    } catch (e) {
+      console.warn('Failed to load translations for', lang);
     }
   }
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      switchPanel(link.dataset.nav);
+  function applyLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('filterstudio_lang', lang);
+    document.documentElement.lang = lang;
+
+    // Update UI elements with data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (i18nData[key]) {
+        el.textContent = i18nData[key];
+      }
     });
-  });
 
-  // MARK: - Work & Screens: Interactive Hover & Preview
-  const interactiveItems = document.querySelectorAll('.project-item, .screen-item');
-  const slides = document.querySelectorAll('.canvas-image');
+    // Update elements with language-specific attributes data-en, data-ru, etc.
+    document.querySelectorAll(`[data-${lang}]`).forEach(el => {
+      const val = el.getAttribute(`data-${lang}`);
+      if (val) {
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.placeholder = val;
+        } else {
+          el.innerHTML = val;
+        }
+      }
+    });
 
-  interactiveItems.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      const idx = parseInt(item.dataset.index, 10);
-      if (idx === currentSlide) return;
-      currentSlide = idx;
+    // Update language badge
+    const label = document.querySelector('.lang-label');
+    if (label) label.textContent = lang.toUpperCase();
 
-      placeholder.classList.add('hidden');
+    // Mark active in dropdown
+    document.querySelectorAll('.lang-menu button').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-val') === lang);
+    });
+  }
 
-      slides.forEach(slide => {
-        slide.classList.toggle('visible', parseInt(slide.dataset.slide, 10) === idx);
+  async function setLanguage(lang) {
+    await loadTranslations(lang);
+    applyLanguage(lang);
+  }
+
+  // Navigation and Tabs
+  function initNav() {
+    const navLinks = document.querySelectorAll('[data-nav]');
+    const panels = document.querySelectorAll('.panel');
+
+    function switchPanel(targetId) {
+      const panel = document.getElementById(`panel-${targetId}`);
+      if (!panel) return;
+
+      panels.forEach(p => p.classList.remove('panel-active'));
+      panel.classList.add('panel-active');
+
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-nav') === targetId) {
+          link.classList.add('nav-active');
+        } else {
+          link.classList.remove('nav-active');
+        }
+      });
+
+      // Close mobile menu if open
+      const mobileNav = document.getElementById('mobileNav');
+      if (mobileNav) mobileNav.classList.remove('open');
+
+      window.location.hash = targetId;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const target = link.getAttribute('data-nav');
+        if (target) {
+          e.preventDefault();
+          switchPanel(target);
+        }
       });
     });
-  });
 
-  const panelWork = document.querySelector('#panel-work');
-  if (panelWork) {
-    panelWork.addEventListener('mouseleave', () => {
-      if (currentPanel !== 'work') return;
-      currentSlide = -1;
-      slides.forEach(s => s.classList.remove('visible'));
-      placeholder.classList.remove('hidden');
-    });
+    // Check hash on load
+    if (window.location.hash) {
+      const hash = window.location.hash.replace('#', '');
+      switchPanel(hash);
+    }
   }
 
-  const panelScreens = document.querySelector('#panel-screens');
-  if (panelScreens) {
-    panelScreens.addEventListener('mouseleave', () => {
-      if (currentPanel !== 'screens') return;
-      currentSlide = -1;
-      slides.forEach(s => s.classList.remove('visible'));
-      placeholder.classList.remove('hidden');
-    });
-  }
+  // Device Screens Filters & Slides
+  function initScreens() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('#screensList .interactive-item');
+    const visualSlides = document.querySelectorAll('.visual-slide');
 
-  // MARK: - Touch Device Support / Поддержка сенсорных экранов
-  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-    interactiveItems.forEach(item => {
-      item.addEventListener('click', (e) => {
-        e.preventDefault();
-        const idx = parseInt(item.dataset.index, 10);
+    function showSlide(slideId) {
+      visualSlides.forEach(slide => {
+        slide.classList.toggle('slide-active', slide.id === `slide-${slideId}`);
+      });
+    }
 
-        placeholder.classList.add('hidden');
-        interactiveItems.forEach(i => i.classList.remove('active'));
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        items.forEach(i => i.classList.remove('active'));
         item.classList.add('active');
+        const slide = item.getAttribute('data-slide');
+        if (slide) showSlide(slide);
+      });
+      item.addEventListener('mouseenter', () => {
+        const slide = item.getAttribute('data-slide');
+        if (slide) showSlide(slide);
+      });
+    });
 
-        slides.forEach(slide => {
-          const match = parseInt(slide.dataset.slide, 10) === idx;
-          slide.classList.toggle('visible', match);
-          if (match && window.innerWidth <= 900) {
-            slide.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+
+        items.forEach(item => {
+          const model = item.getAttribute('data-model');
+          if (filter === 'all' || model === filter) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
           }
         });
       });
     });
   }
 
-  // MARK: - Screenshot Filtering (Duo, iPhone, iPad, Apple Watch)
-  const filterBtns = document.querySelectorAll('.screen-filter-btn');
-  const screenItems = document.querySelectorAll('.screen-item');
+  // Features List interactive hover/click
+  function initFeatures() {
+    const featItems = document.querySelectorAll('#featuresList .interactive-item, #projectList .interactive-item');
+    const visualSlides = document.querySelectorAll('.visual-slide');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filter = btn.dataset.filter;
-      screenItems.forEach(item => {
-        if (filter === 'all' || item.dataset.category === filter) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
+    featItems.forEach(item => {
+      item.addEventListener('click', () => {
+        featItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        const slide = item.getAttribute('data-slide');
+        if (slide) {
+          visualSlides.forEach(s => s.classList.toggle('slide-active', s.id === `slide-${slide}` || s.id === `slide-${slide.replace('feat', 'duo')}`));
+        }
+      });
+      item.addEventListener('mouseenter', () => {
+        const slide = item.getAttribute('data-slide');
+        if (slide) {
+          visualSlides.forEach(s => s.classList.toggle('slide-active', s.id === `slide-${slide}` || s.id === `slide-${slide.replace('feat', 'duo')}`));
         }
       });
     });
-  });
-
-  // MARK: - Bilingual Language Switcher (EN / RU)
-  const langBtns = document.querySelectorAll('.lang-btn');
-  const translatableElements = document.querySelectorAll('[data-en][data-ru]');
-
-  function setLanguage(lang) {
-    document.documentElement.lang = lang;
-    langBtns.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.lang === lang);
-    });
-
-    translatableElements.forEach(el => {
-      el.innerHTML = el.getAttribute('data-' + lang) || el.innerHTML;
-    });
-
-    try {
-      localStorage.setItem('nightwell_lang', lang);
-    } catch (e) {}
   }
 
-  langBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      setLanguage(btn.dataset.lang);
-    });
-  });
+  // Guide Steps walkthrough
+  function initGuide() {
+    const guideCards = document.querySelectorAll('.guide-step-card');
+    const visualSlides = document.querySelectorAll('.visual-slide');
 
-  // Restore preferred language
-  try {
-    const savedLang = localStorage.getItem('nightwell_lang');
-    if (savedLang === 'ru') {
-      setLanguage('ru');
+    guideCards.forEach(card => {
+      card.addEventListener('click', () => {
+        guideCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        const slide = card.getAttribute('data-slide');
+        if (slide) {
+          visualSlides.forEach(s => s.classList.toggle('slide-active', s.id === `slide-${slide}`));
+        }
+      });
+    });
+  }
+
+  // Mobile menu and dropdown toggles
+  function initControls() {
+    const burger = document.getElementById('navBurger');
+    const closeBtn = document.getElementById('navClose');
+    const mobileNav = document.getElementById('mobileNav');
+
+    if (burger && mobileNav) {
+      burger.addEventListener('click', () => mobileNav.classList.add('open'));
     }
-  } catch (e) {}
+    if (closeBtn && mobileNav) {
+      closeBtn.addEventListener('click', () => mobileNav.classList.remove('open'));
+    }
+
+    const langBtn = document.querySelector('.lang-btn');
+    const langMenu = document.querySelector('.lang-menu');
+
+    if (langBtn && langMenu) {
+      langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langMenu.classList.toggle('show');
+      });
+
+      document.querySelectorAll('.lang-menu button').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const selected = btn.getAttribute('data-val');
+          if (selected) {
+            setLanguage(selected);
+            langMenu.classList.remove('show');
+          }
+        });
+      });
+
+      document.addEventListener('click', () => {
+        langMenu.classList.remove('show');
+      });
+    }
+  }
+
+  // Lightbox Modal
+  function initLightbox() {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    const closeBtn = document.querySelector('.modal-close');
+
+    if (!modal || !modalImg) return;
+
+    document.querySelectorAll('.visual-slide img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        modalImg.src = img.src;
+        if (modalCaption) {
+          modalCaption.textContent = img.alt || 'Filter Studio Showcase';
+        }
+      });
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.style.display = 'none');
+    }
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') modal.style.display = 'none';
+    });
+  }
+
+  // Initialize all components
+  document.addEventListener('DOMContentLoaded', () => {
+    initNav();
+    initScreens();
+    initFeatures();
+    initGuide();
+    initControls();
+    initLightbox();
+    setLanguage(currentLang);
+  });
 })();

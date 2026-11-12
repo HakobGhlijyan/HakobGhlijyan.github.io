@@ -1,22 +1,28 @@
 # Session Handoff
 
 ## Current Status
-- **Unified Design & Typography System (Nightwell & CentSweep):**
-  - **Shared Font Foundation**: Both products use the exact same Google Fonts stack (`Playfair Display` for brand & feature headings, `Instrument Sans` for body & navigation labels, and `DM Mono` for metadata, badges, and footer).
-  - **Brand Header Alignment**: Both sites feature the identical `.site-brand-group` on the left (26×26 rounded squircle app icon, bold serif brand name in `Playfair Display`, and `← Portfolio` pill link).
-  - **Center Navigation Tabs**: Nav tabs now use identical uppercase sans typography and solid accent pill active state (`.nav-active`).
-  - **Right Action Controls**: Consistent controls on the right: active ` App Store` button and custom language switcher dropdown with `EN ⌵` trigger.
-  - **Footer Typography**: Both footers aligned to `DM Mono`, font-weight 300, 0.6rem, letter-spacing 0.1em uppercase with 0.75rem 2.2rem padding.
-  - **Feature Titles Size**: `.project-title` in Nightwell and `.item-title` in CentSweep share identical proportions (`clamp(1.05rem, 1.45vw, 1.35rem)`, `line-height: 1.15`).
-- **App Store Integration for Nightwell:**
-  - **Main Portfolio (`index.html`)**: Nightwell card updated with official App Store badge linked to `https://apps.apple.com/us/app/night-well/id6823939137`.
-  - **Nightwell Top Banner (`.live-card`)**: Added below Features header with app icon, bilingual description, App Store badge, and 84×84 black QR placeholder with "Scan to download".
-  - **Panel Footer Action**: Replaced coming-soon placeholder with active ` Download on the App Store` link.
-  - **Mobile Menu**: Updated coming-soon text to active App Store link.
-- **CentSweep Rebrand & Unified Support Email:**
-  - **Product Rename**: Full rebrand from Balance Cleaner / BalanceCleaner to CentSweep across folder structure, HTML/JS, 7 language dictionaries, and documentation.
-  - **Single Contact & Support Email**: FormSubmit endpoint and all direct email links across the portfolio, CentSweep, Nightwell, and project showcases unified strictly to `hakobghlijyan@gmail.com`.
+- **Filter Studio Showcase Integration (Project-3):**
+  - **Complete Website Showcase**: Converted Project-3 into full-featured showcase for Filter Studio (`iOS 18+`, iPhone & iPad, Core Image, SwiftData, private iCloud).
+  - **Shared Design Architecture**: Split-screen responsive container with dark navy & yellow palette (`#070A12` base, `#F6D743` accent, `#4C8DFF` secondary accent).
+  - **6 Integrated Sections**:
+    1. Features (`#work`): 6 modules with live preview and interactive hover states.
+    2. Screenshots (`#screens`): Device gallery with filters for All, Duo, iPhone, and iPad.
+    3. Overview / Guide (`#guide`): 20 walkthrough onboarding steps + responsive iPhone 18 Pro Max demo video (`.mp4` / `.mov`).
+    4. About (`#about`): Product philosophy and 3 metrics (0 accounts, 0 trackers, 6 languages).
+    5. Support (`#support`): Direct Web3Forms integration with access key `fd738668-d5b4-41fa-b85c-35eb8d8c4a18`, botcheck honeypot, 4 steps getting started, and 7 FAQ accordions.
+    6. Privacy (`#privacy`): 13 structured privacy disclosures.
+  - **Dedicated App Store Connect Pages**:
+    - Support URL: `Project-3/support/`
+    - Privacy Policy URL: `Project-3/privacy/`
+    - Marketing URL: `Project-3/`
+  - **Portfolio Update (`index.html`)**:
+    - Project 03 cell updated to Filter Studio with squircle icon, tags, and showcase links.
+
+- **Universal Project Template (`Project-Template/`):**
+  - Modular boilerplate deployed to `Project-Template/`, `Project-4/`, `Project-5/`, and `Project-6/`.
+  - Zero-framework structure with `tokens.css`, `config.js`, `contact-form.js`, and 6-language i18n (`en`, `ru`, `fr`, `es`, `it`, `de`).
+  - Added documentation: `TEMPLATE.md`.
 
 ## Working Branch / Repository Location
-- Working Tree: `/Users/hakobghlijyan/Developer/GItHub/HakobGhlijyan.github.io`
-- Branch: `dev/UpdateBalanceWithToCentSweep`
+- Working Tree: `/Users/hakobghlijyan/Library/Mobile Documents/com~apple~CloudDocs/Developer/GitHub/HakobGhlijyan.github.io`
+- Branch: `dev/FeaturesUpdateAndAddNewFilterStudio`
