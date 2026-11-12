@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#070A12">
-  <meta name="description" content="Template App — Native iOS Application Showcase. Core Image filters, non-destructive versions, custom watermarks, and private iCloud sync.">
+  <meta name="description" content="Template App — Native iOS Application Showcase. A native iOS application built with Swift. Discover features, screenshots, and download information.">  
   <meta name="author" content="Hakob Ghlijyan">
 
   <!-- Canonical & Favicon -->
@@ -19,7 +19,7 @@
 
   <!-- Open Graph & Twitter Cards -->
   <meta property="og:title" content="Template App — Native iOS Application Showcase">
-  <meta property="og:description" content="A calm, fast photo editor for iPhone and iPad with live previews, versions, and private iCloud sync.">
+  <meta property="og:description" content="A native iOS application built with Swift and Apple frameworks. Discover features, screenshots, and download information.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://hakobghlijyan.github.io/Project-Template/">
   <meta property="og:image" content="images/cover.jpg">
@@ -102,15 +102,15 @@
       </div>
 
       <!-- Mobile Hamburger Button -->
-      <button class="hamburger-btn" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
+      <button type="button" class="hamburger-btn" id="navBurger" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </header>
 
   <!-- Mobile Navigation Overlay -->
-  <div class="mobile-nav-overlay" id="mobileNav">
-    <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</button>
+  <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menu">
+    <button type="button" class="mobile-nav-close" id="navClose" aria-label="Close menu">&times;</button>
     <nav class="mobile-nav-links">
       <a data-nav="features" data-i18n="features">Features</a>
       <a data-nav="screens" data-i18n="screens">Screens</a>
@@ -1251,7 +1251,7 @@
        MARK: - SITE FOOTER (Подвал)
        ========================================================================= -->
   <footer class="site-footer">
-    <span>&copy; 2026 Hakob Ghlijyan &middot; Template App is built with Apple Core Image &amp; SwiftData.</span>
+    <span>&copy; 2026 Hakob Ghlijyan &middot; Template App is built with Swift &amp; UIKit.</span>
     <div class="footer-links">
       <a href="../index.html" data-i18n="portfolio">Portfolio</a>
       <span>&middot;</span>
