@@ -2,22 +2,23 @@
 
 ## Current Status
 - **Filter Studio Production Showcase (`FilterStudio/`):**
-  - **Clean Typography (Removed Stray Apostrophes/Commas):**
-    - Cleaned all dictionary entries across all 6 languages (`en`, `ru`, `fr`, `de`, `es`, `it`), removing accidental trailing escaped apostrophes (`\'`) in `features`, `privacy`, `featuresHeader`, `privacyEyebrow`, `privacyTitle`, `privacyLead`, `privacyBannerTitle`, `privacyBannerText`, and all 13 `policyTitle` / `policyBody` sections.
-    - Verified via automated AST and string sweep: 0 trailing quote artifacts remaining.
-  - **100% Full 6-Language Localization (Including Privacy Policy):**
-    - All 13 numbered sections of Privacy Policy wired to `data-i18n` with full translations across `en`, `ru`, `fr`, `de`, `es`, `it` from `Marketing/Website-Privacy-Support.md`.
-    - Total of 104 data-i18n dictionary keys verified complete with zero missing strings.
-  - **Item 07 Synchronized with Storage & iCloud Sync:**
-    - Features: Item 07 set to "Sync with your iCloud" (`feat7Title` / `feat7Tag: iCloud Sync`), slide `feat-7` updated.
-    - Screens: `duo-7`, `iphone-7`, `pad-7` updated to "Sync with your iCloud" (`Duo · iCloud`, `iPhone · iCloud`, `iPad · iCloud`).
-    - Canvas captions across all 4 contexts updated to "Sync with your iCloud · Private, optional and automatic".
-  - **iOS 18 Deployment Target Alignment:**
-    - Updated minimum iOS version to **iOS 18.0+** / iPadOS 18.0+ across schema.org metadata, FAQ accordions, and policy header.
-  - **Native Clean Video Playback on Canvas:**
-    - Direct `<video class="canvas-video">` playback with zero distortion or forced aspect ratios.
-  - **Active Web3Forms Support Form:**
-    - Live key `fd738668-d5b4-41fa-b85c-35eb8d8c4a18` with spam trap and AJAX submission.
+  - **Dashed Canvas Border (`1.5px dashed var(--canvas-card-border)`):**
+    - Directly aligned with CentSweep's dashed border architecture (`border: 1.5px dashed var(--canvas-card-border)` on `.canvas-image, .canvas-context` and `border-top: 1.5px dashed var(--canvas-card-border)` on `.canvas-caption`).
+  - **Header Layout & Portfolio Link Alignment:**
+    - Wrapped `.site-brand-group` and `.site-nav-tabs` together into `.site-header-left` with `gap: 1.5rem`.
+    - `Filter Studio` (brand & icon), `← Portfolio` button, and `Features` navigation tab sit cleanly side-by-side on desktop without huge stranded gaps.
+  - **Top-Alignment for Banners, Lists & Captions ("Сделай начало, пусть будет сверху"):**
+    - Updated `.live-card` to `align-items: flex-start;` and `.live-qr` to `justify-content: flex-start;`.
+    - Updated `.interactive-link` to `align-items: flex-start;` with top-padding compensation (`.item-num`, `.item-tag`, `.item-arrow`) to align cleanly with first line of wrapped multi-line titles.
+    - Updated `.canvas-caption` to flex column with `align-items: flex-start; text-align: left;`.
+  - **Initial Blank Canvas & Hover Inspection State:**
+    - Both `FilterStudio` and `CentSweep` now open cleanly on `#features` with clean placeholder visible (`.canvas-placeholder`), zero pre-selected active classes (`.active` removed on initial load), and reveal preview images only upon hover or click.
+    - Added `mouseleave` handlers to restore the clean placeholder when cursor exits the list/panel.
+  - **100% 6-Language Localization of Canvas Badges & Subtitles:**
+    - All canvas bottom badges (`canvasPrivacyTitle`, `canvasPrivacySub`, `canvasSupportTitle`, `canvasSupportSub`, `canvasAboutTitle`, `canvasAboutSub`, `canvasCoverTitle`, `canvasCoverSub`, `feat1CanvasSub`..`feat8CanvasSub`) fully localized across all 6 languages (`en`, `ru`, `fr`, `de`, `es`, `it`).
+    - Total 120 `data-i18n` keys in HTML verified 100% translated with zero missing keys.
+- **Nightwell Standardization (`Nightwell/`):**
+  - Standardized split screen aspect ratio tokens to `--info-width: 44vw;` and `--canvas-width: 56vw;` in `Nightwell/css/split-style.css`, exactly matching CentSweep and Filter Studio.
 
 ## Working Branch & Git State
 - Working Tree: `/Users/hakobghlijyan/Library/Mobile Documents/com~apple~CloudDocs/Developer/GitHub/HakobGhlijyan.github.io`

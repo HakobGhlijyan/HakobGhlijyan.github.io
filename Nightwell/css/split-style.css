@@ -34,6 +34,10 @@ https://templatemo.com/tm-616-split-index
 	--ocean-glass-hover: rgba(13, 44, 82, 0.85);
 	--grain-opacity: 0.025;
 	--transition-panel: 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+
+	/* Split Container Ratios (Standardized across CentSweep, FilterStudio, Nightwell) */
+	--info-width: 44vw;
+	--canvas-width: 56vw;
 }
 
 html {
@@ -257,7 +261,7 @@ body::before {
      LEFT SIDE — Panel System
      ══════════════════════════════════════ */
 .left-side {
-	width: 50vw;
+	width: var(--info-width, 44vw);
 	position: relative;
 	overflow: hidden;
 }
@@ -660,7 +664,7 @@ body::before {
      RIGHT SIDE — Canvas
      ══════════════════════════════════════ */
 .canvas-side {
-	width: 50vw;
+	width: var(--canvas-width, 56vw);
 	position: relative;
 	overflow: hidden;
 	display: flex;

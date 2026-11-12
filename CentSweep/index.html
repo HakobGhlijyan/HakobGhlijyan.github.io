@@ -152,8 +152,8 @@
         </aside>
 
         <ul class="interactive-list" id="featuresList">
-          <!-- Feature 1: Choose Custom Clear -->
-          <li class="interactive-item active" data-slide="feat-1">
+          <!-- Feature 1: Choose Custom Clear (clean on load until hovered/selected) -->
+          <li class="interactive-item" data-slide="feat-1">
             <div class="interactive-link">
               <span class="item-num">01</span>
               <span class="item-title" data-i18n="feat1Title">Choose Custom Clear</span>
@@ -938,8 +938,8 @@
     <!-- RIGHT SIDE: Visual Canvas Showcase -->
     <div class="canvas-side" id="canvasSide">
 
-      <!-- Default Placeholder (hidden on landing because feat-1 is visible) -->
-      <div class="canvas-placeholder hidden" id="placeholder">
+      <!-- Default Placeholder: clean on load until item is hovered/clicked -->
+      <div class="canvas-placeholder" id="placeholder">
         <div class="placeholder-icon">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4m-10-10h4m12 0h4m-3.3-6.7-2.8 2.8m-5.8 5.8-2.8 2.8m0-11.3 2.8 2.8m5.8 5.8 2.8 2.8"/></svg>
         </div>
@@ -947,7 +947,7 @@
       </div>
 
       <!-- Feature Canvas Images (Features 1-6 from assets/images/) -->
-      <div class="canvas-image visible" data-slide="feat-1">
+      <div class="canvas-image" data-slide="feat-1">
         <img src="assets/images/features1ai-store-black.png" alt="Choose Custom Clear" loading="eager">
         <div class="canvas-caption">
           <div class="canvas-caption-title">Choose Custom Clear</div>

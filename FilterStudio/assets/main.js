@@ -118,6 +118,22 @@ const dictionaries = {
     policyBody12: 'This site is static. It sets no tracking cookies and uses no analytics. If you write through the contact form, we use your name, email and message only to reply.',
     policyTitle13: '13. Contact Information',
     policyBody13: 'Questions about privacy: <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
+    canvasPrivacyTitle: '100% On-Device Native Privacy',
+    canvasPrivacySub: 'Zero data tracking · Zero telemetry · SwiftData & CloudKit',
+    canvasSupportTitle: 'Support & User Inquiries',
+    canvasSupportSub: 'Direct developer assistance · hakobghlijyan@gmail.com',
+    canvasAboutTitle: 'Filter Studio Ecosystem',
+    canvasAboutSub: 'iPhone & iPad Native Architecture · Studio-Grade Editing',
+    canvasCoverTitle: 'All Devices Ecosystem',
+    canvasCoverSub: 'iPhone, iPad & Duo Screens · Filter Studio',
+    feat1CanvasSub: 'Core Image · Live previews · Filter Studio',
+    feat2CanvasSub: 'Square, Portrait, Landscape ratios · Filter Studio',
+    feat3CanvasSub: 'Eight watermark styles · Custom colour · Filter Studio',
+    feat4CanvasSub: 'Non-destructive storage · Original untouched · Filter Studio',
+    feat5CanvasSub: 'Favourites, albums and filters · Filter Studio',
+    feat6CanvasSub: 'Detailed metadata & versions · Filter Studio',
+    feat7CanvasSub: 'Storage Breakdown · Private, optional and automatic · Filter Studio',
+    feat8CanvasSub: 'Desktop & Lock Screen widgets · Filter Studio',
   },
   ru: {
     portfolio: 'Портфолио',
@@ -228,6 +244,22 @@ const dictionaries = {
     policyBody12: 'Сайт статический. Он не ставит отслеживающие cookie и не использует аналитику. Если вы пишете через форму, имя, email и сообщение используются только для ответа.',
     policyTitle13: '13. Контакты',
     policyBody13: 'Вопросы о приватности: <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
+    canvasPrivacyTitle: '100% нативная приватность на устройстве',
+    canvasPrivacySub: 'Ноль трекинга · Ноль телеметрии · SwiftData и CloudKit',
+    canvasSupportTitle: 'Поддержка и вопросы пользователей',
+    canvasSupportSub: 'Прямая помощь разработчика · hakobghlijyan@gmail.com',
+    canvasAboutTitle: 'Экосистема Filter Studio',
+    canvasAboutSub: 'Нативная архитектура iPhone и iPad · Студийная обработка',
+    canvasCoverTitle: 'Экосистема всех устройств',
+    canvasCoverSub: 'Экраны iPhone, iPad и Duo · Filter Studio',
+    feat1CanvasSub: 'Core Image · Живой предпросмотр · Filter Studio',
+    feat2CanvasSub: 'Квадрат, портрет, ландшафт · Filter Studio',
+    feat3CanvasSub: 'Восемь стилей водяного знака · Свой цвет · Filter Studio',
+    feat4CanvasSub: 'Неразрушающее хранение · Оригинал нетронут · Filter Studio',
+    feat5CanvasSub: 'Избранное, альбомы и фильтры · Filter Studio',
+    feat6CanvasSub: 'Подробные метаданные и версии · Filter Studio',
+    feat7CanvasSub: 'Аналитика памяти · Приватно, опционально и авто · Filter Studio',
+    feat8CanvasSub: 'Виджеты экрана «Домой» и экрана блокировки · Filter Studio',
   },
   fr: {
     portfolio: 'Portfolio',
@@ -338,6 +370,22 @@ const dictionaries = {
     policyBody12: 'Ce site est statique. Il ne dépose aucun cookie de suivi et n’utilise aucun outil d’analyse. Si vous écrivez via le formulaire, votre nom, e-mail et message ne servent qu’à vous répondre.',
     policyTitle13: '13. Contact',
     policyBody13: 'Questions sur la confidentialité : <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
+    canvasPrivacyTitle: "Confidentialité 100% native sur l'appareil",
+    canvasPrivacySub: 'Zéro suivi · Zéro télémétrie · SwiftData et CloudKit',
+    canvasSupportTitle: 'Assistance et demandes des utilisateurs',
+    canvasSupportSub: 'Assistance directe du développeur · hakobghlijyan@gmail.com',
+    canvasAboutTitle: 'Écosystème Filter Studio',
+    canvasAboutSub: 'Architecture native iPhone et iPad · Retouche de qualité studio',
+    canvasCoverTitle: 'Écosystème tous appareils',
+    canvasCoverSub: 'Écrans iPhone, iPad et Duo · Filter Studio',
+    feat1CanvasSub: 'Core Image · Aperçus en direct · Filter Studio',
+    feat2CanvasSub: 'Formats carré, portrait et paysage · Filter Studio',
+    feat3CanvasSub: 'Huit styles de filigrane · Couleur personnalisée · Filter Studio',
+    feat4CanvasSub: 'Stockage non destructif · Original intact · Filter Studio',
+    feat5CanvasSub: 'Favoris, albums et filtres · Filter Studio',
+    feat6CanvasSub: 'Métadonnées детаillées et versions · Filter Studio',
+    feat7CanvasSub: 'Détail du stockage · Privé, optionnel et automatique · Filter Studio',
+    feat8CanvasSub: "Widgets pour l'écran d'accueil et de verrouillage · Filter Studio",
   },
   de: {
     portfolio: 'Portfolio',
@@ -448,6 +496,22 @@ const dictionaries = {
     policyBody12: 'Diese Seite ist statisch. Sie setzt keine Tracking-Cookies und nutzt keine Analyse. Wenn du das Kontaktformular verwendest, nutzen wir Name, E-Mail und Nachricht nur für die Antwort.',
     policyTitle13: '13. Kontakt',
     policyBody13: 'Fragen zum Datenschutz: <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
+    canvasPrivacyTitle: '100% native Privatsphäre auf dem Gerät',
+    canvasPrivacySub: 'Null Tracking · Null Telemetrie · SwiftData und CloudKit',
+    canvasSupportTitle: 'Support & Benutzeranfragen',
+    canvasSupportSub: 'Direkte Entwicklerhilfe · hakobghlijyan@gmail.com',
+    canvasAboutTitle: 'Filter Studio Ökosystem',
+    canvasAboutSub: 'Native iPhone- und iPad-Architektur · Studio-Bildbearbeitung',
+    canvasCoverTitle: 'Ökosystem aller Geräte',
+    canvasCoverSub: 'iPhone-, iPad- und Duo-Bildschirme · Filter Studio',
+    feat1CanvasSub: 'Core Image · Live-Vorschau · Filter Studio',
+    feat2CanvasSub: 'Quadrat-, Porträt- und Querformat · Filter Studio',
+    feat3CanvasSub: 'Acht Wasserzeichen-Stile · Eigene Farbe · Filter Studio',
+    feat4CanvasSub: 'Nicht-destruktive Speicherung · Original unberührt · Filter Studio',
+    feat5CanvasSub: 'Favoriten, Alben und Filter · Filter Studio',
+    feat6CanvasSub: 'Detaillierte Metadaten & Versionen · Filter Studio',
+    feat7CanvasSub: 'Speicherübersicht · Privat, optional und automatisch · Filter Studio',
+    feat8CanvasSub: 'Widgets für Home- und Sperrbildschirm · Filter Studio',
   },
   es: {
     portfolio: 'Portafolio',
@@ -558,6 +622,22 @@ const dictionaries = {
     policyBody12: 'Este sitio es estático. No usa cookies de rastreo ni analítica. Si escribes por el formulario, usamos tu nombre, correo y mensaje solo para responderte.',
     policyTitle13: '13. Contacto',
     policyBody13: 'Preguntas sobre privacidad: <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
+    canvasPrivacyTitle: 'Privacidad 100% nativa en el dispositivo',
+    canvasPrivacySub: 'Cero rastreo · Cero telemetría · SwiftData y CloudKit',
+    canvasSupportTitle: 'Soporte y consultas de usuarios',
+    canvasSupportSub: 'Asistencia directa del desarrollador · hakobghlijyan@gmail.com',
+    canvasAboutTitle: 'Ecosistema Filter Studio',
+    canvasAboutSub: 'Arquitectura nativa de iPhone y iPad · Edición de nivel de estudio',
+    canvasCoverTitle: 'Ecosistema de todos los dispositivos',
+    canvasCoverSub: 'Pantallas iPhone, iPad y Duo · Filter Studio',
+    feat1CanvasSub: 'Core Image · Vista previa en directo · Filter Studio',
+    feat2CanvasSub: 'Formatos cuadrado, vertical y horizontal · Filter Studio',
+    feat3CanvasSub: 'Ocho estilos de marca de agua · Color personalizado · Filter Studio',
+    feat4CanvasSub: 'Almacenamiento no destructivo · Original intacto · Filter Studio',
+    feat5CanvasSub: 'Favoritos, álbumes y filtros · Filter Studio',
+    feat6CanvasSub: 'Metadatos detallados y versiones · Filter Studio',
+    feat7CanvasSub: 'Desglose de almacenamiento · Privado, opcional y automático · Filter Studio',
+    feat8CanvasSub: 'Widgets para pantalla de inicio y bloqueo · Filter Studio',
   },
   it: {
     portfolio: 'Portfolio',
@@ -668,6 +748,22 @@ const dictionaries = {
     policyBody12: 'Questo sito è statico. Non imposta cookie di tracciamento né usa analisi. Se scrivi dal modulo, usiamo nome, e-mail e messaggio solo per risponderti.',
     policyTitle13: '13. Contatti',
     policyBody13: 'Domande sulla privacy: <a href="mailto:hakobghlijyan@gmail.com">hakobghlijyan@gmail.com</a>.',
+    canvasPrivacyTitle: 'Privacy nativa al 100% sul dispositivo',
+    canvasPrivacySub: 'Zero tracciamento · Zero telemetria · SwiftData e CloudKit',
+    canvasSupportTitle: 'Supporto e richieste degli utenti',
+    canvasSupportSub: 'Assistenza diretta dello sviluppatore · hakobghlijyan@gmail.com',
+    canvasAboutTitle: 'Ecosistema Filter Studio',
+    canvasAboutSub: 'Architettura nativa per iPhone e iPad · Editing di livello da studio',
+    canvasCoverTitle: 'Ecosistema di tutti i dispositivi',
+    canvasCoverSub: 'Schermate iPhone, iPad e Duo · Filter Studio',
+    feat1CanvasSub: 'Core Image · Anteprime live · Filter Studio',
+    feat2CanvasSub: 'Formati quadrato, verticale e orizzontale · Filter Studio',
+    feat3CanvasSub: 'Otto stili di filigrana · Colore personalizzato · Filter Studio',
+    feat4CanvasSub: 'Archiviazione non distruttiva · Originale intatto · Filter Studio',
+    feat5CanvasSub: 'Preferiti, album e filtri · Filter Studio',
+    feat6CanvasSub: 'Dettaglio archiviazione · Privato, facoltativo e automatico · Filter Studio',
+    feat7CanvasSub: 'Dettaglio archiviazione · Privato, facoltativo e automatico · Filter Studio',
+    feat8CanvasSub: 'Widget per schermata iniziale e di blocco · Filter Studio',
   }
 };
 
@@ -764,18 +860,11 @@ function switchPanel(target) {
     if (firstStep) {
       setTimeout(() => firstStep.click(), 60);
     }
-  } else if (target === 'screens') {
-    const firstScreen = document.querySelector('#panel-screens [data-slide]');
-    if (firstScreen) {
-      setTimeout(() => firstScreen.click(), 60);
-    }
-  } else if (target === 'features') {
-    const firstFeat = document.querySelector('#panel-features [data-slide]');
-    if (firstFeat) {
-      setTimeout(() => firstFeat.click(), 60);
-    }
   } else {
+    // Show placeholder (clean blank canvas state on initial open and section return)
     if (placeholder) placeholder.classList.remove('hidden');
+    document.querySelectorAll('.interactive-item').forEach(i => i.classList.remove('active'));
+    currentSlide = null;
   }
 
   // Update URL hash without jumping
@@ -846,6 +935,38 @@ function setupInteractivePreview() {
     item.addEventListener('mouseenter', showSlide);
     item.addEventListener('click', showSlide);
   });
+
+  // RU: Возврат к чистому плейсхолдеру при уводе курсора с панели Features
+  // EN: Return to clean placeholder when mouse leaves Features panel
+  const panelFeatures = document.querySelector('#panel-features');
+  if (panelFeatures) {
+    panelFeatures.addEventListener('mouseleave', () => {
+      if (currentPanel !== 'features') return;
+      currentSlide = null;
+      document.querySelectorAll('#panel-features .interactive-item').forEach(i => i.classList.remove('active'));
+      document.querySelectorAll('.canvas-image').forEach(s => s.classList.remove('visible'));
+      document.querySelectorAll('.canvas-image video').forEach(v => {
+        try { v.pause(); } catch (e) {}
+      });
+      if (placeholder) placeholder.classList.remove('hidden');
+    });
+  }
+
+  // RU: Возврат к чистому плейсхолдеру при уводе курсора со списка экранов
+  // EN: Return to clean placeholder when mouse leaves screens list
+  const panelScreens = document.querySelector('#panel-screens');
+  if (panelScreens) {
+    panelScreens.addEventListener('mouseleave', () => {
+      if (currentPanel !== 'screens') return;
+      currentSlide = null;
+      document.querySelectorAll('#panel-screens .interactive-item').forEach(i => i.classList.remove('active'));
+      document.querySelectorAll('.canvas-image').forEach(s => s.classList.remove('visible'));
+      document.querySelectorAll('.canvas-image video').forEach(v => {
+        try { v.pause(); } catch (e) {}
+      });
+      if (placeholder) placeholder.classList.remove('hidden');
+    });
+  }
 }
 
 // Sticky Screens Model Filter

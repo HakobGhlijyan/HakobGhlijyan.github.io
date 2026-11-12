@@ -102,7 +102,7 @@ a {
 	align-items: center;
 	justify-content: space-between;
 	padding: 0.9rem 2.2rem;
-	background: linear-gradient(to bottom, rgba(7, 17, 13, 0.96) 0%, rgba(7, 17, 13, 0.80) 65%, transparent 100%);
+	background: linear-gradient(to bottom, rgba(7, 10, 18, 0.96) 0%, rgba(7, 10, 18, 0.80) 65%, transparent 100%);
 	backdrop-filter: blur(14px);
 	-webkit-backdrop-filter: blur(14px);
 	border-bottom: 1px solid var(--line);
@@ -111,6 +111,13 @@ a {
 
 .site-header > * {
 	pointer-events: auto;
+}
+
+/* Header Left Group / Бренд, Portfolio и табы навигации рядом */
+.site-header-left {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
 }
 
 .site-brand-group {
@@ -539,7 +546,7 @@ a {
 
 .interactive-link {
 	display: flex;
-	align-items: baseline;
+	align-items: flex-start; /* RU: выравнивание по верху для многострочных названий EN: top-aligned */
 	gap: 1.2rem;
 	padding: 1rem 2.8rem;
 	position: relative;
@@ -555,6 +562,7 @@ a {
 	color: var(--green);
 	opacity: 0.85;
 	min-width: 1.8rem;
+	padding-top: 0.15rem; /* RU: компенсация высоты строки заголовка EN: align with first title line */
 }
 
 .item-title {
@@ -579,6 +587,7 @@ a {
 	color: var(--text-secondary);
 	margin-left: auto;
 	opacity: 0.75;
+	padding-top: 0.2rem; /* RU: выравнивание по первой строке EN: align with first line */
 }
 
 .item-arrow {
@@ -587,6 +596,7 @@ a {
 	transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 	display: flex;
 	align-items: center;
+	padding-top: 0.15rem;
 }
 
 .item-arrow svg {
@@ -1061,7 +1071,7 @@ a {
 	color: var(--text-secondary);
 }
 
-/* Canvas Image Container (Card Stage) / Сцена-карточка предпросмотра */
+/* Canvas Image Container (Card Stage) / Сцена-карточка предпросмотра с прерывистой рамкой как в CentSweep */
 .canvas-image,
 .canvas-context {
 	position: absolute;
@@ -1071,7 +1081,7 @@ a {
 	transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
 	z-index: 0;
 	background: var(--canvas-card-bg);
-	border: 1px solid var(--canvas-card-border);
+	border: 1.5px dashed var(--canvas-card-border);
 	box-shadow: var(--canvas-card-shadow);
 	border-radius: 18px;
 	overflow: hidden;
@@ -1283,7 +1293,7 @@ a {
 	border-radius: 8px;
 }
 
-/* Canvas Bottom Caption / Подпись к экрану */
+/* Canvas Bottom Caption / Подпись к экрану с прерывистой верхней линией */
 .canvas-caption {
 	position: absolute;
 	bottom: 0;
@@ -1291,10 +1301,15 @@ a {
 	right: 0;
 	padding: 1.1rem 1.8rem 1rem;
 	background: var(--caption-bg);
-	border-top: 1px solid var(--line);
+	border-top: 1.5px dashed var(--canvas-card-border);
 	opacity: 0;
 	transform: translateY(6px);
 	transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	text-align: left;
 }
 
 .canvas-image.visible .canvas-caption,
@@ -1549,7 +1564,7 @@ a {
    ========================================================================= */
 .live-card {
 	display: flex;
-	align-items: center;
+	align-items: flex-start; /* RU: выравнивание по верху EN: top-aligned */
 	gap: 1rem;
 	margin: 0 42px 1.2rem; /* RU: выровнено по тексту заголовка. EN: aligned with the header text. */
 	padding: 0.9rem 1.1rem;
@@ -1607,7 +1622,7 @@ a {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	text-align: center;
 }
 

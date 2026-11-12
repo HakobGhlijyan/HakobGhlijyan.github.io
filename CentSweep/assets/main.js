@@ -686,6 +686,32 @@ function setupInteractivePreview() {
     item.addEventListener('mouseenter', showSlide);
     item.addEventListener('click', showSlide);
   });
+
+  // RU: Возврат к чистому плейсхолдеру при уводе мыши с Features
+  // EN: Reset to clean placeholder when mouse leaves Features panel
+  const panelFeatures = document.querySelector('#panel-features');
+  if (panelFeatures) {
+    panelFeatures.addEventListener('mouseleave', () => {
+      if (currentPanel !== 'features') return;
+      currentSlide = null;
+      document.querySelectorAll('#panel-features .interactive-item').forEach(i => i.classList.remove('active'));
+      document.querySelectorAll('.canvas-image').forEach(s => s.classList.remove('visible'));
+      if (placeholder) placeholder.classList.remove('hidden');
+    });
+  }
+
+  // RU: Возврат к чистому плейсхолдеру при уводе мыши со Screens
+  // EN: Reset to clean placeholder when mouse leaves Screens panel
+  const panelScreens = document.querySelector('#panel-screens');
+  if (panelScreens) {
+    panelScreens.addEventListener('mouseleave', () => {
+      if (currentPanel !== 'screens') return;
+      currentSlide = null;
+      document.querySelectorAll('#panel-screens .interactive-item').forEach(i => i.classList.remove('active'));
+      document.querySelectorAll('.canvas-image').forEach(s => s.classList.remove('visible'));
+      if (placeholder) placeholder.classList.remove('hidden');
+    });
+  }
 }
 
 // Sticky Screens Model Filter
