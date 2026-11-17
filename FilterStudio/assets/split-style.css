@@ -59,6 +59,19 @@
 	box-sizing: border-box;
 }
 
+/* MARK: - Anti-FOUC & Initial Load Stabilization / Предотвращение искажения при первой загрузке */
+body.preload,
+body.preload *,
+body.preload *::before,
+body.preload *::after {
+	transition: none !important;
+	animation: none !important;
+}
+
+:focus:not(:focus-visible) {
+	outline: none;
+}
+
 html {
 	font-size: 15px;
 	-webkit-font-smoothing: antialiased;
@@ -1685,6 +1698,18 @@ body.menu-open { overflow: hidden; }
 	text-align: right;
 }
 
+.live-qr a {
+	display: block;
+	border-radius: 8px;
+	overflow: hidden;
+	line-height: 0;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.live-qr a:hover {
+	transform: scale(1.04);
+}
+
 .live-qr img,
 .live-qr-placeholder {
 	display: block;
@@ -1741,6 +1766,11 @@ body.menu-open { overflow: hidden; }
 		min-width: auto;
 		margin: 0.1rem 0 0 0; /* RU: сброс auto-margin вправо EN: reset right auto-margin */
 		text-align: left;
+	}
+
+	.live-qr a {
+		border-radius: 6px;
+		line-height: 0;
 	}
 
 	.live-qr img,
