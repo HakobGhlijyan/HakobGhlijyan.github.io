@@ -1,75 +1,43 @@
-# Session Handoff — Portfolio Audit & Full Standardization
+# Session Handoff — Filter Studio App Store Release & FOUC Fix
 
-**Date:** November 12, 2026  
+**Date:** November 17, 2026  
 **Active Branch:** `dev/FeaturesUpdateAndAddNewFilterStudio`  
-**Last Commit:** `98eb71d`  
-**Current Status:** ✅ All 7 sub-sites fully standardized. Full audit complete.
+**Current Status:** ✅ Filter Studio released on App Store. All download links, badges, QR codes wired and verified. Initial load FOUC/distortion resolved.
 
 ---
 
-## 1. Completed This Session
+## 1. What Was Done in This Session
 
-### Core Sites (FilterStudio / CentSweep / Nightwell)
-- **FilterStudio** = golden master (night navy `#070A12`, iOS blue `#4C8DFF`, amber `#F6D743`)
-- **CentSweep** = emerald palette — hamburger standardized to `setMenu()` ✅
-- **Nightwell** = ocean navy — header normalized, `html { font-size: 15px }` ✅
+### Filter Studio — Full App Store Integration
+- **App Store Link:** `https://apple.co/4zl4g0K` (App ID `6825377434`).
+- **Header Action Button:** Replaced "Coming Soon" with live App Store button matching CentSweep/Nightwell standard.
+- **Mobile Menu Overlay:** Replaced "Coming Soon" with live download button (`data-i18n="getOnAppStore"`).
+- **Hero Banner (`.live-card`):**
+  - Updated title to "Now available on the App Store" (`liveTitle`).
+  - Wired live App Store badge to `https://apple.co/4zl4g0K`.
+  - Replaced SVG placeholder with authentic `images/qr-code.png` (400×400 rendered at 72×72px).
+  - Made QR code interactive and clickable, wrapped in `<a>` link with subtle hover scaling.
+- **Panel Footer:** Converted bottom button from `#features` anchor to direct App Store link.
+- **i18n Dictionaries:** Updated all 6 languages (`en`, `ru`, `fr`, `de`, `es`, `it`) with live release strings.
+- **Root Portfolio (`index.html`):**
+  - Card 03 (Filter Studio): Replaced disabled "Coming soon" pill with official SVG App Store badge link.
+  - Ecosystem subtitle: Updated to announce CentSweep, Nightwell, and Filter Studio as live releases.
 
-### Hamburger Standard — All 7 sites unified
-- `id="navBurger"` / `id="navClose"`, `role="dialog"`, `aria-modal="true"`
-- `setMenu(open)` with `body.menu-open`, `aria-expanded`, Escape key, resize handler
-- Zero inline `onclick=` attributes anywhere
-
-### Banner / QR Section — All 3 main sites
-- QR: 72px with `min-width:72px`; V-stack on mobile (≤640px), left-aligned
-- FilterStudio: Coming Soon → QR is placeholder (no App Store yet) ✅ intentional
-
-### Nightwell CSS Font Variables — FIXED (commit `98eb71d`)
-- `--font-serif` corrected: `'Instrument Serif'` → `'Playfair Display'`
-- `--font-mono` corrected: `'JetBrains Mono'` → `'DM Mono'`
-- All ~15 hardcoded `font-family` occurrences replaced with `var(--font-serif/mono/sans)`
-
-### Project-Template / Project-4 / 5 / 6 — FIXED (commit `98eb71d`)
-- `setMenu()` block added to `assets/main.js` (was missing, only had raw `classList.remove`)
-- Inline `onclick=` removed from burger/close buttons in all 4 HTML files
-- `og:description` fixed (was FilterStudio copy → generic template text)
-- `main.js` synced: Template → 4, 5, 6 (always keep in sync via `cp`)
-
----
-
-## 2. Architecture Rules (Do Not Change)
-
-| Rule | Value |
-|------|-------|
-| Font stack | `Playfair Display` (serif) · `Instrument Sans` (sans) · `DM Mono` (mono) |
-| `html { font-size }` | `15px` on all sites |
-| `.site-brand` | `800` weight / `1.15rem` |
-| `.site-nav-tabs a` | `500` weight / `0.76rem` |
-| Hamburger JS | `setMenu()` with `body.menu-open` and `aria-expanded` |
-| Template sync | Edit `Project-Template/` → `cp` to 4, 5, 6 |
-| Palette | Never alter FilterStudio navy, CentSweep emerald, Nightwell indigo |
+### Anti-FOUC & Page Load Stabilization
+- **Root Cause of Distortion:** 
+  1. `.panel` had entrance transition (`opacity var(--transition-panel), transform var(--transition-panel)`) executing immediately on cold load, resulting in 450ms of dim, semi-transparent text.
+  2. `loading="lazy"` on above-the-fold QR and hero elements caused layout recalculation and late asset painting.
+  3. Blue focus outlines appeared in WebKit/Safari around `<a>` tags during hash navigation/initial activation.
+- **Fix:**
+  - Added `body.preload` anti-FOUC rule disabling all transitions and animations during first paint.
+  - Added double `requestAnimationFrame` in `DOMContentLoaded` to cleanly release `preload` only after layout has rendered.
+  - Added `:focus:not(:focus-visible) { outline: none; }` to eliminate unwanted Safari focus rings.
+  - Removed `loading="lazy"` from above-the-fold critical hero elements for instantaneous rendering.
 
 ---
 
-## 3. Known Issues / Not Yet Done
-
-| Priority | Issue | File(s) |
-|----------|-------|---------|
-| LOW | Root `index.html` has no link to `Project-Template/` (intentional? internal only) | `index.html` |
-| LOW | `og:image` on templates is relative `images/cover.jpg` (needs absolute URL for OG sharing) | Project-Template/4/5/6 `index.html` |
-| INFO | FilterStudio QR code = placeholder (Coming Soon, no App Store URL yet) | `FilterStudio/assets/…/qr-code-white.png` |
-| INFO | 10 copies of `app-store-badge.svg` across sites (working fine, no refactor needed) | various |
-
----
-
-## 4. Next Session Start
-
-```
-git -C "$REPO" log --oneline -5
-# Branch: dev/FeaturesUpdateAndAddNewFilterStudio
-# Last: 98eb71d fix: standardize font vars in Nightwell CSS; add setMenu()…
-```
-
-When FilterStudio is published to App Store:
-1. Update `FilterStudio/index.html` App Store URL (currently `#features` placeholder)
-2. Download real QR: `curl "https://api.qrserver.com/v1/create-qr-code/?size=400x400&color=FFFFFF&bgcolor=070A12&data=<APPSTORE_URL>&margin=10" -o "FilterStudio/assets/FilterStudio - marketingtools/qr-code-white.png"`
-3. Remove "Coming Soon" badge text, switch to "Download on the App Store"
+## 2. Verification
+- Live dev server `http://127.0.0.1:5500/` tested:
+  - `FilterStudio/`: Header button, live-badge, QR code, panel footer, and mobile nav all point to `https://apple.co/4zl4g0K` ✓
+  - Root `index.html`: Card 03 badge links to App Store ✓
+  - Zero console errors, instantaneous clean paint without transition lag or missing assets ✓

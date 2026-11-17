@@ -459,3 +459,24 @@ When you copy-paste a site to create a new one, the metadata travels with it. `o
 
 ### Next milestone
 FilterStudio → App Store. When that happens: swap `#features` href → real App Store URL, download QR, remove "Coming Soon" badge, update all i18n strings. One focused session, all mechanical.
+
+---
+
+## Session — November 17, 2026 · Filter Studio App Store Launch & Anti-FOUC Architecture
+
+**The goal:** Transition Filter Studio from "Coming Soon" to active App Store release (`https://apple.co/4zl4g0K`), activate real clickable QR code, and diagnose/cure the initial page load flicker/distortion.
+
+### What Was Done
+1. **Live App Store Rollout:**
+   - Swapped all temporary `#features` anchors in Filter Studio for `https://apple.co/4zl4g0K`: top header action button, banner badge, mobile menu, and bottom panel footer.
+   - Connected `FilterStudio/images/qr-code.png` (72×72px) wrapped in an interactive `<a>` element so clicking the QR code directly opens the App Store.
+   - Localized "Now available on the App Store" and "Download on the App Store" across all 6 supported locales (`en`, `ru`, `fr`, `de`, `es`, `it`).
+   - Updated the root portfolio showcase (`index.html`) to display the live App Store badge for Filter Studio alongside CentSweep and Nightwell.
+
+2. **The Initial Load Distortion (FOUC & Transition Lag):**
+   - *The mystery:* Upon hard refresh or first visit, the page momentarily displayed dim, washed-out text and missing assets before snapping into place.
+   - *The diagnosis:* Three separate factors converged:
+     1. CSS transitions on `.panel` (`opacity 0.45s, transform 0.45s`) were firing on page initialization, putting the panel in a half-opacity state during initial paint.
+     2. `loading="lazy"` on above-the-fold hero elements deferred QR image loading.
+     3. Default WebKit `:focus` outlines produced blue focus frames around hash-targeted and anchor elements.
+   - *The cure:* Implemented the industry-standard `body.preload` pattern. During initial paint, all CSS transitions are suspended (`transition: none !important`). A double-rAF hook in `DOMContentLoaded` lifts the preload state right after the DOM settles, ensuring immediate crisp rendering while preserving smooth interactive transitions for tab clicks. `:focus:not(:focus-visible)` cleanly prevents spurious focus boxes.

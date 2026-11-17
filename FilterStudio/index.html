@@ -25,6 +25,7 @@
   <meta property="og:image" content="images/cover.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="images/cover.jpg">
+  <meta name="apple-itunes-app" content="app-id=6825377434">
 
   <title>Filter Studio — Photo filters &amp; editor for iPhone &amp; iPad</title>
 
@@ -46,7 +47,7 @@
   }
   </script>
 </head>
-<body>
+<body class="preload">
 
   <!-- =========================================================================
        MARK: - SITE HEADER & BRAND (Шапка и переключатели)
@@ -79,10 +80,10 @@
 
     <!-- Actions: Language & Mobile Menu (Default Dark Theme) -->
     <div class="site-actions">
-      <!-- Coming Soon App Store button -->
-      <a href="#features" class="header-appstore-btn" title="Filter Studio Coming Soon to App Store" aria-label="Coming Soon on App Store">
+      <!-- App Store button (live) / Кнопка App Store — приложение уже в магазине -->
+      <a href="https://apple.co/4zl4g0K" target="_blank" rel="noopener noreferrer" class="header-appstore-btn" title="Download Filter Studio on the App Store" aria-label="Download on the App Store">
         <img src="assets/apple.logo@1x.png" alt="Apple" class="header-apple-logo">
-        <span data-i18n="comingSoon">Coming Soon</span>
+        <span>App Store</span>
       </a>
 
       <!-- 6-Language Switcher Dropdown (en, ru, fr, de, es, it) -->
@@ -118,7 +119,7 @@
     <a data-nav="about" data-i18n="about">About</a>
     <a data-nav="support" data-i18n="support">Support</a>
     <a data-nav="privacy" data-i18n="privacy">Privacy</a>
-    <a class="mobile-nav-soon" data-i18n="comingSoon">Coming Soon</a>
+    <a href="https://apple.co/4zl4g0K" target="_blank" rel="noopener noreferrer" class="mobile-nav-soon" data-i18n="getOnAppStore">Download on the App Store</a>
   </div>
 
   <!-- =========================================================================
@@ -138,18 +139,20 @@
           <span data-i18n="featuresHeader">Filter Studio for iPhone &amp; iPad · Core Image &amp; SwiftData</span>
         </div>
 
-        <!-- Coming Soon Card: иконка, бейдж и QR-блок -->
+        <!-- App Store Card: иконка, бейдж и QR-блок -->
         <aside class="live-card" aria-labelledby="liveTitle">
           <img class="live-icon" src="assets/icons/x512_squircle.svg" alt="Filter Studio app icon" width="64" height="64" decoding="async">
           <div class="live-text">
-            <strong id="liveTitle" data-i18n="liveTitle">Coming Soon on the App Store</strong>
+            <strong id="liveTitle" data-i18n="liveTitle">Now available on the App Store</strong>
             <span data-i18n="liveDesc">A calm, fast photo editor for iPhone and iPad with live previews, versions, and private iCloud sync.</span>
-            <a class="live-badge" href="#features" aria-label="Coming Soon on the App Store">
-              <img src="assets/app-store-badge.svg" alt="Coming Soon on the App Store" height="38">
+            <a class="live-badge" href="https://apple.co/4zl4g0K" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+              <img src="assets/app-store-badge.svg" alt="Download on the App Store" height="38">
             </a>
           </div>
           <figure class="live-qr">
-            <img src="assets/FilterStudio - marketingtools/qr-code-white.svg" alt="QR code: open Filter Studio" width="84" height="84" loading="lazy" decoding="async">
+            <a href="https://apple.co/4zl4g0K" target="_blank" rel="noopener noreferrer" aria-label="Download Filter Studio on the App Store">
+              <img src="images/qr-code.png" alt="QR code: open Filter Studio on the App Store" width="72" height="72" decoding="async">
+            </a>
             <figcaption data-i18n="liveQr">Scan to download</figcaption>
           </figure>
         </aside>
@@ -246,9 +249,9 @@
         </ul>
 
         <div class="panel-footer">
-          <a href="#features" class="header-appstore-btn" aria-label="Coming Soon on App Store">
+          <a href="https://apple.co/4zl4g0K" target="_blank" rel="noopener noreferrer" class="header-appstore-btn" aria-label="Download on the App Store">
             <img src="assets/apple.logo@1x.png" alt="Apple" class="header-apple-logo">
-            <span data-i18n="getOnAppStore">Coming Soon to App Store</span>
+            <span data-i18n="getOnAppStore">Download on the App Store</span>
           </a>
           <span style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-secondary);" data-i18n="hoverInspect">Hover module to inspect</span>
         </div>
